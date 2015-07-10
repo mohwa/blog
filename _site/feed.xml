@@ -1,14 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
+    <title>mohwa blog site</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Jul 2015 15:06:14 +0900</pubDate>
-    <lastBuildDate>Fri, 10 Jul 2015 15:06:14 +0900</lastBuildDate>
+    <link>http://mohwa.github.io/blog/</link>
+    <atom:link href="http://mohwa.github.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 10 Jul 2015 16:56:18 +0900</pubDate>
+    <lastBuildDate>Fri, 10 Jul 2015 16:56:18 +0900</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;인터페이스&lt;/h1&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;1. 정의&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;가장 큰 범위의 &lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4&quot;&gt;인터페이스&lt;/a&gt; &lt;code&gt;정의&lt;/code&gt;는 사물 간 또는 사물과 인간 간(&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4&quot;&gt;User Interface&lt;/a&gt;)의 의사소통을 위한 중간 &lt;span style=&quot;color:red&quot;&gt;“매개체”&lt;/span&gt; 다. 즉 서로간의 의사소통을 위해 정해진 약속이 존재하며, 이를 &lt;code&gt;표준 규격&lt;/code&gt; 이라 말할 수 있는것이다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;2. 의미&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/Users/sgjeon/blog_doc/img/interface_diagram.png?4&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;인터페이스&lt;/strong&gt;(DB Interface):&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;strong&gt;구현 클래스&lt;/strong&gt;가 공통적으로 가져야할 필수 &lt;span style=&quot;color:red&quot;&gt;특성&lt;/span&gt;(connect, disconnect 등)들을 &lt;strong&gt;선언&lt;/strong&gt;함으로써, 해당 구현 클래스들에게 &lt;strong&gt;사용자&lt;/strong&gt;(User Class)와의 &lt;strong&gt;의사 소통&lt;/strong&gt; 방침(&lt;span style=&quot;color:red&quot;&gt;“표준 규격”&lt;/span&gt;)을 알리는데 목적이 있다.&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;&lt;em&gt;인터페이스 내부에 선언된 모든 특성은 구현 클래스를 통해 반드시 구현되어야 한다&lt;/em&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;구현 클래스&lt;/strong&gt;(MSSQL, ORACLE API Class 등):&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;사용자(User Class)와의 의사소통을 위해 인터페이스 내부에 선언된 모든 특성들을 충실히 구현한다.&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;&lt;em&gt;이때 사용자 입장에서는 특정 ==구현 클래스== 명세없이도, ==인터페이스== 명세에 따라 제공받은 모든 API 를 사용할 수 있다는 장점이 존재한다.&lt;/em&gt;(정확히 말하면, 특정 API 의 모든 기능이 아닌 인터페이스를 구현한 기능에 한정된다)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;3. 상황에 따른 의미&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;만약 운영중인 어플리케이션의 DB 플랫폼이 &lt;strong&gt;MSSQL&lt;/strong&gt; 에서 &lt;strong&gt;PostgreSQL&lt;/strong&gt; 로 변경된다고 생각해보자.(오랜 기간 운영중인 어플리케이션의 경우 이런저런 이유로 이와 같은 상황이 충분히 올 수 있다)&lt;/p&gt;
+
+    &lt;p&gt;이때 위와 같은 인터페이스 설계가 되어있다면, &lt;strong&gt;PostgreSQL&lt;/strong&gt; 규격에 따라 해당 인터페이스만 구현하면 최소 비용으로 기능을 &lt;strong&gt;확장&lt;/strong&gt;할 수 있을 것이다.&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;사용자 입장에서보면, 인터페이스를 통해 구현된 공통적인 기능에 대해서 만큼은 기존 코드를 ==재사용==할 수 있다는 큰 장점이 존재하게 되는 것이다.(어플리케이션 유지보수 비용 ==최소화==)&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;js---&quot;&gt;4. JS 로 인터페이스 구현해보기&lt;/h2&gt;
+
+&lt;iframe width=&quot;100%&quot; height=&quot;1000&quot; src=&quot;http://jsfiddle.net/mohwa/jzu5r06e/3/embedded/js&quot; allowfullscreen=&quot;allowfullscreen&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;JS 인터페이스 구현은 아래 &lt;strong&gt;C# 인터페이스 가이드&lt;/strong&gt;에 맞춰 구현되었으며, JS 코드에 대한 자세한 설명은 따로 하지 않겠다.(만약 JS 에 대해 어느정도 알고 있는 상황이라면, 코드를 분석해보길 권장한다)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;위 코드에 대한 간단한 설명은 아래와 같다.&lt;/p&gt;
+
+        &lt;ol&gt;
+          &lt;li&gt;
+            &lt;p&gt;인터페이스 선언을 위한 인터페이스 함수 객체를 구현한다.&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;인터페이스 &lt;strong&gt;[이벤트]&lt;/strong&gt; 선언을 위해 &lt;strong&gt;Observer&lt;/strong&gt; 함수 객체를 구현한다.
+                &lt;ul&gt;
+                  &lt;li&gt;&lt;em&gt;&lt;a href=&quot;https://msdn.microsoft.com/ko-kr/library/awbftdfh.aspx&quot;&gt;C# 이벤트 선언&lt;/a&gt;&lt;/em&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;인터페이스를 상속받은 &lt;strong&gt;구현 클래스&lt;/strong&gt;를 검증(상속받은 인터페이스를 모두 구현했는지에 대한 검증)하는 함수 객체(==Interface.ensureImplement==)를 구현한다.&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;이전 다이어그램과 같이 &lt;strong&gt;인터페이스&lt;/strong&gt; 및 각 &lt;strong&gt;클래스&lt;/strong&gt;(구현 클래스)들을 구현한다.&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;https://msdn.microsoft.com/ko-kr/library/ms173156.aspx&quot;&gt;C# 인터페이스&lt;/a&gt;(인터페이스 정의는 각 언어마다 조금씩 차이를 보인다)&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;em&gt;위 코드는 JS 인터페이스 구현 뿐 아니라, 이전 다이어그램에 명시된 ==[인터페이스]==, ==[구현 클래스]==, ==[사용자 클래스]== 부분까지 전부 작성되었다.&lt;/em&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;5. 정리&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;인터페이스&lt;/strong&gt;는 개발 중인 어플케이션 규모 및 설계에 따라 적용 범위가 얼마든지 달라질 수 있다.(또는 사용이 불필요할 수 도 있다(간혹 팀내에서의 &lt;strong&gt;관행&lt;/strong&gt;적인 적용이 있다는 말을 들은적이 있는데 이건 정말 아닌듯 하다;;;))&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;em&gt;너무 당연한 말일 수 도 있지만, 인터페이스와 같은 모든 디자인 패턴은 적재 적소에 활용해야만 득이되는 것이다.&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;위에서 언급한 내용과 다른 &lt;strong&gt;적용 사례&lt;/strong&gt;에 대해(&lt;em&gt;그럼 어떤 상황이 더 있을까?) 한번쯤 심도있게 생각해보길 바란다&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sat, 11 Jul 2015 01:48:00 +0900</pubDate>
+        <link>http://mohwa.github.io/blog/design/patterns/2015/07/11/interface.html</link>
+        <guid isPermaLink="true">http://mohwa.github.io/blog/design/patterns/2015/07/11/interface.html</guid>
+        
+        
+        <category>design</category>
+        
+        <category>patterns</category>
+        
+      </item>
     
       <item>
         <title>Welcome to Jekyll!</title>
@@ -28,8 +154,8 @@
 
 </description>
         <pubDate>Fri, 10 Jul 2015 23:51:30 +0900</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/07/10/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/07/10/welcome-to-jekyll.html</guid>
+        <link>http://mohwa.github.io/blog/jekyll/update/2015/07/10/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://mohwa.github.io/blog/jekyll/update/2015/07/10/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>

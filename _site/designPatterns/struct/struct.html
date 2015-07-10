@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>struct.html</title>
+  <meta name="generator" content="Haroopad 0.13.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>div.oembedall-githubrepos{border:1px solid #DDD;border-radius:4px;list-style-type:none;margin:0 0 10px;padding:8px 10px 0;font:13.34px/1.4 helvetica,arial,freesans,clean,sans-serif;width:452px;background-color:#fff}div.oembedall-githubrepos .oembedall-body{background:-moz-linear-gradient(center top,#FAFAFA,#EFEFEF);background:-webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#EFEFEF));border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-top:1px solid #EEE;margin-left:-10px;margin-top:8px;padding:5px 10px;width:100%}div.oembedall-githubrepos h3{font-size:14px;margin:0;padding-left:18px;white-space:nowrap}div.oembedall-githubrepos p.oembedall-description{color:#444;font-size:12px;margin:0 0 3px}div.oembedall-githubrepos p.oembedall-updated-at{color:#888;font-size:11px;margin:0}div.oembedall-githubrepos ul.oembedall-repo-stats{border:none;float:right;font-size:11px;font-weight:700;padding-left:15px;position:relative;z-index:5;margin:0}div.oembedall-githubrepos ul.oembedall-repo-stats li{border:none;color:#666;display:inline-block;list-style-type:none;margin:0!important}div.oembedall-githubrepos ul.oembedall-repo-stats li a{background-color:transparent;border:none;color:#666!important;background-position:5px -2px;background-repeat:no-repeat;border-left:1px solid #DDD;display:inline-block;height:21px;line-height:21px;padding:0 5px 0 23px}div.oembedall-githubrepos ul.oembedall-repo-stats li:first-child a{border-left:medium none;margin-right:-3px}div.oembedall-githubrepos ul.oembedall-repo-stats li a:hover{background:5px -27px no-repeat #4183C4;color:#FFF!important;text-decoration:none}div.oembedall-githubrepos ul.oembedall-repo-stats li:first-child a:hover{border-bottom-left-radius:3px;border-top-left-radius:3px}ul.oembedall-repo-stats li:last-child a:hover{border-bottom-right-radius:3px;border-top-right-radius:3px}span.oembedall-closehide{background-color:#aaa;border-radius:2px;cursor:pointer;margin-right:3px}div.oembedall-container{margin-top:5px;text-align:left}.oembedall-ljuser{font-weight:700}.oembedall-ljuser img{vertical-align:bottom;border:0;padding-right:1px}.oembedall-stoqembed{border-bottom:1px dotted #999;float:left;overflow:hidden;width:730px;line-height:1;background:#FFF;color:#000;font-family:Arial,Liberation Sans,DejaVu Sans,sans-serif;font-size:80%;text-align:left;margin:0;padding:0}.oembedall-stoqembed a{color:#07C;text-decoration:none;margin:0;padding:0}.oembedall-stoqembed a:hover{text-decoration:underline}.oembedall-stoqembed a:visited{color:#4A6B82}.oembedall-stoqembed h3{font-family:Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;font-size:130%;font-weight:700;margin:0;padding:0}.oembedall-stoqembed .oembedall-reputation-score{color:#444;font-size:120%;font-weight:700;margin-right:2px}.oembedall-stoqembed .oembedall-user-info{height:35px;width:185px}.oembedall-stoqembed .oembedall-user-info .oembedall-user-gravatar32{float:left;height:32px;width:32px}.oembedall-stoqembed .oembedall-user-info .oembedall-user-details{float:left;margin-left:5px;overflow:hidden;white-space:nowrap;width:145px}.oembedall-stoqembed .oembedall-question-hyperlink{font-weight:700}.oembedall-stoqembed .oembedall-stats{background:#EEE;margin:0 0 0 7px;padding:4px 7px 6px;width:58px}.oembedall-stoqembed .oembedall-statscontainer{float:left;margin-right:8px;width:86px}.oembedall-stoqembed .oembedall-votes{color:#555;padding:0 0 7px;text-align:center}.oembedall-stoqembed .oembedall-vote-count-post{font-size:240%;color:#808185;display:block;font-weight:700}.oembedall-stoqembed .oembedall-views{color:#999;padding-top:4px;text-align:center}.oembedall-stoqembed .oembedall-status{margin-top:-3px;padding:4px 0;text-align:center;background:#75845C;color:#FFF}.oembedall-stoqembed .oembedall-status strong{color:#FFF;display:block;font-size:140%}.oembedall-stoqembed .oembedall-summary{float:left;width:635px}.oembedall-stoqembed .oembedall-excerpt{line-height:1.2;margin:0;padding:0 0 5px}.oembedall-stoqembed .oembedall-tags{float:left;line-height:18px}.oembedall-stoqembed .oembedall-tags a:hover{text-decoration:none}.oembedall-stoqembed .oembedall-post-tag{background-color:#E0EAF1;border-bottom:1px solid #3E6D8E;border-right:1px solid #7F9FB6;color:#3E6D8E;font-size:90%;line-height:2.4;margin:2px 2px 2px 0;padding:3px 4px;text-decoration:none;white-space:nowrap}.oembedall-stoqembed .oembedall-post-tag:hover{background-color:#3E6D8E;border-bottom:1px solid #37607D;border-right:1px solid #37607D;color:#E0EAF1}.oembedall-stoqembed .oembedall-fr{float:right}.oembedall-stoqembed .oembedall-statsarrow{background-image:url(http://cdn.sstatic.net/stackoverflow/img/sprites.png?v=3);background-repeat:no-repeat;overflow:hidden;background-position:0 -435px;float:right;height:13px;margin-top:12px;width:7px}.oembedall-facebook1{border:1px solid #1A3C6C;padding:0;font:13.34px/1.4 verdana;width:500px}.oembedall-facebook2{background-color:#627add}.oembedall-facebook2 a{color:#e8e8e8;text-decoration:none}.oembedall-facebookBody{background-color:#fff;vertical-align:top;padding:5px}.oembedall-facebookBody .contents{display:inline-block;width:100%}.oembedall-facebookBody div img{float:left;margin-right:5px}div.oembedall-lanyard{-webkit-box-shadow:none;-webkit-transition-delay:0s;-webkit-transition-duration:.4000000059604645s;-webkit-transition-property:width;-webkit-transition-timing-function:cubic-bezier(0.42,0,.58,1);background-attachment:scroll;background-clip:border-box;background-color:transparent;background-image:none;background-origin:padding-box;border-width:0;box-shadow:none;color:#112644;display:block;float:left;font-family:'Trebuchet MS',Trebuchet,sans-serif;font-size:16px;height:253px;line-height:19px;margin:0;max-width:none;min-height:0;outline:#112644 0;overflow-x:visible;overflow-y:visible;padding:0;position:relative;text-align:left;vertical-align:baseline;width:804px}div.oembedall-lanyard .tagline{font-size:1.5em}div.oembedall-lanyard .wrapper{overflow:hidden;clear:both}div.oembedall-lanyard .split{float:left;display:inline}div.oembedall-lanyard .prominent-place .flag:active,div.oembedall-lanyard .prominent-place .flag:focus,div.oembedall-lanyard .prominent-place .flag:hover,div.oembedall-lanyard .prominent-place .flag:link,div.oembedall-lanyard .prominent-place .flag:visited{float:left;display:block;width:48px;height:48px;position:relative;top:-5px;margin-right:10px}div.oembedall-lanyard .place-context{font-size:.889em}div.oembedall-lanyard .prominent-place .sub-place{display:block}div.oembedall-lanyard .prominent-place{font-size:1.125em;line-height:1.1em;font-weight:400}div.oembedall-lanyard .main-date{color:#8CB4E0;font-weight:700;line-height:1.1}div.oembedall-lanyard .first{width:48.57%;margin:0 0 0 2.857%}.mermaid .label{color:#333}.node circle,.node polygon,.node rect{fill:#cde498;stroke:#13540c;stroke-width:1px}.edgePath .path{stroke:green;stroke-width:1.5px}.cluster rect{fill:#cdffb2;rx:40;stroke:#6eaa49;stroke-width:1px}.cluster text{fill:#333}.actor{stroke:#13540c;fill:#cde498}text.actor{fill:#000;stroke:none}.actor-line{stroke:grey}.messageLine0{stroke-width:1.5;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#333}.messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#arrowhead{fill:#333}#crosshead path{fill:#333!important;stroke:#333!important}.messageText{fill:#333;stroke:none}.labelBox{stroke:#326932;fill:#cde498}.labelText,.loopText{fill:#000;stroke:none}.loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#326932}.note{stroke:#6eaa49;fill:#fff5ad}.noteText{fill:#000;stroke:none;font-family:'trebuchet ms',verdana,arial;font-size:14px}.section{stroke:none;opacity:.2}.section0,.section2{fill:#6eaa49}.section1,.section3{fill:#fff;opacity:.2}.sectionTitle0,.sectionTitle1,.sectionTitle2,.sectionTitle3{fill:#333}.sectionTitle{text-anchor:start;font-size:11px;text-height:14px}.grid .tick{stroke:lightgrey;opacity:.3;shape-rendering:crispEdges}.grid path{stroke-width:0}.today{fill:none;stroke:red;stroke-width:2px}.task{stroke-width:2}.taskText{text-anchor:middle;font-size:11px}.taskTextOutsideRight{fill:#000;text-anchor:start;font-size:11px}.taskTextOutsideLeft{fill:#000;text-anchor:end;font-size:11px}.taskText0,.taskText1,.taskText2,.taskText3{fill:#fff}.task0,.task1,.task2,.task3{fill:#487e3a;stroke:#13540c}.taskTextOutside0,.taskTextOutside1,.taskTextOutside2,.taskTextOutside3{fill:#000}.active0,.active1,.active2,.active3{fill:#cde498;stroke:#13540c}.activeText0,.activeText1,.activeText2,.activeText3{fill:#000!important}.done0,.done1,.done2,.done3{stroke:grey;fill:lightgrey;stroke-width:2}.doneText0,.doneText1,.doneText2,.doneText3{fill:#000!important}.crit0,.crit1,.crit2,.crit3{stroke:#f88;fill:red;stroke-width:2}.activeCrit0,.activeCrit1,.activeCrit2,.activeCrit3{stroke:#f88;fill:#cde498;stroke-width:2}.doneCrit0,.doneCrit1,.doneCrit2,.doneCrit3{stroke:#f88;fill:lightgrey;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}.activeCritText0,.activeCritText1,.activeCritText2,.activeCritText3,.doneCritText0,.doneCritText1,.doneCritText2,.doneCritText3{fill:#000!important}.titleText{text-anchor:middle;font-size:18px;fill:#000}text{font-family:'trebuchet ms',verdana,arial;font-size:14px}html{height:100%}body{margin:0!important;padding:5px 20px 26px!important;background-color:#fff;font-family:"Lucida Grande","Segoe UI","Apple SD Gothic Neo","Malgun Gothic","Lucida Sans Unicode",Helvetica,Arial,sans-serif;font-size:.9em;overflow-x:hidden;overflow-y:auto}br,h1,h2,h3,h4,h5,h6{clear:both}hr.page{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x;border:0;height:3px;padding:0}hr.underscore{border-top-style:dashed!important}body >:first-child{margin-top:0!important}img.plugin{box-shadow:0 1px 3px rgba(0,0,0,.1);border-radius:3px}iframe{border:0}figure{-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit-margin-end:0}kbd{border:1px solid #aaa;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;-moz-box-shadow:1px 2px 2px #ddd;-webkit-box-shadow:1px 2px 2px #ddd;box-shadow:1px 2px 2px #ddd;background-color:#f9f9f9;background-image:-moz-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:-o-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:-webkit-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:linear-gradient(top,#eee,#f9f9f9,#eee);padding:1px 3px;font-family:inherit;font-size:.85em}.oembeded .oembed_photo{display:inline-block}img[data-echo]{margin:25px 0;width:100px;height:100px;background:url(../img/ajax.gif) center center no-repeat #fff}.spinner{display:inline-block;width:10px;height:10px;margin-bottom:-.1em;border:2px solid rgba(0,0,0,.5);border-top-color:transparent;border-radius:100%;-webkit-animation:spin 1s infinite linear;animation:spin 1s infinite linear}.spinner:after{content:'';display:block;width:0;height:0;position:absolute;top:-6px;left:0;border:4px solid transparent;border-bottom-color:rgba(0,0,0,.5);-webkit-transform:rotate(45deg);transform:rotate(45deg)}@-webkit-keyframes spin{to{-webkit-transform:rotate(360deg)}}@keyframes spin{to{transform:rotate(360deg)}}p.toc{margin:0!important}p.toc ul{padding-left:10px}p.toc>ul{padding:10px;margin:0 10px;display:inline-block;border:1px solid #ededed;border-radius:5px}p.toc li,p.toc ul{list-style-type:none}p.toc li{width:100%;padding:0;overflow:hidden}p.toc li a::after{content:"."}p.toc li a:before{content:"• "}p.toc h5{text-transform:uppercase}p.toc .title{float:left;padding-right:3px}p.toc .number{margin:0;float:right;padding-left:3px;background:#fff;display:none}input.task-list-item{margin-left:-1.62em}.markdown{font-family:"Hiragino Sans GB","Microsoft YaHei",STHeiti,SimSun,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",'Segoe UI',AppleSDGothicNeo-Medium,'Malgun Gothic',Verdana,Tahoma,sans-serif;padding:20px}.markdown a{text-decoration:none;vertical-align:baseline}.markdown a:hover{text-decoration:underline}.markdown h1{font-size:2.2em;font-weight:700;margin:1.5em 0 1em}.markdown h2{font-size:1.8em;font-weight:700;margin:1.275em 0 .85em}.markdown h3{font-size:1.6em;font-weight:700;margin:1.125em 0 .75em}.markdown h4{font-size:1.4em;font-weight:700;margin:.99em 0 .66em}.markdown h5{font-size:1.2em;font-weight:700;margin:.855em 0 .57em}.markdown h6{font-size:1em;font-weight:700;margin:.75em 0 .5em}.markdown h1+p,.markdown h1:first-child,.markdown h2+p,.markdown h2:first-child,.markdown h3+p,.markdown h3:first-child,.markdown h4+p,.markdown h4:first-child,.markdown h5+p,.markdown h5:first-child,.markdown h6+p,.markdown h6:first-child{margin-top:0}.markdown hr{border:1px solid #ccc}.markdown p{margin:1em 0;word-wrap:break-word}.markdown ol{list-style-type:decimal}.markdown li{display:list-item;line-height:1.4em}.markdown blockquote{margin:1em 20px}.markdown blockquote>:first-child{margin-top:0}.markdown blockquote>:last-child{margin-bottom:0}.markdown blockquote cite:before{content:'\2014 \00A0'}.markdown .code{border-radius:3px;word-wrap:break-word}.markdown pre{border-radius:3px;word-wrap:break-word;border:1px solid #ccc;overflow:auto;padding:.5em}.markdown pre code{border:0;display:block}.markdown pre>code{font-family:Consolas,Inconsolata,Courier,monospace;font-weight:700;white-space:pre;margin:0}.markdown code{border-radius:3px;word-wrap:break-word;border:1px solid #ccc;padding:0 5px;margin:0 2px}.markdown img{max-width:100%}.markdown mark{color:#000;background-color:#fcf8e3}.markdown table{padding:0;border-collapse:collapse;border-spacing:0;margin-bottom:16px}.markdown table tr td,.markdown table tr th{border:1px solid #ccc;margin:0;padding:6px 13px}.markdown table tr th{font-weight:700}.markdown table tr th>:first-child{margin-top:0}.markdown table tr th>:last-child{margin-bottom:0}.markdown table tr td>:first-child{margin-top:0}.markdown table tr td>:last-child{margin-bottom:0}.github{padding:20px;font-family:"Helvetica Neue",Helvetica,"Hiragino Sans GB","Microsoft YaHei",STHeiti,SimSun,"Segoe UI",AppleSDGothicNeo-Medium,'Malgun Gothic',Arial,freesans,sans-serif;font-size:15px;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}.github a{color:#3269a0}.github a:hover{color:#4183c4}.github h2{border-bottom:1px solid #e6e6e6;line-height:1.6}.github h6{color:#777}.github hr{border:1px solid #e6e6e6}.github pre>code{font-size:.9em;font-family:Consolas,Inconsolata,Courier,monospace}.github blockquote>code,.github h1>code,.github h2>code,.github h3>code,.github h4>code,.github h5>code,.github h6>code,.github li>code,.github p>code,.github td>code{background-color:rgba(0,0,0,.07);font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;font-size:85%;padding:.2em .5em;border:0}.github blockquote{border-left:4px solid #e6e6e6;padding:0 15px;font-style:italic}.github table{background-color:#fafafa}.github table tr td,.github table tr th{border:1px solid #e6e6e6}.github table tr:nth-child(2n){background-color:#f2f2f2}.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8;-webkit-text-size-adjust:none}.diff .hljs-header,.hljs-comment,.hljs-javadoc{color:#998;font-style:italic}.css .rule .hljs-keyword,.hljs-keyword,.hljs-request,.hljs-status,.hljs-subst,.hljs-winutils,.nginx .hljs-title{color:#333;font-weight:700}.hljs-hexcolor,.hljs-number,.ruby .hljs-constant{color:teal}.hljs-dartdoc,.hljs-phpdoc,.hljs-string,.hljs-tag .hljs-value,.tex .hljs-formula{color:#d14}.hljs-id,.hljs-title,.scss .hljs-preprocessor{color:#900;font-weight:700}.hljs-list .hljs-keyword,.hljs-subst{font-weight:400}.hljs-class .hljs-title,.hljs-type,.tex .hljs-command,.vhdl .hljs-literal{color:#458;font-weight:700}.django .hljs-tag .hljs-keyword,.hljs-rules .hljs-property,.hljs-tag,.hljs-tag .hljs-title{color:navy;font-weight:400}.hljs-attribute,.hljs-variable,.lisp .hljs-body{color:teal}.hljs-regexp{color:#009926}.clojure .hljs-keyword,.hljs-prompt,.hljs-symbol,.lisp .hljs-keyword,.ruby .hljs-symbol .hljs-string,.scheme .hljs-keyword,.tex .hljs-special{color:#990073}.hljs-built_in{color:#0086b3}.hljs-cdata,.hljs-doctype,.hljs-pi,.hljs-pragma,.hljs-preprocessor,.hljs-shebang{color:#999;font-weight:700}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}.MathJax_Hover_Frame{border-radius:.25em;-webkit-border-radius:.25em;-moz-border-radius:.25em;-khtml-border-radius:.25em;box-shadow:0 0 15px #83A;-webkit-box-shadow:0 0 15px #83A;-moz-box-shadow:0 0 15px #83A;-khtml-box-shadow:0 0 15px #83A;border:1px solid #A6D!important;display:inline-block;position:absolute}.MathJax_Hover_Arrow{position:absolute;width:15px;height:11px;cursor:pointer}#MathJax_About{position:fixed;left:50%;width:auto;text-align:center;border:3px outset;padding:1em 2em;background-color:#DDD;color:#000;cursor:default;font-family:message-box;font-size:120%;font-style:normal;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;z-index:201;border-radius:15px;-webkit-border-radius:15px;-moz-border-radius:15px;-khtml-border-radius:15px;box-shadow:0 10px 20px gray;-webkit-box-shadow:0 10px 20px gray;-moz-box-shadow:0 10px 20px gray;-khtml-box-shadow:0 10px 20px gray;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}.MathJax_Menu{position:absolute;background-color:#fff;color:#000;width:auto;padding:5px 0;border:1px solid #CCC;margin:0;cursor:default;font:menu;text-align:left;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;z-index:201;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-khtml-border-radius:5px;box-shadow:0 10px 20px gray;-webkit-box-shadow:0 10px 20px gray;-moz-box-shadow:0 10px 20px gray;-khtml-box-shadow:0 10px 20px gray;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}.MathJax_MenuItem{padding:1px 2em;background:0 0}.MathJax_MenuArrow{position:absolute;right:.5em;color:#666}.MathJax_MenuActive .MathJax_MenuArrow{color:#fff}.MathJax_MenuArrow.RTL{left:.5em;right:auto}.MathJax_MenuCheck{position:absolute;left:.7em}.MathJax_MenuCheck.RTL{right:.7em;left:auto}.MathJax_MenuRadioCheck{position:absolute;left:.7em}.MathJax_MenuRadioCheck.RTL{right:.7em;left:auto}.MathJax_MenuLabel{padding:1px 2em 3px 1.33em;font-style:italic}.MathJax_MenuRule{border-top:1px solid #DDD;margin:4px 3px}.MathJax_MenuDisabled{color:GrayText}.MathJax_MenuActive{background-color:#606872;color:#fff}.MathJax_Menu_Close{position:absolute;width:31px;height:31px;top:-15px;left:-15px}#MathJax_Zoom{position:absolute;background-color:#F0F0F0;overflow:auto;display:block;z-index:301;padding:.5em;border:1px solid #000;margin:0;font-weight:400;font-style:normal;text-align:left;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;box-shadow:5px 5px 15px #AAA;-webkit-box-shadow:5px 5px 15px #AAA;-moz-box-shadow:5px 5px 15px #AAA;-khtml-box-shadow:5px 5px 15px #AAA;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}#MathJax_ZoomOverlay{position:absolute;left:0;top:0;z-index:300;display:inline-block;width:100%;height:100%;border:0;padding:0;margin:0;background-color:#fff;opacity:0;filter:alpha(opacity=0)}#MathJax_ZoomFrame{position:relative;display:inline-block;height:0;width:0}#MathJax_ZoomEventTrap{position:absolute;left:0;top:0;z-index:302;display:inline-block;border:0;padding:0;margin:0;background-color:#fff;opacity:0;filter:alpha(opacity=0)}.MathJax_Preview{color:#888}#MathJax_Message{position:fixed;left:1px;bottom:2px;background-color:#E6E6E6;border:1px solid #959595;margin:0;padding:2px 8px;z-index:102;color:#000;font-size:80%;width:auto;white-space:nowrap}#MathJax_MSIE_Frame{position:absolute;top:0;left:0;width:0;z-index:101;border:0;margin:0;padding:0}.MathJax_Error{color:#C00;font-style:italic}footer{position:fixed;font-size:.8em;text-align:right;bottom:0;margin-left:-25px;height:20px;width:100%}</style>
+</head>
+<body class="markdown github">
+<h1 id="구조체"><a name="구조체" href="#구조체"></a>구조체</h1><h2 id="1.-정의"><a name="1.-정의" href="#1.-정의"></a>1. 정의</h2><ul>
+<li><p>C 와 C++(또는 C# 등) 에서 <strong>구조화 된 데이터</strong>를 처리할 때, <strong>struct</strong> 를 사용하는데 이를 <a href="https://ko.wikipedia.org/wiki/Struct">구조체</a>라 부른다.</p>
+<ul>
+<li><p>최초의 <strong>구조체</strong>는 C 언어에서 다양한 <strong>자료구조</strong>를 하나의 <strong>집합</strong>으로 만들어 <strong>관리</strong>하기위해 만들어졌다.</p>
+<ul>
+<li>구조체는 하나 이상의 <strong>자료구조</strong>를 가진 또 하나의 <strong>데이터 타입</strong>을 정의한다.</li></ul>
+</li><li><p><strong>구조화란?</strong> 정보를 쉽게 인출할 수 있도록 <strong>편성된 방식</strong>을 말한다.</p>
+<ul>
+<li><a href="http://terms.naver.com/entry.nhn?docId=838410&amp;cid=42344&amp;categoryId=42344">http://terms.naver.com/entry.nhn?docId=838410&amp;cid=42344&amp;categoryId=42344</a></li></ul>
+</li><li><p>이 글은 <strong>구조체</strong>를 다루는 여러 언어 중 <strong>[<ins>C# 구조체]</ins></strong> 를 기준으로 다루고있다.</p>
+<p><img src="struct_diagram.jpg?2" alt=""></p>
+</li><li><p>코드화</p>
+<pre class="java hljs"><code class="java" data-origin="<pre><code class=&quot;java&quot;>  public struct Song
+  {
+      public int lengthInSeconds, yearRecorded;
+
+      // 생성자        
+      public Song(int p1, int p2)
+      {
+          lengthInSeconds = p1;
+          yearRecorded = p2;
+      }
+  }
+
+  class TestSong
+  {
+      static void Main()
+      {
+          // Initialize:
+          // stack 메모리 영역에 객체가 할당된다.
+          Song song1 = new Song(213, 1994);
+          Song song2 = new Song(248, 1988);
+
+          // Display results:
+          Console.WriteLine(&quot;lengthInSeconds = {0}, yearRecorded = {1}&quot;, song1.lengthInSeconds, song1.yearRecorded);
+
+          Console.WriteLine(&quot;lengthInSeconds = {0}, yearRecorded = {1}&quot;, song2.lengthInSeconds, song2.yearRecorded);
+
+      }
+  }
+
+  /* Output:
+      lengthInSeconds = 213, yearRecorded = 1994
+      lengthInSeconds = 248, yearRecorded = 1988
+  */
+</code></pre>">  <span class="hljs-keyword">public</span> struct Song
+  {
+      <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> lengthInSeconds, yearRecorded;
+
+      <span class="hljs-comment">// 생성자        </span>
+      <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Song</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p1, <span class="hljs-keyword">int</span> p2)</span>
+      </span>{
+          lengthInSeconds = p1;
+          yearRecorded = p2;
+      }
+  }
+
+  <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestSong</span>
+  </span>{
+      <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span><span class="hljs-params">()</span>
+      </span>{
+          <span class="hljs-comment">// Initialize:</span>
+          <span class="hljs-comment">// stack 메모리 영역에 객체가 할당된다.</span>
+          Song song1 = <span class="hljs-keyword">new</span> Song(<span class="hljs-number">213</span>, <span class="hljs-number">1994</span>);
+          Song song2 = <span class="hljs-keyword">new</span> Song(<span class="hljs-number">248</span>, <span class="hljs-number">1988</span>);
+
+          <span class="hljs-comment">// Display results:</span>
+          Console.WriteLine(<span class="hljs-string">"lengthInSeconds = {0}, yearRecorded = {1}"</span>, song1.lengthInSeconds, song1.yearRecorded);
+
+          Console.WriteLine(<span class="hljs-string">"lengthInSeconds = {0}, yearRecorded = {1}"</span>, song2.lengthInSeconds, song2.yearRecorded);
+
+      }
+  }
+
+  <span class="hljs-comment">/* Output:
+      lengthInSeconds = 213, yearRecorded = 1994
+      lengthInSeconds = 248, yearRecorded = 1988
+  */</span>
+</code></pre>
+</li><li><p><strong>구조체</strong>는 <strong>Class</strong> 와 같이 여러 특성(생성자, 상수, 필드, 메서드, 속성, 인덱서, 연산자, 이벤트 등)들을 <strong>그룹화</strong> 하는데 사용된다.</p>
+<ul>
+<li><p><a href="https://msdn.microsoft.com/ko-kr/library/0taef578.aspx">C# 구조체 설명</a></p>
+</li><li><p><a href="https://msdn.microsoft.com/ko-kr/library/0b0thckt.aspx">C# 클래스 설명</a></p>
+</li><li><p><strong>구조체</strong>와 <strong>클래스</strong>는 매우 비슷한 <strong>구조</strong>를 가지고 있으며, <strong><ins>사용 방법 및 적용 이유</ins></strong>가 <strong>유사</strong>하다.</p>
+</li></ul>
+</li></ul>
+</li></ul><h2 id="2.-c#-구조체의-특징"><a name="2.-c#-구조체의-특징" href="#2.-c#-구조체의-특징"></a>2. C# 구조체의 특징</h2><ol>
+<li><p><strong><ins>값 타입</ins></strong>이다.</p>
+<ul>
+<li><p>값 형식 및 참조 형식</p>
+<ul>
+<li><a href="https://msdn.microsoft.com/ko-kr/library/4d43ts61(v=vs.90).aspx">https://msdn.microsoft.com/ko-kr/library/4d43ts61(v=vs.90).aspx</a></li></ul>
+</li><li><p>[Six important .NET concepts: Stack, heap, value types, reference types, boxing, and unboxing]</p>
+<p>  <img src="memoryDiagram.jpg?2" alt=""></p>
+<ul>
+<li><a href="http://www.codeproject.com/Articles/76153/Six-important-NET-concepts-Stack-">http://www.codeproject.com/Articles/76153/Six-important-NET-concepts-Stack-</a></li></ul>
+</li></ul>
+</li><li><p><strong>구조체</strong>는 보통 <ins>작은 데이터</ins>를 다루는데 <strong>적합</strong>하다.</p>
+<ul>
+<li><p>하지만 <strong>이것</strong>을 기존의 <strong>클래스</strong>로 <span style="color:red">표현할 수 없는 것</span>은 아니다.</p>
+<ul>
+<li><em>그럼에도 불구하고 <strong>구조체</strong>를 써야하는 이유는 <ins>분명 존재</ins>할 것이다.</em></li></ul>
+</li></ul>
+</li><li><p><strong>new</strong> 연산자를 사용하지 않고도 <strong>인스턴스화</strong>할 수 있다.</p>
+<ul>
+<li><p>생성된 <strong>객체</strong>는 <strong>Stack</strong> 영역에 할당된다.</p>
+</li><li><p><ins><strong>생성자</strong>를 호출하지 않으므로</ins>, 선언된 맴버를 따로 <strong>초기화</strong> 해야하는 <span style="color:red">불편함</span>이 있다.</p>
+</li><li><p>만약 <strong>new</strong> 연산자를 통해 <strong>인스턴스</strong>를 생성하더라도, <ins><strong>Heap</strong> 영역이 아닌 <strong>Stack</strong> 영역에 <strong>객체</strong>가 할당된다.</ins></p>
+<pre class="java hljs"><code class="java" data-origin="<pre><code class=&quot;java&quot;>public struct Song
+{
+  public int lengthInSeconds, yearRecorded;
+
+  // 생성자
+  public Song(int p1, int p2)
+  {
+      lengthInSeconds = p1;
+      yearRecorded = p2;
+  }
+}
+
+class TestSongNoNew
+{
+  static void Main()
+  {
+      // new 연산자 없이 인스턴스를 생성한다.
+      // stack 메모리 영역에 객체가 할당된다.
+      // 생성자를 호출하지 않는다.
+      Song song1;
+
+      // 맴버 초기화
+      song1.lengthInSeconds = 213;
+      song1.yearRecorded = 1994;            
+
+      // Display results:
+      Console.WriteLine(&quot;lengthInSeconds = {0}, yearRecorded = {1}&quot;, song1.lengthInSeconds, song1.yearRecorded);
+
+  }
+}
+
+/* Output:
+  lengthInSeconds = 213, yearRecorded = 1994
+*/
+</code></pre>"><span class="hljs-keyword">public</span> struct Song
+{
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> lengthInSeconds, yearRecorded;
+
+  <span class="hljs-comment">// 생성자</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Song</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p1, <span class="hljs-keyword">int</span> p2)</span>
+  </span>{
+      lengthInSeconds = p1;
+      yearRecorded = p2;
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestSongNoNew</span>
+</span>{
+  <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span><span class="hljs-params">()</span>
+  </span>{
+      <span class="hljs-comment">// new 연산자 없이 인스턴스를 생성한다.</span>
+      <span class="hljs-comment">// stack 메모리 영역에 객체가 할당된다.</span>
+      <span class="hljs-comment">// 생성자를 호출하지 않는다.</span>
+      Song song1;
+
+      <span class="hljs-comment">// 맴버 초기화</span>
+      song1.lengthInSeconds = <span class="hljs-number">213</span>;
+      song1.yearRecorded = <span class="hljs-number">1994</span>;            
+
+      <span class="hljs-comment">// Display results:</span>
+      Console.WriteLine(<span class="hljs-string">"lengthInSeconds = {0}, yearRecorded = {1}"</span>, song1.lengthInSeconds, song1.yearRecorded);
+
+  }
+}
+
+<span class="hljs-comment">/* Output:
+  lengthInSeconds = 213, yearRecorded = 1994
+*/</span>
+</code></pre>
+</li></ul>
+</li><li><p><strong>구조체</strong>는 <strong>구조체</strong> 또는 <strong>클래스</strong>에서 <ins>상속될 수 없으며</ins>, 클래스의 기본 클래스가 될 수 없다.</p>
+<ul>
+<li><strong>클래스</strong>와 달리, <ins>상속 구조를 표현할 수 없다.</ins></li></ul>
+</li><li><p><strong>클래스</strong>와 같이 <ins><strong>인터페이스</strong>를 구현할 수 있다.</ins></p>
+</li><li><p>구조체는 <strong>Stack</strong> 영역에 할당되는 <strong><span style="color:red">값 타입</span></strong>이고, 클래스는 <strong>Heap</strong> 영역에 할당되는 <strong><span style="color:red">참조 타입</span></strong>이다.</p>
+<ul>
+<li><p><strong>Stack</strong> 영역(<span style="color:red">정적 할당</span>)이란?</p>
+<p>  <img src="struct_stack.jpg" alt=""></p>
+<ul>
+<li><p><strong>Stack</strong> 영역은 <strong>컴파일 시점</strong>에서 크기가 <strong>결정</strong>되는 요소들이 저장되는 <strong>메모리 영역</strong>이다.</p>
+<ul>
+<li>함수 내부 <strong>지역 변수</strong> 와 <strong>매개 변수</strong>는 <strong>Stack</strong> 영역에 할당되며, 함수 종료 시 <strong>소멸</strong>된다.</li></ul>
+</li><li><p><strong>Stack</strong> 영역은 <strong>LIFO</strong>(Last In First out)라는 <strong>자료구조</strong> 가진다.</p>
+<ul>
+<li><p><em>즉 <strong>마지막</strong>에 넣은(Push) 데이터가 <strong>가장 먼저</strong> 나가는것을(Pop) 의미한다.</em></p>
+<ul>
+<li><p>Stack Push 순서:</p>
+<ul>
+<li><strong>A &gt; B &gt; C &gt; D &gt; E</strong></li></ul>
+</li><li><p>Stack Pop 순서:</p>
+<ul>
+<li><strong>E &gt; D &gt; C &gt; B &gt; A</strong></li></ul>
+</li></ul>
+</li><li style="list-style: none"><p><input type="checkbox" class="task-list-item" checked="" data-task-index="0"> 그럼 <strong>JS Stack</strong> 은?</p>
+<ul>
+<li><p>JS 는 <a href="https://ko.wikipedia.org/wiki/%EB%8F%99%EC%A0%81_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%EC%96%B8%EC%96%B4"><strong>동적 언어</strong></a> 이므로 <strong>컴파일 시점</strong>이 아닌 <strong>런타임 시점</strong>에서 메모리가 <strong>할당</strong>(allocation)된다.</p>
+<ul>
+<li>C, C++, C#(<strong>정적 언어</strong>)</li></ul>
+</li><li><p>JS <strong>원시 타입</strong>(string, number, boolean, undefined, null)은 <strong>고정된 크기</strong>를 가지며, <strong>Stack</strong> 메모리 영역에 할당된다.</p>
+<ul>
+<li><p><a href="http://stackoverflow.com/questions/13266616/primitive-value-vs-reference-value">primitive-value-vs-reference-value</a></p>
+</li><li><p><a href="http://codingnuri.com/javascript-tutorial/javascript-primitive-types-and-reference-types.html">원시 타입과 참조 타입</a></p>
+</li><li><p>값 형식 및 참조 형식(Visual C# Express)</p>
+<ul>
+<li><a href="https://msdn.microsoft.com/ko-kr/library/4d43ts61(v=vs.90).aspx">https://msdn.microsoft.com/ko-kr/library/4d43ts61(v=vs.90).aspx</a></li></ul>
+</li></ul>
+</li><li><p>JS 의 모든 <strong>실행 컨텍스트</strong>는 <span style="color:red">ECStack</span>(일종의 <a href="https://ko.wikipedia.org/wiki/%EC%BD%9C_%EC%8A%A4%ED%83%9D">Call Stack</a> 이다) 내부로 할당된다.</p>
+<ul>
+<li><p><span style="color:red">ECStack</span> 대한 <strong>상세 내용</strong>은 아래 <strong>링크</strong>로 대신하며, <ins>꼭 한번 읽어 보길 바란다.</ins></p>
+<ul>
+<li><p><a href="http://davidshariff.com/blog/what-is-the-execution-context-in-javascript/">What is the Execution Context &amp; Stack in JavaScript?</a></p>
+</li><li><p><a href="http://stackoverflow.com/questions/11148353/javascript-scope-and-execution-context">javascript-scope-and-execution-context</a></p>
+</li></ul>
+</li><li><p>아래와 같은 방법으로 <strong>ECStack</strong> Count 를 셀 수 있다.</p>
+<pre class="javascript hljs"><code class="javascript" data-origin="<pre><code class=&quot;javascript&quot;>function getStackCount(){
+
+  var i = 0;
+
+  try{
+      (function _stack(){
+
+          ++i &amp;amp;&amp;amp; arguments.callee();
+      })();
+  }
+  catch(e){
+
+      console.log(e.message);
+
+      return i;
+  }
+}
+
+// get call stack count
+console.log('call stack count: ' + getStackCount());
+
+/* output
+
+Maximum call stack size exceeded
+
+// 15,745 번 함수 호출 후 Stack overflow 가 발생했다.
+call stack count: 15745
+
+*/
+</code></pre>"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getStackCount</span><span class="hljs-params">()</span></span>{
+
+  <span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>;
+
+  <span class="hljs-keyword">try</span>{
+      (<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_stack</span><span class="hljs-params">()</span></span>{
+
+          ++i &amp;&amp; <span class="hljs-built_in">arguments</span>.callee();
+      })();
+  }
+  <span class="hljs-keyword">catch</span>(e){
+
+      <span class="hljs-built_in">console</span>.log(e.message);
+
+      <span class="hljs-keyword">return</span> i;
+  }
+}
+
+<span class="hljs-comment">// get call stack count</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'call stack count: '</span> + getStackCount());
+
+<span class="hljs-comment">/* output
+
+Maximum call stack size exceeded
+
+// 15,745 번 함수 호출 후 Stack overflow 가 발생했다.
+call stack count: 15745
+
+*/</span>
+</code></pre>
+</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li><li><p><strong>Heap</strong> 영역(<span style="color:red">동적 할당</span>)이란?</p>
+<ul>
+<li><p><strong>Heap</strong> 영역은 <strong>런타임 시점</strong>에서 크기가 <strong>결정</strong>되는 요소들이 저장되는 <strong>메모리 영역</strong>이다.</p>
+<ul>
+<li><strong>Object</strong> 와 <strong>Array</strong> Data Type 등을 가진다.</li></ul>
+</li><li><p><strong>Heap</strong> 영역은 <strong>런타임 시점</strong>에서 메모리를 <ins><strong>가변적</strong>으로 <strong>동적 할당</strong> 및 <strong>반환</strong> 시키는 구조</ins>이다.</p>
+</li><li><p><strong>GC</strong>는 <strong>할당</strong>된 <strong>Heap</strong> 메모리 영역의 <span style="color:red">반환</span>(de-allocated)을 담당한다.</p>
+<ul>
+<li style="list-style: none"><p><input type="checkbox" class="task-list-item" checked="" data-task-index="1"> <strong>GC</strong>(Garbage Collection)란?</p>
+<ul>
+<li><p><strong>자동 메모리 관리</strong>의 한 형태이며, 프로세스 수행 중, 더 이상 필요가 없어진 <strong>객체</strong>가 점유하는 <ins>메모리에 대해 <span style="color:red">반환</span> 작업을 수행</ins>한다.</p>
+</li><li><p>프로그래머가 직접 메모리를 <span style="color:red">반환</span>할 수 없다.(반드시 <strong>GC</strong>를 통해 반환된다)</p>
+<ul>
+<li>물론, 메모리 <ins><strong>반환 조건</strong>에 따라</ins>, <strong>GC</strong> 에게 일을 시킬 수는 있다.</li></ul>
+</li></ul>
+</li></ul>
+</li></ul>
+</li><li style="list-style: none"><p><input type="checkbox" class="task-list-item" checked="" data-task-index="2"> JS <strong>Heap</strong> 메모리 영역 테스트 해보기!!</p>
+<ul>
+<li><p>JS <strong>Handle scope</strong> Diagram</p>
+<p>  <img src="handleV8.jpg" alt=""></p>
+</li><li><p>아래 코드는 <strong>전역 변수</strong>를 통해 <strong>Heap</strong> 영역에 <strong>객체</strong>를 <span style="color:red">할당</span>하는 예제이다.</p>
+<pre class="javascript hljs"><code class="javascript" data-origin="<pre><code class=&quot;javascript&quot;>// global execution context
+
+// 선언된 전역 변수에 배열 객체를 할당(Heap 영역에 할당된다)한다.
+
+// 이때 할당된 배열 객체는 Heap 메모리 영역으로 할당된다.
+var _arr = [];
+
+// 배열에 10000 개의 객체를 할당한다.
+for (var i = 0; i &amp;lt; 10000; i++) {
+  _arr.push({x: i, y: i});
+}
+</code></pre>"><span class="hljs-comment">// global execution context</span>
+
+<span class="hljs-comment">// 선언된 전역 변수에 배열 객체를 할당(Heap 영역에 할당된다)한다.</span>
+
+<span class="hljs-comment">// 이때 할당된 배열 객체는 Heap 메모리 영역으로 할당된다.</span>
+<span class="hljs-keyword">var</span> _arr = [];
+
+<span class="hljs-comment">// 배열에 10000 개의 객체를 할당한다.</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10000</span>; i++) {
+  _arr.push({x: i, y: i});
+}
+</code></pre>
+<p><img src="persistentHeap.jpg?1" alt="">    </p>
+</li><li><p>개발 툴(<span style="color:red">Chrome Inspector</span>)을 통해 할당된 <strong>Heap 메모리 영역</strong>을 살펴볼 수 있다.</p>
+<ul>
+<li><a href="http://stackoverflow.com/questions/20697298/understanding-chrome-heap-profile">understanding chrome heap profile</a></li></ul>
+</li><li><p>만약 함수 내부 <strong>지역 변수</strong>에 <strong>객체</strong>를 할당했다면, 그 객체(<strong>Heap</strong> 영역)의 메모리 <strong><span style="color:red">반환</span></strong> <strong>시점</strong>은 언제일까?</p>
+<ul>
+<li><p><em>결론: <strong>지역 변수</strong>에 할당된 <strong>객체</strong>의 메모리 <span style="color:red">반환</span> 시점은 <ins><strong>함수 종료 시점</strong></ins>이 된다.</em></p>
+<ul>
+<li><p>테스트 1: <strong>전역 변수</strong>와 함수 내부 <strong>지역 변수</strong>에 동일한 <strong>객체</strong>를 할당해본 후 <strong>Profile</strong> 을 통해 <strong>Heap</strong> 영역을 관찰해본다.</p>
+<pre class="javascript hljs"><code class="javascript" data-origin="<pre><code class=&quot;javascript&quot;>  // global execution context
+
+  // 선언된 전역 변수에 배열 객체를 할당(Heap 영역에 할당된다)한다.
+
+  // 이때 할당된 배열 객체는 Heap 메모리 영역으로 할당된다.
+  var global_arr = [];
+
+  // 배열에 10000 개의 객체를 할당한다.
+  for (var i = 0; i &amp;lt; 10000; i++) {
+      global_arr.push({x: i, y: i});
+  }
+
+  function createHeapMemory(){
+
+      // function execution context
+
+      // 선언된 지역 변수에 배열 객체를 할당(Heap 영역에 할당된다)한다.
+
+      // 이때 할당된 배열 객체는 Heap 메모리 영역에 할당된다.
+      var local_arr = [];
+
+      for (var i = 0; i &amp;lt; 10000; i++) {
+          // 배열에 10000 개의 객체를 할당한다.
+          local_arr.push({x: i, y: i});
+      }
+  }
+
+  createHeapMemory();
+</code></pre>">  <span class="hljs-comment">// global execution context</span>
+
+  <span class="hljs-comment">// 선언된 전역 변수에 배열 객체를 할당(Heap 영역에 할당된다)한다.</span>
+
+  <span class="hljs-comment">// 이때 할당된 배열 객체는 Heap 메모리 영역으로 할당된다.</span>
+  <span class="hljs-keyword">var</span> global_arr = [];
+
+  <span class="hljs-comment">// 배열에 10000 개의 객체를 할당한다.</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10000</span>; i++) {
+      global_arr.push({x: i, y: i});
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createHeapMemory</span><span class="hljs-params">()</span></span>{
+
+      <span class="hljs-comment">// function execution context</span>
+
+      <span class="hljs-comment">// 선언된 지역 변수에 배열 객체를 할당(Heap 영역에 할당된다)한다.</span>
+
+      <span class="hljs-comment">// 이때 할당된 배열 객체는 Heap 메모리 영역에 할당된다.</span>
+      <span class="hljs-keyword">var</span> local_arr = [];
+
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10000</span>; i++) {
+          <span class="hljs-comment">// 배열에 10000 개의 객체를 할당한다.</span>
+          local_arr.push({x: i, y: i});
+      }
+  }
+
+  createHeapMemory();
+</code></pre>
+</li><li><p><strong>전역 변수</strong>에 할당된 <strong>객체</strong>는 <strong>Heap</strong> 영역에 <span style="color:red">유지</span>된 반면, <strong>지역 변수</strong>에 할당된 <strong>객체</strong>는 <strong>Heap</strong> 영역에서 <span style="color:red">반환</span>되어 보이지 않는다.</p>
+<p><img src="persistentHeap2.jpg?1" alt=""></p>
+</li><li><p>테스트 2: <strong>기존 전역 변수</strong>와 함수 내부에 <strong>지역 변수</strong>가 아닌 <strong>전역 변수</strong>를 선언 후 동일한 객체를 할당해본다.</p>
+<pre class="javascript hljs"><code class="javascript" data-origin="<pre><code class=&quot;javascript&quot;>
+  // global execution context
+
+  // 선언된 전역 변수에 배열 객체를 할당(Heap 영역에 할당된다)한다.
+
+  // 이때 할당된 배열 객체는 Heap 메모리 영역으로 할당된다.
+  var global_arr = [];
+
+  // 배열에 10000 개의 객체를 할당한다.
+  for (var i = 0; i &amp;lt; 10000; i++) {
+      global_arr.push({x: i, y: i});
+  }
+
+  function createHeapMemory(){
+
+      // function execution context
+
+      // 선언된 지역 변수에 배열 객체를 할당(Heap 영역에 할당된다)한다.
+
+      // 이때 할당된 배열 객체는 Heap 메모리 영역에 할당된다.
+      global_arr2 = [];
+
+      for (var i = 0; i &amp;lt; 10000; i++) {
+          // 배열에 10000 개의 객체를 할당한다.
+          global_arr2.push({x: i, y: i});
+      }
+  }
+
+  createHeapMemory();
+</code></pre>">
+  <span class="hljs-comment">// global execution context</span>
+
+  <span class="hljs-comment">// 선언된 전역 변수에 배열 객체를 할당(Heap 영역에 할당된다)한다.</span>
+
+  <span class="hljs-comment">// 이때 할당된 배열 객체는 Heap 메모리 영역으로 할당된다.</span>
+  <span class="hljs-keyword">var</span> global_arr = [];
+
+  <span class="hljs-comment">// 배열에 10000 개의 객체를 할당한다.</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10000</span>; i++) {
+      global_arr.push({x: i, y: i});
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createHeapMemory</span><span class="hljs-params">()</span></span>{
+
+      <span class="hljs-comment">// function execution context</span>
+
+      <span class="hljs-comment">// 선언된 지역 변수에 배열 객체를 할당(Heap 영역에 할당된다)한다.</span>
+
+      <span class="hljs-comment">// 이때 할당된 배열 객체는 Heap 메모리 영역에 할당된다.</span>
+      global_arr2 = [];
+
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10000</span>; i++) {
+          <span class="hljs-comment">// 배열에 10000 개의 객체를 할당한다.</span>
+          global_arr2.push({x: i, y: i});
+      }
+  }
+
+  createHeapMemory();
+</code></pre>
+</li><li><p>두 <strong>전역 변수</strong>(global_arr, global_arr2)에 할당된 <strong>객체</strong> 모두 <strong>Heap</strong> 영역에 <span style="color:red">유지</span>되고 있는것을 볼 수 있다.</p>
+<p><img src="persistentHeap3.jpg" alt="">                </p>
+</li></ul>
+</li></ul>
+</li></ul>
+</li><li><p><a href="http://dsnight.tistory.com/50">C언어의 메모리 구조</a></p>
+</li><li><p><a href="http://egloos.zum.com/recipes/v/5057426">STACK, HEAP에 관한 소고</a></p>
+</li><li><p><a href="https://kldp.org/node/44714">도대체 [구조체]가 [클래스]보다 좋은점이 뭔가요?</a></p>
+<ul>
+<li><em>개인적으로 이런 글을 좋아한다.(다양한 생각들을 들을 수 있으며, 그로인해 많은 <strong>영감</strong>을 얻기도 한다)</em></li></ul>
+</li></ul>
+</li></ol><h2 id="3.-js-로-구조체-구현해보기"><a name="3.-js-로-구조체-구현해보기" href="#3.-js-로-구조체-구현해보기"></a>3. JS 로 구조체 구현해보기</h2><ul>
+<li><p>위에서 나열한 <strong>구조체</strong>의 <strong>특징</strong> 중 <strong>클래스</strong>와 <strong>본질</strong>적으로 다른 부분인, <ins><strong>데이터 생성</strong></ins>에 대한 부분을 JS 를 통해 구현해 보았다.</p>
+<ul>
+<li><p>구조체: <strong>값</strong> 타입(<strong>Stack</strong> 메모리 영역에 할당되며, 값이 <span style="color:red">복사</span>되어 할당된다)</p>
+</li><li><p>클래스: <strong>참조</strong> 타입(<strong>Heap</strong> 메모리 영역에 할당되며, <span style="color:red">참조</span> 값이 할당된다)</p>
+</li></ul>
+</li></ul><pre class="javascript hljs"><code class="javascript" data-origin="<pre><code class=&quot;javascript&quot;>
+function Struct(val){
+
+    if (
+        typeof val === 'string' ||
+        typeof val === 'number' ||
+        typeof val === 'boolean' ||
+        val === null ||
+        val === undefined
+    ){
+        console.error('primitive type value: ' + val);
+        return val;
+    }
+
+    var _copy = function(val){
+
+        var ret = null;
+        var constructor = val.constructor;
+
+        if (constructor === Function){
+
+            // 함수(상황에 따라 생성자 함수가 될 수도 있다) 객체 내부 this 값을 apply 함수를 통해 초기화 시키고, 그 결과를 반환하는 함수를 생성한다.
+            ret = function $F(){
+
+                // this === global or $F of instance object
+                return val.apply(this, arguments);
+            };
+
+            // 전달된 함수 객체의 prototype(객체 원형)을 할당한다.
+            ret.prototype = val.prototype;
+        }
+        else if (constructor === String || constructor === Number || constructor === Boolean) {
+            ret = new constructor(val.valueOf());
+        }
+        else if (constructor === Date){
+            ret = new constructor(val.getTime());
+        }
+        else if (constructor === Object || constructor === Array){
+
+            ret = new constructor();
+
+            for (var n in val){
+
+                if (val.hasOwnProperty(n)){
+                    ret[n] = val[n];
+                }
+            }
+        }
+
+        return ret;
+
+    }(val) || val;
+
+
+    return _copy;
+}
+
+    // 5 가지의 원시 타입 값 할당
+Struct('test'); // test
+Struct(1); // 1
+Struct(true); // true
+Struct(undefined); // undefined
+Struct(null); // null
+
+/*
+    모든 경우(모든 타입)에 전달된 원본 값(객체)이 아닌 복사 된 값을 반환한다.
+*/
+
+/*
+ 함수 객체 선언
+ */
+var $ = function() {
+
+    var $ = function(){
+        return new _$();
+    };
+
+    var _$ = function(){
+        this.x = 1;
+    }
+    // 나를통해 생성될 객체 원형에 새로운 객체를 할당한다.
+    _$.prototype = {
+        getX: function() {
+            return this.x;
+        }
+    };
+
+    $.staticMethod = function(){};
+
+    return $;
+}();
+
+/*
+ 다른 유형의 함수 객체 선언
+ */
+function Plus(x, y){
+
+    x = x || 0;
+    y = y || 0;
+
+    return parseFloat(x + y);
+}
+
+    var originalFn = $;
+    var structFn = Struct($);
+
+    console.dir(originalFn); // function
+    console.dir(structFn); // function
+
+    console.dir(originalFn()); // object
+    console.dir(structFn()); // object
+
+    var originalFn1 = Plus;
+    var structFn1 = Struct(Plus);
+
+    console.dir(originalFn1); // function
+    console.dir(structFn1); // function
+
+    console.dir(originalFn1(1, 3)); // 4
+    console.dir(structFn1(2, 3)); // 5
+
+    var structStr = Struct(new String('test'));
+    var structNum = Struct(new Number(1));
+
+    console.dir(structStr); // string object
+    console.dir(structNum); // number object
+
+    var structObject = Struct({x: 1, y: 2});
+    var structArray = Struct([1, 2, 3]);
+
+    console.dir(structObject); // object
+    console.dir(structArray); // array
+
+    var structBoolean = Struct(new Boolean(false));
+    console.dir(structBoolean); // boolean object
+
+
+    var structDate = Struct(new Date());
+    console.dir(structDate); // date object
+</code></pre>">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Struct</span><span class="hljs-params">(val)</span></span>{
+
+    <span class="hljs-keyword">if</span> (
+        <span class="hljs-keyword">typeof</span> val === <span class="hljs-string">'string'</span> ||
+        <span class="hljs-keyword">typeof</span> val === <span class="hljs-string">'number'</span> ||
+        <span class="hljs-keyword">typeof</span> val === <span class="hljs-string">'boolean'</span> ||
+        val === <span class="hljs-literal">null</span> ||
+        val === <span class="hljs-literal">undefined</span>
+    ){
+        <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'primitive type value: '</span> + val);
+        <span class="hljs-keyword">return</span> val;
+    }
+
+    <span class="hljs-keyword">var</span> _copy = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(val)</span></span>{
+
+        <span class="hljs-keyword">var</span> ret = <span class="hljs-literal">null</span>;
+        <span class="hljs-keyword">var</span> constructor = val.constructor;
+
+        <span class="hljs-keyword">if</span> (constructor === <span class="hljs-built_in">Function</span>){
+
+            <span class="hljs-comment">// 함수(상황에 따라 생성자 함수가 될 수도 있다) 객체 내부 this 값을 apply 함수를 통해 초기화 시키고, 그 결과를 반환하는 함수를 생성한다.</span>
+            ret = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">$F</span><span class="hljs-params">()</span></span>{
+
+                <span class="hljs-comment">// this === global or $F of instance object</span>
+                <span class="hljs-keyword">return</span> val.apply(<span class="hljs-keyword">this</span>, <span class="hljs-built_in">arguments</span>);
+            };
+
+            <span class="hljs-comment">// 전달된 함수 객체의 prototype(객체 원형)을 할당한다.</span>
+            ret.prototype = val.prototype;
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (constructor === <span class="hljs-built_in">String</span> || constructor === <span class="hljs-built_in">Number</span> || constructor === <span class="hljs-built_in">Boolean</span>) {
+            ret = <span class="hljs-keyword">new</span> constructor(val.valueOf());
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (constructor === <span class="hljs-built_in">Date</span>){
+            ret = <span class="hljs-keyword">new</span> constructor(val.getTime());
+        }
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (constructor === <span class="hljs-built_in">Object</span> || constructor === <span class="hljs-built_in">Array</span>){
+
+            ret = <span class="hljs-keyword">new</span> constructor();
+
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> n <span class="hljs-keyword">in</span> val){
+
+                <span class="hljs-keyword">if</span> (val.hasOwnProperty(n)){
+                    ret[n] = val[n];
+                }
+            }
+        }
+
+        <span class="hljs-keyword">return</span> ret;
+
+    }(val) || val;
+
+
+    <span class="hljs-keyword">return</span> _copy;
+}
+
+    <span class="hljs-comment">// 5 가지의 원시 타입 값 할당</span>
+Struct(<span class="hljs-string">'test'</span>); <span class="hljs-comment">// test</span>
+Struct(<span class="hljs-number">1</span>); <span class="hljs-comment">// 1</span>
+Struct(<span class="hljs-literal">true</span>); <span class="hljs-comment">// true</span>
+Struct(<span class="hljs-literal">undefined</span>); <span class="hljs-comment">// undefined</span>
+Struct(<span class="hljs-literal">null</span>); <span class="hljs-comment">// null</span>
+
+<span class="hljs-comment">/*
+    모든 경우(모든 타입)에 전달된 원본 값(객체)이 아닌 복사 된 값을 반환한다.
+*/</span>
+
+<span class="hljs-comment">/*
+ 함수 객체 선언
+ */</span>
+<span class="hljs-keyword">var</span> $ = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+
+    <span class="hljs-keyword">var</span> $ = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> _$();
+    };
+
+    <span class="hljs-keyword">var</span> _$ = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">this</span>.x = <span class="hljs-number">1</span>;
+    }
+    <span class="hljs-comment">// 나를통해 생성될 객체 원형에 새로운 객체를 할당한다.</span>
+    _$.prototype = {
+        getX: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.x;
+        }
+    };
+
+    $.staticMethod = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{};
+
+    <span class="hljs-keyword">return</span> $;
+}();
+
+<span class="hljs-comment">/*
+ 다른 유형의 함수 객체 선언
+ */</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Plus</span><span class="hljs-params">(x, y)</span></span>{
+
+    x = x || <span class="hljs-number">0</span>;
+    y = y || <span class="hljs-number">0</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>(x + y);
+}
+
+    <span class="hljs-keyword">var</span> originalFn = $;
+    <span class="hljs-keyword">var</span> structFn = Struct($);
+
+    <span class="hljs-built_in">console</span>.dir(originalFn); <span class="hljs-comment">// function</span>
+    <span class="hljs-built_in">console</span>.dir(structFn); <span class="hljs-comment">// function</span>
+
+    <span class="hljs-built_in">console</span>.dir(originalFn()); <span class="hljs-comment">// object</span>
+    <span class="hljs-built_in">console</span>.dir(structFn()); <span class="hljs-comment">// object</span>
+
+    <span class="hljs-keyword">var</span> originalFn1 = Plus;
+    <span class="hljs-keyword">var</span> structFn1 = Struct(Plus);
+
+    <span class="hljs-built_in">console</span>.dir(originalFn1); <span class="hljs-comment">// function</span>
+    <span class="hljs-built_in">console</span>.dir(structFn1); <span class="hljs-comment">// function</span>
+
+    <span class="hljs-built_in">console</span>.dir(originalFn1(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// 4</span>
+    <span class="hljs-built_in">console</span>.dir(structFn1(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// 5</span>
+
+    <span class="hljs-keyword">var</span> structStr = Struct(<span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>(<span class="hljs-string">'test'</span>));
+    <span class="hljs-keyword">var</span> structNum = Struct(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Number</span>(<span class="hljs-number">1</span>));
+
+    <span class="hljs-built_in">console</span>.dir(structStr); <span class="hljs-comment">// string object</span>
+    <span class="hljs-built_in">console</span>.dir(structNum); <span class="hljs-comment">// number object</span>
+
+    <span class="hljs-keyword">var</span> structObject = Struct({x: <span class="hljs-number">1</span>, y: <span class="hljs-number">2</span>});
+    <span class="hljs-keyword">var</span> structArray = Struct([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);
+
+    <span class="hljs-built_in">console</span>.dir(structObject); <span class="hljs-comment">// object</span>
+    <span class="hljs-built_in">console</span>.dir(structArray); <span class="hljs-comment">// array</span>
+
+    <span class="hljs-keyword">var</span> structBoolean = Struct(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Boolean</span>(<span class="hljs-literal">false</span>));
+    <span class="hljs-built_in">console</span>.dir(structBoolean); <span class="hljs-comment">// boolean object</span>
+
+
+    <span class="hljs-keyword">var</span> structDate = Struct(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>());
+    <span class="hljs-built_in">console</span>.dir(structDate); <span class="hljs-comment">// date object</span>
+</code></pre><h2 id="4.-정리하며"><a name="4.-정리하며" href="#4.-정리하며"></a>4. 정리하며</h2><ul>
+<li><p>그럼 언제 사용하면될까?</p>
+<ul>
+<li><p>개인적인 생각으로는 이럴때가 아닌가 싶다?</p>
+<ol>
+<li><p>클래스로 만들기에는 너무 간단한 구조인 경우.</p>
+<ul>
+<li style="list-style: none"><p><input type="checkbox" class="task-list-item" checked="" data-task-index="3"> 사실 이 경우, 반드시 <strong>구조</strong> 만의 문제는 아닐 수 있다.</p>
+<ul>
+<li>만약 모든 경우에 <strong>클래스</strong>를 사용한다면, 위에서 언급한 봐와같이 <strong>객체</strong>는 <strong>Heap</strong> 영역에 <span style="color:red">할당</span>될 것이며, 결국 <strong>GC</strong> 는 그 메모리 <strong>반환</strong>을 위해 쓸때 없는 리소스를 <strong>낭비</strong>하게 될 것이다.</li></ul>
+</li></ul>
+</li><li><p><strong>상속 구조</strong>를 만들 필요가 없는 경우.</p>
+</li></ol>
+</li><li><p>하지만, 이 두 가지 특징 모두 <strong><span style="color:red">각 언어</span></strong>(C/C++/C# 등 구조체를 가진 모든 언어)가 가지는 <strong><span style="color:red">특성</span></strong>에 따라 충분히 변할 수 있는 부분이므로 모든 언어에 <strong>적용</strong>된다고 말할 수는 없다.</p>
+<ul>
+<li><em>간단히 말해, 특정 <strong>언어</strong>가 <strong>구조체</strong>를 어떤 방식으로 <strong>구현</strong>하느냐에 따라, <strong>사용 범위</strong>도 크게 달라질 수 있다는 말과 같다.</em></li></ul>
+</li></ul>
+</li></ul>
+
+<footer style="position:fixed; font-size:.8em; text-align:right; bottom:0px; margin-left:-25px; height:20px; width:100%;">generated by <a href="http://pad.haroopress.com" target="_blank">haroopad</a></footer>
+</body>
+</html>

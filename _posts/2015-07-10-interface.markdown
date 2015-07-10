@@ -1,8 +1,9 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2015-07-10 16:48:00
-categories: Design Patterns
+title:  "interface"
+date:   2015-07-10 14:48:01
+# 변경하지 않는다 _site 내부에 생성되는 디렉토리 path 를 맞춰줘야한다(jekyll/update/2014/07....)
+categories: jekyll update
 ---
 #인터페이스
 

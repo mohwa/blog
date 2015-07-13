@@ -1,5 +1,7 @@
 ---
+# _layouts 폴더의 post.html 을 가리킨다(즉 각 포스트에 따라 유동적으로 변경할 수 있다는 말과 같다(post1.html 로 변경가능)
 layout: post
+# 글 제목을 가리킨다(또한, 글의 웹 주소는파일 이름을 따라 지정된다)
 title:  "interface"
 date:   2015-07-10 14:48:01
 # 변경하지 않는다 _site 내부에 생성되는 디렉토리 path 를 맞춰줘야한다(jekyll/update/2014/07....)

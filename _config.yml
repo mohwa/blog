@@ -1,0 +1,38 @@
+title: Mohwa blog
+
+
+assets_path: "/assets"
+
+# Oveerriden by GitHub Pages: https://help.github.com/articles/using-jekyll-with-pages#configuring-jekyll
+safe: true
+highlighter: pygments
+lsi: false
+
+permalink: pretty
+
+markdown:     redcarpet
+
+redcarpet:
+    extensions:
+      - no_intra_emphasis
+      - fenced_code_blocks
+      - tablesgithub
+      - strikethrough
+      - superscriptauthor
+      - autolink
+      - hard_wrap
+
+# redcarpet:
+#    extensions: ["smart"]
+gems: ['jekyll-lunr-js-search']
+
+paginate: 10
+
+author:
+    twitter: yanione
+    github: mohwa
+
+# lunr serarch exclude file setup
+#exclude_from_search: true
+lunr_search:
+  excludes: [rss.xml, atom.xml]

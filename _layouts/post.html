@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<article>
+  <h1>
+    {{ page.title }}
+  </h1>
+  <div class="center">
+    <p class="meta">{{ page.date | date_to_string }}</p>
+  </div>
+
+{% if page.french %}
+  <div class="suggest-translate">
+    This post is in French. You can try to
+    <a href="http://translate.google.com/translate?sl=fr&amp;tl=en&amp;u=http://sebastien.saunier.me{{ page.url }}">
+      google translate it</a>.
+  </div>
+  {% endif %}
+
+  <div class="post">
+  {{ content }}
+  </div>
+  <ul class="tags post-tags cf">
+    {% for tag in page.tags %}
+    <li><a href="/search/?tags={{ tag }}">{{ tag | downcase }}</a></li>
+    {% endfor %}
+  </ul>
+</article>
+
+<section class="post-footer">
+  <!--<a href="/feed.xml" class="pull-right">-->
+    <!--<img src="/images/rss.jpg" alt="RSS" />-->
+  <!--</a>-->
+</section>
+<!-- tag, category search -->
+<script defer src="{{ site.assets_path }}/js/alexpearce.js"></script>
+
+<div class="separator"></div>
+
+<section class="comments">
+    {% include disqus.html %}
+</section>

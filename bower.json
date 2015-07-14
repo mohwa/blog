@@ -1,0 +1,24 @@
+{
+  "name": "jekyll-lunr-js-search",
+  "version": "0.0.1",
+  "homepage": "https://github.com/slashdotdash/jekyll-lunr-js-search",
+  "authors": [
+    "Ben Smith <ben@10consulting.com>"
+  ],
+  "description": "Jekyll + lunr.js = Static websites with powerful full-text search using JavaScript.",
+  "keywords": [
+    "jekyll",
+    "lunr",
+    "search"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "build"
+  ],
+  "dependencies": {
+    "simple-jekyll-search": "~1.0.7"
+  }
+}

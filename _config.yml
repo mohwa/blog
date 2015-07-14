@@ -1,8 +1,6 @@
 title: Mohwa blog
 
 
-assets_path: "/assets"
-
 baseurl: "/blog"
 
 # Oveerriden by GitHub Pages: https://help.github.com/articles/using-jekyll-with-pages#configuring-jekyll

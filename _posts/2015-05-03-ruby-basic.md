@@ -2,7 +2,7 @@
 layout: post
 title: "루비 언어 기초"
 description: "코세라 웹 앱 아키텍처 중 루비 언어에 대한 기초 부분"
-category: blog
+category: etc
 tags: [Coursera, ruby, basic]
 ---
 

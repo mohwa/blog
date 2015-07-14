@@ -2,7 +2,7 @@
 layout: post
 title: "루비 온 레일즈로 블로그 만들기"
 description: "코세라 웹 앱 아키텍처를 수강하면서 내용을 요약 정리하였다."
-category: blog
+category: etc
 tags: [Coursera, ruby, rails, ror, blog]
 ---
 

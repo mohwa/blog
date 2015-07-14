@@ -6,7 +6,7 @@ title:  "Interface"
 date:   2015-07-10 14:48:01
 description: "옥토프레스를 설치하여 워드프레스 블로그를 마이그레이션하고, 무료 호스팅 서비스를 제공하는 깃허브에 올리고 운영하는 방법"
 # 변경하지 않는다 _site 내부에 생성되는 디렉토리 path 를 맞춰줘야한다(jekyll/update/2014/07....)
-categories: blog
+categories: language
 tags: [Interface, C#, C++, JAVA, JavaScript]
 ---
 #인터페이스

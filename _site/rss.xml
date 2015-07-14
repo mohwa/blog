@@ -13,18 +13,18 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     <link href="/" />
     <description><![CDATA[]]></description>
-    <lastBuildDate>Tue, 14 Jul 2015 16:29:04 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2015 16:34:30 +0900</lastBuildDate>
     <language>en-US</language>
     <generator uri="http://octopress.org/">Octopress</generator>
 
     
         <item>
             <title><![CDATA[Interface]]></title>
-            <link>/blog/2015/07/10/interface/</link>
+            <link>/language/2015/07/10/interface/</link>
             <pubDate>Fri, 10 Jul 2015 23:48:01 +0900</pubDate>
             <dc:creator><![CDATA[{"twitter"=>"yanione", "github"=>"mohwa"}]]></dc:creator>
         
-            <category><![CDATA[blog]]></category>
+            <category><![CDATA[language]]></category>
         
         
             <category><![CDATA[Interface]]></category>
@@ -37,7 +37,7 @@
         
             <category><![CDATA[JavaScript]]></category>
         
-            <guid>/blog/2015/07/10/interface/</guid>
+            <guid>/language/2015/07/10/interface/</guid>
             <description>
                 <![CDATA[인터페이스 1. 정의 가장 큰 범위의 인터페이스 정의는 사물 간 또는 사물과 인간 간(User Interface)의 의사소통을 위한 중간 &quot;매개체&quot; 다. 즉 서로간의 의사소통을 위해 정해진 약속이 존재하며, 이를 표준 규격 이라 말할 수 있는것이다. 2. 의미 인터페이스(DB Interface): 구현 클래스가 공통적으로 가져야할 필수 특성(connect, disconnect 등)들을 선언함으로써, 해당 구현 클래스들에게...]]>
             </description>
@@ -128,11 +128,11 @@
     
         <item>
             <title><![CDATA[루비 온 레일즈로 블로그 만들기]]></title>
-            <link>/blog/2015/05/05/web-application-architecture/</link>
+            <link>/etc/2015/05/05/web-application-architecture/</link>
             <pubDate>Tue, 05 May 2015 00:00:00 +0900</pubDate>
             <dc:creator><![CDATA[{"twitter"=>"yanione", "github"=>"mohwa"}]]></dc:creator>
         
-            <category><![CDATA[blog]]></category>
+            <category><![CDATA[etc]]></category>
         
         
             <category><![CDATA[Coursera]]></category>
@@ -145,7 +145,7 @@
         
             <category><![CDATA[blog]]></category>
         
-            <guid>/blog/2015/05/05/web-application-architecture/</guid>
+            <guid>/etc/2015/05/05/web-application-architecture/</guid>
             <description>
                 <![CDATA[뉴멕시코 대학의 Greg Heileman 교수의 코세라 강좌인 Web Application Architectures를 수강한 내용을 정리해 보았다. 루비도 잘 모르고, 레일즈도 잘 모르는 상황에서 기록을 위해 정리했고, 번역에 시간을 들일 상황이 없어서 그냥 영문으로 남겨버린 경우도 많아서 읽는 분들한테는 좋은 포스팅이 되지는 않는 것 같다. 지송ㅎㅎ 간략하게 살펴보고 위 강좌의 링크에서 직접 강연을...]]>
             </description>
@@ -1201,11 +1201,11 @@ executed in the web page. (<code>create.js.erb</code>)</li>
     
         <item>
             <title><![CDATA[루비 언어 기초]]></title>
-            <link>/blog/2015/05/03/ruby-basic/</link>
+            <link>/etc/2015/05/03/ruby-basic/</link>
             <pubDate>Sun, 03 May 2015 00:00:00 +0900</pubDate>
             <dc:creator><![CDATA[{"twitter"=>"yanione", "github"=>"mohwa"}]]></dc:creator>
         
-            <category><![CDATA[blog]]></category>
+            <category><![CDATA[etc]]></category>
         
         
             <category><![CDATA[Coursera]]></category>
@@ -1214,7 +1214,7 @@ executed in the web page. (<code>create.js.erb</code>)</li>
         
             <category><![CDATA[basic]]></category>
         
-            <guid>/blog/2015/05/03/ruby-basic/</guid>
+            <guid>/etc/2015/05/03/ruby-basic/</guid>
             <description>
                 <![CDATA[뉴멕시코 대학의 Greg Heileman 교수의 코세라 강좌 Web Application Architectures 중에서 루비 언어 기초만 별도로 정리하였다. 나머지는 루비 온 레일즈로 블로그 만들기에서 볼 수 있다. Ruby Programming Language Yukihiro Matsumoto(“Matz”)는 90년 중반에 루비를 만들었다. &quot;펄보다 강력하고 파이썬 보다 객체지향적인 스크립트 언어를 만들길 원했다.&quot; 루비는 기계보단 프로그래머에 초점을 맞쳤고, 설계 목표도...]]>
             </description>
@@ -1718,11 +1718,11 @@ Ex. </p>
     
         <item>
             <title><![CDATA[애용하는 웹브라우저 확장과 북마클릿]]></title>
-            <link>/blog/2015/05/02/browser-extension-bookmarklet/</link>
+            <link>/etc/2015/05/02/browser-extension-bookmarklet/</link>
             <pubDate>Sat, 02 May 2015 00:00:00 +0900</pubDate>
             <dc:creator><![CDATA[{"twitter"=>"yanione", "github"=>"mohwa"}]]></dc:creator>
         
-            <category><![CDATA[blog]]></category>
+            <category><![CDATA[etc]]></category>
         
         
             <category><![CDATA[browser]]></category>
@@ -1731,7 +1731,7 @@ Ex. </p>
         
             <category><![CDATA[bookmarklet]]></category>
         
-            <guid>/blog/2015/05/02/browser-extension-bookmarklet/</guid>
+            <guid>/etc/2015/05/02/browser-extension-bookmarklet/</guid>
             <description>
                 <![CDATA[예전에는 크롬을 주로 사용하였으나 메모리를 너무 많이 잡아먹는 현상때문에 크롬 개발자 도구를 사용할 때 외에는 파이어폭스를 주로 사용한다. 그러나 요즘은 파폭도 탭을 열었다가 닫아도 메모리를 회복하지 못해서 그냥 껏다가 키는 불필요한 행동을 해야한다. 브라우저 회사들은 왜 이리 멍청하게 발전하는지 모르겠다. 다 퍽(fxxx)이다ㅎㅎ 사용하려는 확장이 많이지면 브라우저가 메모리를 차지하는 현상이 더...]]>
             </description>

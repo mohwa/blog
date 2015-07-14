@@ -2,7 +2,7 @@
 layout: post
 title: "애용하는 웹브라우저 확장과 북마클릿"
 description: "주로 사용하는 파이어폭스 확장과 북마클릿을 나열하였다."
-category: blog
+category: etc
 tags: [browser, extension, bookmarklet]
 ---
 

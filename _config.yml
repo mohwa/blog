@@ -1,7 +1,7 @@
 title: Mohwa blog
 
 
-baseurl: "/blog"
+baseurl: "blog"
 
 # Oveerriden by GitHub Pages: https://help.github.com/articles/using-jekyll-with-pages#configuring-jekyll
 safe: true

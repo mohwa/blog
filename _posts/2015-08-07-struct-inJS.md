@@ -67,8 +67,7 @@ categories: designPattern
 
 - **<u>값 타입</u>**이다.
 
-	- 값 형식 및 참조 형식
-		- https://msdn.microsoft.com/ko-kr/library/4d43ts61(v=vs.90).aspx
+	- [값 형식 및 참조 형식](https://msdn.microsoft.com/ko-kr/library/4d43ts61(v=vs.90).aspx)
 
 	- [Six important .NET concepts: Stack, heap, value types, reference types, boxing, and unboxing]
 

@@ -13,7 +13,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     <link href="/" />
     <description><![CDATA[]]></description>
-    <lastBuildDate>Fri, 07 Aug 2015 17:35:23 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2015 17:38:45 +0900</lastBuildDate>
     <language>en-US</language>
     <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -102,11 +102,7 @@
 <li><p><strong><u>값 타입</u></strong>이다.</p>
 
 <ul>
-<li>값 형식 및 참조 형식
-
-<ul>
-<li><a href="https://msdn.microsoft.com/ko-kr/library/4d43ts61(v=vs.90).aspx">https://msdn.microsoft.com/ko-kr/library/4d43ts61(v=vs.90).aspx</a></li>
-</ul></li>
+<li><a href="https://msdn.microsoft.com/ko-kr/library/4d43ts61(v=vs.90).aspx">값 형식 및 참조 형식</a></li>
 <li><p>[Six important .NET concepts: Stack, heap, value types, reference types, boxing, and unboxing]</p>
 
 <p><img src="http://mohwa.github.io/blog/assets/images/posts/memoryDiagram.jpg?2" alt=""></p>

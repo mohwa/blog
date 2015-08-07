@@ -13,7 +13,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     <link href="/" />
     <description><![CDATA[]]></description>
-    <lastBuildDate>Fri, 07 Aug 2015 14:03:02 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2015 14:05:04 +0900</lastBuildDate>
     <language>en-US</language>
     <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -97,7 +97,7 @@
 </ul></li>
 </ul>
 
-<p><img src="/Users/sgjeon/blog_doc/img/ballHeap.jpg" alt=""></p></li>
+<p><img src="/blog/assets/images/posts/ballHeap.jpg" alt=""></p></li>
 <li><p><strong>Object Pool</strong> 적용 후</p>
 
 <ul>
@@ -109,7 +109,7 @@
 </ul></li>
 </ul>
 
-<p><img src="/Users/sgjeon/blog_doc/img/ballHeap2.jpg" alt=""></p></li>
+<p><img src="/blog/assets/images/posts/ballHeap2.jpg" alt=""></p></li>
 </ul></li>
 </ul>
 

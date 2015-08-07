@@ -56,7 +56,7 @@ categories: designPattern
 
 			- 30 * 10 = 300(무조건 새로운 객체를 Heap 메모리에 할당했다)
 
-		![](/Users/sgjeon/blog_doc/img/ballHeap.jpg)
+		![](/blog/assets/images/posts/ballHeap.jpg)
 
 	- **Object Pool** 적용 후
 
@@ -66,7 +66,7 @@ categories: designPattern
 
 			- 적용 후에는 총 **93**개의 객체를 <span style="color:#c11f1f">할당</span>했으며, **207**개의 객체를 <span style="color:#c11f1f">재사용</span>하였다.
 
-		![](/Users/sgjeon/blog_doc/img/ballHeap2.jpg)
+		![](/blog/assets/images/posts/ballHeap2.jpg)
 
 
 ##5. 정리하며

@@ -5,7 +5,19 @@
   "category" : "",
   "tags"     : [ null],
   "href"     : "/blog/designpattern/2015/08/07/objectpool-inJS/",
-  "date"  : "2015-08-07",
+  "date"  : "07",
+  "day"   : "07",
+  "month" : "August",
+  "year"  : "2015"
+}
+,
+
+{
+  "title"    : "Interface in JS",
+  "category" : "",
+  "tags"     : [ null],
+  "href"     : "/blog/designpattern/2015/08/07/interface-inJS/",
+  "date"  : "07",
   "day"   : "07",
   "month" : "August",
   "year"  : "2015"

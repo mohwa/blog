@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ObjectPool in JS"
-date:   2015-08-07 13:31:00
+date:   2015-08-07
 categories: designPattern
 #tags: [objectPool, C#, C++, JAVA, JavaScript, designPattern]
 ---

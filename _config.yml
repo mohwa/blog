@@ -5,22 +5,32 @@ baseurl: "/blog"
 
 # Oveerriden by GitHub Pages: https://help.github.com/articles/using-jekyll-with-pages#configuring-jekyll
 safe: true
-highlighter: pygments
-lsi: false
 
 permalink: pretty
 
-markdown:     redcarpet
+# Conversion
+markdown: redcarpet
+markdown_ext:  markdown,mkdown,mkdn,mkd,md
+lsi: false
+excerpt_separator: "\n\n"
+
+kramdown:
+  auto_ids: true
+  input: GFM
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  use_coderay: false
 
 redcarpet:
     extensions:
       - no_intra_emphasis
       - fenced_code_blocks
-      - tablesgithub
+      - tables
       - strikethrough
-      - superscriptauthor
+      - superscript
       - autolink
       - hard_wrap
+
 
 # redcarpet:
 #    extensions: ["smart"]

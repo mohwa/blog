@@ -21,8 +21,9 @@ ul {
 }
 
 body {
+
   color: #545454;
-  text-align: center;
+  /*text-align: center;*/
   font-family: '나눔고딕', NanumGothic, '돋움',Dotum, Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
   font-size: 120%;
@@ -124,7 +125,7 @@ a.discreet {
 /* Header and navigation */
 header {
   margin: auto;
-  max-width: 800px;
+  max-width: 1280px;
   width: 100%;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
@@ -317,7 +318,7 @@ ul.posts .date {
 .site {
   /*text-align: justify;*/
   width: 100%;
-  max-width: 800px;
+  max-width: 1280px;
   min-width: 400px;
   margin: 1em auto 1em;
   line-height: 1.5em;

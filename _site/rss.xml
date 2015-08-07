@@ -13,7 +13,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     <link href="/" />
     <description><![CDATA[]]></description>
-    <lastBuildDate>Fri, 07 Aug 2015 15:08:40 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2015 15:54:09 +0900</lastBuildDate>
     <language>en-US</language>
     <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -156,22 +156,26 @@
 <p><img src="/blog/assets/images/posts/interface_diagram.png" alt=""></p>
 
 <ul>
-<li><p><strong>인터페이스</strong>(DB Interface):</p>
+<li><p><strong>인터페이스</strong>(<code>DB Interface</code>):</p>
 
 <ul>
-<li><p><strong>구현 클래스</strong>가 공통적으로 가져야할 필수 <span style="color:#c11f1f">특성</span>(connect, disconnect 등)들을 <strong>선언</strong>함으로써, 해당 구현 클래스들에게 <strong>사용자</strong>(User Class)와의 <strong>의사 소통</strong> 방침(<span style="color:#c11f1f">표준 규격</span>)을 알리는데 목적이 있다.</p>
+<li><p><strong>구현 클래스</strong>가 공통적으로 가져야할 필수 <span style="color:#c11f1f">특성</span>(connect, disconnect 등)들을 <strong>선언</strong>함으로써, 해당 구현 클래스들에게 <strong>사용자</strong>(<code>User Class</code>)와의 <strong>의사 소통</strong> 방침(<span style="color:#c11f1f">표준 규격</span>)을 알리는데 목적이 있다.</p>
 
 <ul>
-<li><em>인터페이스 내부에 선언된 모든 특성은 구현 클래스를 통해 반드시 구현되어야 한다</em></li>
+<li>[x] <em>인터페이스 내부에 선언된 모든 특성은 구현 클래스를 통해 반드시 구현되어야 한다.</em></li>
 </ul></li>
 </ul></li>
-<li><p><strong>구현 클래스</strong>(MSSQL, ORACLE API Class 등):</p>
+<li><p><strong>구현 클래스</strong>(<code>MSSQL, ORACLE API Class 등</code>):</p>
 
 <ul>
-<li><p>사용자(User Class)와의 의사소통을 위해 인터페이스 내부에 선언된 모든 특성들을 충실히 구현한다.</p>
+<li><p>사용자(<code>User Class</code>)와의 의사소통을 위해 인터페이스 내부에 선언된 모든 특성들을 충실히 구현한다.</p>
 
 <ul>
-<li><em>이때 사용자 입장에서는 특정 구현 클래스 명세없이도, 인터페이스 명세에 따라 제공받은 모든 API 를 사용할 수 있다는 장점이 존재한다.</em>(정확히 말하면, 특정 API 의 모든 기능이 아닌 인터페이스를 구현한 기능에 한정된다)</li>
+<li><p><em>이때 <code>사용자</code> 입장에서는 특정 구현 클래스 <code>명세</code> 없이도, 인터페이스 명세에 따라 제공받은 모든 API 를 사용할 수 있다는 장점이 존재한다.</em></p>
+
+<ul>
+<li>[x] <em>정확히 말하자면, 특정 API 의 모든 기능이 아닌 인터페이스를 구현한 기능에 한정된다.</em></li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -179,12 +183,12 @@
 <h2>3. 상황에 따른 의미</h2>
 
 <ul>
-<li><p>만약 운영중인 어플리케이션의 DB 플랫폼이 <strong>MSSQL</strong> 에서 <strong>PostgreSQL</strong> 로 변경된다고 생각해보자.(오랜 기간 운영중인 어플리케이션의 경우 이런저런 이유로 이와 같은 상황이 충분히 올 수 있다)</p>
+<li><p>만약 운영중인 어플리케이션의 DB 플랫폼이 <strong>MSSQL</strong> 에서 <strong>PostgreSQL</strong> 로 변경된다고 가정해보자.(오랜 기간 운영중인 어플리케이션의 경우 이런저런 이유로 이와 같은 상황이 충분히 올 수 있다)</p>
 
-<p>이때 위와 같은 인터페이스 설계가 되어있다면, <strong>PostgreSQL</strong> 규격에 따라 해당 인터페이스만 구현하면 최소 비용으로 기능을 <strong>확장</strong>할 수 있을 것이다.</p>
+<p>이때 위 다이어그과 같은 <code>인터페이스 설계</code>가 되어있는 상태라면, <strong>PostgreSQL</strong> 규격에 따라, 구현 클래스만 작성하면 최소 비용으로 기능을 <span style="color:#c11f1f">확장</span>할 수 있을 것이다.</p>
 
 <ul>
-<li><em>사용자 입장에서보면, 인터페이스를 통해 구현된 공통적인 기능에 대해서 만큼은 기존 코드를 재사용할 수 있다는 큰 장점이 존재하게 되는 것이다.(어플리케이션 유지보수 비용 최소화)</em></li>
+<li><em>또 <code>사용자 입장</code>에서보면, 인터페이스를 통해 구현된, 공통적인 기능 만큼은 기존 코드를 <span style="color:#c11f1f">재사용</span>할 수 있다는 큰 장점까지 갖게 되는 것이다.(어플리케이션 유지보수 비용 최소화)</em></li>
 </ul></li>
 </ul>
 
@@ -192,25 +196,22 @@
 
 <iframe width="100%" height="1000" src="http://jsfiddle.net/mohwa/jzu5r06e/3/embedded/js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
-<ul>
-<li><p>JS 인터페이스 구현은 아래 <strong>C# 인터페이스 가이드</strong>에 맞춰 구현되었으며, JS 코드에 대한 자세한 설명은 따로 하지 않겠다.(만약 JS 에 대해 어느정도 알고 있는 상황이라면, 코드를 분석해보길 권장한다)</p>
+<p>인터페이스 <code>구현</code>은 아래 <strong>C# 인터페이스 가이드</strong>에 맞춰 구현되었으며, JS 코드에 대한 자세한 설명은 따로 하지 않겠다.(만약 JS 에 대해 어느정도 알고 있는 상황이라면, 코드를 분석해보길 권장한다)</p>
 
 <ul>
-<li><p>위 코드에 대한 간단한 설명은 아래와 같다.</p>
+<li><p>아래는 구현에 대한 간략한 설명이다.</p>
 
 <ul>
 <li><p>인터페이스 선언을 위한 인터페이스 함수 객체를 구현한다.</p>
 
 <ul>
-<li>인터페이스 <strong>[이벤트]</strong> 선언을 위해 <strong>Observer</strong> 함수 객체를 구현한다.</li>
+<li>인터페이스 [이벤트] 선언을 위해 <strong>Observer</strong> 기능을 구현한다.</li>
 <li><a href="https://msdn.microsoft.com/ko-kr/library/awbftdfh.aspx">C# 이벤트 선언</a></li>
 </ul></li>
 <li><p>인터페이스를 상속받은 <strong>구현 클래스</strong>를 검증(상속받은 인터페이스를 모두 구현했는지에 대한 검증)하는 함수 객체(Interface.ensureImplement)를 구현한다.</p></li>
-<li><p>이전 다이어그램과 같이 <strong>인터페이스</strong> 및 각 <strong>클래스</strong>(구현 클래스)들을 구현한다.</p></li>
+<li><p>위 다이어그램과 같이 <strong>인터페이스</strong> 및 각 <strong>클래스</strong>(구현 클래스)들을 구현한다.</p></li>
 </ul></li>
-<li><p><a href="https://msdn.microsoft.com/ko-kr/library/ms173156.aspx">C# 인터페이스</a>(인터페이스 정의는 각 언어마다 조금씩 차이를 보인다)</p></li>
-<li><p><em>위 코드는 JS 인터페이스 구현 뿐 아니라, 이전 다이어그램에 명시된 [인터페이스], [구현 클래스], [사용자 클래스] 부분까지 전부 작성되었다.</em></p></li>
-</ul></li>
+<li><p><a href="https://msdn.microsoft.com/ko-kr/library/ms173156.aspx">C# 인터페이스</a>(인터페이스 <code>정의</code>는 각 언어마다 조금씩 차이를 보인다(모든 언어에 동일하게 구현되어있지 않다))</p></li>
 </ul>
 
 <h2>5. 정리하며</h2>
@@ -221,7 +222,7 @@
 <ul>
 <li><em>너무 당연한 말일 수 도 있지만, 인터페이스와 같은 모든 디자인 패턴은 적재 적소에 활용해야만 득이되는 것이다.</em></li>
 </ul></li>
-<li><p>위에서 언급한 내용과 다른 <strong>적용 사례</strong>에 대해(<em>그럼 어떤 상황이 더 있을까?) 한번쯤 심도있게 생각해보길 바란다</em></p></li>
+<li><p>위에서 언급한 내용과 다른 <strong>적용 사례</strong>에 대해(<em>인터페이스를 구현하는 상황이 또 모가 있을까?) 한번쯤 심도있게 생각해보길 바란다</em></p></li>
 </ul>
 
 <h2>6. 참고 URL</h2>

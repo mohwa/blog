@@ -1,6 +1,18 @@
 [
 
 {
+  "title"    : "Struct in JS",
+  "category" : "",
+  "tags"     : [ null],
+  "href"     : "/blog/designpattern/2015/08/07/struct-inJS/",
+  "date"  : "2015-08-07",
+  "day"   : "07",
+  "month" : "August",
+  "year"  : "2015"
+}
+,
+
+{
   "title"    : "ObjectPool in JS",
   "category" : "",
   "tags"     : [ null],

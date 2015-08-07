@@ -8,17 +8,13 @@ categories: designPattern
 
 ##1. 정의
 
-- C 와 C++(또는 C# 등) 에서 **구조화 된 데이터**를 처리할 때, **struct** 를 사용하는데 이를 [구조체](https://ko.wikipedia.org/wiki/Struct)라 부른다.
+- C 와 C++(또는 C# 등) 에서 **구조화 된 데이터**를 처리할 때, **Struct** 를 사용하는데 이를 [구조체](https://ko.wikipedia.org/wiki/Struct)라 부른다.
 
 	- 최초의 **구조체**는 C 언어에서 다양한 **자료구조**를 하나의 **집합**으로 만들어 **관리**하기위해 만들어졌다.
 
 		- 구조체는 하나 이상의 **자료구조**를 가진 또 하나의 **데이터 타입**을 정의한다.
 
-	- **구조화란?** 정보를 쉽게 인출할 수 있도록 **편성된 방식**을 말한다.
-
-		- http://terms.naver.com/entry.nhn?docId=838410&cid=42344&categoryId=42344
-
-	- 이 글은 **구조체**를 다루는 여러 언어 중 `<u>[C# 구조체]</u>` 를 기준으로 다루고있다.
+	- 이 글은 **구조체**를 다루는 여러 언어 중 `[C# 구조체]` 를 기준으로 하고있다.
 
 	![](http://mohwa.github.io/blog/assets/images/posts/struct_diagram.jpg?2)
 

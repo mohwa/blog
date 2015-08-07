@@ -13,7 +13,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     <link href="/" />
     <description><![CDATA[]]></description>
-    <lastBuildDate>Fri, 07 Aug 2015 17:55:59 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2015 18:01:26 +0900</lastBuildDate>
     <language>en-US</language>
     <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -29,13 +29,13 @@
         
             <guid>/designpattern/2015/08/07/struct-inJS/</guid>
             <description>
-                <![CDATA[1. 정의 C 와 C++(또는 C# 등) 에서 구조화 된 데이터를 처리할 때, struct 를 사용하는데 이를 구조체라 부른다. 최초의 구조체는 C 언어에서 다양한 자료구조를 하나의 집합으로 만들어 관리하기위해 만들어졌다. 구조체는 하나 이상의 자료구조를 가진 또 하나의 데이터 타입을 정의한다. 구조화란? 정보를 쉽게 인출할 수 있도록 편성된 방식을 말한다. http://terms.naver.com/entry.nhn?docId=838410&amp;cid=42344&amp;categoryId=42344...]]>
+                <![CDATA[1. 정의 C 와 C++(또는 C# 등) 에서 구조화 된 데이터를 처리할 때, Struct 를 사용하는데 이를 구조체라 부른다. 최초의 구조체는 C 언어에서 다양한 자료구조를 하나의 집합으로 만들어 관리하기위해 만들어졌다. 구조체는 하나 이상의 자료구조를 가진 또 하나의 데이터 타입을 정의한다. 이 글은 구조체를 다루는 여러 언어 중 [C# 구조체] 를...]]>
             </description>
             <content:encoded>
                 <![CDATA[<h2>1. 정의</h2>
 
 <ul>
-<li><p>C 와 C++(또는 C# 등) 에서 <strong>구조화 된 데이터</strong>를 처리할 때, <strong>struct</strong> 를 사용하는데 이를 <a href="https://ko.wikipedia.org/wiki/Struct">구조체</a>라 부른다.</p>
+<li><p>C 와 C++(또는 C# 등) 에서 <strong>구조화 된 데이터</strong>를 처리할 때, <strong>Struct</strong> 를 사용하는데 이를 <a href="https://ko.wikipedia.org/wiki/Struct">구조체</a>라 부른다.</p>
 
 <ul>
 <li><p>최초의 <strong>구조체</strong>는 C 언어에서 다양한 <strong>자료구조</strong>를 하나의 <strong>집합</strong>으로 만들어 <strong>관리</strong>하기위해 만들어졌다.</p>
@@ -43,12 +43,7 @@
 <ul>
 <li>구조체는 하나 이상의 <strong>자료구조</strong>를 가진 또 하나의 <strong>데이터 타입</strong>을 정의한다.</li>
 </ul></li>
-<li><p><strong>구조화란?</strong> 정보를 쉽게 인출할 수 있도록 <strong>편성된 방식</strong>을 말한다.</p>
-
-<ul>
-<li><a href="http://terms.naver.com/entry.nhn?docId=838410&amp;cid=42344&amp;categoryId=42344">http://terms.naver.com/entry.nhn?docId=838410&amp;cid=42344&amp;categoryId=42344</a></li>
-</ul></li>
-<li><p>이 글은 <strong>구조체</strong>를 다루는 여러 언어 중 <code>&lt;u&gt;[C# 구조체]&lt;/u&gt;</code> 를 기준으로 다루고있다.</p></li>
+<li><p>이 글은 <strong>구조체</strong>를 다루는 여러 언어 중 <code>[C# 구조체]</code> 를 기준으로 하고있다.</p></li>
 </ul>
 
 <p><img src="http://mohwa.github.io/blog/assets/images/posts/struct_diagram.jpg?2" alt=""><br>

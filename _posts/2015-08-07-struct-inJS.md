@@ -248,11 +248,11 @@ categories: designPattern
 
 		- **전역 실행 컨텍스트**에서 선언된 **globalA** 함수 객체의 **Heap** 메모리 영역.
 
-			![](http://mohwa.github.io/blog/assets/images/posts/heapSnapshot0.jpg)
+			![](http://mohwa.github.io/blog/assets/images/posts/heapSnapShot0.jpg)
 
 		- **_global** 전역 변수가 참조하는 **객체**의 **Heap** 메모리 영역.
 
-			![](http://mohwa.github.io/blog/assets/images/posts/heapSnapshot1.jpg)
+			![](http://mohwa.github.io/blog/assets/images/posts/heapSnapShot1.jpg)
 
 		- 개발 툴(<span style="color:red">Chrome Inspector</span>)을 통해 할당된 **Heap 메모리 영역**을 살펴볼 수 있다.
 
@@ -290,7 +290,7 @@ categories: designPattern
 
 				- `지역 변수`에 할당된 `객체`는 `Heap` 메모리 영역에서 <span style="color:red">반환</span>되어 보이지 않는다.
 
-				![](http://mohwa.github.io/blog/assets/images/posts/heapSnapshot2.jpg)
+				![](http://mohwa.github.io/blog/assets/images/posts/heapSnapShot2.jpg)
 
 	- [C언어의 메모리 구조](http://dsnight.tistory.com/50)
 

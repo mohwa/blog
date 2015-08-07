@@ -13,7 +13,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     <link href="/" />
     <description><![CDATA[]]></description>
-    <lastBuildDate>Fri, 07 Aug 2015 13:47:06 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2015 14:03:02 +0900</lastBuildDate>
     <language>en-US</language>
     <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -116,7 +116,7 @@
 <h2>5. 정리하며</h2>
 
 <ul>
-<li><p>즉 지나친 객체 <span style="color:#c11f1f">생성</span> 및 <span style="color:#c11f1f">반환</span>을 <strong>최소화</strong> 하는것이, <strong>어플리케이션</strong>상에 <span style="color:#c11f1f">메모리 변동</span>을 줄이는 방법이며, 이로인해 사용자 경험까지 최적화할 수 있다.</p></li>
+<li><p>즉 지나친 객체 <span style="color:#c11f1f">생성</span> 및 <span style="color`:#c11f1f">반환</span>을 <strong>최소화</strong> 하는것이, <strong>어플리케이션</strong>상에 <span style="color:#c11f1f">메모리 변동</span>을 줄이는 방법이며, 이로인해 사용자 경험까지 최적화할 수 있다.</p></li>
 <li><p>일반적인 <strong>웹</strong>상에서는 적용할 일이 거의 없어보이지만, <strong>게임 어플리케이션</strong>이라면, 적용 범위가 꽤 많을 듯 하다.</p></li>
 </ul>
 

@@ -13,7 +13,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     <link href="/" />
     <description><![CDATA[]]></description>
-    <lastBuildDate>Fri, 07 Aug 2015 18:01:26 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 07 Aug 2015 19:04:12 +0900</lastBuildDate>
     <language>en-US</language>
     <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -65,7 +65,7 @@
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">// Initialize:</span>
-        <span class="c1">// stack 메모리 영역에 객체가 할당된다.</span>
+        <span class="c1">// 생성된 객체는 Stack 메모리에 객체가 할당된다.</span>
         <span class="n">Song</span> <span class="n">song1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Song</span><span class="p">(</span><span class="m">213</span><span class="p">,</span> <span class="m">1994</span><span class="p">);</span>
         <span class="n">Song</span> <span class="n">song2</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Song</span><span class="p">(</span><span class="m">248</span><span class="p">,</span> <span class="m">1988</span><span class="p">);</span>
 
@@ -86,7 +86,7 @@
 <li><p><strong>구조체</strong>는 <strong>Class</strong> 와 같이 여러 특성(생성자, 상수, 필드, 메서드, 속성, 인덱서, 연산자, 이벤트 등)들을 <strong>그룹화</strong> 하는데 사용된다.</p>
 
 <ul>
-<li><strong>구조체</strong>와 <strong>클래스</strong>는 매우 비슷한 <strong>구조</strong>를 가지고 있으며, <strong><u>사용 방법 및 적용 이유</u></strong>가 <strong>유사</strong>하다.</li>
+<li><strong>구조체</strong>와 <strong>클래스</strong>는 매우 비슷한 <strong>구조</strong>를 가지고 있으며, <u><strong>사용 방법</strong> 및 <strong>적용 이유</strong></u>가 유사하다.</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -94,7 +94,7 @@
 <h2>2. C# 구조체의 특징</h2>
 
 <ul>
-<li><p><strong><u>값 타입</u></strong>이다.</p>
+<li><p><code>값 타입</code>이다.</p>
 
 <ul>
 <li><a href="https://msdn.microsoft.com/ko-kr/library/4d43ts61(v=vs.90).aspx">값 형식 및 참조 형식</a></li>
@@ -106,10 +106,11 @@
 <li><a href="http://www.codeproject.com/Articles/76153/Six-important-NET-concepts-Stack-">http://www.codeproject.com/Articles/76153/Six-important-NET-concepts-Stack-</a></li>
 </ul></li>
 </ul></li>
+<li><p>생성된 객체는 <strong>Stack</strong> 메모리에 할당된다.</p></li>
 <li><p><strong>구조체</strong>는 보통 <u>작은 데이터</u>를 다루는데 <strong>적합</strong>하다.</p>
 
 <ul>
-<li><p>하지만 <strong>이것</strong>을 기존의 <strong>클래스</strong>로 <span style="color:#c11f1f">표현할 수 없는 것</span>은 아니다.</p>
+<li><p>하지만 <strong>이것</strong>을 <strong>클래스</strong>로 <span style="color:#c11f1f">표현할 수 없는 것</span>은 아니다.(그냥 작은 Class를 만들면 그만이다;;)</p>
 
 <ul>
 <li><em>그럼에도 불구하고 <code>구조체</code>를 써야하는 이유는 <u>분명 존재</u>할 것이다.</em></li>
@@ -118,9 +119,7 @@
 <li><p><strong>new</strong> 연산자를 사용하지 않고도 <strong>인스턴스화</strong>할 수 있다.</p>
 
 <ul>
-<li>생성된 <strong>객체</strong>는 <strong>Stack</strong> 영역에 할당된다.</li>
-<li><u><strong>생성자</strong>를 호출하지 않으므로</u>, 선언된 맴버를 따로 <strong>초기화</strong> 해야하는 <span style="color:#c11f1f">불편함</span>이 있다.</li>
-<li>만약 <strong>new</strong> 연산자를 통해 <strong>인스턴스</strong>를 생성하더라도, <u><strong>Heap</strong> 영역이 아닌 <strong>Stack</strong> 영역에 <strong>객체</strong>가 할당된다.</u></li>
+<li>하지만 <u><strong>생성자</strong>를 호출하지 않으므로</u>, 선언된 맴버를 따로 <strong>초기화</strong> 해야하는 <span style="color:#c11f1f">불편함</span>이 존재한다.</li>
 </ul>
 <div class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">public</span> <span class="k">struct</span> <span class="nc">Song</span>
 <span class="p">{</span>
@@ -139,11 +138,11 @@
     <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">// new 연산자 없이 인스턴스를 생성한다.</span>
-        <span class="c1">// stack 메모리 영역에 객체가 할당된다.</span>
+        <span class="c1">// Stack 메모리에 객체가 할당된다.</span>
         <span class="c1">// 생성자를 호출하지 않는다.</span>
         <span class="n">Song</span> <span class="n">song1</span><span class="p">;</span>
 
-        <span class="c1">// 맴버 초기화</span>
+        <span class="c1">// 속성 초기화</span>
         <span class="n">song1</span><span class="p">.</span><span class="n">lengthInSeconds</span> <span class="p">=</span> <span class="m">213</span><span class="p">;</span>
         <span class="n">song1</span><span class="p">.</span><span class="n">yearRecorded</span> <span class="p">=</span> <span class="m">1994</span><span class="p">;</span>
 
@@ -160,7 +159,7 @@
 <li><p><strong>구조체</strong>는 <strong>구조체</strong> 또는 <strong>클래스</strong>에서 <u>상속될 수 없으며</u>, 클래스의 기본 클래스가 될 수 없다.</p>
 
 <ul>
-<li><strong>클래스</strong>와 달리, <u>상속 구조를 표현할 수 없다.</u></li>
+<li><strong>클래스</strong>와 달리, 상속 구조를 구현할 수 없다.</li>
 </ul></li>
 <li><p><strong>클래스</strong>와 같이 <u><strong>인터페이스</strong>를 구현할 수 있다.</u></p></li>
 <li><p>구조체는 <strong>Stack</strong> 영역에 할당되는 <strong><span style="color:#c11f1f">값 타입</span></strong>이고, 클래스는 <strong>Heap</strong> 영역에 할당되는 <strong><span style="color:#c11f1f">참조 타입</span></strong>이다.</p>
@@ -200,12 +199,10 @@
 <li>C, C++, C#(<strong>정적 언어</strong>)</li>
 </ul></li>
 <li><p>JS <strong>원시 타입</strong>(string, number, boolean, undefined, null)은 <strong>고정된 크기</strong>를 가지며, <strong>Stack</strong> 메모리 영역에 할당된다.</p></li>
-<li><p>JS 의 모든 <strong>실행 컨텍스트</strong>는 <span style="color:#c11f1f">ECStack</span>(일종의 <a href="https://ko.wikipedia.org/wiki/%EC%BD%9C_%EC%8A%A4%ED%83%9D">Call Stack</a> 이다) 내부로 할당된다.</p>
+<li><p>JS 의 모든 <strong>실행 컨텍스트</strong>는 <span style="color:#c11f1f">ECStack</span>(일종의 <a href="https://ko.wikipedia.org/wiki/%EC%BD%9C_%EC%8A%A4%ED%83%9D">Call Stack</a>) 내부로 할당된다.</p>
 
 <ul>
-<li><span style="color:#c11f1f">ECStack</span> 대한 <strong>상세 내용</strong>은 아래 <strong>링크</strong>로 대신하며, <u>꼭 한번 읽어 보길 바란다.</u></li>
-<li>아래와 같은 방법으로 <strong>ECStack</strong> Count 를 셀 수 있다.</li>
-</ul>
+<li><p>아래와 같은 방법으로 <code>ECStack Count</code> 를 셀 수 있다.</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">getStackCount</span><span class="p">(){</span>
 
     <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -238,31 +235,37 @@
 </code></pre></div></li>
 </ul></li>
 </ul></li>
+</ul></li>
 <li><p><strong>Heap</strong> 영역(<span style="color:#c11f1f">동적 할당</span>)이란?</p>
 
 <ul>
-<li><strong>Heap</strong> 영역은 <strong>런타임 시점</strong>에서 크기가 <strong>결정</strong>되는 요소들이 저장되는 <strong>메모리 영역</strong>이다.
+<li><p><strong>Heap</strong> 영역은 <strong>런타임 시점</strong>에서 크기가 <strong>결정</strong>되는 요소들이 저장되는 <strong>메모리 영역</strong>이다.</p>
 
 <ul>
-<li><strong>Object</strong> 와 <strong>Array</strong> Data Type 등을 가진다.</li>
+<li>Object 또는 Array Data Type 등을 가진다.</li>
 </ul></li>
-<li><strong>Heap</strong> 영역은 <strong>런타임 시점</strong>에서 메모리를 <u><strong>가변적</strong>으로 <strong>동적 할당</strong> 및 <strong>반환</strong> 시키는 구조</u>이다.</li>
-<li><p><strong>GC</strong>는 <strong>할당</strong>된 <strong>Heap</strong> 메모리 영역의 <span style="color:#c11f1f">반환</span>(de-allocated)을 담당한다.</p>
+<li><p><strong>Heap</strong> 영역은 <strong>런타임 시점</strong>에서 메모리를 <u><strong>가변적</strong>으로 <strong>동적</strong> <span style="color:#c11f1f">할당</span> 및 <span style="color:#c11f1f">반환</span>(GC를 통해) 시키는 구조</u>를 가진다.</p></li>
+<li><p><strong>GC</strong>는 <strong>할당</strong>된 <strong>Heap</strong> 메모리 영역의 <span style="color:#c11f1f">반환</span>(de-allocated(수거))을 담당한다.</p>
 
 <ul>
 <li><p><strong>GC</strong>(Garbage Collection)란?</p>
 
 <ul>
 <li><strong>자동 메모리 관리</strong>의 한 형태이며, 프로세스 수행 중, 더 이상 필요가 없어진 <strong>객체</strong>가 점유하는 <u>메모리에 대해 <span style="color:#c11f1f">반환</span> 작업을 수행</u>한다.</li>
-<li>프로그래머가 직접 메모리를 <span style="color:#c11f1f">반환</span>할 수 없다.(반드시 <code>GC</code>를 통해 반환된다)</li>
-<li>물론, 메모리 <u><strong>반환 조건</strong>에 따라</u>, <code>GC</code> 에게 일을 시킬 수는 있다.</li>
+<li>프로그래머가 직접 메모리를 <span style="color:#c11f1f">반환</span>할 수는 없다.(반드시 <code>GC</code>를 통해 반환된다)</li>
+<li><p>단 GC에게 메모리 <u>**반환** 조건</u>을 만들어 줄 수는 있다.</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">x</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">2</span><span class="p">};</span>
+
+<span class="c1">// 메모리 반환 조건을 만들어 준다.</span>
+<span class="nx">obj</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</code></pre></div></li>
 </ul></li>
 </ul></li>
 </ul></li>
 <li><p>JS <strong>Heap</strong> 메모리 영역 테스트 해보기!!</p>
 
 <ul>
-<li><p>JS <strong>Handle scope</strong> Diagram</p>
+<li><p>V8 <strong>Handle scope</strong> Diagram</p>
 
 <p><img src="http://mohwa.github.io/blog/assets/images/posts/handleV8.jpg" alt=""></p></li>
 <li><p>아래 코드는 <strong>Heap</strong> 메모리 영역에 <strong>객체</strong>를 <span style="color:#c11f1f">할당</span>하는 예제이다.</p></li>
@@ -294,18 +297,18 @@
 <li><p><strong>_global</strong> 전역 변수가 참조하는 <strong>객체</strong>의 <strong>Heap</strong> 메모리 영역.</p>
 
 <p><img src="http://mohwa.github.io/blog/assets/images/posts/heapSnapShot1.jpg" alt=""></p></li>
-<li><p>개발 툴(<span style="color:#c11f1f">Chrome Inspector</span>)을 통해 할당된 <strong>Heap 메모리 영역</strong>을 살펴볼 수 있다.</p>
+<li><p><span style="color:#c11f1f">Chrome Inspector</span>를 통해 할당된 <strong>Heap 메모리 영역</strong>을 살펴볼 수 있다.</p>
 
 <ul>
 <li><a href="http://stackoverflow.com/questions/20697298/understanding-chrome-heap-profile">understanding chrome heap profile</a></li>
 </ul></li>
-<li><p>만약 함수 내부 <strong>지역 변수</strong>에 <strong>객체</strong>를 할당했다면, 그 객체(<strong>Heap</strong> 영역)의 메모리 <strong><span style="color:#c11f1f">반환</span></strong> <strong>시점</strong>은 언제일까?</p>
+<li><p>만약 함수 <strong>지역 변수</strong>에 <strong>객체</strong>를 할당했다면, 그 객체(<strong>Heap</strong> 영역)의 메모리 <strong><span style="color:#c11f1f">반환</span></strong> <strong>시점</strong>은 언제일까?</p>
 
 <ul>
 <li><p><em>결론: <code>지역 변수</code>에 할당된 객체 메모리 <span style="color:#c11f1f">반환</span> 시점은 <u></em><em>함수 종료 시점</em><em></u>이 된다.</em></p>
 
 <ul>
-<li><p>테스트 1: <code>전역 변수</code>와 함수 내부 <code>지역 변수</code>에 동일한 <code>객체</code>를 할당해본 후 <code>Profile</code> 을 통해 <code>Heap</code> 영역을 관찰해본다.</p>
+<li><p>테스트 1: <code>전역 변수</code>와 함수 <code>지역 변수</code>에 동일한 <code>객체</code>를 할당해본 후 <code>Profile</code> 을 통해 <code>Heap</code> 영역을 관찰해본다.</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// global execution context</span>
 
 <span class="c1">// 전역 실행 컨텍스트에서 함수 객체를 하나 선언한다.</span>
@@ -334,19 +337,10 @@
 <p><img src="http://mohwa.github.io/blog/assets/images/posts/heapSnapShot2.jpg" alt=""></p></li>
 </ul></li>
 </ul></li>
-<li><p><a href="http://dsnight.tistory.com/50">C언어의 메모리 구조</a></p></li>
-<li><p><a href="http://egloos.zum.com/recipes/v/5057426">STACK, HEAP에 관한 소고</a></p></li>
-<li><p><a href="https://kldp.org/node/44714">도대체 [구조체]가 [클래스]보다 좋은점이 뭔가요?</a></p></li>
-<li><p><a href="https://opentutorials.org/course/1720/9735">메모리 구조</a></p></li>
-<li><p><a href="http://adibong.tistory.com/169">프로그램과 메모리 , 스택과 힙</a></p>
-
-<ul>
-<li><em>개인적으로 이런 글을 좋아한다.(다양한 생각들을 들을 수 있으며, 그로인해 많은 <code>영감</code>을 얻기도 한다)</em></li>
-</ul></li>
 </ul></li>
 </ul>
 
-<h2>3. JS 로 구조체 구현해보기</h2>
+<h2>3. JS 로 Struct 구현해보기</h2>
 
 <ul>
 <li><p>위에서 나열한 <strong>구조체</strong>의 <strong>특징</strong> 중 <strong>클래스</strong>와 <strong>본질</strong>적으로 다른 부분인, <u><strong>데이터 생성</strong></u>에 대한 부분을 JS 를 통해 구현해 보았다.</p>
@@ -355,6 +349,7 @@
 <li>구조체: <strong>값</strong> 타입(<strong>Stack</strong> 메모리 영역에 할당되며, 값이 <span style="color:#c11f1f">복사</span>되어 할당된다)</li>
 <li>클래스: <strong>참조</strong> 타입(<strong>Heap</strong> 메모리 영역에 할당되며, <span style="color:#c11f1f">참조</span> 값이 할당된다)</li>
 </ul></li>
+<li><p><code>구조체</code>의 특징 중 극히 일부를 구현한것이며, 타 언어에서 구현된 구조체라 할 수는 없다.</p></li>
 </ul>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">Struct</span><span class="p">(</span><span class="nx">val</span><span class="p">){</span>
 
@@ -458,42 +453,42 @@
     <span class="k">return</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">);</span>
 <span class="p">}</span>
 
-    <span class="kd">var</span> <span class="nx">originalFn</span> <span class="o">=</span> <span class="nx">$$</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">structFn</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">(</span><span class="nx">$$</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">originalFn</span> <span class="o">=</span> <span class="nx">$$</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">structFn</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">(</span><span class="nx">$$</span><span class="p">);</span>
 
-    <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">originalFn</span><span class="p">);</span> <span class="c1">// function</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structFn</span><span class="p">);</span> <span class="c1">// function</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">originalFn</span><span class="p">);</span> <span class="c1">// function</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structFn</span><span class="p">);</span> <span class="c1">// function</span>
 
-    <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">originalFn</span><span class="p">());</span> <span class="c1">// object</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structFn</span><span class="p">());</span> <span class="c1">// object</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">originalFn</span><span class="p">());</span> <span class="c1">// object</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structFn</span><span class="p">());</span> <span class="c1">// object</span>
 
-    <span class="kd">var</span> <span class="nx">originalFn1</span> <span class="o">=</span> <span class="nx">Plus</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">structFn1</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">(</span><span class="nx">Plus</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">originalFn1</span> <span class="o">=</span> <span class="nx">Plus</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">structFn1</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">(</span><span class="nx">Plus</span><span class="p">);</span>
 
-    <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">originalFn1</span><span class="p">);</span> <span class="c1">// function</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structFn1</span><span class="p">);</span> <span class="c1">// function</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">originalFn1</span><span class="p">);</span> <span class="c1">// function</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structFn1</span><span class="p">);</span> <span class="c1">// function</span>
 
-    <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">originalFn1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span> <span class="c1">// 4</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structFn1</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span> <span class="c1">// 5</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">originalFn1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span> <span class="c1">// 4</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structFn1</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span> <span class="c1">// 5</span>
 
-    <span class="kd">var</span> <span class="nx">structStr</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">(</span><span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">));</span>
-    <span class="kd">var</span> <span class="nx">structNum</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">(</span><span class="k">new</span> <span class="nb">Number</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="kd">var</span> <span class="nx">structStr</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">(</span><span class="k">new</span> <span class="nb">String</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">));</span>
+<span class="kd">var</span> <span class="nx">structNum</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">(</span><span class="k">new</span> <span class="nb">Number</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
 
-    <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structStr</span><span class="p">);</span> <span class="c1">// string object</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structNum</span><span class="p">);</span> <span class="c1">// number object</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structStr</span><span class="p">);</span> <span class="c1">// string object</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structNum</span><span class="p">);</span> <span class="c1">// number object</span>
 
-    <span class="kd">var</span> <span class="nx">structObject</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">2</span><span class="p">});</span>
-    <span class="kd">var</span> <span class="nx">structArray</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
+<span class="kd">var</span> <span class="nx">structObject</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">({</span><span class="nx">x</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">2</span><span class="p">});</span>
+<span class="kd">var</span> <span class="nx">structArray</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]);</span>
 
-    <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structObject</span><span class="p">);</span> <span class="c1">// object</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structArray</span><span class="p">);</span> <span class="c1">// array</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structObject</span><span class="p">);</span> <span class="c1">// object</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structArray</span><span class="p">);</span> <span class="c1">// array</span>
 
-    <span class="kd">var</span> <span class="nx">structBoolean</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">(</span><span class="k">new</span> <span class="nb">Boolean</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structBoolean</span><span class="p">);</span> <span class="c1">// boolean object</span>
+<span class="kd">var</span> <span class="nx">structBoolean</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">(</span><span class="k">new</span> <span class="nb">Boolean</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structBoolean</span><span class="p">);</span> <span class="c1">// boolean object</span>
 
 
-    <span class="kd">var</span> <span class="nx">structDate</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structDate</span><span class="p">);</span> <span class="c1">// date object</span>
+<span class="kd">var</span> <span class="nx">structDate</span> <span class="o">=</span> <span class="nx">Struct</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="nx">structDate</span><span class="p">);</span> <span class="c1">// date object</span>
 </code></pre></div>
 <h2>4. 정리하며</h2>
 
@@ -532,7 +527,16 @@
 <li><p><a href="http://codingnuri.com/javascript-tutorial/javascript-primitive-types-and-reference-types.html">원시 타입과 참조 타입</a></p></li>
 <li><p><a href="https://msdn.microsoft.com/ko-kr/library/4d43ts61(v=vs.90).aspx">값 형식 및 참조 형식(Visual C# Express)</a></p></li>
 <li><p><a href="http://davidshariff.com/blog/what-is-the-execution-context-in-javascript/">What is the Execution Context &amp; Stack in JavaScript?</a></p></li>
-<li><p><a href="http://stackoverflow.com/questions/11148353/javascript-scope-and-execution-context">javascript-scope-and-execution-context</a></p></li>
+<li><p><a href="http://stackoverflow.com/questions/11148353/javascript-scope-and-execution-context">javascript-scope-and-execution-context</a>=</p></li>
+<li><p><a href="http://dsnight.tistory.com/50">C언어의 메모리 구조</a></p></li>
+<li><p><a href="http://egloos.zum.com/recipes/v/5057426">STACK, HEAP에 관한 소고</a></p></li>
+<li><p><a href="https://kldp.org/node/44714">도대체 [구조체]가 [클래스]보다 좋은점이 뭔가요?</a></p>
+
+<ul>
+<li><em>개인적으로 이런 글을 좋아한다.(다양한 생각들을 들을 수 있으며, 그로인해 많은 <code>영감</code>을 얻기도 한다)</em></li>
+</ul></li>
+<li><p><a href="https://opentutorials.org/course/1720/9735">메모리 구조</a></p></li>
+<li><p><a href="http://adibong.tistory.com/169">프로그램과 메모리 , 스택과 힙</a></p></li>
 </ul>
 ]]>
             </content:encoded>

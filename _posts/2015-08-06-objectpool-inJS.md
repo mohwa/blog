@@ -71,7 +71,7 @@ categories: designPattern
 
 ##5. 정리하며
 
-- 즉 지나친 객체 <span style="color:#c11f1f">생성</span> 및 <span style="color:#c11f1f">반환</span>을 **최소화** 하는것이, **어플리케이션**상에 <span style="color:#c11f1f">메모리 변동</span>을 줄이는 방법이며, 이로인해 사용자 경험까지 최적화할 수 있다.
+- 즉 지나친 객체 <span style="color:#c11f1f">생성</span> 및 <span style="color`:#c11f1f">반환</span>을 **최소화** 하는것이, **어플리케이션**상에 <span style="color:#c11f1f">메모리 변동</span>을 줄이는 방법이며, 이로인해 사용자 경험까지 최적화할 수 있다.
 
 - 일반적인 **웹**상에서는 적용할 일이 거의 없어보이지만, **게임 어플리케이션**이라면, 적용 범위가 꽤 많을 듯 하다.
 

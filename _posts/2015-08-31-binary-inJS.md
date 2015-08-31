@@ -19,7 +19,7 @@ categories: JavaScript
 
 			- 추가로 `File 인터페이스` 는 `Blob 인터페이스` 의 모든 특성들을 상속받는다.
 
-			- ![](/Users/sgjeon/blog_doc/img/bytesManipulation_1.jpg)
+			- ![](http://mohwa.github.io/blog/assets/images/posts/bytesManipulation_1.jpg)
 
 	- [Blob API in MDN](https://developer.mozilla.org/en/docs/Web/API/Blob)
 	- [Blob in Terms](http://www.terms.co.kr/BLOB.htm)
@@ -68,7 +68,7 @@ categories: JavaScript
 					```
 					- 데이터를 다루기위한 특성들:
 
-					![](/Users/sgjeon/blog_doc/img/bytesManipulation_4.jpg)
+					![](http://mohwa.github.io/blog/assets/images/posts/bytesManipulation_4.jpg)
 
 				- Typed Array Views:
 
@@ -78,11 +78,11 @@ categories: JavaScript
 
 					- 위 `클래스` 중 Int32Array `클래스`를 통해 생성된 <span style="color:#c11f1f">view</span> 는 아래와 같은 특성들을 가지게된다.
 
-					![](/Users/sgjeon/blog_doc/img/bytesManipulation_3.jpg)
+					![](http://mohwa.github.io/blog/assets/images/posts/bytesManipulation_3.jpg)
 
 					- 각 <span style="color:#c11f1f">view</span> 에 따라 나눠지는 메모리 공간 .
 
-					![](/Users/sgjeon/blog_doc/img/bytesManipulation_2.jpg)
+					![](http://mohwa.github.io/blog/assets/images/posts/bytesManipulation_2.jpg)
 
 					```javascript
 					/*
@@ -178,7 +178,7 @@ categories: JavaScript
 
 		- 컴퓨터에서 데이터가 저장되는 순서(<span style="color:#c11f1f">byte order</span>)를 말한다.
 
-		![](/Users/sgjeon/blog_doc/img/bytesManipulation_5.jpg)
+		![](http://mohwa.github.io/blog/assets/images/posts/bytesManipulation_5.jpg)
 
 		- 정리:
 
@@ -188,11 +188,11 @@ categories: JavaScript
 
 				- <span style="color:#c11f1f">Little Endian</span> 방식의 장점: 산술연산유닛(ALU)에서 메모리를 읽는 방식이 메모리 주소가 낮은 쪽에서부터 높은 쪽으로 읽기 때문에 산술 연산의 수행이 더 쉽다.(*연산 처리 과정에서 이런 장점이 있는 정도로만 알고 넘어가자...*)
 
-			![](/Users/sgjeon/blog_doc/img/bytesManipulation_6.jpg)
+			![](http://mohwa.github.io/blog/assets/images/posts/bytesManipulation_6.jpg)
 
 			- <span style="color:#c11f1f">Big Endian</span>: 상위 바이트부터 데이터가 저장되는 방식.
 
-			![](/Users/sgjeon/blog_doc/img/bytesManipulation_7.jpg)
+			![](http://mohwa.github.io/blog/assets/images/posts/bytesManipulation_7.jpg)
 
 	- 적용 이유:
 
@@ -412,15 +412,15 @@ categories: JavaScript
 
 				- 원본 이미지
 
-				![](/Users/sgjeon/blog_doc/img/bytesManipulation_8.jpg)
+				![](http://mohwa.github.io/blog/assets/images/posts/bytesManipulation_8.jpg)
 
 				- invert 함수 적용 이미지
 
-				![](/Users/sgjeon/blog_doc/img/bytesManipulation_9.jpg)
+				![](http://mohwa.github.io/blog/assets/images/posts/bytesManipulation_9.jpg)
 
 				- empty 함수 적용 이미지
 
-				![](/Users/sgjeon/blog_doc/img/bytesManipulation_10.jpg)
+				![](http://mohwa.github.io/blog/assets/images/posts/bytesManipulation_10.jpg)
 
 			- 참고 사이트
 
@@ -615,7 +615,7 @@ categories: JavaScript
 
 			- 테스트 결과
 
-				![](/Users/sgjeon/blog_doc/img/bytesManipulation_11.jpg)
+				![](http://mohwa.github.io/blog/assets/images/posts/bytesManipulation_11.jpg)
 
 		- 참고 사이트
 

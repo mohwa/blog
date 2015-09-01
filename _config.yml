@@ -5,6 +5,8 @@ baseurl: "/blog"
 
 # Oveerriden by GitHub Pages: https://help.github.com/articles/using-jekyll-with-pages#configuring-jekyll
 safe: true
+highlighter: pygments
+lsi: false
 
 permalink: pretty
 
@@ -30,7 +32,6 @@ redcarpet:
       - superscript
       - autolink
       - hard_wrap
-
 
 # redcarpet:
 #    extensions: ["smart"]

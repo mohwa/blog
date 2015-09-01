@@ -13,7 +13,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     <link href="/" />
     <description><![CDATA[]]></description>
-    <lastBuildDate>Tue, 01 Sep 2015 21:27:57 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2015 21:51:51 +0900</lastBuildDate>
     <language>en-US</language>
     <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -238,9 +238,7 @@
 <h2>2. JavaScript 를 통해 Binary Data 조작하기</h2>
 
 <ul>
-<li><p><span style="color:#6298c1">예제 소스</span>에서는 <strong>NodeJS</strong> 및 <strong>Socket.IO</strong> 와 관련된 내용은 최대한 배제 하였습니다.(특별히 포스트 내용과 관련 없다고 판단한 내용)</p>
-
-<ul>
+<li><p><span style="color:#6298c1">예제 소스</span>에서는 <strong>NodeJS</strong> 및 <strong>Socket.IO</strong> 와 관련된 내용은 최대한 배제 하였습니다.(특별히 포스트 내용과 관련 없다고 판단한 내용)</p></li>
 <li><p><strong>파일 업로드</strong></p>
 
 <ul>
@@ -630,7 +628,6 @@
 <li><a href="https://simpl.info/video/offline/?1">simpl.info offline video</a></li>
 <li><a href="http://megatuto.com/formation-HTML5.php?HTML5-Examples-Code=MediaSource+error:+This+SourceBuffer+has+been+removed+from+the+parent+media+source+Categorie+javascript+html5+media-source&amp;category=&amp;article=18543">MediaSource 소스 예제</a></li>
 <li><a href="https://nodesource.com/blog/understanding-socketio">Socket IO Stream 코드 예제</a></li>
-</ul></li>
 </ul></li>
 </ul></li>
 </ul>

@@ -20,7 +20,7 @@ categories: designPattern
 
 	- 코드화
 
-    ```c#
+    ```javascript
     public struct Song
     {
         public int lengthInSeconds, yearRecorded;
@@ -55,6 +55,7 @@ categories: designPattern
         lengthInSeconds = 248, yearRecorded = 1988
     */
     ```
+
 	- **구조체**는 **Class** 와 같이 여러 특성(생성자, 상수, 필드, 메서드, 속성, 인덱서, 연산자, 이벤트 등)들을 **그룹화** 하는데 사용된다.
 
 		- **구조체**와 **클래스**는 매우 비슷한 **구조**를 가지고 있으며, <u>**사용 방법** 및 **적용 이유**</u>가 유사하다.
@@ -213,7 +214,7 @@ categories: designPattern
 
 					var obj = {x: 1, y: 2};
 
-					// 메모리 반환 조건을 만들어 준다.
+					// GC에게 메모리 반환 조건을 만들어 준다.
 					obj = null;
 
 					```

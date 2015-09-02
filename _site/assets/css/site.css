@@ -370,22 +370,22 @@ article h1 {
   margin-left: 1.35em;
 }
 
-.post code {
-  background-color: #EAEAEA;
-  padding: 0 .2em;
-}
+/*.post code {*/
+  /*background-color: #EAEAEA;*/
+  /*padding: 0 .2em;*/
+/*}*/
 
 /* terminal */
-pre.terminal {
-  padding: 1px 1px 1px 8px;
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
-}
+/*pre.terminal {*/
+  /*padding: 1px 1px 1px 8px;*/
+  /*border: 1px solid #000;*/
+  /*background-color: #333;*/
+  /*color: #FFF;*/
+/*}*/
 
-pre.terminal code {
-  background-color: #333;
-}
+/*pre.terminal code {*/
+  /*background-color: #333;*/
+/*}*/
 
 /* Quotes */
 blockquote {

@@ -64,7 +64,7 @@ bower install simple-jekyll-search
 
 # Setup
 
-You need to place the following code within the layout where you want he search to appear.
+You need to place the following code within the layout where you want the search to appear.
 
 For example in  **_layouts/default.html**:
 
@@ -229,7 +229,7 @@ Browser support should be about IE6+ with this `addEventListener` [shim](https:/
 
 - `gulp watch` during development
 
-- `npm test` or `npm run watch-test` to run the unit tests
+- `npm test` or `npm run test-watch` to run the unit tests
 
 
 

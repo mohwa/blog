@@ -13,7 +13,7 @@
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     <link href="/" />
     <description><![CDATA[]]></description>
-    <lastBuildDate>Tue, 01 Sep 2015 21:51:51 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2015 13:00:06 +0900</lastBuildDate>
     <language>en-US</language>
     <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -665,31 +665,31 @@
 
 <p><img src="http://mohwa.github.io/blog/assets/images/posts/struct_diagram.jpg?2" alt=""><br>
 - 코드화</p>
-<div class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">public</span> <span class="k">struct</span> <span class="nc">Song</span>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kr">public</span> <span class="nx">struct</span> <span class="nx">Song</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="kt">int</span> <span class="n">lengthInSeconds</span><span class="p">,</span> <span class="n">yearRecorded</span><span class="p">;</span>
+    <span class="kr">public</span> <span class="kr">int</span> <span class="nx">lengthInSeconds</span><span class="p">,</span> <span class="nx">yearRecorded</span><span class="p">;</span>
 
     <span class="c1">// 생성자</span>
-    <span class="k">public</span> <span class="nf">Song</span><span class="p">(</span><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p2</span><span class="p">)</span>
+    <span class="kr">public</span> <span class="nx">Song</span><span class="p">(</span><span class="kr">int</span> <span class="nx">p1</span><span class="p">,</span> <span class="kr">int</span> <span class="nx">p2</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">lengthInSeconds</span> <span class="p">=</span> <span class="n">p1</span><span class="p">;</span>
-        <span class="n">yearRecorded</span> <span class="p">=</span> <span class="n">p2</span><span class="p">;</span>
+        <span class="nx">lengthInSeconds</span> <span class="o">=</span> <span class="nx">p1</span><span class="p">;</span>
+        <span class="nx">yearRecorded</span> <span class="o">=</span> <span class="nx">p2</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="k">class</span> <span class="nc">TestSong</span>
+<span class="kr">class</span> <span class="nx">TestSong</span>
 <span class="p">{</span>
-    <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">()</span>
+    <span class="kr">static</span> <span class="k">void</span> <span class="nx">Main</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="c1">// Initialize:</span>
         <span class="c1">// 생성된 객체는 Stack 메모리에 객체가 할당된다.</span>
-        <span class="n">Song</span> <span class="n">song1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Song</span><span class="p">(</span><span class="m">213</span><span class="p">,</span> <span class="m">1994</span><span class="p">);</span>
-        <span class="n">Song</span> <span class="n">song2</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Song</span><span class="p">(</span><span class="m">248</span><span class="p">,</span> <span class="m">1988</span><span class="p">);</span>
+        <span class="nx">Song</span> <span class="nx">song1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Song</span><span class="p">(</span><span class="mi">213</span><span class="p">,</span> <span class="mi">1994</span><span class="p">);</span>
+        <span class="nx">Song</span> <span class="nx">song2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Song</span><span class="p">(</span><span class="mi">248</span><span class="p">,</span> <span class="mi">1988</span><span class="p">);</span>
 
         <span class="c1">// Display results:</span>
-        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;lengthInSeconds = {0}, yearRecorded = {1}&quot;</span><span class="p">,</span> <span class="n">song1</span><span class="p">.</span><span class="n">lengthInSeconds</span><span class="p">,</span> <span class="n">song1</span><span class="p">.</span><span class="n">yearRecorded</span><span class="p">);</span>
+        <span class="nx">Console</span><span class="p">.</span><span class="nx">WriteLine</span><span class="p">(</span><span class="s2">&quot;lengthInSeconds = {0}, yearRecorded = {1}&quot;</span><span class="p">,</span> <span class="nx">song1</span><span class="p">.</span><span class="nx">lengthInSeconds</span><span class="p">,</span> <span class="nx">song1</span><span class="p">.</span><span class="nx">yearRecorded</span><span class="p">);</span>
 
-        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&quot;lengthInSeconds = {0}, yearRecorded = {1}&quot;</span><span class="p">,</span> <span class="n">song2</span><span class="p">.</span><span class="n">lengthInSeconds</span><span class="p">,</span> <span class="n">song2</span><span class="p">.</span><span class="n">yearRecorded</span><span class="p">);</span>
+        <span class="nx">Console</span><span class="p">.</span><span class="nx">WriteLine</span><span class="p">(</span><span class="s2">&quot;lengthInSeconds = {0}, yearRecorded = {1}&quot;</span><span class="p">,</span> <span class="nx">song2</span><span class="p">.</span><span class="nx">lengthInSeconds</span><span class="p">,</span> <span class="nx">song2</span><span class="p">.</span><span class="nx">yearRecorded</span><span class="p">);</span>
 
     <span class="p">}</span>
 <span class="p">}</span>
@@ -870,10 +870,10 @@
 <ul>
 <li><strong>자동 메모리 관리</strong>의 한 형태이며, 프로세스 수행 중, 더 이상 필요가 없어진 <strong>객체</strong>가 점유하는 <u>메모리에 대해 <span style="color:#c11f1f">반환</span> 작업을 수행</u>한다.</li>
 <li>프로그래머가 직접 메모리를 <span style="color:#c11f1f">반환</span>할 수는 없다.(반드시 <code>GC</code>를 통해 반환된다)</li>
-<li><p>단 GC에게 메모리 <u>**반환** 조건</u>을 만들어 줄 수는 있다.</p>
+<li><p>단 GC에게 메모리 <u><strong>반환</strong> 조건</u>을 만들어 줄 수는 있다.</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">x</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">y</span><span class="o">:</span> <span class="mi">2</span><span class="p">};</span>
 
-<span class="c1">// 메모리 반환 조건을 만들어 준다.</span>
+<span class="c1">// GC에게 메모리 반환 조건을 만들어 준다.</span>
 <span class="nx">obj</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
 </code></pre></div></li>
 </ul></li>

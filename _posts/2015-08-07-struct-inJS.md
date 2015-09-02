@@ -207,7 +207,7 @@ categories: designPattern
 
 				- 프로그래머가 직접 메모리를 <span style="color:#c11f1f">반환</span>할 수는 없다.(반드시 `GC`를 통해 반환된다)
 
-				- 단 GC에게 메모리 <u>**반환** 조건</u>을 만들어 줄 수는 있다.
+				- 단 GC에게 메모리 <u><strong>반환</strong> 조건</u>을 만들어 줄 수는 있다.
 
 					```javascript
 

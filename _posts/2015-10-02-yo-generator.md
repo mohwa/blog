@@ -322,70 +322,70 @@ categories: yeoman
 
         - 아래 코드는 **메서드** 사용에 대한 간단한 **예제**이며, **.html** 파일외에, **APP** 을 구성하는 기반 파일인 **_package.json** 또는 **_gruntfile.js** 와 같은 파일에도 동일하게 적용할 수 있다.
       
-          ```javascript
-          generators.Base.extend({
-              writing: function () {
-              this.fs.copyTpl(
-                this.templatePath('index.html'),
-                this.destinationPath('public/index.html'),
-                { title: 'Templating with Yeoman' }
-              );
-              }
-          });
+            ```javascript
+            generators.Base.extend({
+                writing: function () {
+                this.fs.copyTpl(
+                  this.templatePath('index.html'),
+                  this.destinationPath('public/index.html'),
+                  { title: 'Templating with Yeoman' }
+                );
+                }
+            });
           ```
 	- template 엔진을 통해 아래와 같이 **출력**된다.
 
-          ```javascript
-          <html>
-            <head>
-            <title>Templating with Yeoman</title>
-            </head>
-          </html>
-          ```
+            ```javascript
+            <html>
+              <head>
+              <title>Templating with Yeoman</title>
+              </head>
+            </html>
+            ```
 	- 추가적으로 **의존성**을 관리하는 파일인 **_bower.json** 파일에 적용된 내용이다.
 
-          ```javascript
-          <% var ngVer = "1.2.26" %>
-          {
-            "name": "<%= env.appName %>",
-            "description": "<%= env.appName %> package manager",
-            "homepage": "http://www.cmt-korea.com/",
-            "author": {
-            "name": "sgjeon"
-            },
-        
-            "ignore": [
-            "**/.*",
-            "node_modules",
-            "bower_components"
-            ],
-            "dependencies": {
-            },
-            "devDependencies": {
-            "angular": "<%= ngVer %>",
-            "angular-animate": "<%= ngVer %>",
-            "angular-cookies": "<%= ngVer %>",
-            "angular-route": "<%= ngVer %>",
-            "angular-resource": "<%= ngVer %>",
-            "angular-sanitize": "<%= ngVer %>",
-            "requirejs": "2.1.14",
-            "jquery": "2.1.1",
-            "malihu-custom-scrollbar-plugin": "3.0.8",
-            "jquery-ui": "1.11.2",
-            "json3": "3.3.2",
-            "linqjs": "",
-            "xml2json": "",
-            "purl": "2.3.1",
-            "jquery-mousewheel": "3.0.6",
-            "socket.io-client": "1.3.5",
-            "console.image": "",
-            "enquire": "2.1.2",
-            "angular-local-storage": "0.1.5",
-            "matchMedia": "0.2.0",
-            "jquery.browser": "0.0.7"
+            ```javascript
+            <% var ngVer = "1.2.26" %>
+            {
+              "name": "<%= env.appName %>",
+              "description": "<%= env.appName %> package manager",
+              "homepage": "http://www.cmt-korea.com/",
+              "author": {
+              "name": "sgjeon"
+              },
+          
+              "ignore": [
+              "**/.*",
+              "node_modules",
+              "bower_components"
+              ],
+              "dependencies": {
+              },
+              "devDependencies": {
+              "angular": "<%= ngVer %>",
+              "angular-animate": "<%= ngVer %>",
+              "angular-cookies": "<%= ngVer %>",
+              "angular-route": "<%= ngVer %>",
+              "angular-resource": "<%= ngVer %>",
+              "angular-sanitize": "<%= ngVer %>",
+              "requirejs": "2.1.14",
+              "jquery": "2.1.1",
+              "malihu-custom-scrollbar-plugin": "3.0.8",
+              "jquery-ui": "1.11.2",
+              "json3": "3.3.2",
+              "linqjs": "",
+              "xml2json": "",
+              "purl": "2.3.1",
+              "jquery-mousewheel": "3.0.6",
+              "socket.io-client": "1.3.5",
+              "console.image": "",
+              "enquire": "2.1.2",
+              "angular-local-storage": "0.1.5",
+              "matchMedia": "0.2.0",
+              "jquery.browser": "0.0.7"
+              }
             }
-          }
-          ```
+            ```
 - 전역 **configurations** 파일 관리하기
 
 	- **Yeoman** 은 숨김 파일인 **.yo-rc.json** 파일을 통해 전역 **configurations** 을 관리할 수 있으며, 또 그것을 관리하기 위한 [Yeoman Storage API](http://yeoman.io/generator/Storage.html) 를 제공하고있다.

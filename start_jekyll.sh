@@ -3,6 +3,8 @@
 #cd `dirname $BASH_SOURCE`
 #LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 jekyll serve --watch --drafts
 
-jekyll build --watch
+
+jekyll build
+jekyll serve --watch
 
 

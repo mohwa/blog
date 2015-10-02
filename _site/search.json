@@ -1,6 +1,18 @@
 [
 
 {
+  "title"    : "Yeoman-Generator",
+  "category" : "",
+  "tags"     : [ null],
+  "href"     : "/blog/yeoman/2015/10/02/yo-generator/",
+  "date"  : "2015-10-02",
+  "day"   : "02",
+  "month" : "October",
+  "year"  : "2015"
+}
+,
+
+{
   "title"    : "Selection",
   "category" : "",
   "tags"     : [ null],

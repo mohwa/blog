@@ -23,6 +23,7 @@
 
     <script type="text/javascript">
 
+        // code highlight 적용
         // https://highlightjs.org/static/demo/
         $(document).ready(function() {
             $('pre code').each(function(i, block) {
@@ -31,6 +32,7 @@
         });
     </script>
 </head>
+
 <body>
 
   <div class="top-bar"></div>
@@ -57,9 +59,24 @@
       </header>
       <div class="separator"></div>
       <ul id="results-container" class="results-container"></ul>
-      <section>
+      <!-- ./_layouts/default.html 파일에 정의된  영역으로 아래 내용들이 들어간다. -->
+<section>
   <ul class="posts">
     <!-- This loops through the paginated posts -->
+    
+      <li>
+        <h2>
+          <a href="/blog/yeoman/2015/10/02/yo-generator/">Yeoman-Generator</a>
+        </h2>
+        <p>
+          <span class="date">2015-10-02 12:00:00 AM</span>
+          <span class="description"></span>
+
+        </p>
+        <!--<ul class="tags cf">-->
+          <!---->
+        <!--</ul>-->
+      </li>
     
       <li>
         <h2>
@@ -183,14 +200,25 @@
     <!--</ul>-->
 <!--</li>-->
 <!---->
+<!--<li><a name="yeoman">yeoman</a>-->
+    <!--<ul>-->
+        <!---->
+        <!---->
+        <!--<li><a href=""></a></li>-->
+        <!---->
+        <!---->
+        <!---->
+        <!--<li><a href="/yeoman/2015/10/02/yo-generator/">Yeoman-Generator</a></li>-->
+        <!---->
+        <!---->
+    <!--</ul>-->
+<!--</li>-->
+<!---->
 </section>
 
       <div class="separator"></div>
     </div>
   </div>
-
-  <!--<div class="clear"></div>-->
-
   <footer>
     <!--<p>-->
     <!--Powered by <a href="http://jekyllrb.com/">Jekyll</a>,-->

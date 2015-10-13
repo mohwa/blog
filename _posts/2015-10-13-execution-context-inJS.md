@@ -6,6 +6,8 @@ categories: javascript
 #tags: [JavaScript]
 ---
 
+이 글은 오래전 [김훈민](http://huns.me/)님의 블로그 글을 통해 **ECMA-262-3 in detail** 번역본을 정독 후, 개인적인 테스트를 통해 다시한번 정리해본 내용입니다. 
+
   ![](https://www.dropbox.com/s/c9rg72fludmb0ak/84.png?dl=1)
  
 - **Execution Context** 는 일종의 [Call Stack](http://ko.wikipedia.org/wiki/%EC%BD%9C_%EC%8A%A4%ED%83%9D) 형태를 취하고 있으며, Stack 의 **바닥**에는 Global **Execution Context** 가 존재하고, 가장 **상위**에는 **현재 활성화된 Execution Context** 가 놓이게된다.
@@ -123,7 +125,7 @@ categories: javascript
 
 - [ECMA-262-3 IN DETAIL. CHAPTER 1. EXECUTION CONTEXTS](http://dmitrysoshnikov.com/ecmascript/chapter-1-execution-contexts/)
 
-- [ECMA-262-3 IN DETAIL. CHAPTER 1. EXECUTION CONTEXT 번역 글](http://huns.me/%EB%B2%88%EC%97%AD-ecma-262-3-in-detail-chapter-1-execution-contexts/)
+- [ECMA-262-3 IN DETAIL. CHAPTER 1. EXECUTION CONTEXT 번역 글](http://huns.me/development/159)
 
 - [What is the Execution Context & Stack in JavaScript?](http://davidshariff.com/blog/what-is-the-execution-context-in-javascript/)
 

@@ -18,9 +18,9 @@ categories: javascript
 
 - <span style="color:#c11f1f">ECStack</span> 은 여러 종류의 **Execution Context** 들이 들어오고 나가면서(pushed or poped), 지속적으로 관리(변경)된다.
 
-- [런타임 시점](http://mohwa.github.io/blog/javascript/2015/10/09/prototype/)에서 **실행 코드**를 만나게되면 해당되는 **Execution Context** 가 생성되고, 생성된 **Execution Context**  안에서 **실행 코드**가 처리된다.
+  - <span style="color:#c11f1f">ECStack</span> 은 **LIFO**(Last In First out) 자료구조를 가진다.
 
-- <span style="color:#c11f1f">ECStack</span> 은 **LIFO**(Last In First out) 를 가진다.
+- [런타임 시점](http://mohwa.github.io/blog/javascript/2015/10/09/prototype/)에서 **실행 코드**를 만나게되면 해당되는 **Execution Context** 가 생성되고, 생성된 **Execution Context**  안에서 **실행 코드**가 처리된다.
 
   - **Execution Context** 예 1
   

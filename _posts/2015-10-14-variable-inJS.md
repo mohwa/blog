@@ -1,0 +1,108 @@
+---
+layout: post
+title: "Variable in JS"
+date:   2015-10-14
+categories: javascript
+#tags: [JavaScript]
+---
+
+- <span style="color:#6298c1">var</span> 키워드를 통한 **변수 선언식**만 **변수**로 인정된다.
+	
+	- <span style="color:#6298c1">var</span> 키워드를 통한 **변수 선언식**이 아닌 y 변수는, Execution context 진입 시 <span style="color:#c11f1f">VO</span> **속성**으로 추가되지 않는다.
+
+          ```javascript
+        
+          // global Execution Context
+          
+          // var 키워드를 통해 변수가 선언되었다.
+          // Execution context 진입 시 undefined 로 초기화된다.
+          console.log(this.x); // undefined
+          console.log(x); // undefined
+          
+          var x = 1;
+          
+          // var 키워드가 생략되었다.
+          // Execution context 진입 시 undefined 로 초기화 되지 않으며, 그에 따라 런타임 에러가 발생한다.
+          console.log(y); // Uncaught ReferenceError: y is not defined
+          y = 2;
+        
+          ```
+
+	- Execution context 진입 시 <span style="color:#c11f1f">ECStack</span> 내부
+
+          ```javascript
+          var ECStack = [
+            globalExecutionContext: {
+              VO: {
+                x: undefined
+              }
+            }
+          ];
+          ```
+	- 하지만 y 변수는, **실행 코드 처리 후**에는 <span style="color:#c11f1f">VO</span> 의 새로운 속성으로 추가되었다.
+
+          ```javascript
+        
+          // global Execution Context
+          
+          // Execution context 진입 시 VO의 새로운 속성으로 추가되지않는다.
+          y = 2;
+          
+          // 실행 코드 처리 후 VO 속성으로 추가되었다.
+          console.log(y); // 2
+          console.log(this.y); // 2
+          ```
+
+	- **변수 선언식**을 통해 생성된 **변수**는 <span style="color:#c11f1f">delete</span> 연산자를 통해 **삭제**(초기화)되지 않는다.
+	
+          ```javascript
+          
+          // global Execution Context
+          
+          var x = 1;
+          
+          y = 2;
+          
+          // delete 연산자를 통해 x 변수를 삭제한다.
+          delete window['x'];
+          
+          // delete 연산자를 통해 y 속성을 삭제한다.
+          delete window['y'];
+          
+          // x 변수는 삭제(초기화)되지 않는다.
+          console.log(window['x']); // 1
+          
+          // y 속성은 삭제(초기화)되었다.
+          console.log(window['y']); // undefined
+          ```
+	- <span style="color:#6298c1">eval</span> 함수를 통한 **변수 선언식**은 **변수**로 선언되지 않는다.(<span style="color:#c11f1f">VO</span> 속성으로 추가된다)
+	
+	    - **변수**로 선언되지 않는다
+	    
+            ```javascript
+            
+            // global Execution Context
+            
+            console.log(x); // Uncaught ReferenceError: x is not defined
+        
+            // var 키워드를 통한 변수 선언식
+            eval('var x = 1');
+            ```
+
+      - <span style="color:#c11f1f">VO</span> 속성으로 추가된다
+      
+            ```javascript
+            // global Execution Context
+            
+            // var 키워드를 통한 변수 선언식
+            eval('var x = 1');
+            
+            console.log(this.x); // 1
+            
+            // 선언된 변수 삭제
+            delete window['x'];
+            
+            // 변수가 아닌 VO 의 x 속성은 delete 연산자를 통해 삭제(초기화)된다.
+            console.log(window['x']); // undefined
+
+            ```

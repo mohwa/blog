@@ -1,1 +1,3 @@
-#임시로 GitHub Page 를 통해 블로깅을 시작합니다.
+# jekyll 블로그
+
+http://mohwa.github.io/blog/

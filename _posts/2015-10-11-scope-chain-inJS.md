@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Scope Chain in JS"
+title: "Scope Chain 그리고 Closure"
 date:   2015-10-11
 categories: javascript
 #tags: [JavaScript]
@@ -68,7 +68,7 @@ categories: javascript
             }
           ```
 - **함수 생명 주기** 와 Function Execution Context 의 **Scope Chain**
-
+      
 	- 함수 생명 주기는 **함수 생성**과 **함수 호출**로 나눌 수 있다.
 	
 	- 함수 생성
@@ -78,7 +78,7 @@ categories: javascript
 		- [[Scope]] property 는 직접적인 접근이 불가능하며, **초기화**된 값은 변경되지 않는다.<p>
 
 		- [[Scope]] property 는 해당 function execution context 상위에 있는 <u>모든 부모 계층의 <span style="color:#c11f1f">VO</span> 를 갖는다.</u><p>
-
+		
       - A 함수를 선언한다
   
               ```javascript
@@ -147,10 +147,10 @@ categories: javascript
               ```
 
 	- 함수 호출
-	
-		- 함수 호출시, function execution context 내부에 **Scope Chain** 이 추가된다.
-
-		- 함수 호출시, function execution context 내부 <span style="color:#c11f1f">AO</span>(VO)는 **Scope Chain** 의 <u>**가장 앞**에 추가된다.</u>
+   
+		- 함수 호출 시, function execution context 내부에 **Scope Chain** 이 추가된다.<p>
+		
+		- 생성된 **Scope Chain** 은 함수 [[Scope]] property 를 그대로 가져가 **할당**되며, function execution context 내부 <span style="color:#c11f1f">AO</span>(VO)는 **Scope Chain** 의 <u>**가장 앞**에 추가된다.</u>
 
             ```javascript
         
@@ -449,6 +449,38 @@ categories: javascript
                 }
               ];
               ```
+
+- JS 에서 말하는 [Closure](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures)란? 별도의 **개념**이 아닌, <u>**Scope Chain 매커니즘**</u>에 의한 **바인딩 환경**을 말하는것이다.<p>
+  
+    - Closure 설명하는 일반적인 예제
+    
+          ```javascript
+          
+          // global execution context
+          
+          function makeAdder(x) {
+            
+            // function execution context
+            
+            // 반환되는 익명함수에는 Scope Chain 매커니즘에 의해 부모 계층의 모든 VO 가 포함되어있다.
+            // 부모 계층의 AO(VO)({x: 5 or 10})
+            return function(y) {
+            
+              // function execution context
+              // Scope Chain 의 식별자 검색을 통해 부모 계층의 Vo.x 속성을 사용한다.
+              
+              // anonymousFunctionExecutionContext.scopeChain.makeAdderFunctionExecutionContext.AO.x
+              // anonymousFunctionExecutionContext.scopeChain.AO.y
+              return x + y;
+            };
+          }
+          
+          var add5 = makeAdder(5);
+          var add10 = makeAdder(10);
+          
+          print(add5(2));  // 7
+          print(add10(2)); // 12
+          ```
 
 - Eval Execution Context 의 **Scope Chain**
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Yeoman-Generator"
-date:   2015-10-02
+date:   2015-10-16
 categories: yeoman
 #tags: [JavaScript]
 ---

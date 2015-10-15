@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "function in JS"
+title: "Function in JS"
 date:   2015-10-15
 categories: javascript
 #tags: [JavaScript]

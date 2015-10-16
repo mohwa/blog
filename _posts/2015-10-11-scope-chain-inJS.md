@@ -635,12 +635,14 @@ categories: javascript
             }
           ];
         ```
-- **Scope Chain 확장**과 with 문
+- **Scope Chain** 을 **확장**하는 with 문 과 catch 절
 
-  - with 문을 만나면, 해당 Execution Context 의 **Scope Chain** 은 전달된 인자로 **확장**된다.<p>
-
-      - <span style="color:#c11f1f">실행 코드</span>
+    - with 문
     
+        - with 문을 만나면, 해당 Execution Context 의 **Scope Chain** 은 전달된 인자로 **확장**된다.<p>
+    
+        - <span style="color:#c11f1f">실행 코드</span>
+        
             ```javascript
       
               // global execution context
@@ -674,8 +676,8 @@ categories: javascript
       
               displayInfo();
             ```
-      - <span style="color:#c11f1f">ECStack</span> 내부
-    
+        - <span style="color:#c11f1f">ECStack</span> 내부
+        
             ```javascript
               var ECStack = [
                 functionExecutionContext: { // A function object
@@ -716,40 +718,40 @@ categories: javascript
                 }
               ];
             ```
-
-- catch 절
-
-  - catch 절을 만나면, 해당 Execution Context 의 **Scope Chain** 은 전달된 인자(ex)로 **확장**된다.<p>
     
-        ```javascript
-  
-          // global execution context
-  
-          try{
-          
-            a; // error
-          }
-          catch(ex){
-          
-            // globalExecutionContext.scopeChain.catchObject(ex).message
-            console.log(ex.message);
-          }
-        ```
-    - <span style="color:#c11f1f">ECStack</span> 내부
+    - catch 절
     
-        ```javascript
-          var ECStack = [
-            globalExecutionContext: {
-              VO: {
-              },
-              Scope(Scope Chain): [
-                globalExecutionContext.VO: {
-                },
-                catchObject(<exception object>): {
-                  message: 'a is not defined',
-                  ...
-                }
-              ]					
-            }
-          ];
-        ```	
+        - catch 절을 만나면, 해당 Execution Context 의 **Scope Chain** 은 전달된 인자(ex)로 **확장**된다.<p>
+      
+            ```javascript
+      
+              // global execution context
+      
+              try{
+              
+                a; // error
+              }
+              catch(ex){
+              
+                // globalExecutionContext.scopeChain.catchObject(ex).message
+                console.log(ex.message);
+              }
+              ```
+        - <span style="color:#c11f1f">ECStack</span> 내부
+        
+              ```javascript
+                var ECStack = [
+                  globalExecutionContext: {
+                    VO: {
+                    },
+                    Scope(Scope Chain): [
+                      globalExecutionContext.VO: {
+                      },
+                      catchObject(<exception object>): {
+                        message: 'a is not defined',
+                        ...
+                      }
+                    ]					
+                  }
+                ];
+              ```	

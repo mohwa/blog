@@ -28,8 +28,17 @@ layout: default
     <div class="related-posts-title"><h2>Related Posts</h2></div>
     <div class="related-posts-list">
       <ul>
-        {% for post in site.related_posts %}
-        <li><a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+        {% for post in site.related_posts limit:7 %}
+          <!-- match 를 false 로 초기화한다 -->
+          <!--{% assign match = false %}-->
+          {% for category in post.categories %}
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          {% if page.categories contains category %}
+              <li><a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+          {% endif %}
+          {% endfor %}
+          <!--{% if match %}-->
+          <!--{% endif %}-->
         {% endfor %}
       </ul>
     </div>

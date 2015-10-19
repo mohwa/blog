@@ -2,7 +2,7 @@
 layout: post
 title: "Yeoman-Generator"
 date:   2015-10-16
-categories: generator
+categories: [generator]
 tags: [generator]
 ---
 

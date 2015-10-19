@@ -2,7 +2,7 @@
 layout: post
 title: "ObjectPool in JS"
 date:   2015-10-16
-categories: designPattern
+categories: [designPattern]
 tags: [designPattern, objectPool, C#, C++, Java, JavaScript]
 ---
 

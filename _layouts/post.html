@@ -21,11 +21,6 @@ layout: default
   <div class="post">
   {{ content }}
   </div>
-  <ul class="tags post-tags cf">
-    {% for tag in page.tags %}
-    <li><a href="/search/?tags={{ tag }}">{{ tag | downcase }}</a></li>
-    {% endfor %}
-  </ul>
 </article>
 
 <section class="post-footer">

@@ -6,29 +6,39 @@ categories: javascript
 tags: [JavaScript]
 ---
 
-- <span style="color:#6298c1">var</span> 키워드를 통한 **변수 선언식**만 **변수**로 인정된다.
+- 변수는 오직 <span style="color:#6298c1">var</span> 키워드를 통해, **선언**된다.
 	
-	- <span style="color:#6298c1">var</span> 키워드를 통한 **변수 선언식**이 아닌 y 변수는, Execution context 진입 시 <span style="color:#c11f1f">VO</span> **속성**으로 추가되지 않는다.
+	- 즉 <span style="color:#6298c1">var</span> 키워드가 생략된 y 속성은, <u>**변수가 아닌** <span style="color:#c11f1f">VO</span> 의 **속성**일 뿐이며</u>, Execution Context 진입 시에는, <span style="color:#c11f1f">VO</span> 의 새로운 **속성**으로 추가되지 않는다.
 
           ```javascript
         
           // global Execution Context
           
           // var 키워드를 통해 변수가 선언되었다.
-          // Execution context 진입 시 undefined 로 초기화된다.
+          // Execution Context 진입 시 undefined 로 초기화된다.
           console.log(this.x); // undefined
           console.log(x); // undefined
           
+          // var 키워드를 통한 변수 선언
           var x = 1;
           
-          // var 키워드가 생략되었다.
-          // Execution context 진입 시 undefined 로 초기화 되지 않으며, 그에 따라 런타임 에러가 발생한다.
-          console.log(y); // Uncaught ReferenceError: y is not defined
+        
+          try{
+        
+            // Execution Context 진입 시 VO 의 새로운 속성으로 추가되지않으며, 그에 따라 런타임 에러가 발생한다.
+            console.log(y);
+          }
+          catch(ex){
+            console.log(ex.message); // y is not defined
+          }
+         
+          
+          // var 키워드가 생략된 y 속성
           y = 2;
         
           ```
 
-	- Execution context 진입 시 <span style="color:#c11f1f">ECStack</span> 내부
+	- Execution Context 진입 시 <span style="color:#c11f1f">ECStack</span> 내부
 
           ```javascript
           var ECStack = [
@@ -39,43 +49,52 @@ tags: [JavaScript]
             }
           ];
           ```
-	- 하지만 y 변수는, **실행 코드 처리 후**에는 <span style="color:#c11f1f">VO</span> 의 새로운 속성으로 추가되었다.
+	- **실행 코드 처리 후**에는 <span style="color:#c11f1f">VO</span> 의 새로운 **속성**으로 추가된다.
 
           ```javascript
         
           // global Execution Context
           
-          // Execution context 진입 시 VO의 새로운 속성으로 추가되지않는다.
-          y = 2;
+          // Execution Context 진입 시 VO 의 새로운 속성으로 추가되지않는다.
+          y = 2; // 실행 코드
           
-          // 실행 코드 처리 후 VO 속성으로 추가되었다.
+          // 실행 코드 처리 후 VO 의 속성으로 추가되었다.
           console.log(y); // 2
           console.log(this.y); // 2
           ```
 
-	- **변수 선언식**을 통해 생성된 **변수**는 <span style="color:#c11f1f">delete</span> 연산자를 통해 **삭제**(초기화)되지 않는다.
+	- **변수 선언식**을 통해, 생성된 **변수**는 <u>non-configurable</u> **속성**으로 정의되어있으며, <span style="color:#c11f1f">delete</span> 연산자를 통해 **삭제**되지 않는다.
 	
           ```javascript
           
           // global Execution Context
           
+          // var 키워드를 통한 x 변수는 non-configurable 속성을 가지고있다.
           var x = 1;
           
+          // var 키워드가 생략된 y 속성은 configurable 속성을 가지고있다.
           y = 2;
           
+          
+          // Object {value: 1, writable: true, enumerable: true, configurable: false}
+          console.log(Object.getOwnPropertyDescriptor(this, 'x'));
+          
+          // Object {value: 2, writable: true, enumerable: true, configurable: true}
+          console.log(Object.getOwnPropertyDescriptor(this, 'y'));
+          
           // delete 연산자를 통해 x 변수를 삭제한다.
-          delete window['x'];
+          delete this.x;
           
           // delete 연산자를 통해 y 속성을 삭제한다.
-          delete window['y'];
+          delete this.y;
           
-          // x 변수는 삭제(초기화)되지 않는다.
-          console.log(window['x']); // 1
+          // x 변수는 non-configurable 속성으로 delete 연산자를 통해, 삭제되지 않는다.
+          console.log(x); // 1
           
-          // y 속성은 삭제(초기화)되었다.
-          console.log(window['y']); // undefined
+          // y 속성은 configurable 속성으로 delete 연산자를 통해, 삭제된다.
+          console.log(this.y); // undefined
           ```
-	- <span style="color:#6298c1">eval</span> 함수를 통한 **변수 선언식**은 **변수**로 선언되지 않는다.(<span style="color:#c11f1f">VO</span> 속성으로 추가된다)
+	- <span style="color:#6298c1">eval</span> 함수를 통한 **변수 선언식**은 **변수**로 선언되지 않는다.(<span style="color:#c11f1f">VO</span> 의 **속성**으로 추가된다)
 	
 	    - **변수**로 선언되지 않는다
 	    
@@ -89,7 +108,7 @@ tags: [JavaScript]
             eval('var x = 1');
             ```
 
-      - <span style="color:#c11f1f">VO</span> 속성으로 추가된다
+      - <span style="color:#c11f1f">VO</span> 의 **속성**으로 추가된다
       
             ```javascript
             // global Execution Context
@@ -106,3 +125,10 @@ tags: [JavaScript]
             console.log(window['x']); // undefined
 
             ```
+- [var](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/var)
+
+- [ECMA-262-3 in detail. Chapter 2. Variable object 번역 글](http://huns.me/development/189)
+
+- [Strict Mode (JavaScript)](https://msdn.microsoft.com/en-us/library/br230269(v=vs.94).aspx)
+
+- [Special Operators](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Obsolete_Pages/Core_JavaScript_1.5_Guide/Operators/Special_Operators#delete)

@@ -4,6 +4,9 @@ title: Mohwa blog
 baseurl: "/blog"
 
 # Oveerriden by GitHub Pages: https://help.github.com/articles/using-jekyll-with-pages#configuring-jekyll
+# http://stackoverflow.com/questions/16988190/jekyll-plugin-not-working-on-local-machine
+# 지킬 내부의 plugins/*.rb 파일이 실행안되는 이유는 safe mode 가 false 로 되어있어야 하며, nodeJS 가 설치되어있어야 한다.(아마도;;)
+# Pc 이전 후 테스트 해보기로 하자 !!(현재는 내 mac 이 아니니까!!)
 safe: true
 highlighter: pygments
 lsi: false
@@ -13,6 +16,9 @@ permalink: pretty
 # Conversion
 markdown: redcarpet
 markdown_ext:  markdown,mkdown,mkdn,mkd,md
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data", "strikethrough", "superscript"]
+
 lsi: false
 excerpt_separator: "\n\n"
 
@@ -22,16 +28,6 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   use_coderay: false
-
-redcarpet:
-    extensions:
-      - no_intra_emphasis
-      - fenced_code_blocks
-      - tables
-      - strikethrough
-      - superscript
-      - autolink
-      - hard_wrap
 
 # redcarpet:
 #    extensions: ["smart"]

@@ -3,7 +3,7 @@ layout: post
 title: "Variable in JS"
 date:   2015-10-14
 categories: javascript
-#tags: [JavaScript]
+tags: [JavaScript]
 ---
 
 - <span style="color:#6298c1">var</span> 키워드를 통한 **변수 선언식**만 **변수**로 인정된다.

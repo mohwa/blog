@@ -3,7 +3,7 @@ layout: post
 title: "Scope Chain 그리고 Closure"
 date:   2015-10-11
 categories: javascript
-#tags: [JavaScript]
+tags: [JavaScript]
 ---
 
 - Execution Context 와 <span style="color:#c11f1f">ECStack</span> 내부

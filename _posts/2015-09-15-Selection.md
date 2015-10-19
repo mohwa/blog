@@ -3,7 +3,7 @@ layout: post
 title: "Selection"
 date:   2015-09-15
 categories: JavaScript
-#tags: [JavaScript]
+tags: [JavaScript]
 ---
 
 

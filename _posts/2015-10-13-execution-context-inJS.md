@@ -3,7 +3,7 @@ layout: post
 title: "Execution Context in JS"
 date:   2015-10-13
 categories: javascript
-#tags: [JavaScript]
+tags: [JavaScript]
 ---
 
 이 글은 오래전 [김훈민](http://huns.me/)님의 블로그 글을 통해 **ECMA-262-3 in detail** 번역본을 정독 후, 개인적인 테스트를 통해 다시한번 정리해본 내용입니다. 

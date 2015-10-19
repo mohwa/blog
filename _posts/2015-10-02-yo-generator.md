@@ -3,7 +3,7 @@ layout: post
 title: "Yeoman-Generator"
 date:   2015-10-16
 categories: yeoman
-#tags: [JavaScript]
+tags: [generator]
 ---
 
 ##1. 문서 내용에 대해

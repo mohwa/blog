@@ -3,7 +3,7 @@ layout: post
 title: "JS Enumerable(열거자) or Nonenumerable(비 열거자)"
 date:   2015-10-09
 categories: javascript
-#tags: [JavaScript]
+tags: [JavaScript]
 ---
 
 ##1. 정의

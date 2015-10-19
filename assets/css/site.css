@@ -253,7 +253,7 @@ nav a.selected:hover {
 }
 
 .social-icon {
- padding: 0.2em 0; 
+ padding: 0.2em 0;
 }
 
 .about-me h1 {
@@ -401,6 +401,25 @@ blockquote {
   font-style: italic;
 }
 
+.post-footer .related-posts .related-posts-title{
+
+    position: relative;
+
+    width: 100%;
+
+    font-style: normal;
+    margin-bottom: 0.6em;
+}
+
+.post-footer .related-posts .related-posts-list{
+  font-style: normal;
+}
+
+.post-footer .related-posts .related-posts-list li{
+  margin-bottom: 0.3em;
+}
+
+
 /*Tag from https://alexpearce.me*/
 .tags {
   padding: 0;
@@ -523,22 +542,22 @@ img {
   padding: 6px 12px;
 }
 
-.clearfix:after { 
-  content: "."; 
-  display: block; 
-  clear: both; 
-  visibility: hidden; 
-  line-height: 0; 
-  height: 0; 
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
-.clearfix { 
-  display: inline-block; 
+.clearfix {
+  display: inline-block;
 }
-html[xmlns] .clearfix { 
-  display: block; 
+html[xmlns] .clearfix {
+  display: block;
 }
-* html .clearfix { 
-  height: 1%; 
+* html .clearfix {
+  height: 1%;
 }
 
 /*****************************************************************************/

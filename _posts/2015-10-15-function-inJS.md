@@ -3,7 +3,7 @@ layout: post
 title: "Function in JS"
 date:   2015-10-15
 categories: javascript
-#tags: [JavaScript]
+tags: [JavaScript]
 ---
 
 - JS 의 다양한 함수 식

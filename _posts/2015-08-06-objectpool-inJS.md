@@ -3,7 +3,7 @@ layout: post
 title: "ObjectPool in JS"
 date:   2015-10-16
 categories: designPattern
-#tags: [objectPool, C#, C++, JAVA, JavaScript, designPattern]
+tags: [objectPool, C#, C++, Java, JavaScript, designPattern]
 ---
 
 ##1. 정의

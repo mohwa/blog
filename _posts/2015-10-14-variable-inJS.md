@@ -101,7 +101,8 @@ tags: [JavaScript]
             ```javascript
             
             // global Execution Context
-            
+             
+            // Execution Context 진입 시 VO 의 새로운 속성으로 추가되지않아, 런타임 에러가 발생한다.
             console.log(x); // Uncaught ReferenceError: x is not defined
         
             // var 키워드를 통한 변수 선언식
@@ -113,16 +114,20 @@ tags: [JavaScript]
             ```javascript
             // global Execution Context
             
-            // var 키워드를 통한 변수 선언식
+            // eval 함수를 통한 변수 선언식
             eval('var x = 1');
+            
+            // 정의된 객체 속성을 나열한다.(x 속성은 configurable 속성으로 정의되어있다)
+            // Object {value: 1, writable: true, enumerable: true, configurable: true}
+            console.log(Object.getOwnPropertyDescriptor(this, 'x'));
             
             console.log(this.x); // 1
             
-            // 선언된 변수 삭제
-            delete window['x'];
+            // delete 연산자를 통해 x 속성을 삭제한다.
+            delete this.x;
             
-            // 변수가 아닌 VO 의 x 속성은 delete 연산자를 통해 삭제(초기화)된다.
-            console.log(window['x']); // undefined
+            // 변수(non-configurable)가 아닌, VO 의 x 속성은 delete 연산자를 통해 삭제된다.
+            console.log(this.x); // undefined
 
             ```
 - [var](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/var)

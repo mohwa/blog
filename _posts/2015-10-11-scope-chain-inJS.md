@@ -35,15 +35,16 @@ tags: [JavaScript]
       ```javascript
       var ECStack = [
         // B function execution context
-        activeFunctionExecutionContext: { 
+        <B> activeFunctionExecutionContext: { 
           AO(VO): {
             y: 2
           }
         },
         // A function execution context
-        functionExecutionContext: {
+        <A> functionExecutionContext: {
           AO(VO): {
-            x: 1
+            x: 1,
+            B: < reference to function >
           }
         },
         // global execution context
@@ -173,18 +174,18 @@ tags: [JavaScript]
             
               var ECStack = [
                 // A function execution context
-                functionExecutionContext: {
+                <A> functionExecutionContext: {
                   AO(VO): {
                     y: 2
                   },
                   Scope(Scope Chain): [
+                    // 함수 호출 시, 생성된 AO 는 Scope Chain 의 가장 앞(ScopeChain[0])에 추가되며, 식별자 검색 시 가장 먼저 검색된다.
+                    AO(VO): {
+                      y: 2
+                    },                  
                     globalExecutionContext.VO: {
                       x: 1,
                       A: < reference to function >
-                    },
-                    // 함수 호출 시 생성된 AO 는 Scope Chain 의 가장 앞에 추가되며, Scope Chain 의 식별자 검색 시 가장 먼저 검색된다.
-                    AO(VO): {
-                      y: 2
                     }
                   ]
                 },
@@ -199,7 +200,7 @@ tags: [JavaScript]
 
 	- 식별자 해석 과정
 		
-		- **식별자** 검색 순서는 <u>**Scope Chain** 의 가장 **바닥**에서 가장 **상위**</u> 까지 검색 후, 그 값을 반환한다.
+		- **식별자** 검색 순서는 <u>**Scope Chain** 의 가장 **바닥**(ScopeChain[0])에서부터</u>, <u>가장 **상위**(ScopeChain[scope.length]) 까지</u> 검색 후, 그 값을 반환한다.
 
             ```javascript
         
@@ -225,17 +226,17 @@ tags: [JavaScript]
 
             ```javascript
               var ECStack = [
-                functionExecutionContext: {
+                <A> functionExecutionContext: {
                   AO(VO): {
                     y: 2
                   },
                   Scope(Scope Chain): [
+                    AO(VO): {
+                      y: 2
+                    },                  
                     globalExecutionContext.VO: {
                       x: 1,
                       A: < reference to function >
-                    },
-                    AO(VO): {
-                      y: 2
                     }
                   ]
                 },
@@ -248,7 +249,7 @@ tags: [JavaScript]
               ];
             ```
 
-		- 만약 각 Execution Context 에 선언된 <strong>식별자 이름</strong>이 같은 경우, 위에서 언급한 <strong>Scope Chain</strong> 의 <strong>검색 순서</strong>로 해당 값이 정해지게 된다.
+		- 만약, 각 Execution Context 에 선언된 <strong>식별자 이름</strong>이 같은 경우, 위에서 언급한 <strong>Scope Chain</strong> 의 <strong>검색 순서</strong>로 해당 값이 정해지게 된다.
         
         - BFunctionExecutionContext.AO.y
         
@@ -342,37 +343,37 @@ tags: [JavaScript]
             ```javascript
             var ECStack = [
       
-              activeFunctionExecutionContext: {
+              <B> activeFunctionExecutionContext: {
                 AO(VO): {
                   y: 3
                 },
                 Scope(Scope Chain): [
+                  AO(VO): {
+                    y: 3
+                  },                
+                  <A> functionExecutionContext.AO(VO): {
+                    y: 2,
+                    B: < reference to function >
+                  },                
                   globalExecutionContext.VO: {
                     y: 1,
                     A: < reference to function >
-                  },
-                  AFunctionExecutionContext.AO(VO): {
-                    y: 2,
-                    B: < reference to function >
-                  },
-                  AO(VO): {
-                    y: 3
                   }
                 ]
               },
-              functionExecutionContext: {
+              <A> functionExecutionContext: {
                 AO(VO): {
                   y: 2,
                   B: < reference to function >
                 },
                 Scope(Scope Chain): [
-                  globalExecutionContext.VO: {
-                    y: 1,
-                    A: < reference to function >
-                  },
                   AO(VO): {
                     y: 2,
                     B: < reference to function >
+                  },                
+                  globalExecutionContext.VO: {
+                    y: 1,
+                    A: < reference to function >
                   }
                 ]
               },
@@ -391,7 +392,7 @@ tags: [JavaScript]
         
             // global execution context
       
-            var num2 = 10;
+            var num2 = 5;
       
             function add(num1, num2){
       
@@ -415,7 +416,7 @@ tags: [JavaScript]
           
               ```javascript
               var ECStack = [
-                functionExecutionContext: { // A function object
+                <add> functionExecutionContext: {
                   AO(VO): {
                     arguments: {
                       0: 5,
@@ -425,11 +426,6 @@ tags: [JavaScript]
                     num2: 10
                   },
                   Scope(Scope Chain): [
-                    globalExecutionContext.VO: {
-                      add: < reference to function >,
-                      result: undefined,
-                      num2: 10
-                    },
                     AO(VO): {
                       arguments: {
                         0: 5,
@@ -437,14 +433,19 @@ tags: [JavaScript]
                       },
                       num1: 5,
                       num2: 10
+                    },                  
+                    globalExecutionContext.VO: {
+                      result: undefined,
+                      add: < reference to function >,
+                      num2: 5
                     }
                   ]
                 },
                 globalExecutionContext: {
                   VO: {
+                    result: undefined,                  
                     add: < reference to function >,
-                    result: undefined,							
-                    num2: 10
+                    num2: 5
                   }
                 }
               ];
@@ -612,16 +613,15 @@ tags: [JavaScript]
           var ECStack = [
             functionExecutionContext: { // A function object
               AO(VO): {
-                arguments: {}
               },
               Scope(Scope Chain): [
+                AO(VO): {
+                },              
                 globalExecutionContext.VO: {
                   A: < reference to function >,
                   __proto__: {
                     x: 1
                   }
-                },
-                AO(VO): {
                 }
               ]
             },
@@ -645,48 +645,58 @@ tags: [JavaScript]
         
             ```javascript
       
-              // global execution context
-      
-              // globalExecutionContext.VO.person
-              var person = {
+            // global execution context
+            
+            // globalExecutionContext.VO.person
+            var person = {
                 name: 'Nicholas',
                 age: 30
-              };
-              
-              // globalExecutionContext.VO.num2
-              var num2 = 10;
-      
-              // globalExecutionContext.VO.displayInfo
-              function displayInfo(){
-      
+            };
+            
+            // globalExecutionContext.VO.num2
+            var num2 = 10;
+            
+            // globalExecutionContext.VO.displayInfo
+            function displayInfo(){
+            
                 // function execution context
-                // functionExecutionContext.AO.count
+                // displayInfoFunctionExecutionContext.AO.count
                 var count = 5;
-                
+            
                 // with 문에 전달된 인자(person)로 해당 Scope Chain 이 확장된다.
-                with (person){
-                
-                  // 확장된 Scope Chain 을 통해 객체 속성에 접근한다.
-                  // functionExecutionContext.scopeChain.withObject(person).name
-                  console.log(name); // 'Nicholas'
-                  // functionExecutionContext.scopeChain.withObject(person).age
-                  console.log(age); // 30
+                with ({name: 'Angel', age: 18}){
+            
+                    // 확장된 Scope Chain 을 통해 객체 속성에 접근한다.
+                    // displayInfoFunctionExecutionContext.scopeChain.withObject.name
+                    console.log(name); // 'Angel'
+                    // displayInfoFunctionExecutionContext.scopeChain.withObject.age
+                    console.log(age); // 18
                 }
-              };
-      
-              displayInfo();
+            };
+            
+            displayInfo();
             ```
         - <span style="color:#c11f1f">ECStack</span> 내부
         
             ```javascript
               var ECStack = [
-                functionExecutionContext: { // A function object
+                <displayInfo> functionExecutionContext: {
                   AO(VO): {
                     arguments: {
                     },
                     count: 5
                   },
                   Scope(Scope Chain): [
+                    // with 문으로 인해, Scope Chain 이 확장된다.(Scope Chain 의 가장 앞(ScopeChain[0])에 추가된다.
+                    withObject(person): {
+                      name: 'Angel',
+                      age: 18
+                    },    
+                    AO(VO): {
+                      arguments: {
+                      },
+                      count: 5
+                    },                                  
                     globalExecutionContext.VO: {
                       person: {
                         name: 'Nicholas',
@@ -694,15 +704,6 @@ tags: [JavaScript]
                       },
                       displayInfo: < reference to function >,
                       num2: 10
-                    },
-                    AO(VO): {
-                      arguments: {
-                      },
-                      count: 5
-                    },
-                    withObject(person): {
-                      name: 'Nicholas',
-                      age: 30
                     }
                   ]
                 },
@@ -745,11 +746,11 @@ tags: [JavaScript]
                     VO: {
                     },
                     Scope(Scope Chain): [
-                      globalExecutionContext.VO: {
-                      },
                       catchObject(<exception object>): {
                         message: 'a is not defined',
                         ...
+                      },                    
+                      globalExecutionContext.VO: {
                       }
                     ]					
                   }

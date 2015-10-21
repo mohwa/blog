@@ -228,6 +228,8 @@ tags: [JavaScript]
 	- 식별자 해석 과정
 		
 		- **식별자** 검색 순서는 <u>**Scope Chain** 의 가장 **바닥**(ScopeChain[0])에서부터</u>, <u>가장 **상위**(ScopeChain[scope.length]) 까지</u> 검색 후, 그 값을 반환한다.
+		
+		- 즉, 이와같은 **검색 매커니즘**에 의해, 해당 **함수**가 가진 <span style="color:#c11f1f">AO</span>(VO) 의 속성을 가장 빠르게 **접근**할 수 있으며, global execution context 내부 <span style="color:#c11f1f">VO</span> 의 속성에 **접근**하는것이 가장 느린것이다.
 
             ```javascript
         

@@ -115,18 +115,18 @@ tags: [JavaScript]
   
           ```javascript
           var ECStack = [
-            functionExecutionContext: {
+            <A> functionExecutionContext: {
               AO(VO): {
                 // function execution context 의 AO(VO) 속성으로 추가된다.
                 B: <reference to function>
               },
               // 함수 호출 시 생성되는 Scope Chain
               Scope(Scope Chain): [
-                globalExecutionContext.VO: {
-                  A: < reference to function >
-                },
                 AO(VO): {
                   B: <reference to function>
+                },              
+                globalExecutionContext.VO: {
+                  A: < reference to function >
                 }
               ]
             },

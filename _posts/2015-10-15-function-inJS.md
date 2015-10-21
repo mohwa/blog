@@ -134,7 +134,10 @@ tags: [JavaScript]
               VO: {
                 // global execution context 의 VO 속성으로 추가된다.
                 A: <reference to function>
-              }
+              },
+              Scope(Scope Chain): [
+                globalExecutionContext.VO
+              ]              
             }
           ];
           ```

@@ -38,20 +38,44 @@ tags: [JavaScript]
         <B> activeFunctionExecutionContext: { 
           AO(VO): {
             y: 2
-          }
+          },
+          Scope(Scope Chain): [
+            AO(VO): {
+              y: 2
+            },     
+            <A> functionExecutionContext.AO(VO): {
+              x: 1,
+              B: < reference to function >
+            },                         
+            globalExecutionContext.VO: {
+              A: < reference to function >
+            }
+          ]
         },
         // A function execution context
         <A> functionExecutionContext: {
           AO(VO): {
             x: 1,
             B: < reference to function >
-          }
+          },
+          Scope(Scope Chain): [
+            AO(VO): {
+              x: 1,
+              B: < reference to function >
+            },
+            globalExecutionContext.VO: {
+              A: < reference to function >
+            }
+          ]          
         },
         // global execution context
         globalExecutionContext: {
           VO: {
             A: < reference to function >
-          }
+          },
+          Scope(Scope Chain): [
+            globalExecutionContext.VO
+          ]
         }
       ];
       ```
@@ -193,7 +217,10 @@ tags: [JavaScript]
                   VO: {
                     x: 1,
                     A: < reference to function >								
-                  }
+                  },
+                  Scope(Scope Chain): [
+                    globalExecutionContext.VO
+                  ]                  
                 }
               ];
             ```
@@ -244,7 +271,10 @@ tags: [JavaScript]
                   VO: {
                     x: 1,
                     A: < reference to function >								
-                  }
+                  },
+                  Scope(Scope Chain): [
+                    globalExecutionContext.VO
+                  ]                  
                 }
               ];
             ```
@@ -381,7 +411,10 @@ tags: [JavaScript]
                 VO: {
                   y: 1,
                   A: < reference to function >
-                }
+                },
+                Scope(Scope Chain): [
+                  globalExecutionContext.VO
+                ]                
               }
             ];
             ```
@@ -446,7 +479,10 @@ tags: [JavaScript]
                     result: undefined,                  
                     add: < reference to function >,
                     num2: 5
-                  }
+                  },
+                  Scope(Scope Chain): [
+                    globalExecutionContext.VO
+                  ]                  
                 }
               ];
               ```
@@ -631,7 +667,10 @@ tags: [JavaScript]
                 __proto__: {
                   x: 1
                 }
-              }
+              },
+              Scope(Scope Chain): [
+                globalExecutionContext.VO
+              ]              
             }
           ];
         ```
@@ -715,7 +754,10 @@ tags: [JavaScript]
                     },
                     displayInfo: < reference to function >,
                     num2: 10
-                  }
+                  },
+                  Scope(Scope Chain): [
+                    globalExecutionContext.VO
+                  ]                  
                 }
               ];
             ```

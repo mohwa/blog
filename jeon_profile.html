@@ -1,15 +1,15 @@
 
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=euc-kr"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Ug4CWFFXGwABVlBXAwE="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
-  <title>ÀÌ·Â¼­ º¸±â</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Ug4CWFFXGwABVlBXAwE="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:23,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:10,2:9,3:7,4:11,5:3,6:24,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],6:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:10,2:9,3:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],7:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,2:25,ee:"QJf3ax",gos:"7eSDFh"}],8:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:25,2:24,ee:"QJf3ax"}],9:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:25,2:24,ee:"QJf3ax"}],10:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:25,2:24,ee:"QJf3ax"}],11:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:7,2:25,ee:"QJf3ax"}],12:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:13,3:11,4:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],13:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],14:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:23,2:24,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),f=c.document,u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:23,2:14,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],23:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],24:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],25:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:24,ee:"QJf3ax"}]},{},["G9z0Bl",4,12,6,5]);</script>
+  <title>ì´ë ¥ì„œ ë³´ê¸°</title>
   <script language="JavaScript" type="text/javascript">
     <!--
-    //¼­ºñ½º ¾È³»ÆäÀÌÁö·Î ÀÌµ¿
+    //ì„œë¹„ìŠ¤ ì•ˆë‚´íŽ˜ì´ì§€ë¡œ ì´ë™
     function goServiceGuide(){
       usergroup = 'per';
       if(usergroup != 'com'){
-        alert('±â¾÷È¸¿ø¸¸ »ç¿ëÇÒ ¼ö ÀÖ½À´Ï´Ù') ;
+        alert('ê¸°ì—…íšŒì›ë§Œ ì‚¬ìš©í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤') ;
         return ;
       } else {
         opener.document.location = '/zf_user/service-guide/mandb/res_idx/6575949';
@@ -27,7 +27,7 @@
               $('use-confirm-layer').hide();
               location.reload();
             } else {
-              alert('°áÁ¦°¡ ÇÊ¿äÇÑ ÆäÀÌÁö ÀÔ´Ï´Ù.');
+              alert('ê²°ì œê°€ í•„ìš”í•œ íŽ˜ì´ì§€ ìž…ë‹ˆë‹¤.');
               location.reload();
             }
           }
@@ -48,20 +48,20 @@
   <link href="//www.saraminimage.co.kr/css/resume-20141031.css" rel="stylesheet" type="text/css" media="screen, print">
   <script type="text/javascript" src="//www.saraminimage.co.kr/js/libs/prototype-1.6.0.3.js"></script>
   <script type="text/javascript" src="//www.saraminimage.co.kr/js/libs/pngHack.mini.js"></script>
-  <title>ÀÌ·Â¼­ º¸±â</title>
+  <title>ì´ë ¥ì„œ ë³´ê¸°</title>
 
   <style type="text/css">
     #content { width:695px;text-align:center; }
     .resume #resume_header { margin-top:20px }
     .resume #resume_title_view { margin-top:5px }
 
-    .ly-balloon-yell { position:absolute; z-index:10; margin-top:12px; border:1px solid #bccc7a; background:#fcfdce; text-align:left; padding:8px 9px 6px;font-family:µ¸¿ò,±¼¸²,sans-serif; font-size:11px; color:#444444; line-height:17px; letter-spacing:-1px }
+    .ly-balloon-yell { position:absolute; z-index:10; margin-top:12px; border:1px solid #bccc7a; background:#fcfdce; text-align:left; padding:8px 9px 6px;font-family:ë‹ì›€,êµ´ë¦¼,sans-serif; font-size:11px; color:#444444; line-height:17px; letter-spacing:-1px }
     .ly-balloon-yell p { padding:0; margin:0 }
     .ly-balloon-yell .edge-top-short { position:absolute; top:-6px; width:9px; height:6px; background:url(//www.saraminimage.co.kr/style_guide/2011/wsg/edge_y.gif) no-repeat 0 0; font-size:0 }
   </style>
   <script type="text/javascript">
     /**
-     * header ÃÊ±âÈ­
+     * header ì´ˆê¸°í™”
      */
     var pandora = '';
 
@@ -93,7 +93,7 @@
           emailBtn.show();
         }
       } else {
-        // ½ºÅ©·¦ ¹öÆ°
+        // ìŠ¤í¬ëž© ë²„íŠ¼
         if ( form.scrap_service.value == true ) {
           scrapBtn.show();
         }
@@ -111,7 +111,7 @@
               //$('request_mandb_bottom').show();
             }
           } else {
-            // sms ¹ß¼Û ¹öÆ°
+            // sms ë°œì†¡ ë²„íŠ¼
             if ( form.sms_service.value == true ) {
               smsBtn.show();
             }
@@ -119,10 +119,10 @@
 
           var serviceText = '';
           if ( form.mandb_search_cnt ) {
-            serviceText += '&nbsp;¢ºÀÎÀç ¿¬¶ôÃ³º¸±â : ';
+            serviceText += '&nbsp;â–¶ì¸ìž¬ ì—°ë½ì²˜ë³´ê¸° : ';
             serviceText += '<font color="#e10b00"><b>';
             serviceText += form.mandb_search_cnt_text.value
-            serviceText += '</b></font>°Ç';
+            serviceText += '</b></font>ê±´';
           }
           if(serviceText){
             //$('mandb_service_text').innerHTML = serviceText;
@@ -130,7 +130,7 @@
           }
         }
 
-        // ÀÌ¸ÞÀÏ ¹ß¼Û ¹öÆ°
+        // ì´ë©”ì¼ ë°œì†¡ ë²„íŠ¼
         if ( form.email_service.value == true ) {
           emailBtn.show();
         }
@@ -193,7 +193,7 @@
     }
 
     /**
-     * ¼öÁ¤ ·¹ÀÌ¾î ¿­±â
+     * ìˆ˜ì • ë ˆì´ì–´ ì—´ê¸°
      */
     function showEditResumeLayer(el) {
       if ( $('template_cd').value == 2 ) {
@@ -215,7 +215,7 @@
     }
 
     /**
-     * ¼öÁ¤ ·¹ÀÌ¾î ´Ý±â
+     * ìˆ˜ì • ë ˆì´ì–´ ë‹«ê¸°
      */
     function hideEditResumeLayer() {
       $('edit_resume_layer').hide();
@@ -225,7 +225,7 @@
     }
 
     /**
-     * ÀÌ·Â¼­ ¼öÁ¤ ÆäÀÌÁö·Î ÀÌµ¿
+     * ì´ë ¥ì„œ ìˆ˜ì • íŽ˜ì´ì§€ë¡œ ì´ë™
      */
     function goEditingResume() {
       if ( opener && !opener.closed ) {
@@ -235,7 +235,7 @@
     }
 
     /**
-     * ÀÚ±â¼Ò°³¼­ ¼öÁ¤ ÆäÀÌÁö·Î ÀÌµ¿
+     * ìžê¸°ì†Œê°œì„œ ìˆ˜ì • íŽ˜ì´ì§€ë¡œ ì´ë™
      */
     function goEditingIntroduce() {
       if ( opener && !opener.closed ) {
@@ -245,7 +245,7 @@
     }
 
     /**
-     * ÀÎ¼â
+     * ì¸ì‡„
      */
     function printResume() {
       if ( $('data_form').controller.value == 'mandb' || $('data_form').event_resume_auth ) {
@@ -259,7 +259,7 @@
     }
 
     /**
-     * ¿µ¿ª ÀÎ¼â
+     * ì˜ì—­ ì¸ì‡„
      */
     function printArea() {
       var url = '/zf_user/popup/areaPrint/printId/resume_print_area';
@@ -267,7 +267,7 @@
     }
 
     /**
-     * ÀÎÀçµðºñ »ç¿ë ·¹ÀÌ¾î
+     * ì¸ìž¬ë””ë¹„ ì‚¬ìš© ë ˆì´ì–´
      */
     function useConfirmMandb(el, confirmLayerId) {
       var url = '/zf_user/jobs/talent/use-confirm';
@@ -281,7 +281,7 @@
             var layerId = '';
 
             if ( result.userGroup == 'c' && result.mandb_search_cnt > 0 ) {
-              //$('mandb_num').innerHTML = '<b>'+ (result.mandb_search_cnt-1) + '°Ç</b>';
+              //$('mandb_num').innerHTML = '<b>'+ (result.mandb_search_cnt-1) + 'ê±´</b>';
 
               layerId = confirmLayerId;
             } else {
@@ -304,14 +304,14 @@
               break;
             case 203 :
               // 203 Non-Authoritative Information
-              alert('·Î±×¾Æ¿ô µÇ¾ú½À´Ï´Ù. ´Ù½Ã ·Î±×ÀÎÇØ ÁÖ½Ê½Ã¿À.');
+              alert('ë¡œê·¸ì•„ì›ƒ ë˜ì—ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ë¡œê·¸ì¸í•´ ì£¼ì‹­ì‹œì˜¤.');
               location.reload();
               break;
             case 500 :
-              alert('¼­¹ö¿¡¼­ ¿À·ù°¡ ¹ß»ýÇß½À´Ï´Ù. Àá½ÃÈÄ ´Ù½Ã ½ÃµµÇØ ÁÖ½Ê½Ã¿À.');
+              alert('ì„œë²„ì—ì„œ ì˜¤ë¥˜ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤. ìž ì‹œí›„ ë‹¤ì‹œ ì‹œë„í•´ ì£¼ì‹­ì‹œì˜¤.');
               break;
             default :
-              if(confirm('ÆäÀÌÁö¿¡ ¿À·ù°¡ ¹ß»ýÇß½À´Ï´Ù. ÆäÀÌÁö¸¦ »õ·Î °íÄ¡·Á¸é È®ÀÎÀ» ´­·¯ ÁÖ½Ê½Ã¿À.')) {
+              if(confirm('íŽ˜ì´ì§€ì— ì˜¤ë¥˜ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤. íŽ˜ì´ì§€ë¥¼ ìƒˆë¡œ ê³ ì¹˜ë ¤ë©´ í™•ì¸ì„ ëˆŒëŸ¬ ì£¼ì‹­ì‹œì˜¤.')) {
                 document.location.reload();
               }
               break;
@@ -321,7 +321,7 @@
     }
 
     /**
-     * ½ºÅ©·¦
+     * ìŠ¤í¬ëž©
      */
     var ingScrap = false;
     function scrap() {
@@ -343,7 +343,7 @@
                 var scrapCnt = parseInt($('side_hidden_scrap_talent_count').innerHTML);
                 scrapCnt++;
 
-                // ¿ìÃø »çÀÌµå ¸Þ´º count Ã³¸®
+                // ìš°ì¸¡ ì‚¬ì´ë“œ ë©”ë‰´ count ì²˜ë¦¬
                 sidewidgetcount(scrapCnt);
 
                 try { n_trackEvent('mandb_scrap', 'scrap_complete', res_idx, 'view'); } catch(e) {}
@@ -355,7 +355,7 @@
             ingScrap = false;
           }
           ,onException : function(e) {
-            alert('Åë½ÅÀÇ ¹®Á¦°¡ ¹ß»ýÇÏ¿´½À´Ï´Ù.');
+            alert('í†µì‹ ì˜ ë¬¸ì œê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤.');
             ingScrap = false;
           }
         });
@@ -378,7 +378,7 @@
       }
     }
 
-    //SMS ¹ß¼Û Ã¼Å©
+    //SMS ë°œì†¡ ì²´í¬
     function checkSendingSMS(mem_idx) {
       new Ajax.Request('/zf_user/memcom/sms/check-sending-sms-validation-ajax', {
         parameters: {
@@ -390,7 +390,7 @@
           var json = transport.responseText.evalJSON();
 
           if ( json.result == 'empty' ) {
-            alert('¹®ÀÚ¹ß¼ÛÀÌ ºÒ°¡´ÉÇÑ ¹øÈ£ÀÔ´Ï´Ù.');
+            alert('ë¬¸ìžë°œì†¡ì´ ë¶ˆê°€ëŠ¥í•œ ë²ˆí˜¸ìž…ë‹ˆë‹¤.');
             return;
           }
 
@@ -398,13 +398,13 @@
         },
 
         onFailure: function() {
-          alert('¼­¹öÀÇ ÀÀ´äÀÌ ¾ø½À´Ï´Ù.\n´Ù½Ã ½ÃµµÇÏ¿© ÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.');
+          alert('ì„œë²„ì˜ ì‘ë‹µì´ ì—†ìŠµë‹ˆë‹¤.\në‹¤ì‹œ ì‹œë„í•˜ì—¬ ì£¼ì‹œê¸° ë°”ëžë‹ˆë‹¤.');
           return false;
         }
       });
     }
 
-    //SMS ¹ß¼Û
+    //SMS ë°œì†¡
     function sendSMS(mem_idx) {
       $('smsForm').mode.value = 'group';
       $('smsForm').mem_idx.value = mem_idx;
@@ -418,7 +418,7 @@
       win_sms.focus();
     }
 
-    // ÀÌ¸ÞÀÏ ¹ß¼Û
+    // ì´ë©”ì¼ ë°œì†¡
     function sendMail(mem_idx, res_idx) {
       window.open('/zf_user/company/recruit-apply-sendmail?mode=person&mem_idx='+mem_idx+'&res_idx='+res_idx, 'sendmail', 'width=760, height=710, top=200, left=300, status=yes, resizable=no, scrollbars=yes').focus();
     }
@@ -433,19 +433,19 @@
       window.open(url, 'sendmail', 'width=760, height=710, top=200, left=300, status=yes, resizable=no, scrollbars=yes').focus();
     }
 
-    //ÈÞ´ëÆù ¹øÈ£ À¯È¿¼º °Ë»ç
+    //íœ´ëŒ€í° ë²ˆí˜¸ ìœ íš¨ì„± ê²€ì‚¬
     function checkCellNumber(cell) {
       var reg_pattern = /([^0-9]|^)01(0|1|6|7|8|9)\s*((\&gt;){0,2}|[\+\-\)\.\/\~\>\_]{0,2})\s*[1-9][0-9]{2,3}\s*((\&gt;){0,2}|[\+\-\)\.\/\~\>\_]{0,2})\s*[0-9]{4}/m;
 
       return reg_pattern.test(cell);
     }
 
-    //±â¾÷È¸¿ø ·Î±×ÀÎ
+    //ê¸°ì—…íšŒì› ë¡œê·¸ì¸
     function goCompanyLogin(wwwBaseUrl, wwwBaseUrlTarget) {
       var wwwBaseUrl       = wwwBaseUrl || '',
         wwwBaseUrlTarget = wwwBaseUrlTarget || '';
 
-      if ( !confirm('±â¾÷È¸¿øÀ¸·Î ·Î±×ÀÎ ÈÄ, ÀÌ¿ëÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.\n\n·Î±×ÀÎ ÇÏ½Ã°Ú½À´Ï±î?') ) {
+      if ( !confirm('ê¸°ì—…íšŒì›ìœ¼ë¡œ ë¡œê·¸ì¸ í›„, ì´ìš©í•˜ì‹¤ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.\n\në¡œê·¸ì¸ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?') ) {
         return;
       }
 
@@ -457,14 +457,14 @@
     }
 
     function restrictCompany() {
-      alert('³»ºÎ Á¤Ã¥¿¡ µû¶ó, ±Í»ç´Â ÀÎÀçÁ¤º¸ ¿­¶÷ »óÇ°À» ÀÌ¿ëÇÒ ¼ö ¾ø½À´Ï´Ù.\n\n¹®ÀÇ»çÇ×Àº °í°´¼¾ÅÍ(02-2025-4733)·Î Á¢¼öÇØÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.');
+      alert('ë‚´ë¶€ ì •ì±…ì— ë”°ë¼, ê·€ì‚¬ëŠ” ì¸ìž¬ì •ë³´ ì—´ëžŒ ìƒí’ˆì„ ì´ìš©í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n\në¬¸ì˜ì‚¬í•­ì€ ê³ ê°ì„¼í„°(02-2025-4733)ë¡œ ì ‘ìˆ˜í•´ì£¼ì‹œê¸° ë°”ëžë‹ˆë‹¤.');
     }
 
     // onload event
     Event.observe(window, 'load', function () {
 //    document.getElementById('edit_resume_layer').style.display = 'none';
 
-      // ÀÎ¼â ¸ðµåÀÏ °æ¿ì
+      // ì¸ì‡„ ëª¨ë“œì¼ ê²½ìš°
       if ( $('data_form') ) {
         var mode = $('data_form').mode.value;
 
@@ -509,7 +509,7 @@
 </head>
 
 <body style="text-align:center">
-<!-- ¿öµå ´Ù¿î·ÎµåÀÏ °æ¿ì¿¡´Â ³ëÃâ½ÃÅ°Áö ¾Ê´Â´Ù. -->
+<!-- ì›Œë“œ ë‹¤ìš´ë¡œë“œì¼ ê²½ìš°ì—ëŠ” ë…¸ì¶œì‹œí‚¤ì§€ ì•ŠëŠ”ë‹¤. -->
 <form id="data_form">
   <input type="hidden" name="mode" value="view" id="mode"><input type="hidden" name="controller" value="resume" id="controller"><input type="hidden" name="mem_gb" value="p" id="mem_gb"><input type="hidden" name="res_idx" value="6575949" id="res_idx"><input type="hidden" name="template_cd" value="0" id="template_cd"><input type="hidden" name="has_talent_service" value="" id="has_talent_service"><input type="hidden" name="talent_service" value="" id="talent_service"><input type="hidden" name="sms_service" value="" id="sms_service"><input type="hidden" name="email_service" value="" id="email_service"><input type="hidden" name="scrap_service" value="" id="scrap_service"><input type="hidden" name="edit_icon_fl" value="y" id="edit_icon_fl"><input type="hidden" name="page_url" value="" id="page_url">    </form>
 
@@ -519,14 +519,14 @@
 <!-- //SMS form -->
 
 
-<!-- »ó´Ü ÀÎÀç°Ë»ö ¼­ºñ½º ½ÅÃ» ÀÌ¹ÌÁö -->
+<!-- ìƒë‹¨ ì¸ìž¬ê²€ìƒ‰ ì„œë¹„ìŠ¤ ì‹ ì²­ ì´ë¯¸ì§€ -->
 
 
-<!-- //»ó´Ü ÀÎÀç°Ë»ö ¼­ºñ½º ½ÅÃ» ÀÌ¹ÌÁö -->
+<!-- //ìƒë‹¨ ì¸ìž¬ê²€ìƒ‰ ì„œë¹„ìŠ¤ ì‹ ì²­ ì´ë¯¸ì§€ -->
 
 
-<!-- ÀÌ·Â¼­ º»¹® -->
-<!-- table ³Ö°í ½ÍÁö ¾Ê¾Ò´Âµ¥ ¿öµå ´Ù¿î·Îµå ¶§¹®¿¡ ¾îÂ¿ ¼ö ¾øÀÌ ³ÖÀ½. ¤Ð¤Ð -->
+<!-- ì´ë ¥ì„œ ë³¸ë¬¸ -->
+<!-- table ë„£ê³  ì‹¶ì§€ ì•Šì•˜ëŠ”ë° ì›Œë“œ ë‹¤ìš´ë¡œë“œ ë•Œë¬¸ì— ì–´ì©” ìˆ˜ ì—†ì´ ë„£ìŒ. ã… ã…  -->
 <div id="resume_print_area" class="resume-wrapper">
   <div class="resume">
     <!-- header (top icon & description) -->
@@ -534,44 +534,44 @@
       <div class="item-header">
         <div class="sec-btn-left">
                         <span id="scrap_btn" style="display:none">
-                              <img src="//www.saraminimage.co.kr/resume/2011_new/btn_scrap.gif" style="cursor:pointer" onclick="scrap()" alt="°ü½ÉÀÎÀç·Î µî·Ï">
+                              <img src="//www.saraminimage.co.kr/resume/2011_new/btn_scrap.gif" style="cursor:pointer" onclick="scrap()" alt="ê´€ì‹¬ì¸ìž¬ë¡œ ë“±ë¡">
                           </span>
-          <span id="mandb_btn" style="display:none"><img src="//www.saraminimage.co.kr/resume/2011_new/51_btnopen.png" style="cursor:pointer" onclick="useMandb(6575949)" onmousedown="try{n_trackEvent('', '', 'contact', 'layer1');}catch(e){}" alt="¿­¶÷ÇÏ±â"></span>
-          <!--<span id="print_btn" style="display:none"><img src="//www.saraminimage.co.kr/resume/2011_new/btn_print2.png" style="cursor:pointer" onclick="printResume()" alt="ÀÎ¼â"></span>-->
-          <!--<span id="edit_btn" style="display:none"><img src="//www.saraminimage.co.kr/resume/2011_new/btn_modify_18px.gif" style="cursor:pointer" onclick="showEditResumeLayer(this)" alt="¼öÁ¤"></span>-->
-          <span id="pdf_btn" style="display:none"><img src="//www.saraminimage.co.kr/resume/2011_new/btn_print_pdf.gif" style="cursor:pointer" onclick="" alt="°íÇ°Áú(PDF)ÀÎ¼â"></span>
+          <span id="mandb_btn" style="display:none"><img src="//www.saraminimage.co.kr/resume/2011_new/51_btnopen.png" style="cursor:pointer" onclick="useMandb(6575949)" onmousedown="try{n_trackEvent('', '', 'contact', 'layer1');}catch(e){}" alt="ì—´ëžŒí•˜ê¸°"></span>
+          <!--<span id="print_btn" style="display:none"><img src="//www.saraminimage.co.kr/resume/2011_new/btn_print2.png" style="cursor:pointer" onclick="printResume()" alt="ì¸ì‡„"></span>-->
+          <!--<span id="edit_btn" style="display:none"><img src="//www.saraminimage.co.kr/resume/2011_new/btn_modify_18px.gif" style="cursor:pointer" onclick="showEditResumeLayer(this)" alt="ìˆ˜ì •"></span>-->
+          <span id="pdf_btn" style="display:none"><img src="//www.saraminimage.co.kr/resume/2011_new/btn_print_pdf.gif" style="cursor:pointer" onclick="" alt="ê³ í’ˆì§ˆ(PDF)ì¸ì‡„"></span>
             <span id="email_btn" style="display:none">
-                              <a href="javascript:sendMail('820375', '6575949')" onmousedown="try{n_trackEvent('mandb_resume', 'login_paid', 'send_mail', 'open');}catch(e){}"><img src="//www.saraminimage.co.kr/resume/2011_new/btn_mailsend.gif" style="cursor:pointer" onclick="" alt="¸ÞÀÏ¹ß¼Û"></a>
+                              <a href="javascript:sendMail('820375', '6575949')" onmousedown="try{n_trackEvent('mandb_resume', 'login_paid', 'send_mail', 'open');}catch(e){}"><img src="//www.saraminimage.co.kr/resume/2011_new/btn_mailsend.gif" style="cursor:pointer" onclick="" alt="ë©”ì¼ë°œì†¡"></a>
                           </span>
             <span id="sms_btn" style="display:none">
                 <a id="send_sms_link" href="javascript:checkSendingSMS('820375')">
-                  <img src="//www.saraminimage.co.kr/resume/2011_new/btn_smssend.gif" style="cursor:pointer" alt="¹®ÀÚ¹ß¼Û"></a>
+                  <img src="//www.saraminimage.co.kr/resume/2011_new/btn_smssend.gif" style="cursor:pointer" alt="ë¬¸ìžë°œì†¡"></a>
             </span>
         </div>
         <div class="sec-btn-left h-subtext" style="padding-top:2px;">
           <span id="mandb_service_text" style="display:none;font-size:8pt;"></span>
         </div>
-        <!--<div class="sec-btn-right h-subtext" style="font-family:±¼¸²,sans-serif;padding-top:2px;text-align:right">-->
-          <!--ÃÖ±Ù¼öÁ¤ÀÏ : 2015³â 10¿ù 24ÀÏ (Åä)                    </div>-->
+        <!--<div class="sec-btn-right h-subtext" style="font-family:êµ´ë¦¼,sans-serif;padding-top:2px;text-align:right">-->
+          <!--ìµœê·¼ìˆ˜ì •ì¼ : 2015ë…„ 10ì›” 24ì¼ (í† )                    </div>-->
       </div>
     </div>            <!-- //header (top icon & description) -->
 
-    <!-- ÀúÀåµÈ ¼ø¼­´ë·Î Ç×¸ñº° ·»´õ -->
-    <!-- ÀÌ·Â¼­ Á¦¸ñ -->
+    <!-- ì €ìž¥ëœ ìˆœì„œëŒ€ë¡œ í•­ëª©ë³„ ë Œë” -->
+    <!-- ì´ë ¥ì„œ ì œëª© -->
     <div id="resume_title_view">
       <a name="title_view_anchor"></a>
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
-        <tr><td class="res-title-view-new " valign="middle">À¥ÇÁ·Î±×·¡¸Ó / °æ·Â / Àü¼º±Õ</td></tr>
+        <tr><td class="res-title-view-new " valign="middle">ì›¹í”„ë¡œê·¸ëž˜ë¨¸ / ê²½ë ¥ / ì „ì„±ê· </td></tr>
       </table>
 
     </div>
-    <!-- //ÀÌ·Â¼­ Á¦¸ñ -->
+    <!-- //ì´ë ¥ì„œ ì œëª© -->
 
-    <!-- Áö¿øºÐ¾ß/Èñ¸Á¿¬ºÀ -->
+    <!-- ì§€ì›ë¶„ì•¼/í¬ë§ì—°ë´‰ -->
     <div id="resume_apply_dept_view">
       <div class="item-header">
       </div>
-      <table class="tbl-view" border="0" cellspacing="0" summary="Áö¿øºÐ¾ß/Èñ¸Á¿¬ºÀ" width="100%" >
+      <table class="tbl-view" border="0" cellspacing="0" summary="ì§€ì›ë¶„ì•¼/í¬ë§ì—°ë´‰" width="100%" >
         <colgroup>
           <col width="118">
           <col width="320">
@@ -579,22 +579,22 @@
           <col>
         </colgroup>
         <tr>
-          <th>Áö¿øºÐ¾ß</th>
-          <td><label>À¥ÇÁ·Î±×·¡¸Ó&nbsp;(°æ·Â)</label></td>
-          <th>Èñ¸Á¿¬ºÀ</th>
-          <td>6,000~7,000¸¸¿ø</td>
+          <th>ì§€ì›ë¶„ì•¼</th>
+          <td><label>ì›¹í”„ë¡œê·¸ëž˜ë¨¸&nbsp;(ê²½ë ¥)</label></td>
+          <th>í¬ë§ì—°ë´‰</th>
+          <td>6,000~7,000ë§Œì›</td>
         </tr>
       </table>
     </div>
-    <!-- //Áö¿øºÐ¾ß/Èñ¸Á¿¬ºÀ -->
+    <!-- //ì§€ì›ë¶„ì•¼/í¬ë§ì—°ë´‰ -->
     <div id="basic_view" class="divide-view-item" style="">
       <a name="basic_view_anchor"></a>
       <div class="item-header res-item" style="text-align:left">
-        <h3><span class="item-title">±âº»Á¤º¸</span></h3>
+        <h3><span class="item-title">ê¸°ë³¸ì •ë³´</span></h3>
       </div>
       <div class="item-contents">
         <div id="basic_profile" class="mb10">
-          <table class="tbl-view" border="0" cellspacing="0" summary="±âº»Á¤º¸" width="100%">
+          <table class="tbl-view" border="0" cellspacing="0" summary="ê¸°ë³¸ì •ë³´" width="100%">
             <colgroup>
               <col width="118">
               <col width="70">
@@ -605,36 +605,36 @@
             <tr>
               <td rowspan="5" valign="middle" class="res-photo" style="text-align:center">
                 <img alt="" src="https://www.saramin.co.kr/zf_user/persons/picture?idx=820375|f69123ee1d0c95e11febf8e603584312057b28a3c9f68680688fdad83cea3001" border="0" width="100" height="128" />                                                                </td>
-              <th>ÀÌ¸§</th>
+              <th>ì´ë¦„</th>
               <td>
-                Àü¼º±Õ
+                ì „ì„±ê· 
                 (seong gyun, jeon)
 
               </td>
-              <th>³ªÀÌ/¼ºº°</th>
-              <td>1981³â (35¼¼)<span class="res-cut">&nbsp;|&nbsp;</span>Ñû                    </td>
+              <th>ë‚˜ì´/ì„±ë³„</th>
+              <td>1981ë…„ (35ì„¸)<span class="res-cut">&nbsp;|&nbsp;</span>ç”·                    </td>
             </tr>
             <tr>
-              <th>ÁÖ¼Ò</th>
+              <th>ì£¼ì†Œ</th>
               <td colspan="3">
-                (151-761) ¼­¿ï °ü¾Ç±¸ ½Å¸²2µ¿ 112-206È£                                            </td>
+                (151-761) ì„œìš¸ ê´€ì•…êµ¬ ì‹ ë¦¼2ë™ 112-206í˜¸                                            </td>
             </tr>
             <tr>
-              <th>ÀüÈ­¹øÈ£</th>
+              <th>ì „í™”ë²ˆí˜¸</th>
               <td colspan="3">
                 02-873-3959                                            </td>
             </tr><tr>
-            <th>ÈÞ´ëÆù</th>
+            <th>íœ´ëŒ€í°</th>
             <td colspan="3">
                         <span id="cell_area">
                                                                                 010-9268-0594                                                                            </span>
             </td>
           </tr>
             <tr>
-              <th>ÀÌ¸ÞÀÏ</th>
+              <th>ì´ë©”ì¼</th>
               <td >
                 yanione2@gmail.com                                            </td>
-              <th>È¨ÆäÀÌÁö</th>
+              <th>í™ˆíŽ˜ì´ì§€</th>
               <td class="break-word">
                 <a href="http://mohwa.github.io/blog/" target="_blank">http://mohwa.github.io/blog/</a>
               </td>
@@ -642,7 +642,7 @@
           </table>
         </div>
         <div id="basic-option" class="mb10">
-          <table class="tbl-view" border="0" cellspacing="0" summary="ÅëÈ­°¡´É½Ã°£" width="100%">
+          <table class="tbl-view" border="0" cellspacing="0" summary="í†µí™”ê°€ëŠ¥ì‹œê°„" width="100%">
             <colgroup>
               <col width="118">
               <col width="239">
@@ -650,11 +650,11 @@
               <col>
             </colgroup>
             <tr>
-              <th width="118">ÅëÈ­°¡´É½Ã°£</th>
+              <th width="118">í†µí™”ê°€ëŠ¥ì‹œê°„</th>
               <td width="239" >
-                »ó½Ã                    </td>
-              <th width="81">Ãâ±Ù°¡´ÉÀÏ</th>
-              <td>Áï½ÃÃâ±Ù°¡´É                    </td>
+                ìƒì‹œ                    </td>
+              <th width="81">ì¶œê·¼ê°€ëŠ¥ì¼</th>
+              <td>ì¦‰ì‹œì¶œê·¼ê°€ëŠ¥                    </td>
             </tr>
           </table>
         </div>
@@ -663,15 +663,15 @@
     <a name="school_view_anchor"></a>
     <div class="item-header res-item">
       <h3>
-        <span class="item-title">ÇÐ·Â»çÇ×</span>
+        <span class="item-title">í•™ë ¥ì‚¬í•­</span>
         <span class="res-cut"> | </span>
-        <span class="title-person">ÃÖÁ¾ÇÐ·Â - <b>°íµîÇÐ±³ Á¹¾÷</b></span>
+        <span class="title-person">ìµœì¢…í•™ë ¥ - <b>ê³ ë“±í•™êµ ì¡¸ì—…</b></span>
       </h3>
     </div>
     <div class="item-contents">
       <div id="basic_school_view" class="mb10">
-        <!-- ÃÊµîÇÐ±³, ÁßÇÐ±³, °íÀÔ, ÁßÀÔ °ËÁ¤°í½Ã -->
-        <table class="tbl-view" border="0" cellspacing="0" summary="ÇÐ·Â»çÇ×" width="100%">
+        <!-- ì´ˆë“±í•™êµ, ì¤‘í•™êµ, ê³ ìž…, ì¤‘ìž… ê²€ì •ê³ ì‹œ -->
+        <table class="tbl-view" border="0" cellspacing="0" summary="í•™ë ¥ì‚¬í•­" width="100%">
           <colgroup>
             <col width="118">
             <col width="70">
@@ -680,51 +680,51 @@
             <col>
           </colgroup>
           <tr>
-            <th height="35">ÀçÇÐ±â°£</th>
-            <th>±¸ºÐ</th>
-            <th>ÇÐ±³¸í</th>
-            <th>Àü°ø</th>
-            <th>ÇÐÁ¡</th>
+            <th height="35">ìž¬í•™ê¸°ê°„</th>
+            <th>êµ¬ë¶„</th>
+            <th>í•™êµëª…</th>
+            <th>ì „ê³µ</th>
+            <th>í•™ì </th>
           </tr>
           <tr>
             <td >1996.03 ~ 1999.03</td>
             <td  class="center-td">
-              Á¹¾÷                        </td>
+              ì¡¸ì—…                        </td>
             <td>
-              ¼­ÃÊ°íµîÇÐ±³                                                    </td>
+              ì„œì´ˆê³ ë“±í•™êµ                                                    </td>
             <td style="">
-              ÀÌ°ú°è¿­                                                                                </td>
+              ì´ê³¼ê³„ì—´                                                                                </td>
             <td class="center-td">-</td>
           </tr>
         </table>
-        <!-- //°íµîÇÐ±³, ´ëÇÐ±³ -->
+        <!-- //ê³ ë“±í•™êµ, ëŒ€í•™êµ -->
       </div>
-      <!-- Á÷¾÷Àü¹®ÇÐ±³/ÇÐ¿ø -->
-      <!-- //Á÷¾÷Àü¹®ÇÐ±³/ÇÐ¿ø -->
+      <!-- ì§ì—…ì „ë¬¸í•™êµ/í•™ì› -->
+      <!-- //ì§ì—…ì „ë¬¸í•™êµ/í•™ì› -->
     </div>
   </div><div id="career_view" class="divide-view-item">
     <a name="career_view_anchor"></a>
     <div class="item-header res-item">
       <h3>
-        <span class="item-title">°æ·Â»çÇ×</span>
+        <span class="item-title">ê²½ë ¥ì‚¬í•­</span>
         <span class="res-cut"> | </span>
             <span class="title-person">
-                ÃÑ °æ·Â -
-                <b> 13³â</b>
+                ì´ ê²½ë ¥ -
+                <b> 13ë…„</b>
                             </span>
       </h3>
     </div>
     <div class="item-contents">
-      <!-- ÇÙ½É¿ª·® -->
-      <!-- //ÇÙ½É¿ª·® -->
+      <!-- í•µì‹¬ì—­ëŸ‰ -->
+      <!-- //í•µì‹¬ì—­ëŸ‰ -->
 
-      <!-- IT/°³¹ßÁ÷À» Á¦¿ÜÇÑ Á÷Á¾º° °æ·Â -->
-      <!-- //IT/°³¹ßÁ÷À» Á¦¿ÜÇÑ Á÷Á¾º° °æ·Â -->
+      <!-- IT/ê°œë°œì§ì„ ì œì™¸í•œ ì§ì¢…ë³„ ê²½ë ¥ -->
+      <!-- //IT/ê°œë°œì§ì„ ì œì™¸í•œ ì§ì¢…ë³„ ê²½ë ¥ -->
 
-      <!-- ÀÏ¹Ý °æ·Â -->
+      <!-- ì¼ë°˜ ê²½ë ¥ -->
       <div id="career_basic">
         <div class="mb10">
-          <table class="tbl-view" border="0" cellspacing="0" summary="°æ·Â»çÇ×" width="100%">
+          <table class="tbl-view" border="0" cellspacing="0" summary="ê²½ë ¥ì‚¬í•­" width="100%">
             <colgroup>
               <col width="118">
               <col width="100">
@@ -733,49 +733,49 @@
               <col>
             </colgroup>
             <tr>
-              <th width="118" height="35">±Ù¹«±â°£</th>
+              <th width="118" height="35">ê·¼ë¬´ê¸°ê°„</th>
               <th colspan="4">
-                »ó¼¼°æ·Â
+                ìƒì„¸ê²½ë ¥
               </th>
             </tr>
             <tr>
               <td width="118" rowspan="6" style="vertical-align:top;">
-                2004.01 ~ 2006.05<br />(2³â 5°³¿ù)                        </td>
-              <th width="100">È¸»ç¸í</th>
-              <td colspan="3">±Â¾Ø¸®Ä¡ÀÚ»ê¿î¿ë</td>
+                2004.01 ~ 2006.05<br />(2ë…„ 5ê°œì›”)                        </td>
+              <th width="100">íšŒì‚¬ëª…</th>
+              <td colspan="3">êµ¿ì•¤ë¦¬ì¹˜ìžì‚°ìš´ìš©</td>
             </tr>
             <tr>
-              <th width="100">Á÷Á¾</th>
-              <td colspan="3">IT¡¤ÀÎÅÍ³Ý > À¥ÇÁ·Î±×·¡¸Ó</td>
+              <th width="100">ì§ì¢…</th>
+              <td colspan="3">ITÂ·ì¸í„°ë„· > ì›¹í”„ë¡œê·¸ëž˜ë¨¸</td>
             </tr>
             <tr>
-              <th width="100">±Ù¹«ºÎ¼­</th>
-              <td >Àü»êÆÀ</td>
+              <th width="100">ê·¼ë¬´ë¶€ì„œ</th>
+              <td >ì „ì‚°íŒ€</td>
 
-              <th width="100">±Ù¹«Áö¿ª</th>
-              <td >¼­¿ï</td>
+              <th width="100">ê·¼ë¬´ì§€ì—­</th>
+              <td >ì„œìš¸</td>
             </tr>
             <tr>
-              <th width="100">Á÷±Þ(Á÷Ã¥)</th>
+              <th width="100">ì§ê¸‰(ì§ì±…)</th>
               <td>
-                »ç¿ø                                                                                </td>
-              <th width="100">¿¬ºÀ</th>
+                ì‚¬ì›                                                                                </td>
+              <th width="100">ì—°ë´‰</th>
               <td>
-                0¸¸¿ø                                                    </td>
+                0ë§Œì›                                                    </td>
             </tr>
             <tr>
-              <th width="100">´ã´ç¾÷¹«</th>
+              <th width="100">ë‹´ë‹¹ì—…ë¬´</th>
               <td colspan="3" class="break-word">
-                »ç³» ÆÝµå ½Ã½ºÅÛ ¹× ÀÎÆ®¶ó³Ý °³¹ß                                                  </td>
+                ì‚¬ë‚´ íŽ€ë“œ ì‹œìŠ¤í…œ ë° ì¸íŠ¸ë¼ë„· ê°œë°œ                                                  </td>
             </tr>
             <tr>
-              <th width="100">Åð»ç»çÀ¯</th>
-              <td colspan="3">°³ÀÎ»çÁ¤</td>
+              <th width="100">í‡´ì‚¬ì‚¬ìœ </th>
+              <td colspan="3">ê°œì¸ì‚¬ì •</td>
             </tr>
           </table>
         </div>
         <div class="mb10">
-          <table class="tbl-view" border="0" cellspacing="0" summary="°æ·Â»çÇ×" width="100%">
+          <table class="tbl-view" border="0" cellspacing="0" summary="ê²½ë ¥ì‚¬í•­" width="100%">
             <colgroup>
               <col width="118">
               <col width="100">
@@ -785,42 +785,42 @@
             </colgroup>
             <tr>
               <td width="118" rowspan="6" style="vertical-align:top;">
-                2005.05 ~ 2008.08<br />(3³â 4°³¿ù)                        </td>
-              <th width="100">È¸»ç¸í</th>
-              <td colspan="3">ÀÎÅÚ¸®¿ÍÀÌ¾î¸®½º</td>
+                2005.05 ~ 2008.08<br />(3ë…„ 4ê°œì›”)                        </td>
+              <th width="100">íšŒì‚¬ëª…</th>
+              <td colspan="3">ì¸í…”ë¦¬ì™€ì´ì–´ë¦¬ìŠ¤</td>
             </tr>
             <tr>
-              <th width="100">Á÷Á¾</th>
-              <td colspan="3">IT¡¤ÀÎÅÍ³Ý > À¥ÇÁ·Î±×·¡¸Ó</td>
+              <th width="100">ì§ì¢…</th>
+              <td colspan="3">ITÂ·ì¸í„°ë„· > ì›¹í”„ë¡œê·¸ëž˜ë¨¸</td>
             </tr>
             <tr>
-              <th width="100">±Ù¹«ºÎ¼­</th>
-              <td >À¥ÆÀ</td>
+              <th width="100">ê·¼ë¬´ë¶€ì„œ</th>
+              <td >ì›¹íŒ€</td>
 
-              <th width="100">±Ù¹«Áö¿ª</th>
-              <td >¼­¿ï</td>
+              <th width="100">ê·¼ë¬´ì§€ì—­</th>
+              <td >ì„œìš¸</td>
             </tr>
             <tr>
-              <th width="100">Á÷±Þ(Á÷Ã¥)</th>
+              <th width="100">ì§ê¸‰(ì§ì±…)</th>
               <td>
-                ´ë¸®                                                                                </td>
-              <th width="100">¿¬ºÀ</th>
+                ëŒ€ë¦¬                                                                                </td>
+              <th width="100">ì—°ë´‰</th>
               <td>
-                0¸¸¿ø                                                    </td>
+                0ë§Œì›                                                    </td>
             </tr>
             <tr>
-              <th width="100">´ã´ç¾÷¹«</th>
+              <th width="100">ë‹´ë‹¹ì—…ë¬´</th>
               <td colspan="3" class="break-word">
-                À¥ »çÀÌÆ® °³¹ß                                                  </td>
+                ì›¹ ì‚¬ì´íŠ¸ ê°œë°œ                                                  </td>
             </tr>
             <tr>
-              <th width="100">Åð»ç»çÀ¯</th>
-              <td colspan="3">°³ÀÎ»çÁ¤</td>
+              <th width="100">í‡´ì‚¬ì‚¬ìœ </th>
+              <td colspan="3">ê°œì¸ì‚¬ì •</td>
             </tr>
           </table>
         </div>
         <div class="mb10">
-          <table class="tbl-view" border="0" cellspacing="0" summary="°æ·Â»çÇ×" width="100%">
+          <table class="tbl-view" border="0" cellspacing="0" summary="ê²½ë ¥ì‚¬í•­" width="100%">
             <colgroup>
               <col width="118">
               <col width="100">
@@ -830,42 +830,42 @@
             </colgroup>
             <tr>
               <td width="118" rowspan="6" style="vertical-align:top;">
-                2008.09 ~ 2010.12<br />(2³â 4°³¿ù)                        </td>
-              <th width="100">È¸»ç¸í</th>
-              <td colspan="3">¿¡µà¹Ú½º</td>
+                2008.09 ~ 2010.12<br />(2ë…„ 4ê°œì›”)                        </td>
+              <th width="100">íšŒì‚¬ëª…</th>
+              <td colspan="3">ì—ë“€ë°•ìŠ¤</td>
             </tr>
             <tr>
-              <th width="100">Á÷Á¾</th>
-              <td colspan="3">IT¡¤ÀÎÅÍ³Ý > À¥ÇÁ·Î±×·¡¸Ó</td>
+              <th width="100">ì§ì¢…</th>
+              <td colspan="3">ITÂ·ì¸í„°ë„· > ì›¹í”„ë¡œê·¸ëž˜ë¨¸</td>
             </tr>
             <tr>
-              <th width="100">±Ù¹«ºÎ¼­</th>
-              <td >½Ã½ºÅÛ °³¹ßÆÀ</td>
+              <th width="100">ê·¼ë¬´ë¶€ì„œ</th>
+              <td >ì‹œìŠ¤í…œ ê°œë°œíŒ€</td>
 
-              <th width="100">±Ù¹«Áö¿ª</th>
-              <td >¼­¿ï</td>
+              <th width="100">ê·¼ë¬´ì§€ì—­</th>
+              <td >ì„œìš¸</td>
             </tr>
             <tr>
-              <th width="100">Á÷±Þ(Á÷Ã¥)</th>
+              <th width="100">ì§ê¸‰(ì§ì±…)</th>
               <td>
-                ´ë¸®                                                                                </td>
-              <th width="100">¿¬ºÀ</th>
+                ëŒ€ë¦¬                                                                                </td>
+              <th width="100">ì—°ë´‰</th>
               <td>
-                0¸¸¿ø                                                    </td>
+                0ë§Œì›                                                    </td>
             </tr>
             <tr>
-              <th width="100">´ã´ç¾÷¹«</th>
+              <th width="100">ë‹´ë‹¹ì—…ë¬´</th>
               <td colspan="3" class="break-word">
-                °ÔÀÓ ¹× ±³À° Æ÷Å» »çÀÌÆ® °³¹ß                                                  </td>
+                ê²Œìž„ ë° êµìœ¡ í¬íƒˆ ì‚¬ì´íŠ¸ ê°œë°œ                                                  </td>
             </tr>
             <tr>
-              <th width="100">Åð»ç»çÀ¯</th>
-              <td colspan="3">°³ÀÎ»çÁ¤</td>
+              <th width="100">í‡´ì‚¬ì‚¬ìœ </th>
+              <td colspan="3">ê°œì¸ì‚¬ì •</td>
             </tr>
           </table>
         </div>
         <div class="mb10">
-          <table class="tbl-view" border="0" cellspacing="0" summary="°æ·Â»çÇ×" width="100%">
+          <table class="tbl-view" border="0" cellspacing="0" summary="ê²½ë ¥ì‚¬í•­" width="100%">
             <colgroup>
               <col width="118">
               <col width="100">
@@ -875,42 +875,42 @@
             </colgroup>
             <tr>
               <td width="118" rowspan="6" style="vertical-align:top;">
-                2010.12 ~ 2013.07<br />(2³â 8°³¿ù)                        </td>
-              <th width="100">È¸»ç¸í</th>
-              <td colspan="3">µå·¡°ïÇÃ¶óÀÌ</td>
+                2010.12 ~ 2013.07<br />(2ë…„ 8ê°œì›”)                        </td>
+              <th width="100">íšŒì‚¬ëª…</th>
+              <td colspan="3">ë“œëž˜ê³¤í”Œë¼ì´</td>
             </tr>
             <tr>
-              <th width="100">Á÷Á¾</th>
-              <td colspan="3">IT¡¤ÀÎÅÍ³Ý > À¥ÇÁ·Î±×·¡¸Ó</td>
+              <th width="100">ì§ì¢…</th>
+              <td colspan="3">ITÂ·ì¸í„°ë„· > ì›¹í”„ë¡œê·¸ëž˜ë¨¸</td>
             </tr>
             <tr>
-              <th width="100">±Ù¹«ºÎ¼­</th>
-              <td >À¥ÆÀ</td>
+              <th width="100">ê·¼ë¬´ë¶€ì„œ</th>
+              <td >ì›¹íŒ€</td>
 
-              <th width="100">±Ù¹«Áö¿ª</th>
-              <td >¼­¿ï</td>
+              <th width="100">ê·¼ë¬´ì§€ì—­</th>
+              <td >ì„œìš¸</td>
             </tr>
             <tr>
-              <th width="100">Á÷±Þ(Á÷Ã¥)</th>
+              <th width="100">ì§ê¸‰(ì§ì±…)</th>
               <td>
-                °úÀå                                                                                </td>
-              <th width="100">¿¬ºÀ</th>
+                ê³¼ìž¥                                                                                </td>
+              <th width="100">ì—°ë´‰</th>
               <td>
-                0¸¸¿ø                                                    </td>
+                0ë§Œì›                                                    </td>
             </tr>
             <tr>
-              <th width="100">´ã´ç¾÷¹«</th>
+              <th width="100">ë‹´ë‹¹ì—…ë¬´</th>
               <td colspan="3" class="break-word">
-                °ÔÀÓ ¹× Æ÷Å» »çÀÌÆ® °³¹ß                                                  </td>
+                ê²Œìž„ ë° í¬íƒˆ ì‚¬ì´íŠ¸ ê°œë°œ                                                  </td>
             </tr>
             <tr>
-              <th width="100">Åð»ç»çÀ¯</th>
-              <td colspan="3">°³ÀÎ»çÁ¤</td>
+              <th width="100">í‡´ì‚¬ì‚¬ìœ </th>
+              <td colspan="3">ê°œì¸ì‚¬ì •</td>
             </tr>
           </table>
         </div>
         <div class="mb10">
-          <table class="tbl-view" border="0" cellspacing="0" summary="°æ·Â»çÇ×" width="100%">
+          <table class="tbl-view" border="0" cellspacing="0" summary="ê²½ë ¥ì‚¬í•­" width="100%">
             <colgroup>
               <col width="118">
               <col width="100">
@@ -920,42 +920,42 @@
             </colgroup>
             <tr>
               <td width="118" rowspan="6" style="vertical-align:top;">
-                2013.08 ~ 2014.12<br />(1³â 5°³¿ù)                        </td>
-              <th width="100">È¸»ç¸í</th>
-              <td colspan="3">Ä«º»ÄÚµåÅ×Å©³î·¯Áö(¿Ü±¹°è)</td>
+                2013.08 ~ 2014.12<br />(1ë…„ 5ê°œì›”)                        </td>
+              <th width="100">íšŒì‚¬ëª…</th>
+              <td colspan="3">ì¹´ë³¸ì½”ë“œí…Œí¬ë†€ëŸ¬ì§€(ì™¸êµ­ê³„)</td>
             </tr>
             <tr>
-              <th width="100">Á÷Á¾</th>
-              <td colspan="3">IT¡¤ÀÎÅÍ³Ý > À¥ÇÁ·Î±×·¡¸Ó</td>
+              <th width="100">ì§ì¢…</th>
+              <td colspan="3">ITÂ·ì¸í„°ë„· > ì›¹í”„ë¡œê·¸ëž˜ë¨¸</td>
             </tr>
             <tr>
-              <th width="100">±Ù¹«ºÎ¼­</th>
-              <td >¸ð¹ÙÀÏÆÀ</td>
+              <th width="100">ê·¼ë¬´ë¶€ì„œ</th>
+              <td >ëª¨ë°”ì¼íŒ€</td>
 
-              <th width="100">±Ù¹«Áö¿ª</th>
-              <td >¼­¿ï</td>
+              <th width="100">ê·¼ë¬´ì§€ì—­</th>
+              <td >ì„œìš¸</td>
             </tr>
             <tr>
-              <th width="100">Á÷±Þ(Á÷Ã¥)</th>
+              <th width="100">ì§ê¸‰(ì§ì±…)</th>
               <td>
-                °úÀå                                                                                </td>
-              <th width="100">¿¬ºÀ</th>
+                ê³¼ìž¥                                                                                </td>
+              <th width="100">ì—°ë´‰</th>
               <td>
-                0¸¸¿ø                                                    </td>
+                0ë§Œì›                                                    </td>
             </tr>
             <tr>
-              <th width="100">´ã´ç¾÷¹«</th>
+              <th width="100">ë‹´ë‹¹ì—…ë¬´</th>
               <td colspan="3" class="break-word">
-                °ÔÀÓ ·Îºñ °³¹ß(¸ð¹ÙÀÏ ¹× µ¥½ºÅ©Å¾)                                                  </td>
+                ê²Œìž„ ë¡œë¹„ ê°œë°œ(ëª¨ë°”ì¼ ë° ë°ìŠ¤í¬íƒ‘)                                                  </td>
             </tr>
             <tr>
-              <th width="100">Åð»ç»çÀ¯</th>
-              <td colspan="3">°³ÀÎ»çÁ¤</td>
+              <th width="100">í‡´ì‚¬ì‚¬ìœ </th>
+              <td colspan="3">ê°œì¸ì‚¬ì •</td>
             </tr>
           </table>
         </div>
         <div class="mb10">
-          <table class="tbl-view" border="0" cellspacing="0" summary="°æ·Â»çÇ×" width="100%">
+          <table class="tbl-view" border="0" cellspacing="0" summary="ê²½ë ¥ì‚¬í•­" width="100%">
             <colgroup>
               <col width="118">
               <col width="100">
@@ -965,87 +965,87 @@
             </colgroup>
             <tr>
               <td width="118" rowspan="6" style="vertical-align:top;">
-                2015.01 ~ 2015.10<br />(10°³¿ù)                        </td>
-              <th width="100">È¸»ç¸í</th>
+                2015.01 ~ 2015.10<br />(10ê°œì›”)                        </td>
+              <th width="100">íšŒì‚¬ëª…</th>
               <td colspan="3">CMTECH</td>
             </tr>
             <tr>
-              <th width="100">Á÷Á¾</th>
-              <td colspan="3">IT¡¤ÀÎÅÍ³Ý > À¥ÇÁ·Î±×·¡¸Ó</td>
+              <th width="100">ì§ì¢…</th>
+              <td colspan="3">ITÂ·ì¸í„°ë„· > ì›¹í”„ë¡œê·¸ëž˜ë¨¸</td>
             </tr>
             <tr>
-              <th width="100">±Ù¹«ºÎ¼­</th>
-              <td >Client ÆÀ</td>
+              <th width="100">ê·¼ë¬´ë¶€ì„œ</th>
+              <td >Client íŒ€</td>
 
-              <th width="100">±Ù¹«Áö¿ª</th>
-              <td >¼­¿ï</td>
+              <th width="100">ê·¼ë¬´ì§€ì—­</th>
+              <td >ì„œìš¸</td>
             </tr>
             <tr>
-              <th width="100">Á÷±Þ(Á÷Ã¥)</th>
+              <th width="100">ì§ê¸‰(ì§ì±…)</th>
               <td>
-                °úÀå
-                <span class="res-cut"> | </span> 5³âÂ÷                                                    </td>
-              <th width="100">¿¬ºÀ</th>
+                ê³¼ìž¥
+                <span class="res-cut"> | </span> 5ë…„ì°¨                                                    </td>
+              <th width="100">ì—°ë´‰</th>
               <td>
-                0¸¸¿ø                                                    </td>
+                0ë§Œì›                                                    </td>
             </tr>
             <tr>
-              <th width="100">´ã´ç¾÷¹«</th>
+              <th width="100">ë‹´ë‹¹ì—…ë¬´</th>
               <td colspan="3" class="break-word">
-                °ÔÀÓ ·Îºñ °³¹ß(¸ð¹ÙÀÏ ¹× µ¥½ºÅ©Å¾)                                                  </td>
+                ê²Œìž„ ë¡œë¹„ ê°œë°œ(ëª¨ë°”ì¼ ë° ë°ìŠ¤í¬íƒ‘)                                                  </td>
             </tr>
             <tr>
-              <th width="100">Åð»ç»çÀ¯</th>
-              <td colspan="3">°³ÀÎ»çÁ¤</td>
+              <th width="100">í‡´ì‚¬ì‚¬ìœ </th>
+              <td colspan="3">ê°œì¸ì‚¬ì •</td>
             </tr>
           </table>
         </div>
       </div>
-      <!-- //ÀÏ¹Ý °æ·Â -->
+      <!-- //ì¼ë°˜ ê²½ë ¥ -->
 
-      <!-- IT/°³¹ßÁ÷ °æ·Â -->
-      <!-- //IT/°³¹ßÁ÷ °æ·Â -->
+      <!-- IT/ê°œë°œì§ ê²½ë ¥ -->
+      <!-- //IT/ê°œë°œì§ ê²½ë ¥ -->
 
-      <!-- °æ·Â±â¼ú¼­ -->
+      <!-- ê²½ë ¥ê¸°ìˆ ì„œ -->
       <div id="career_profile" class="mb10">
-        <table class="tbl-view" border="0" cellspacing="0" summary="°æ·Â±â¼ú¼­" width="100%">
+        <table class="tbl-view" border="0" cellspacing="0" summary="ê²½ë ¥ê¸°ìˆ ì„œ" width="100%">
           <tr>
-            <th height="35">°æ·Â±â¼ú¼­</th>
+            <th height="35">ê²½ë ¥ê¸°ìˆ ì„œ</th>
           </tr>
           <tr>
             <td class="career break-word">
-              È¸»ç: ±Â¾Ø¸®Ä¡ÀÚ»ê¿î¿ë<br />
-              ¾÷¹«: »ç³» ÆÝµå ½Ã½ºÅÛ ¹× ÀÎÆ®¶ó³Ý °³¹ß<br />
+              íšŒì‚¬: êµ¿ì•¤ë¦¬ì¹˜ìžì‚°ìš´ìš©<br />
+              ì—…ë¬´: ì‚¬ë‚´ íŽ€ë“œ ì‹œìŠ¤í…œ ë° ì¸íŠ¸ë¼ë„· ê°œë°œ<br />
               <br />
-              »ç¿ë±â¼ú: VBS, ASP, MSSQL, ORABLE, Flash(ActionScript(1.0 ~ 2.0), JS(Native), HTML, CSS µî<br />
-              <br />
-              ---------------------------------------------------------------------------------------------<br />
-              <br />
-              È¸»ç: ÀÎÅÚ¸®¿ÍÀÌ¾î¸®½º<br />
-              ¾÷¹«: KT Æ÷Å», °ø»ç, ÇùÈ¸ µî ´Ù¼ö »çÀÌÆ® °³¹ß<br />
-              <br />
-              »ç¿ë±â¼ú: ASP, MSSQL, PHP, JS(Native), HTML, CSS µî<br />
+              ì‚¬ìš©ê¸°ìˆ : VBS, ASP, MSSQL, ORABLE, Flash(ActionScript(1.0 ~ 2.0), JS(Native), HTML, CSS ë“±<br />
               <br />
               ---------------------------------------------------------------------------------------------<br />
               <br />
-              È¸»ç: ¿¡µà¹Ú½º<br />
-              ¾÷¹«: °ÔÀÓ ¹× ±³À° Æ÷Å» »çÀÌÆ® °³¹ß<br />
+              íšŒì‚¬: ì¸í…”ë¦¬ì™€ì´ì–´ë¦¬ìŠ¤<br />
+              ì—…ë¬´: KT í¬íƒˆ, ê³µì‚¬, í˜‘íšŒ ë“± ë‹¤ìˆ˜ ì‚¬ì´íŠ¸ ê°œë°œ<br />
               <br />
-              »ç¿ë±â¼ú: ASP.NET 1.0 ~ 2.0(C# Based), ASP, MSSQL, JS(Native), JQuery, HTML, CSS µî<br />
+              ì‚¬ìš©ê¸°ìˆ : ASP, MSSQL, PHP, JS(Native), HTML, CSS ë“±<br />
               <br />
-              °ü·Ã URL:<br />
+              ---------------------------------------------------------------------------------------------<br />
+              <br />
+              íšŒì‚¬: ì—ë“€ë°•ìŠ¤<br />
+              ì—…ë¬´: ê²Œìž„ ë° êµìœ¡ í¬íƒˆ ì‚¬ì´íŠ¸ ê°œë°œ<br />
+              <br />
+              ì‚¬ìš©ê¸°ìˆ : ASP.NET 1.0 ~ 2.0(C# Based), ASP, MSSQL, JS(Native), JQuery, HTML, CSS ë“±<br />
+              <br />
+              ê´€ë ¨ URL:<br />
               <a href="http://www.edubox.com">http://www.edubox.com/</a><br />
               <a href="http://comsem.co.kr">http://comsem.co.kr/</a><br />
               <a href="http://www.talkingclub.co.kr/main.do">http://www.talkingclub.co.kr/main.do</a><br />
               <br />
               ---------------------------------------------------------------------------------------------<br />
               <br />
-              È¸»ç: µå·¡°ïÇÃ¶óÀÌ<br />
-              ¾÷¹«: °ÔÀÓ ¹× À¥ »çÀÌÆ® °³¹ß<br />
+              íšŒì‚¬: ë“œëž˜ê³¤í”Œë¼ì´<br />
+              ì—…ë¬´: ê²Œìž„ ë° ì›¹ ì‚¬ì´íŠ¸ ê°œë°œ<br />
               <br />
-              »ç¿ë±â¼ú: ASP.NET 2.0(C# Based), ASP.NET MVC(C# Based), ASP, PHP, MSSQL, MYSQL, JS(Native), JQuery(1.6+), HTMl(or HTML5). CSS µî<br />
+              ì‚¬ìš©ê¸°ìˆ : ASP.NET 2.0(C# Based), ASP.NET MVC(C# Based), ASP, PHP, MSSQL, MYSQL, JS(Native), JQuery(1.6+), HTMl(or HTML5). CSS ë“±<br />
               <br />
-              °ü·Ã URL:<br />
+              ê´€ë ¨ URL:<br />
               http://dfl.co.kr/<br />
               http://ssen.dfl.co.kr/Main/HomeMain<br />
               http://vaan.dfl.co.kr/Main/HomeMain<br />
@@ -1053,46 +1053,46 @@
               <br />
               ---------------------------------------------------------------------------------------------<br />
               <br />
-              È¸»ç: Ä«º»ÄÚµåÅ×Å©³î·¯Áö<br />
-              ¾÷¹«: °ÔÀÓ ·Îºñ °³¹ß(¸ð¹ÙÀÏ ¹× µ¥½ºÅ©Å¾) / °³¹ß ÆÄÆ® ¸®µå<br />
+              íšŒì‚¬: ì¹´ë³¸ì½”ë“œí…Œí¬ë†€ëŸ¬ì§€<br />
+              ì—…ë¬´: ê²Œìž„ ë¡œë¹„ ê°œë°œ(ëª¨ë°”ì¼ ë° ë°ìŠ¤í¬íƒ‘) / ê°œë°œ íŒŒíŠ¸ ë¦¬ë“œ<br />
               <br />
-              ´ëÇ¥ ÇÁ·ÎÁ§Æ® 1: Poker Game Lobby(Mobile Web App)<br />
+              ëŒ€í‘œ í”„ë¡œì íŠ¸ 1: Poker Game Lobby(Mobile Web App)<br />
               <br />
               - Architecture Pattern: MVC<br />
-              - Main FrameWork: Sencha Touch FrameWork(2.31+)(SPA ±â¹Ý ±¸¼º)<br />
-              - BuildTool: Sencha CMD(NodeJS ±â¹Ý), ComPass/Sass(Sass ÄÄÆÄÀÏ·¯) µî<br />
-              - ETC: App Æ÷ÆÛ¸Õ½º¸¦ À§ÇØ, LocalStorage ¹× Application Cache µµÀÔ<br />
+              - Main FrameWork: Sencha Touch FrameWork(2.31+)(SPA ê¸°ë°˜ êµ¬ì„±)<br />
+              - BuildTool: Sencha CMD(NodeJS ê¸°ë°˜), ComPass/Sass(Sass ì»´íŒŒì¼ëŸ¬) ë“±<br />
+              - ETC: App í¬í¼ë¨¼ìŠ¤ë¥¼ ìœ„í•´, LocalStorage ë° Application Cache ë„ìž…<br />
               <br />
-              ´ëÇ¥ ÇÁ·ÎÁ§Æ® 2: Poker Game Lobby(DeskTop App)<br />
+              ëŒ€í‘œ í”„ë¡œì íŠ¸ 2: Poker Game Lobby(DeskTop App)<br />
               <br />
               - Main FrameWork: AngularJS(1.2.26+)<br />
-              - DeskTop App Frame: Atom(Çö Eelectron) Frame ¹æ½ÄÀ» ÅëÇØ, AngulraJS ·Î °³¹ßµÈ À¥À» Embedded ÇÏ´Â ¹æ½ÄÀ¸·Î ±¸¼º)(Mac ¹öÀü¸¸ °³¹ß)<br />
-              - BuildTool: GruntJS(NodeJS ±â¹Ý), Grunt-Sass µî...<br />
-              - Dependency Tool: Bower µî<br />
+              - DeskTop App Frame: Atom(í˜„ Eelectron) Frame ë°©ì‹ì„ í†µí•´, AngulraJS ë¡œ ê°œë°œëœ ì›¹ì„ Embedded í•˜ëŠ” ë°©ì‹ìœ¼ë¡œ êµ¬ì„±)(Mac ë²„ì „ë§Œ ê°œë°œ)<br />
+              - BuildTool: GruntJS(NodeJS ê¸°ë°˜), Grunt-Sass ë“±...<br />
+              - Dependency Tool: Bower ë“±<br />
               <br />
-              »ç¿ë±â¼ú: AngularJS(1.2.26+) , Sencha Touch FrameWork(2.31+), JQuery(1.9+), JS(Native), HTML(or HTML5), CSS(or Sass), Atom(Çö electron)https://github.com/atom/electron, Maven µî<br />
+              ì‚¬ìš©ê¸°ìˆ : AngularJS(1.2.26+) , Sencha Touch FrameWork(2.31+), JQuery(1.9+), JS(Native), HTML(or HTML5), CSS(or Sass), Atom(í˜„ electron)https://github.com/atom/electron, Maven ë“±<br />
               <br />
-              °ü·Ã URL:<br />
+              ê´€ë ¨ URL:<br />
               <a href="http://m.bovada.lv/">http://m.bovada.lv/</a><br />
               <a href="https://poker.bovada.lv/">https://poker.bovada.lv/</a><br />
                 <a href="https://casino.bovada.lv">https://casino.bovada.lv/</a><br />
               <br />
               ---------------------------------------------------------------------------------------------<br />
               <br />
-              È¸»ç: CMTECH<br />
-              ¾÷¹«: °ÔÀÓ ·Îºñ °³¹ß(¸ð¹ÙÀÏ ¹× µ¥½ºÅ©Å¾) / °³¹ß ÆÄÆ® ¸®µå<br />
+              íšŒì‚¬: CMTECH<br />
+              ì—…ë¬´: ê²Œìž„ ë¡œë¹„ ê°œë°œ(ëª¨ë°”ì¼ ë° ë°ìŠ¤í¬íƒ‘) / ê°œë°œ íŒŒíŠ¸ ë¦¬ë“œ<br />
               <br />
               - Main FrameWork: AngularJS(1.2.26+), Sencha Touch FrameWork(2.31+)<br />
-              - DeskTop App Frame: NodeWebKit(Frame(nwfaketop)) ¹æ½ÄÀ» ÅëÇØ, AngulraJS ·Î °³¹ßµÈ À¥À» Embedded ÇÏ´Â ¹æ½ÄÀ¸·Î ±¸¼º)<br />
-              - BuildTool: GruntJS(NodeJS ±â¹Ý), Grunt-Sass µî...<br />
+              - DeskTop App Frame: NodeWebKit(Frame(nwfaketop)) ë°©ì‹ì„ í†µí•´, AngulraJS ë¡œ ê°œë°œëœ ì›¹ì„ Embedded í•˜ëŠ” ë°©ì‹ìœ¼ë¡œ êµ¬ì„±)<br />
+              - BuildTool: GruntJS(NodeJS ê¸°ë°˜), Grunt-Sass ë“±...<br />
               - Dependency Tool: Bower<br />
-              - App Generator Tool: Yeoman, NodeJS ¸¦ ÅëÇØ ÀÚÃ¼ °³¹ß<br />
-              - Setup Wizard:  Inno setup(Window ±â¹Ý)<br />
-              - ETC: App Æ÷ÆÛ¸Õ½º¸¦ À§ÇØ, Application Cache µµÀÔ<br />
+              - App Generator Tool: Yeoman, NodeJS ë¥¼ í†µí•´ ìžì²´ ê°œë°œ<br />
+              - Setup Wizard:  Inno setup(Window ê¸°ë°˜)<br />
+              - ETC: App í¬í¼ë¨¼ìŠ¤ë¥¼ ìœ„í•´, Application Cache ë„ìž…<br />
               <br />
-              »ç¿ë±â¼ú: AngularJS(1.2.26+), Sencha Touch FrameWork(2.31+), JQuery(1.9+), JS(Native), HTML(or HTML5), CSS(or Sass), nodeJS, nodeWebkit, ETC(Bower, GruntJS, yeoman) µî<br />
+              ì‚¬ìš©ê¸°ìˆ : AngularJS(1.2.26+), Sencha Touch FrameWork(2.31+), JQuery(1.9+), JS(Native), HTML(or HTML5), CSS(or Sass), nodeJS, nodeWebkit, ETC(Bower, GruntJS, yeoman) ë“±<br />
               <br />
-              °ü·Ã URL:<br />
+              ê´€ë ¨ URL:<br />
               # DeskTop App<br />
               <a href="http://demo-ilovepoker.sjh-studio.com/poker/#/board/cash">http://demo-ilovepoker.sjh-studio.com/poker/#/board/cash</a><br />
               #Mobile Web App<br />
@@ -1100,64 +1100,64 @@
               <br />
               ################################################<br />
               ################################################<br />
-              ##°³ÀÎ ºí·Î±×, °³ÀÎ ÇÁ·ÎÁ§Æ®, ¼¼¹Ì³ª ¹ßÇ¥ ³»¿ª<br />
+              ##ê°œì¸ ë¸”ë¡œê·¸, ê°œì¸ í”„ë¡œì íŠ¸, ì„¸ë¯¸ë‚˜ ë°œí‘œ ë‚´ì—­<br />
               ################################################<br />
               ################################################<br />
               <br />
-              1. 2015³â ÀÌÈÄºÎÅÍ ¿î¿µÁßÀÎ °³ÀÎ ºí·Î±×:<br />
+              1. 2015ë…„ ì´í›„ë¶€í„° ìš´ì˜ì¤‘ì¸ ê°œì¸ ë¸”ë¡œê·¸:<br />
               http://mohwa.github.io/blog/<br />
               <br />
-              2. 2014³â±îÁö ¿î¿µÇß¾ú´ø °³ÀÎ ºí·Î±×:<br />
+              2. 2014ë…„ê¹Œì§€ ìš´ì˜í–ˆì—ˆë˜ ê°œì¸ ë¸”ë¡œê·¸:<br />
               http://mohwaproject.tistory.com/<br />
               <br />
               3. GitHub Page<br />
-              ºí·Î±× ¹× °³ÀÎ ÇÁ·ÎÁ§Æ® ÀúÀå¼Ò:<br />
+              ë¸”ë¡œê·¸ ë° ê°œì¸ í”„ë¡œì íŠ¸ ì €ìž¥ì†Œ:<br />
               https://github.com/mohwa<br />
               <br />
-              4. ÇÑ°æ¿¡¼­ ÁÖÃÖÇÑ ¼¼¹Ì³ª ¹ßÇ¥ ÀÚ·á(ÀÀ´äÇÏ¶ó ¹ÝÀÀÇüÀ¥)<br />
+              4. í•œê²½ì—ì„œ ì£¼ìµœí•œ ì„¸ë¯¸ë‚˜ ë°œí‘œ ìžë£Œ(ì‘ë‹µí•˜ë¼ ë°˜ì‘í˜•ì›¹)<br />
               http://imazine.github.io/HKSeminar/#/<br />
               <br />
-              5. Undefined ¸ðÀÓ ¹ßÇ¥ ÀÚ·á(CoffeeScript)<br />https://docs.google.com/presentation/d/1qOiYT6o6TcBmtY9YxtVyfaY7ysi4gnlkGJ9VdCjiJCA/edit</td>
+              5. Undefined ëª¨ìž„ ë°œí‘œ ìžë£Œ(CoffeeScript)<br />https://docs.google.com/presentation/d/1qOiYT6o6TcBmtY9YxtVyfaY7ysi4gnlkGJ9VdCjiJCA/edit</td>
           </tr>
         </table>
       </div>
-      <!-- //°æ·Â±â¼ú¼­ -->
+      <!-- //ê²½ë ¥ê¸°ìˆ ì„œ -->
     </div>
   </div>
     <div id="activity_view" class="divide-view-item">
       <a name="activity_view_anchor"></a>
       <div class="item-header res-item">
-        <h3 style="position:relative"><span class="item-title">ÁÖ¿äÈ°µ¿ ¹× »çÈ¸°æÇè</span>
-          <a onclick="window.open('/zf_user/guide/movie/popup?category=majorActivity', 'popup', 'width=690,height=490,scrollbars=no,status=no')" class="btn-meida-view " style="left:175px;top:0;width:32px;cursor:pointer" title="µ¿¿µ»ó °¡ÀÌµå º¸±â"><span class="hide"><span class="bar"></span>µ¿¿µ»ó °¡ÀÌµå º¸±â</span></a>
+        <h3 style="position:relative"><span class="item-title">ì£¼ìš”í™œë™ ë° ì‚¬íšŒê²½í—˜</span>
+          <a onclick="window.open('/zf_user/guide/movie/popup?category=majorActivity', 'popup', 'width=690,height=490,scrollbars=no,status=no')" class="btn-meida-view " style="left:175px;top:0;width:32px;cursor:pointer" title="ë™ì˜ìƒ ê°€ì´ë“œ ë³´ê¸°"><span class="hide"><span class="bar"></span>ë™ì˜ìƒ ê°€ì´ë“œ ë³´ê¸°</span></a>
         </h3>
       </div>
       <div class="item-contents">
         <div class="mb10">
-          <table class="tbl-view" border="0" cellspacing="0" summary="ÁÖ¿äÈ°µ¿ ¹× »çÈ¸°æÇè" width="100%">
+          <table class="tbl-view" border="0" cellspacing="0" summary="ì£¼ìš”í™œë™ ë° ì‚¬íšŒê²½í—˜" width="100%">
             <colgroup>
               <col width="118">
               <col width="95">
               <col>
             </colgroup>
             <tr>
-              <th width="118" height="35">È°µ¿±â°£</th>
-              <th colspan="2">»ó¼¼È°µ¿</th>
+              <th width="118" height="35">í™œë™ê¸°ê°„</th>
+              <th colspan="2">ìƒì„¸í™œë™</th>
             </tr>
             <tr>
               <td width="118" rowspan="3" style="vertical-align:top;">
-                2014.07 ~ 2014.07<br />(1°³¿ù)                        </td>
-              <th width="95">±¸ºÐ</th>
-              <td>»çÈ¸È°µ¿</td>
+                2014.07 ~ 2014.07<br />(1ê°œì›”)                        </td>
+              <th width="95">êµ¬ë¶„</th>
+              <td>ì‚¬íšŒí™œë™</td>
             </tr>
             <tr>
-              <th width="95">È°µ¿±â°ü</th>
-              <td>ÇÑ±¹°æÁ¦</td>
+              <th width="95">í™œë™ê¸°ê´€</th>
+              <td>í•œêµ­ê²½ì œ</td>
             </tr>
             <tr>
-              <th width="95">È°µ¿³»¿ë</th>
-              <td class="break-word">¹ÝÀÀÇüÀ¥ ¼¼¹Ì³ª °­»ç<br />
+              <th width="95">í™œë™ë‚´ìš©</th>
+              <td class="break-word">ë°˜ì‘í˜•ì›¹ ì„¸ë¯¸ë‚˜ ê°•ì‚¬<br />
                 <br />
-                ÇÑ°æ¿¡¼­ ÁÖÃÖÇÑ ¼¼¹Ì³ª ¹ßÇ¥ ÀÚ·á(ÀÀ´äÇÏ¶ó ¹ÝÀÀÇüÀ¥)<br />
+                í•œê²½ì—ì„œ ì£¼ìµœí•œ ì„¸ë¯¸ë‚˜ ë°œí‘œ ìžë£Œ(ì‘ë‹µí•˜ë¼ ë°˜ì‘í˜•ì›¹)<br />
                 http://imazine.github.io/HKSeminar/#/</td>
             </tr>
           </table>
@@ -1166,10 +1166,10 @@
     </div><div id="personal_view" class="divide-view-item">
     <a name="personal_view_anchor"></a>
     <div class="item-header res-item">
-      <h3><span class="item-title">°³ÀÎ ½Å»óÁ¤º¸</span></h3>
+      <h3><span class="item-title">ê°œì¸ ì‹ ìƒì •ë³´</span></h3>
     </div>
     <div class="item-contents">
-      <table class="tbl-view" border="0" cellspacing="0" summary="°³ÀÎ ½Å»óÁ¤º¸" width="100%">
+      <table class="tbl-view" border="0" cellspacing="0" summary="ê°œì¸ ì‹ ìƒì •ë³´" width="100%">
         <colgroup>
           <col width="100">
           <col width="221">
@@ -1177,26 +1177,26 @@
           <col>
         </colgroup>
         <tr>
-          <th>°áÈ¥¿©ºÎ</th>
-          <td >±âÈ¥</td>
-          <th>Ãë¹Ì/Æ¯±â</th>
+          <th>ê²°í˜¼ì—¬ë¶€</th>
+          <td >ê¸°í˜¼</td>
+          <th>ì·¨ë¯¸/íŠ¹ê¸°</th>
           <td >
-            ±×¸² / ÄÄÇ»ÅÍ                    </td>
+            ê·¸ë¦¼ / ì»´í“¨í„°                    </td>
         </tr>
         <tr>
-          <th>º´¿ª´ë»ó</th>
+          <th>ë³‘ì—­ëŒ€ìƒ</th>
           <td colspan="3" class="break-word">
-            [±ºÇÊ] 2001.04 ~ 2003.06                                    <span class="res-cut"> | </span> À°±º                                                    <span class="res-cut"> | </span> º´Àå                                                            </tr>
+            [êµ°í•„] 2001.04 ~ 2003.06                                    <span class="res-cut"> | </span> ìœ¡êµ°                                                    <span class="res-cut"> | </span> ë³‘ìž¥                                                            </tr>
       </table>
     </div>
   </div>
     <div id="family_view" class="divide-view-item">
       <a name="family_view_anchor"></a>
       <div class="item-header res-item">
-        <h3><span class="item-title">°¡Á·°ü°è</span></h3>
+        <h3><span class="item-title">ê°€ì¡±ê´€ê³„</span></h3>
       </div>
       <div class="item-contents">
-        <table class="tbl-view" border="0" cellspacing="0" summary="°¡Á·°ü°è" width="100%">
+        <table class="tbl-view" border="0" cellspacing="0" summary="ê°€ì¡±ê´€ê³„" width="100%">
           <colgroup>
             <col width="75">
             <col width="75">
@@ -1206,47 +1206,47 @@
             <col>
           </colgroup>
           <tr>
-            <th height="35">ÇüÁ¦°ü°è</th>
-            <td colspan="5">1³² 2³à Áß 3Â°</td>
+            <th height="35">í˜•ì œê´€ê³„</th>
+            <td colspan="5">1ë‚¨ 2ë…€ ì¤‘ 3ì§¸</td>
           </tr>
           <tr>
-            <th height="35">°ü°è</th>
-            <th>¼º¸í</th>
-            <th>¿¬·É</th>
-            <th height="35">ÇöÀçÁ÷¾÷</th>
-            <th>µ¿°Å¿©ºÎ</th>
-            <th>ÇÑÁÙ¼Ò°³</th>
+            <th height="35">ê´€ê³„</th>
+            <th>ì„±ëª…</th>
+            <th>ì—°ë ¹</th>
+            <th height="35">í˜„ìž¬ì§ì—…</th>
+            <th>ë™ê±°ì—¬ë¶€</th>
+            <th>í•œì¤„ì†Œê°œ</th>
           </tr>
           <tr>
-            <td class="center-td">ºÎ</td>
-            <td class="center-td">Àü¿ë´ë</td>
-            <td class="center-td">74¼¼</td>
-            <td class="center-td">°³ÀÎ»ç¾÷</td>
-            <td class="center-td">ºñµ¿°Å</td>
+            <td class="center-td">ë¶€</td>
+            <td class="center-td">ì „ìš©ëŒ€</td>
+            <td class="center-td">74ì„¸</td>
+            <td class="center-td">ê°œì¸ì‚¬ì—…</td>
+            <td class="center-td">ë¹„ë™ê±°</td>
             <td class="center-td">-</td>
           </tr>
           <tr>
-            <td class="center-td">¸ð</td>
-            <td class="center-td">±èÁ¡·Ê</td>
-            <td class="center-td">66¼¼</td>
-            <td class="center-td">°¡»ç</td>
-            <td class="center-td">ºñµ¿°Å</td>
+            <td class="center-td">ëª¨</td>
+            <td class="center-td">ê¹€ì ë¡€</td>
+            <td class="center-td">66ì„¸</td>
+            <td class="center-td">ê°€ì‚¬</td>
+            <td class="center-td">ë¹„ë™ê±°</td>
             <td class="center-td">-</td>
           </tr>
           <tr>
-            <td class="center-td">¸Å</td>
-            <td class="center-td">ÀüÁöÇö</td>
-            <td class="center-td">40¼¼</td>
-            <td class="center-td">È¸»ç¿ø</td>
-            <td class="center-td">ºñµ¿°Å</td>
+            <td class="center-td">ë§¤</td>
+            <td class="center-td">ì „ì§€í˜„</td>
+            <td class="center-td">40ì„¸</td>
+            <td class="center-td">íšŒì‚¬ì›</td>
+            <td class="center-td">ë¹„ë™ê±°</td>
             <td class="center-td">-</td>
           </tr>
           <tr>
-            <td class="center-td">¸Å</td>
-            <td class="center-td">ÀüÁö¼±</td>
-            <td class="center-td">38¼¼</td>
-            <td class="center-td">°£È£»ç</td>
-            <td class="center-td">ºñµ¿°Å</td>
+            <td class="center-td">ë§¤</td>
+            <td class="center-td">ì „ì§€ì„ </td>
+            <td class="center-td">38ì„¸</td>
+            <td class="center-td">ê°„í˜¸ì‚¬</td>
+            <td class="center-td">ë¹„ë™ê±°</td>
             <td class="center-td">-</td>
           </tr>
         </table>
@@ -1255,67 +1255,67 @@
     <div id="character_view" class="divide-view-item">
       <a name="character_view_anchor"></a>
       <div class="item-header res-item">
-        <h3><span class="item-title">°­Á¡/¼º°Ý</span></h3>
+        <h3><span class="item-title">ê°•ì /ì„±ê²©</span></h3>
       </div>
       <div class="mb10">
-        <table class="tbl-view" cellpadding="0" cellspacing="0" summary="°­Á¡/¼º°Ý" width="100%">
+        <table class="tbl-view" cellpadding="0" cellspacing="0" summary="ê°•ì /ì„±ê²©" width="100%">
           <colgroup>
             <col width="100">
             <col width="*">
           </colgroup>
           <tr>
-            <th width="100">°­Á¡</th>
-            <td>Ã¥ÀÓ°¨ÀÌ °­ÇÔ, ÁýÁß·ÂÀÌ ¶Ù¾î³², °èÈ¹À» Àß ¼¼¿ò, ½ÇÇà·ÂÀÌ ¶Ù¾î³²</td>
+            <th width="100">ê°•ì </th>
+            <td>ì±…ìž„ê°ì´ ê°•í•¨, ì§‘ì¤‘ë ¥ì´ ë›°ì–´ë‚¨, ê³„íšì„ ìž˜ ì„¸ì›€, ì‹¤í–‰ë ¥ì´ ë›°ì–´ë‚¨</td>
           </tr>
           <tr>
-            <th>¼º°Ý</th>
-            <td>Â÷ºÐÇÔ, ½ÅÁßÇÔ, ³í¸®Àû, ³«°üÀû, Ä§ÂøÇÔ</td>
+            <th>ì„±ê²©</th>
+            <td>ì°¨ë¶„í•¨, ì‹ ì¤‘í•¨, ë…¼ë¦¬ì , ë‚™ê´€ì , ì¹¨ì°©í•¨</td>
           </tr>
         </table>
       </div>
     </div>
     <div id="free_introduce_view" class="divide-view-item" style="page-break-before: always;">
       <div class="item-header res-item">
-        <h3><span class="item-title">ÀÚ±â¼Ò°³¼­</span></h3>
+        <h3><span class="item-title">ìžê¸°ì†Œê°œì„œ</span></h3>
       </div>
       <div class="item-contents" >
-        <table class="tbl-view" border="0" cellspacing="0" summary="ÀÚ±â¼Ò°³¼­" width="100%">
+        <table class="tbl-view" border="0" cellspacing="0" summary="ìžê¸°ì†Œê°œì„œ" width="100%">
           <tr>
-            <th height="35"><b>ÀÚ±â¼Ò°³¼­</b></th>
+            <th height="35"><b>ìžê¸°ì†Œê°œì„œ</b></th>
           </tr>
           <tr>
             <td class="career break-word" valign="top" height="100%">
                         <span id="introduce_contents">
-                            ¾à 5³âÀüºÎÅÍ, ³­ °³¹ßÀÚ°¡ &quot;ÃµÁ÷&quot; ÀÌ±¸³ª¶ó´Â »ç½ÇÀ» ÀÎÁ¤ ÈÄ, Áö±Ý±îÁö ÇÑ´«ÆÈÁö¾Ê°í ±×<br />
-±æÀ» °É¾î°¡°íÀÖ°í, ¶Ç ¾ÕÀ¸·Îµµ ±× ±æ¸¸À» °É¾î°¡°í ½ÍÀº 30´ë Áß¹ÝÀ» ´Þ¸®°í ÀÖ´Â °³¹ßÀÚÀÔ´Ï´Ù.<br />
+                            ì•½ 5ë…„ì „ë¶€í„°, ë‚œ ê°œë°œìžê°€ &quot;ì²œì§&quot; ì´êµ¬ë‚˜ë¼ëŠ” ì‚¬ì‹¤ì„ ì¸ì • í›„, ì§€ê¸ˆê¹Œì§€ í•œëˆˆíŒ”ì§€ì•Šê³  ê·¸<br />
+ê¸¸ì„ ê±¸ì–´ê°€ê³ ìžˆê³ , ë˜ ì•žìœ¼ë¡œë„ ê·¸ ê¸¸ë§Œì„ ê±¸ì–´ê°€ê³  ì‹¶ì€ 30ëŒ€ ì¤‘ë°˜ì„ ë‹¬ë¦¬ê³  ìžˆëŠ” ê°œë°œìžìž…ë‹ˆë‹¤.<br />
 <br />
-¿ì¼± Áö±Ý±îÁöÀÇ °³¹ß °æÇèÀ¸·Î´Â, 2004³â Ã¹ È¸»ç¸¦ ÅëÇØ VB, ASP, Oracle, MSSQL(2000+), ActionScript(1.0+) µîÀ» ½ÃÀÛÀ¸·Î, C# À» Base ·Î µÎ°í ÀÖ´Â, ASP.NET(MVC) À» °ÅÃÄ, 2013³âºÎÅÍ º»°ÝÀûÀ¸·Î &quot;ÇÁ·ÐÆ® °³¹ßÀÚ&quot;·Î ÀüÇâ ÈÄ °ü·ÃµÈ ¸¹Àº ÇÁ·ÎÁ§Æ®µéÀ» ÁøÇàÇÏ¿´½À´Ï´Ù.(´Ü JavaScript µîÀÇ &quot;ÇÁ·ÐÆ® °ü·Ã ¾ð¾î&quot;µéÀº, ÀÌ¹Ì ¿À·¡ÀüºÎÅÍ ¸¹ÀÌ ´Ù·ï¿Ô¾ú½À´Ï´Ù)<br />
+ìš°ì„  ì§€ê¸ˆê¹Œì§€ì˜ ê°œë°œ ê²½í—˜ìœ¼ë¡œëŠ”, 2004ë…„ ì²« íšŒì‚¬ë¥¼ í†µí•´ VB, ASP, Oracle, MSSQL(2000+), ActionScript(1.0+) ë“±ì„ ì‹œìž‘ìœ¼ë¡œ, C# ì„ Base ë¡œ ë‘ê³  ìžˆëŠ”, ASP.NET(MVC) ì„ ê±°ì³, 2013ë…„ë¶€í„° ë³¸ê²©ì ìœ¼ë¡œ &quot;í”„ë¡ íŠ¸ ê°œë°œìž&quot;ë¡œ ì „í–¥ í›„ ê´€ë ¨ëœ ë§Žì€ í”„ë¡œì íŠ¸ë“¤ì„ ì§„í–‰í•˜ì˜€ìŠµë‹ˆë‹¤.(ë‹¨ JavaScript ë“±ì˜ &quot;í”„ë¡ íŠ¸ ê´€ë ¨ ì–¸ì–´&quot;ë“¤ì€, ì´ë¯¸ ì˜¤ëž˜ì „ë¶€í„° ë§Žì´ ë‹¤ë¤„ì™”ì—ˆìŠµë‹ˆë‹¤)<br />
 <br />
-¸ÕÀú ÀÌÀü È¸»çÀÎ &quot;Ä«º» ÄÚµå Å×Å©³î·¯Áö&quot; ¿¡¼­´Â Sencha Touch FrameWork(2.31+)À» ±â¹ÝÀ¸·ÎÇÑ ¸ð¹ÙÀÏ À¥¾Û(SPA)À» ÁÖ·Î °³¹ßÇÏ¿´°í, &quot;¹ø¿Ü ÇÁ·ÎÁ§Æ®&quot;·Î AngularJS + Atom À» ÀÌ¿ëÇÑ µ¥Å©½ºÅ¾ ¾îÇÃ(Poker tournament lobby)À» °³¹ßÇÏ¿´½À´Ï´Ù. <br />
+ë¨¼ì € ì´ì „ íšŒì‚¬ì¸ &quot;ì¹´ë³¸ ì½”ë“œ í…Œí¬ë†€ëŸ¬ì§€&quot; ì—ì„œëŠ” Sencha Touch FrameWork(2.31+)ì„ ê¸°ë°˜ìœ¼ë¡œí•œ ëª¨ë°”ì¼ ì›¹ì•±(SPA)ì„ ì£¼ë¡œ ê°œë°œí•˜ì˜€ê³ , &quot;ë²ˆì™¸ í”„ë¡œì íŠ¸&quot;ë¡œ AngularJS + Atom ì„ ì´ìš©í•œ ë°í¬ìŠ¤íƒ‘ ì–´í”Œ(Poker tournament lobby)ì„ ê°œë°œí•˜ì˜€ìŠµë‹ˆë‹¤. <br />
 <br />
-¶Ç ÇöÀç È¸»ç¿¡¼­´Â &quot;Poker game lobby&quot; ¸¦ À§ÇÑ, µ¥½ºÅ©Å¾ À¥(¾Û)(AngularJS + nodeWebkit + webSocket ±â¹Ý SPA) ¹× ¸ð¹ÙÀÏ<br />
-À¥¾Û(Sencha Touch FrameWork + webSocket ±â¹Ý SPA)À» °³¹ßÇÏ¿´½À´Ï´Ù. <br />
+ë˜ í˜„ìž¬ íšŒì‚¬ì—ì„œëŠ” &quot;Poker game lobby&quot; ë¥¼ ìœ„í•œ, ë°ìŠ¤í¬íƒ‘ ì›¹(ì•±)(AngularJS + nodeWebkit + webSocket ê¸°ë°˜ SPA) ë° ëª¨ë°”ì¼<br />
+ì›¹ì•±(Sencha Touch FrameWork + webSocket ê¸°ë°˜ SPA)ì„ ê°œë°œí•˜ì˜€ìŠµë‹ˆë‹¤. <br />
 <br />
-¸¶Áö¸·À¸·Î Á¦°¡ °¡Áø &quot;°æÀï·Â&quot;ÀÌ¸ç, &quot;°³¹ßÀÚ&quot;°¡ °¡Á®¾ßÇÒ, °¡Àå Å« ºÎºÐÀÌ¶ó°í »ý°¢ÇÏ´Â°Ç &quot;²ÙÁØÇÔ&quot; °ú ±×°ÍÀ» À¯Áö½ÃÅ°´Â &quot;¿­Á¤(or ´ö·Â)&quot; ÀÌ¶ó°í »ý°¢ÇÕ´Ï´Ù.<br />
+ë§ˆì§€ë§‰ìœ¼ë¡œ ì œê°€ ê°€ì§„ &quot;ê²½ìŸë ¥&quot;ì´ë©°, &quot;ê°œë°œìž&quot;ê°€ ê°€ì ¸ì•¼í• , ê°€ìž¥ í° ë¶€ë¶„ì´ë¼ê³  ìƒê°í•˜ëŠ”ê±´ &quot;ê¾¸ì¤€í•¨&quot; ê³¼ ê·¸ê²ƒì„ ìœ ì§€ì‹œí‚¤ëŠ” &quot;ì—´ì •(or ë•ë ¥)&quot; ì´ë¼ê³  ìƒê°í•©ë‹ˆë‹¤.<br />
 <br />
-¾Õ¼­¸»ÇÑ &quot;²ÙÁØÇÔ&quot; °ú &quot;¿­Á¤(or ´ö·Â)&quot; ¿¡ ´ëÇÑ, Á¦ °³ÀÎÀûÀÎ »êÃâ¹°·Î´Â &quot;°³ÀÎ ºí·Î±×&quot; ¹× GitHub Page ¸¦ ÅëÇÑ &quot;°³ÀÎ ÇÁ·ÎÁ§Æ®&quot;(È¸»ç<br />
-ÇÁ·ÎÁ§Æ®¸¦ ÅëÇØ Á¢ÇÏÁö ¸øÇß´ø ±â¼úµéÀ» Á¢ÇÏ±â À§ÇÑ)°¡ ÀÖ½À´Ï´Ù.<br />
+ì•žì„œë§í•œ &quot;ê¾¸ì¤€í•¨&quot; ê³¼ &quot;ì—´ì •(or ë•ë ¥)&quot; ì— ëŒ€í•œ, ì œ ê°œì¸ì ì¸ ì‚°ì¶œë¬¼ë¡œëŠ” &quot;ê°œì¸ ë¸”ë¡œê·¸&quot; ë° GitHub Page ë¥¼ í†µí•œ &quot;ê°œì¸ í”„ë¡œì íŠ¸&quot;(íšŒì‚¬<br />
+í”„ë¡œì íŠ¸ë¥¼ í†µí•´ ì ‘í•˜ì§€ ëª»í–ˆë˜ ê¸°ìˆ ë“¤ì„ ì ‘í•˜ê¸° ìœ„í•œ)ê°€ ìžˆìŠµë‹ˆë‹¤.<br />
 <br />
 <br />
-1. 2015³â ÀÌÈÄºÎÅÍ ¿î¿µÁßÀÎ °³ÀÎ ºí·Î±×:<br />
+1. 2015ë…„ ì´í›„ë¶€í„° ìš´ì˜ì¤‘ì¸ ê°œì¸ ë¸”ë¡œê·¸:<br />
 http://mohwa.github.io/blog/<br />
 <br />
-2. 2014³â±îÁö ¿î¿µÇß¾ú´ø °³ÀÎ ºí·Î±×:<br />
+2. 2014ë…„ê¹Œì§€ ìš´ì˜í–ˆì—ˆë˜ ê°œì¸ ë¸”ë¡œê·¸:<br />
 http://mohwaproject.tistory.com/<br />
 <br />
 3. GitHub Page<br />
-ºí·Î±× ¹× °³ÀÎ ÇÁ·ÎÁ§Æ® ÀúÀå¼Ò:<br />
+ë¸”ë¡œê·¸ ë° ê°œì¸ í”„ë¡œì íŠ¸ ì €ìž¥ì†Œ:<br />
 https://github.com/mohwa<br />
 <br />
-4. ÇÑ°æ¿¡¼­ ÁÖÃÖÇÑ ¼¼¹Ì³ª ¹ßÇ¥ ÀÚ·á(ÀÀ´äÇÏ¶ó ¹ÝÀÀÇüÀ¥)<br />
+4. í•œê²½ì—ì„œ ì£¼ìµœí•œ ì„¸ë¯¸ë‚˜ ë°œí‘œ ìžë£Œ(ì‘ë‹µí•˜ë¼ ë°˜ì‘í˜•ì›¹)<br />
 http://imazine.github.io/HKSeminar/#/<br />
 <br />
-5. Undefined ¸ðÀÓ ¹ßÇ¥ ÀÚ·á(CoffeeScript)<br />
+5. Undefined ëª¨ìž„ ë°œí‘œ ìžë£Œ(CoffeeScript)<br />
 https://docs.google.com/presentation/d/1qOiYT6o6TcBmtY9YxtVy<br />
 <br />
 faY7ysi4gnlkGJ9VdCjiJCA/edit<br />
@@ -1325,52 +1325,52 @@ faY7ysi4gnlkGJ9VdCjiJCA/edit<br />
         </table>
       </div>
     </div>
-    <!-- //ÀúÀåµÈ ¼ø¼­´ë·Î Ç×¸ñº° ·»´õ -->
+    <!-- //ì €ìž¥ëœ ìˆœì„œëŒ€ë¡œ í•­ëª©ë³„ ë Œë” -->
 
     <!-- footer -->
     <div id="resume_footer">
       <div class="sign">
-        À§ÀÇ ¸ðµç ³»¿ëÀº »ç½Ç°ú ´Ù¸§¾øÀ½À» È®ÀÎÇÕ´Ï´Ù.<br />
-        ÀÛ¼ºÀÏ :<b> 2015³â 10¿ù 24ÀÏ (Åä)</b>
-        / ÀÛ¼ºÀÚ : <b>Àü¼º±Õ</b></div>
+        ìœ„ì˜ ëª¨ë“  ë‚´ìš©ì€ ì‚¬ì‹¤ê³¼ ë‹¤ë¦„ì—†ìŒì„ í™•ì¸í•©ë‹ˆë‹¤.<br />
+        ìž‘ì„±ì¼ :<b> 2015ë…„ 10ì›” 24ì¼ (í† )</b>
+        / ìž‘ì„±ìž : <b>ì „ì„±ê· </b></div>
     </div>
     <!-- //footer -->
 
   </div>
 </div>
-<!-- //ÀÌ·Â¼­ º»¹® -->
+<!-- //ì´ë ¥ì„œ ë³¸ë¬¸ -->
 
-<!-- ÀÎÀçÁ¤º¸ ºäÀÏ ¶§ ÇÏ´Ü¿¡ ¸ñ·ÏÀ¸·Î ¾ÆÀÌÄÜ -->
-<!-- //ÀÎÀçÁ¤º¸ ºäÀÏ ¶§ ÇÏ´Ü¿¡ ¸ñ·ÏÀ¸·Î ¾ÆÀÌÄÜ -->
+<!-- ì¸ìž¬ì •ë³´ ë·°ì¼ ë•Œ í•˜ë‹¨ì— ëª©ë¡ìœ¼ë¡œ ì•„ì´ì½˜ -->
+<!-- //ì¸ìž¬ì •ë³´ ë·°ì¼ ë•Œ í•˜ë‹¨ì— ëª©ë¡ìœ¼ë¡œ ì•„ì´ì½˜ -->
 
-<!-- ÇÏ´Ü ÀÎÀç°Ë»ö ¼­ºñ½º ½ÅÃ» ÀÌ¹ÌÁö -->
-<!-- //ÇÏ´Ü ÀÎÀç°Ë»ö ¼­ºñ½º ½ÅÃ» ÀÌ¹ÌÁö -->
+<!-- í•˜ë‹¨ ì¸ìž¬ê²€ìƒ‰ ì„œë¹„ìŠ¤ ì‹ ì²­ ì´ë¯¸ì§€ -->
+<!-- //í•˜ë‹¨ ì¸ìž¬ê²€ìƒ‰ ì„œë¹„ìŠ¤ ì‹ ì²­ ì´ë¯¸ì§€ -->
 
-<!-- ÀÌ·Â¼­ ¼öÁ¤ ¸»Ç³¼± -->
+<!-- ì´ë ¥ì„œ ìˆ˜ì • ë§í’ì„  -->
 <div id="edit_resume_layer" style="width:100px;display:none" class="ly-balloon-yell">
-  <p><a href="javascript:goEditingResume()">ÀÌ·Â¼­</a><br><a href="javascript:goEditingIntroduce()">ÀÚ±â¼Ò°³¼­</a></p><div class="edge-top-short" style="left:40%;"></div>
+  <p><a href="javascript:goEditingResume()">ì´ë ¥ì„œ</a><br><a href="javascript:goEditingIntroduce()">ìžê¸°ì†Œê°œì„œ</a></p><div class="edge-top-short" style="left:40%;"></div>
 </div>
-<!-- //ÀÌ·Â¼­ ¼öÁ¤ ¸»Ç³¼± -->
+<!-- //ì´ë ¥ì„œ ìˆ˜ì • ë§í’ì„  -->
 </body>
-</html>    <!-- ÀÎÀçµðºñ »ç¿ë È®ÀÎ ·¹ÀÌ¾î  ½ÃÀÛ-->
+</html>    <!-- ì¸ìž¬ë””ë¹„ ì‚¬ìš© í™•ì¸ ë ˆì´ì–´  ì‹œìž‘-->
 <div id="use-confirm-layer" valign="middle" style="background-color: white; left: 225px; top: 247px; position: absolute; width:350px; padding:15px; border:5px solid #5986d1; display: none; z-index:1;">
   <table width="100%"  cellspacing="0" cellpadding="0" border="0">
     <tr>
       <td bgcolor="f2f7ff" style="padding:10px;border:1px solid #c3d7f8; font-family: gulim; color:#494949;">
-        <b>º» ÀÎÀçÀÇ »ó¼¼ÀÌ·Â ¹× ¿¬¶ôÃ³¸¦ È®ÀÎÇÕ´Ï´Ù.</b>
+        <b>ë³¸ ì¸ìž¬ì˜ ìƒì„¸ì´ë ¥ ë° ì—°ë½ì²˜ë¥¼ í™•ì¸í•©ë‹ˆë‹¤.</b>
         <br>
         <br>
-        È®ÀÎ ÈÄ, ÀÎÀçÁ¤º¸ ¿­¶÷ »óÇ° ÀÜ¿© °Ç¼ö : <span id="mandb_num"></span><br> </td>
+        í™•ì¸ í›„, ì¸ìž¬ì •ë³´ ì—´ëžŒ ìƒí’ˆ ìž”ì—¬ ê±´ìˆ˜ : <span id="mandb_num"></span><br> </td>
     </tr>
     <tr>
       <td style="text-align:center; padding-top:5px;">
-        <a style="cursor:pointer" onclick="useMandb('6575949');"><img src="//www.saraminimage.co.kr/pds/mandb/new/btn_ok.gif" alt="È®ÀÎ" border="0" hspace="10"></a>
-        <a style="cursor:pointer" onclick="$('use-confirm-layer').hide();"><img src="//www.saraminimage.co.kr/pds/mandb/new/btn_c_02.gif" alt="Ãë¼Ò" border="0"></a>
+        <a style="cursor:pointer" onclick="useMandb('6575949');"><img src="//www.saraminimage.co.kr/pds/mandb/new/btn_ok.gif" alt="í™•ì¸" border="0" hspace="10"></a>
+        <a style="cursor:pointer" onclick="$('use-confirm-layer').hide();"><img src="//www.saraminimage.co.kr/pds/mandb/new/btn_c_02.gif" alt="ì·¨ì†Œ" border="0"></a>
       </td>
     </tr>
   </table>
 </div>
-<!-- ÀÎÀçµðºñ »ç¿ë È®ÀÎ ·¹ÀÌ¾î ³¡-->
+<!-- ì¸ìž¬ë””ë¹„ ì‚¬ìš© í™•ì¸ ë ˆì´ì–´ ë-->
 <script type="text/javascript">
   (function() {
     var pszProto = (("https:" == document.location.protocol) ? "https://www.saramin.co.kr/js/" : "//www.saraminimage.co.kr/js/");
@@ -1435,7 +1435,7 @@ faY7ysi4gnlkGJ9VdCjiJCA/edit<br />
     n_trackEvent('ADs', 'Click-' + cc);
   }
 
-  // ÇÃ·¡½Ã ¹è³Ê Å¬¸¯¼ö Ã¼Å©¸¦ À§ÇÑ ÇÔ¼ö - @deprecated Since 2013-1-01-10
+  // í”Œëž˜ì‹œ ë°°ë„ˆ í´ë¦­ìˆ˜ ì²´í¬ë¥¼ ìœ„í•œ í•¨ìˆ˜ - @deprecated Since 2013-1-01-10
   var adsClick = function (cc, url) {
     var redirectUrl = 'http://ads.saramin.co.kr/checkpage.php?url=' + encodeURIComponent(url);
     _hwaClick(cc);

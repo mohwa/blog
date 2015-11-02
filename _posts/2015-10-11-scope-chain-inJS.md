@@ -82,7 +82,7 @@ tags: [JavaScript]
 
 - Global Execution Context 의 **Scope Chain**
 
-  - global execution context 에 생성되는 **Scope Chain** 은 globalExecutionContext.VO 만 **포함**한다.
+  - global execution context 내부에 생성되는 **Scope Chain** 은 globalExecutionContext.VO 만 **포함**한다.
     
           ```javascript
             globalExecutionContext:{
@@ -491,35 +491,60 @@ tags: [JavaScript]
 
 - JS 에서 말하는 [Closure](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures)란? 별도의 **개념**이 아닌, <u>**Scope Chain 매커니즘**</u>에 의한 **바인딩 환경**을 말하는것이다.<p>
   
-    - Closure 설명하는 일반적인 예제
+    - 일반적인 Closure 환경
     
-          ```javascript
-          
+          ```javascript    
           // global execution context
           
-          function makeAdder(x) {
-            
-            // function execution context
-            
-            // 반환되는 익명함수에는 Scope Chain 매커니즘에 의해 부모 계층의 모든 VO 가 포함되어있다.
-            // 부모 계층의 AO(VO)({x: 5 or 10})
-            return function(y) {
-            
-              // function execution context
-              // Scope Chain 의 식별자 검색을 통해 부모 계층의 Vo.x 속성을 사용한다.
-              
-              // anonymousFunctionExecutionContext.scopeChain.makeAdderFunctionExecutionContext.AO.x
-              // anonymousFunctionExecutionContext.scopeChain.AO.y
-              return x + y;
-            };
+          var x = 1;
+          function A(){
+          
+              // function execution context;
+          
+              // 식별자 검색을 통해, 상위 계층의 VO 에 접근하여 결과를 반환한다.
+              // AFunctionExecutionContext.scopeChain[1].VO.x
+              console.log(x); // 1
           }
           
-          var add5 = makeAdder(5);
-          var add10 = makeAdder(10);
-          
-          print(add5(2));  // 7
-          print(add10(2)); // 12
-          ```
+          A();
+          ```          
+    
+    
+    - 하지만 Closure **환경**으로 인해, **메모리 누수**가 발생할 수 있다.
+    
+        - makeAdder 함수 호출 시, 반환받은 add5, add10 함수의 [[Scope]] 속성에는, 모든 부모 계층의 <span style="color:#c11f1f">VO</span> 가 **영구적**으로 포함된다.
+        
+        - 즉 makeAdder 함수(상위 계층) 종료 시, 소멸되는 <span style="color:#c11f1f">AO</span>(and globalExecutionContext.VO)가, 해당 [[Scope]] 속성 내부에 영구적으로 보관된다는 것이다.(**메모리 누수**의 원인)
+        
+              ```javascript
+              
+              // global execution context
+              
+              function makeAdder(x) {
+                
+                // function execution context
+                
+                // 반환되는 익명함수에는 Scope Chain 매커니즘에 의해 부모 계층의 모든 VO 가 포함되어있다.
+                // 부모 계층의 AO(VO)({x: 5 or 10})
+                return function(y) {
+                
+                  // function execution context
+                  // Scope Chain 의 식별자 검색을 통해 부모 계층의 Vo.x 속성을 사용한다.
+                  
+                  // anonymousFunctionExecutionContext.scopeChain.makeAdderFunctionExecutionContext.AO.x
+                  // anonymousFunctionExecutionContext.scopeChain.AO.y
+                  return x + y;
+                };
+              }
+              
+              // 반환받은 add5, add10 함수의 [[Scope]] 속성에서는, 모든 부모 계층의 VO 가 소멸되지않고, 영원히 포함된다.
+              var add5 = makeAdder(5);
+              var add10 = makeAdder(10);
+              
+              print(add5(2));  // 7
+              print(add10(2)); // 12
+         
+              ```
 
 - Eval Execution Context 의 **Scope Chain**
 
@@ -729,7 +754,7 @@ tags: [JavaScript]
                   },
                   Scope(Scope Chain): [
                     // with 문으로 인해, Scope Chain 이 확장된다.(Scope Chain 의 가장 앞(ScopeChain[0])에 추가된다.
-                    withObject(person): {
+                    with(VO(person)): {
                       name: 'Angel',
                       age: 18
                     },    
@@ -790,7 +815,7 @@ tags: [JavaScript]
                     VO: {
                     },
                     Scope(Scope Chain): [
-                      catchObject(<exception object>): {
+                      catch(VO(<exception object>)): {
                         message: 'a is not defined',
                         ...
                       },                    

@@ -512,9 +512,9 @@ tags: [JavaScript]
     
     - 하지만 Closure **환경**으로 인해, **메모리 누수**가 발생할 수 있다.
     
-        - makeAdder 함수 호출 시, 반환받은 add5, add10 함수의 [[Scope]] 속성에는, 모든 부모 계층의 <span style="color:#c11f1f">VO</span> 가 **영구적**으로 포함된다.
+        - makeAdder 함수 호출 시, 반환받은 add5 함수 [[Scope]] 속성에는, 모든 부모 계층의 <span style="color:#c11f1f">VO, AO(VO)</span> 가 **영구적**으로 포함된다.
         
-        - 즉 makeAdder 함수(상위 계층) 종료 시, 소멸되는 <span style="color:#c11f1f">AO</span>(and globalExecutionContext.VO)가, 해당 [[Scope]] 속성 내부에 영구적으로 보관된다는 것이다.(**메모리 누수**의 원인)
+        - 즉 makeAdder 함수(상위 계층) 종료 시, 소멸되는 <span style="color:#c11f1f">AO(VO)</span> 가, 해당 [[Scope]] 속성 내부에 영구적으로 보관된다는 것이다.(**메모리 누수의 원인**)
         
               ```javascript
               
@@ -525,7 +525,7 @@ tags: [JavaScript]
                 // function execution context
                 
                 // 반환되는 익명함수에는 Scope Chain 매커니즘에 의해 부모 계층의 모든 VO 가 포함되어있다.
-                // 부모 계층의 AO(VO)({x: 5 or 10})
+                // 부모 계층의 AO(VO)({x: 5})
                 return function(y) {
                 
                   // function execution context
@@ -537,15 +537,54 @@ tags: [JavaScript]
                 };
               }
               
-              // 반환받은 add5, add10 함수의 [[Scope]] 속성에서는, 모든 부모 계층의 VO 가 소멸되지않고, 영원히 포함된다.
               var add5 = makeAdder(5);
-              var add10 = makeAdder(10);
               
               print(add5(2));  // 7
-              print(add10(2)); // 12
          
               ```
 
+      - anonymousFunction(= add5) 함수 [[Scope]] 속성 내부
+      
+             ```javascript
+             anonymousFunction(= add5): {
+              [[Scope]]: [
+                <makeAdder> functionExecutionContext.AO(VO): {
+                  arguments: {
+                    0: 5                
+                  },
+                  x: 5
+                },
+                globalExecutionContext.VO: {
+                  makeAdder: < reference to function >,
+                  add5: undefined
+                }
+              ]
+            }
+            ```
+      - anonymousFunction(= add5) 함수 **Scope Chain** 내부
+      
+             ```javascript
+             anonymousFunction(= add5): {
+              Scope(Scope Chain): [
+                AO: {
+                  arguments: {
+                    0: 2                
+                  },
+                  y: 2                
+                },
+                <makeAdder> functionExecutionContext.AO(VO): {
+                  arguments: {
+                    0: 5                
+                  },
+                  x: 5
+                },
+                globalExecutionContext.VO: {
+                  makeAdder: < reference to function >,
+                  add5: < reference to function >
+                }
+              ]
+            }
+            ```    
 - Eval Execution Context 의 **Scope Chain**
 
   - eval execution context 의 **Scope Chain** 은 calling context 의 **Scope Chain** 을 따라간다.
@@ -825,3 +864,8 @@ tags: [JavaScript]
                   }
                 ];
               ```	
+              
+- 참고 URL
+
+  - [ECMA-262-3 in detail. Chapter 4. Scope chain.](http://dmitrysoshnikov.com/ecmascript/chapter-4-scope-chain/)
+             

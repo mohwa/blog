@@ -82,7 +82,7 @@ tags: [JavaScript]
 
 - Global Execution Context 의 **Scope Chain**
 
-  - global execution context 내부에 생성되는 **Scope Chain** 은 globalExecutionContext.VO 만 **포함**한다.
+  - Global Execution Context 내부에 생성되는 **Scope Chain** 은 globalExecutionContext.VO 만 **포함**한다.
     
           ```javascript
             globalExecutionContext:{
@@ -102,7 +102,7 @@ tags: [JavaScript]
 		
 		- [[Scope]] property 는 직접적인 접근이 불가능하며, **초기화**된 값은 변경되지 않는다.<p>
 
-		- [[Scope]] property 는 해당 function execution context 상위에 있는 <u>모든 부모 계층의 <span style="color:#c11f1f">VO</span> 를 갖는다.</u><p>
+		- [[Scope]] property 는 해당 Function Execution Context 상위에 있는 <u>모든 부모 계층의 <span style="color:#c11f1f">VO</span> 를 갖는다.</u><p>
 		
       - A 함수를 선언한다
   
@@ -173,9 +173,11 @@ tags: [JavaScript]
 
 	- 함수 호출
    
-		- 함수 호출 시, function execution context 내부에 **Scope Chain** 이 추가된다.<p>
+		- 함수 호출 시, Function Execution Context 내부에 **Scope Chain** 이 추가된다.<p>
 		
-		- 생성된 **Scope Chain** 은 함수 [[Scope]] property 를 그대로 가져가 **할당**되며, function execution context 내부 <span style="color:#c11f1f">AO</span>(VO)는 **Scope Chain** 의 <u>**가장 앞**에 추가된다.</u>
+		- **Scope Chain** 은 함수 [[Scope]] property 를 그대로 가져가 **초기화**되며, Function Execution Context 내부 <span style="color:#c11f1f">AO</span>(VO)는 **Scope Chain** 의 <u>**가장 앞**에 추가된다.</u>
+		
+            ![](http://figures.oreilly.com/tagoreillycom20090601oreillybooks300541I_book_d1e1/figs/I_mediaobject7_d1e6895-web.png)		
 
             ```javascript
         
@@ -192,6 +194,7 @@ tags: [JavaScript]
         
               A(); // call A function object
             ```
+    		            
 		- <span style="color:#c11f1f">ECStack</span> 내부
 
             ```javascript
@@ -229,7 +232,7 @@ tags: [JavaScript]
 		
 		- **식별자** 검색 순서는 <u>**Scope Chain** 의 가장 **바닥**(ScopeChain[0])에서부터</u>, <u>가장 **상위**(ScopeChain[scope.length]) 까지</u> 검색 후, 그 값을 반환한다.
 		
-		- 즉, 이와같은 **검색 매커니즘**에 의해, 해당 **함수**가 가진 <span style="color:#c11f1f">AO</span>(VO) 의 속성을 가장 빠르게 **접근**할 수 있으며, global execution context 내부 <span style="color:#c11f1f">VO</span> 의 속성에 **접근**하는것이 가장 느린것이다.
+		- 즉, 이와같은 **검색 매커니즘**에 의해, 해당 **함수**가 가진 <span style="color:#c11f1f">AO</span>(VO) 의 속성을 가장 빠르게 **접근**할 수 있으며, Global Execution Context 내부 <span style="color:#c11f1f">VO</span> 의 속성에 **접근**하는것이 가장 느린것이다.
 
             ```javascript
         
@@ -630,7 +633,7 @@ tags: [JavaScript]
           
 - Function 생성자 함수
 
-  - <span style="color:#c11f1f">Function 생성자 함수</span>를 통한, **함수 생성 시** 생성되는 [[Scope]] property 에는 global execution context 의 <span style="color:#c11f1f">VO</span> 만 포함된다.
+  - <span style="color:#c11f1f">Function 생성자 함수</span>를 통한, **함수 생성 시** 생성되는 [[Scope]] property 에는 Global Execution Context 의 <span style="color:#c11f1f">VO</span> 만 포함된다.
 
         ```javascript
         
@@ -689,7 +692,7 @@ tags: [JavaScript]
 
   - 만약 **Scope Chain** 내부 <span style="color:#c11f1f">VO</span> 에 원하는 **식별자 이름**이 없을경우, <span style="color:#c11f1f">VO</span> 객체의 **원형**인 Object.prototype 까지 검색 후 찾아낸다.
     
-    - 즉 *global execution context 내부 <span style="color:#c11f1f">VO</span> 는 그 원형인 Object.prototype 객체를 참조할 수 있다.*
+    - 즉 *Global Execution Context 내부 <span style="color:#c11f1f">VO</span> 는 그 원형인 Object.prototype 객체를 참조할 수 있다.*
 
         ```javascript
           
@@ -867,5 +870,7 @@ tags: [JavaScript]
               
 - 참고 URL
 
-  - [ECMA-262-3 in detail. Chapter 4. Scope chain.](http://dmitrysoshnikov.com/ecmascript/chapter-4-scope-chain/)
+  - [ECMA-262-3 in detail. Chapter 4. Scope chain.](http://dmitrysoshnikov.com/ecmascript/chapter-4-scope-chain/)<p>
+  
+  - [Writing Efficient JavaScript: Chapter 7 - Even Faster Websites](http://archive.oreilly.com/pub/a/server-administration/excerpts/even-faster-websites/writing-efficient-javascript.html)
              

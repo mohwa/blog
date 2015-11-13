@@ -14,8 +14,8 @@ tags: [tool]
 
 - (<span style="color:#c11f1f">n</span>) 개의 **전역 변수** 및 **중첩 함수**를 생성하여, **식별자 검색**에 대한 <span style="color:#c11f1f">성능 테스트</span>를 진행할 수 있다.
 
-    <iframe height='350' scrolling='no' src='//codepen.io/yanione/embed/epbYzm/?height=268&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yanione/pen/epbYzm/'>epbYzm</a> by mohwa (<a href='http://codepen.io/yanione'>@yanione</a>) on <a href='http://codepen.io'>CodePen</a>.
-    </iframe>
+  <iframe height='350' scrolling='no' src='http://codepen.io/yanione/embed/epbYzm/?height=268&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yanione/pen/epbYzm/'>epbYzm</a> by mohwa (<a href='http://codepen.io/yanione'>@yanione</a>) on <a href='http://codepen.io'>CodePen</a>.
+  </iframe>
 
 ##개선된 식별자 검색
 
@@ -70,12 +70,17 @@ tags: [tool]
      
     - IE: <span style="color:#c11f1f">차후 테스트 진행...</span><p>
     
-    - Chrome: <span style="color:#c11f1f">7</span>ms(개선 전) / <span style="color:#c11f1f">1</span>ms(개선 후)<p>
+    - Chrome: 
+       - 읽기: <span style="color:#c11f1f">7 ~ 12</span>ms(개선 전) / <span style="color:#c11f1f">0 ~ 1</span>ms(개선 후)<p />
+       - 쓰기: <span style="color:#c11f1f">9 ~ 14</span>ms(개선 전) / <span style="color:#c11f1f">0 ~ 1</span>ms(개선 후)<p />
      
-    - Safari: <span style="color:#c11f1f">5</span>ms(개선 전) / <span style="color:#c11f1f">0</span>ms(개선 후)<p>
+    - Safari:
+       - 읽기: <span style="color:#c11f1f">5 ~ 7</span>ms(개선 전) / <span style="color:#c11f1f">0 ~ 1</span>ms(개선 후)<p />
+       - 쓰기: <span style="color:#c11f1f">9 ~ 12</span>ms(개선 전) / <span style="color:#c11f1f">0 ~ 1</span>ms(개선 후)<p />    
     
-    - FF: <span style="color:#c11f1f">2</span>ms(개선 전) / <span style="color:#c11f1f">0</span>ms(개선 후)
-
+    - FF: 
+       - 읽기: <span style="color:#c11f1f">0 ~ 2ms(개선 전) / <span style="color:#c11f1f">0 ~ 1</span>ms(개선 후)<p />
+       - 쓰기: <span style="color:#c11f1f">5 ~ 6</span>ms(개선 전) / <span style="color:#c11f1f">0 ~ 1</span>ms(개선 후)<p />    
 
 ##마치며
 

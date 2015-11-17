@@ -8,7 +8,7 @@ tags: [JavaScript]
 
 - **ECMAScript** 에서 말하는 **변수**는 오직 <span style="color:#6298c1">var</span> 키워드를 통해서만 **선언**된다.
 	
-	- 즉 <span style="color:#6298c1">var</span> 키워드가 생략된 y 속성은, <u>**변수가 아닌** <span style="color:#c11f1f">VO</span> 의 **속성**일 뿐이며</u>, Execution Context 진입 시에는, <span style="color:#c11f1f">VO</span> 의 새로운 **속성**으로 추가되지 않는다.
+	- 즉 <span style="color:#6298c1">var</span> 키워드가 생략된 y 속성은, <u>**변수가 아닌** <span style="color:#c11f1f">VO</span> 의 **속성**일 뿐이며</u>, Execution Context 진입 시, <span style="color:#c11f1f">VO</span> 의 새로운 **속성**으로 추가되지 않는다.
 
           ```javascript
         
@@ -45,6 +45,7 @@ tags: [JavaScript]
             globalExecutionContext: {
               VO: {
                 x: undefined
+                // y 속성은 execution context 진입 시 초기화되지 않는다.
               }
             }
           ];
@@ -58,12 +59,12 @@ tags: [JavaScript]
           // Execution Context 진입 시 VO 의 새로운 속성으로 추가되지않는다.
           y = 2; // 실행 코드
           
-          // 실행 코드 처리 후 VO 의 속성으로 추가된다.
+          // 실행 코드 처리 후에는 VO 의 속성으로 추가된다.
           console.log(y); // 2
           console.log(this.y); // 2
           ```
 
-	- **변수 선언식**을 통해, 생성된 **변수**는 <u>non-configurable</u> **속성**으로 정의되며, <span style="color:#c11f1f">delete</span> 연산자를 통해 **삭제**되지 않는다.
+	- **변수 선언식**을 통해, 생성된 **변수**는 <u>non-configurable</u>(or **DontDelete**) **속성**으로 정의되며, <span style="color:#c11f1f">delete</span> 연산자를 통해 **삭제**되지 않는다.
 	
           ```javascript
           
@@ -96,18 +97,20 @@ tags: [JavaScript]
           // y 속성은 configurable 속성으로 delete 연산자를 통해, 삭제된다.
           console.log(this.y); // undefined
           ```
-	- <span style="color:#6298c1">eval</span> 함수를 통해, 선언된 **변수**는 **변수**로 선언되지 않는다.(<span style="color:#c11f1f">VO</span> 의 **속성**으로 추가된다)
+	- <span style="color:#6298c1">eval</span> 함수를 통해, 선언된 **변수**는 **변수**로 선언되지 않는다.(<span style="color:#c11f1f">VO</span> 의 **속성**으로 추가되며, **configuration** 속성으로 정의된다)
 	
       - 변수가 아닌, <span style="color:#c11f1f">VO</span> 의 **속성**으로 추가된다
       
             ```javascript
             // global Execution Context
             
-            // calling context === global Execution Context
-            // eval 함수를 통한 변수 선언식
+            // calling context 는 global Execution Context 를 가리킨다.
+            
+            // eval 함수를 통해 x 변수를 생성한다.
             eval('var x = 1');
             
             // 정의된 객체 속성을 나열한다.(x 속성은 configurable 속성으로 정의되어있다)
+            
             // Object {value: 1, writable: true, enumerable: true, configurable: true}
             console.log(Object.getOwnPropertyDescriptor(this, 'x'));
             
@@ -131,7 +134,7 @@ tags: [JavaScript]
             
                 // function execution context
             
-                // calling context === function execution context
+                // calling context 는 function execution context 를 가리킨다.
             
                 // x 지역 변수를 선언한다.
                 var x = 1;
@@ -150,11 +153,11 @@ tags: [JavaScript]
                 delete y;
             
                 // x 변수는 delete 연산자를 통해, 삭제되지 않는다.
-                // 즉 x 는 변수로 선언되었다.(DonDelete 속성)
+                // 즉 x 변수는 변수로 선언되었다.(DontDelete 속성)
                 console.log(x); // 1
             
                 // delete 연산자를 통해, 해당 속성이 삭제되었다.
-                // 즉 y 는 변수로 선언되지 않았다는 말과 같다.
+                // 즉 y 속성은 변수로 선언되지 않았다.
                 console.log(y); // Uncaught ReferenceError: y is not defined
             }
             
@@ -186,7 +189,12 @@ tags: [JavaScript]
                 }
               }
             ];
-            ```                     
+            ```
+
+##참고 URL
+
+- [Variable Object in JS](http://mohwa.github.io/blog/javascript/2015/10/14/vo-inJS/)
+                                 
 - [var](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/var)
 
 - [ECMA-262-3 in detail. Chapter 2. Variable object 번역 글](http://huns.me/development/189)

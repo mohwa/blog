@@ -868,9 +868,9 @@ tags: [JavaScript]
                 ];
               ```	
               
-- 참고 URL
+##참고 URL
 
-  - [ECMA-262-3 in detail. Chapter 4. Scope chain.](http://dmitrysoshnikov.com/ecmascript/chapter-4-scope-chain/)<p>
-  
-  - [Writing Efficient JavaScript: Chapter 7 - Even Faster Websites](http://archive.oreilly.com/pub/a/server-administration/excerpts/even-faster-websites/writing-efficient-javascript.html)
+- [ECMA-262-3 in detail. Chapter 4. Scope chain.](http://dmitrysoshnikov.com/ecmascript/chapter-4-scope-chain/)<p>
+
+- [Writing Efficient JavaScript: Chapter 7 - Even Faster Websites](http://archive.oreilly.com/pub/a/server-administration/excerpts/even-faster-websites/writing-efficient-javascript.html)
              

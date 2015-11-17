@@ -266,10 +266,10 @@ tags: [JavaScript]
 
 ##참조 URL
 
-   - [Variable in JS](http://mohwa.github.io/blog/javascript/2015/10/14/variable-inJS/)
-  
-   - [Variable Object in JS](http://mohwa.github.io/blog/javascript/2015/10/14/vo-inJS/)
-  
-   - [Scope Chain 그리고 Closure](http://mohwa.github.io/blog/javascript/2015/10/11/scope-chain-inJS/)
-   
-   - [Struct in JS](http://mohwa.github.io/blog/designpattern/2015/08/07/struct-inJS/)
+- [Variable in JS](http://mohwa.github.io/blog/javascript/2015/10/14/variable-inJS/)
+
+- [Variable Object in JS](http://mohwa.github.io/blog/javascript/2015/10/14/vo-inJS/)
+
+- [Scope Chain 그리고 Closure](http://mohwa.github.io/blog/javascript/2015/10/11/scope-chain-inJS/)
+
+- [Struct in JS](http://mohwa.github.io/blog/designpattern/2015/08/07/struct-inJS/)

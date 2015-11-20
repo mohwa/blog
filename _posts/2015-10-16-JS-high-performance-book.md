@@ -2,8 +2,8 @@
 layout: post
 title: "\"Javascript 성능 최적화 책을 읽고..\" - 데이터 접근 -"
 date:   2015-11-20
-categories: JavaScript
-tags: [JavaScript]
+categories: book
+tags: [book]
 ---
 
 꽤 오래전에 구입했었던, [JavaScript 성능 최적화](http://www.hanbit.co.kr/book/look.html?isbn=978-89-7914-855-8)라는 책을 다시 한번 읽어보며, 책 내용 중 개인적으로 중요하다고 느꼈던 부분과, 당시 [모호](http://krdic.naver.com/detail.nhn?docid=13706300)했었던 부분들을, 이 포스트를 통해, 다시한번 정리해나갈 생각이다. 아마 이 책을 소지하고계신 분이라면, 책 내용을 이해하는데, 조금은 도움이될 듯 합니다.

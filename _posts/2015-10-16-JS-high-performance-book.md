@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "\"Javascript 성능 최적화 책을 읽고..\" - 데이터 접근 -"
-date:   2015-10-16
+date:   2015-11-20
 categories: JavaScript
 tags: [JavaScript]
 ---

@@ -8,21 +8,27 @@ layout: default
     <!-- This loops through the paginated posts -->
     {% for post in paginator.posts %}
       <li>
-        <h2>
-          <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a>
-        </h2>
-        <p>
-          <span class="date">{{ post.date | date: "%F %r" }}</span>
-          <span class="description">{{ post.description }}</span>
-          <!--<span class="description">{{ post.categories }}</span>-->
-        </p>
-        <ul class="tags cf">
-          {% for category in post.categories %}
-            <li><a href="/blog/search/?category={{ category }}">{{ category }}</a></li>
-          {% endfor %}
-        </ul>
-      </li>
-    {% endfor %}
+          <header class="post-header">
+            <h1 itemprop="name" class="post-title">
+              <a itemprop="url" class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </h1>
+            <div class="tags cf">
+              {% for category in post.categories %}
+                <a href="{{site.baseurl}}/search/?category={{ category }}">{{ category }}</a>&nbsp;
+              {% endfor %}
+              <time itemprop="datePublished" datetime="{{ post.date | date: '%Y-%m-%d' }}">
+                {{ site.locales[site.default_locale].PostDate }}{{ post.date | date: "%b %-d, %Y" }}
+              </time>
+            </div>
+        </header>
+
+        <article style="position: relative; width: 100%; height: 400px; overflow-y: hidden; margin-bottom: 15px;">
+          {{ post.content }}
+        </article>
+        <p style="text-align: right"><a href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>
+        <hr style="margin-bottom:30px; border:0; border-bottom: 1px dotted #ccc;" />
+    </li>
+  {% endfor %}
   </ul>
 </section>
 <section class="pagination">

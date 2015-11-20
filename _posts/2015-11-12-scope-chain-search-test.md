@@ -2,7 +2,7 @@
 layout: post
 title: "식별자 검색 테스트"
 date:   2015-11-12
-categories: tool
+categories: [tool]
 tags: [tool]
 ---
 

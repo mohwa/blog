@@ -8,6 +8,10 @@ tags: [book]
 
 꽤 오래전에 구입했었던, [JavaScript 성능 최적화](http://www.hanbit.co.kr/book/look.html?isbn=978-89-7914-855-8)라는 책을 다시 한번 읽어보며, 책 내용 중 개인적으로 중요하다고 느꼈던 부분과, 당시 [모호](http://krdic.naver.com/detail.nhn?docid=13706300)했었던 부분들을, 이 포스트를 통해, 다시한번 정리해나갈 생각이다. 아마 이 책을 소지하고계신 분이라면, 책 내용을 이해하는데, 조금은 도움이될 듯 합니다.
 
+##글에 대해
+
+- 자주 언급되는 특정 <span style="color:#c11f1f">[JS 용어](http://mohwa.github.io/blog/search/?category=javascript)</span>(**VO**, **AO**, **Scope Chain** 등)에 대해서는 따로 설명하지 않으며, **링크**된 **블로그 글**을 통해 찾아볼 수 있을것이다.
+
 ##데이터 접근
 
 - <h3>원글: <em><strong>리터널 값</strong>이란? 단순히 자신을 나타낼 뿐이며, 특정 장소에 저장되지 않는 <strong>모든 값</strong>입니다. JS 에서는 문자열, 숫자, 불리언, 객체, 배열, <span style="color:#c11f1f">함수</span>, 정규 표현식, 특별한 값인 null 과 undefined 가 <strong>리터널</strong>입니다.</em></h3>
@@ -112,7 +116,11 @@ tags: [book]
                     console.dir(this); // function object
                 }(); // === new A();                
                 ````
-                
+                  
+  - [Function in JS](http://mohwa.github.io/blog/javascript/2015/10/15/function-inJS/)
+  
+  - [Variable Object in JS](http://mohwa.github.io/blog/javascript/2015/10/14/vo-inJS/)
+  
   - [문법과 타입](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Values,_variables,_and_literals#Literals)
   
   - [JavaScript Function Literals](http://www.tutorialspoint.com/javascript/javascript_function_literals.htm)
@@ -131,7 +139,11 @@ tags: [book]
     
 - <h3>원글: <em><strong>변수</strong>는 데이터를 저장할 목적으로, <u><span style="color:#c11f1f">var</span> 키워드를 써서 만든</u>, 개발자가 정의한 위치입니다.</em></h3>
 
-  - <em>"개발자가 정의한 위치"</em> 라는 **표현**은 왜 썼는지 이해가 되지 않는다.
+  - <strike><em>"개발자가 정의한 위치"</em> 라는 **표현**은 왜 썼는지 이해가 되지 않는다.</strike><p />
+  
+  - 글 공개 후, 지인을 통해 <span style="color:#c11f1f">"개발자가 정의한 위치"</span> 라는 표현은 **스코프**를 말하는 것이 아닐까?" 라는 말을 들었다.<p />
+    
+  - 내 생각도 그것과 크게 다르지 않으나, 구지 **Scope** 라는 큰 범위의 의미를 **변수**를 설명하기 위한 이 **한 문장**에 꼭 넣어야 했을까? 라는 생각이 들기도 한다...<p />
   
   - **변수**는 오직 <span style="color:#c11f1f">var</span> 키워드를 통해서만 선언된다.
 
@@ -215,6 +227,8 @@ tags: [book]
       - 이 말은 JS **함수 객체**에서도 동일하게 적용될 수 있다. 즉 **함수**를 생성하는 <span style="color:#c11f1f">Function</span> **생성자 함수 객체**를 생성하기 위해서는, 또 다른 <span style="color:#c11f1f">Function</span> **생성자 함수 객체**가 무한히 반복되기 때문이다.
              
              ![](/blog/assets/images/posts/20151019/performance_4.png)
+             
+  - [Variable Object in JS](http://mohwa.github.io/blog/javascript/2015/10/14/vo-inJS/)             
       
 - <h3>원글: <em>함수가 만들어질 때(함수 생성 시), 함수가 생성된 스코프에서 접근할 수 있는, 데이터를 나타내는 객체(<span style="color:#c11f1f">VO</span>)와 함께 <strong>Scope Chain</strong>이 만들어집니다.</em></h3>
 

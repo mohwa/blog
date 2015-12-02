@@ -638,7 +638,7 @@ tags: [book]
 
   - **프로토타입 체인 검색 테스트**<p>
   
-  - 테스트(모던 브라우저를 통한) 후 알게된 사실이지만, **Chrome**(<span style="color:#c11f1f">46.0.2490.86</span> (64-bit)) or **FF**(<span style="color:#c11f1f">42.0</span>) 는 **프로토타입 체인 검색**을 통한, **읽기** 과정이 **쓰기** 보다 더욱 빨랐다...(하지만 **Safari**(<span style="color:#c11f1f">9.0.1</span>(10601.2.7.2)) 의 경우, 예상했던대로 **읽기 과정**이 더 빨랐다.;;)<p>
+  - 테스트(모던 브라우저를 통한) 후 알게된 사실이지만, **Chrome**(<span style="color:#c11f1f">46.0.2490.86</span> (64-bit)) or **FF**(<span style="color:#c11f1f">42.0</span>) 는 **프로토타입 체인 검색**을 통한, **쓰기** 과정이 **읽기** 보다 더욱 빨랐다...(하지만 **Safari**(<span style="color:#c11f1f">9.0.1</span>(10601.2.7.2)) 의 경우, 예상했던대로 **읽기 과정**이 더 빨랐다.;;)<p>
   
   - 위의 [식별자 검색 테스트](http://mohwa.github.io/blog/tool/2015/11/12/scope-chain-search-test/)와 같이 모던 브라우저상에서는, **성능**상 **큰 이슈**가 되지 않을듯 하다.
   

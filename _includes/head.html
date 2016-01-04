@@ -1,11 +1,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{% if page.summary %}{{ page.summary | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}">
-    <meta name="author" content="{{ site.author.name }}">
+    <meta name="author" content="{{ site.author.github }}">
 
     {% if page.categories %}<meta name="keywords" content="{{ page.categories | join: ', ' }}">{% endif %}
     {% if page.description %}<meta name="description" content="{{page.description}}" />{% endif %}
+    <meta name="copyright" content="by {{ site.author.github }}" />
 
     <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 

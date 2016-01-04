@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "JS Enumerable(열거자) or Nonenumerable(비 열거자)"
+description: "JavaScript Enumerable(열거자) 또는 Nonenumerable(비 열거자) 에 대해 알아보기"
 date:   2015-10-09
 categories: javascript
 tags: [JavaScript]

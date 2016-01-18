@@ -7,15 +7,15 @@ categories: javascript
 tags: [JavaScript]
 ---
 
-- **ECMAScript** 에서 말하는 **변수**는 오직 <span style="color:#6298c1">var</span> 키워드를 통해서만 **선언**된다.
+- **ECMAScript** 에서 말하는 **변수**는 오직 <span style="color:#6298c1">var</span> 키워드를(또는 변수 선언식을) 통해서만 **선언**된다.
 	
-	- 즉 <span style="color:#6298c1">var</span> 키워드가 생략된 y 속성은, <u>**변수가 아닌** <span style="color:#c11f1f">VO</span> 의 **속성**일 뿐이며</u>, Execution Context 진입 시, <span style="color:#c11f1f">VO</span> 의 새로운 **속성**으로 추가되지 않는다.
+	- 즉 <span style="color:#6298c1">var</span> 키워드가(또는 변수 선언식이) 생략된 y 속성은, <u>**변수가 아닌** <span style="color:#c11f1f">VO</span> 의 **속성**일 뿐이며</u>, Execution Context 진입 시, <span style="color:#c11f1f">VO</span> 의 새로운 **속성**으로 추가되지 않는다.
 
           ```javascript
         
           // global Execution Context
           
-          // var 키워드를 통해 변수가 선언되었다.
+          // var 키워드를(변수 선언식을) 통해 변수가 선언되었다.
           // Execution Context 진입 시 VO 의 새로운 속성으로 추가되며, undefined 로 초기화된다.
           console.log(this.x); // undefined
           console.log(x); // undefined
@@ -34,7 +34,7 @@ tags: [JavaScript]
           }
          
           
-          // var 키워드가 생략된 y 속성
+          // var 키워드가(변수 선언식이) 생략된 y 속성
           y = 2;
         
           ```

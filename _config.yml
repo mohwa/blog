@@ -1,7 +1,7 @@
 title: Mohwa blog
 
 
-baseurl: "/"
+baseurl: "/blog"
 
 # Oveerriden by GitHub Pages: https://help.github.com/articles/using-jekyll-with-pages#configuring-jekyll
 # http://stackoverflow.com/questions/16988190/jekyll-plugin-not-working-on-local-machine

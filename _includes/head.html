@@ -1,15 +1,23 @@
 <head>
     <meta charset="utf-8">
+
+    <!-- viewport 설정 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="{{ site.author.github }}">
-
+    <!-- keyword 설정 -->
     {% if page.categories %}<meta name="keywords" content="{{ page.categories | join: ', ' }}">{% endif %}
+    <!-- description 설정 -->
     {% if page.description %}<meta name="description" content="{{page.description}}" />{% endif %}
-    <meta name="copyright" content="by {{ site.author.github }}" />
-    <!-- naver-site-verification -->
-    <meta name="naver-site-verification" content="1825f0efb34a3dacd107bb55f6ae200d48e1b275"/>
 
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!-- open graph 설정 -->
+    <meta property="og:type" content="mohwa blog">
+    {% if page.title %}<meta property="og:title" content="{{page.title}}">{% endif %}
+    {% if page.description %}<meta property="og:description" content="{{page.description}}">{% endif %}
+    <!--<meta property="og:image" content="http://mysite.com/myimage.jpg">-->
+    <meta property="og:url" content="{{ site.baseurl }}{{ post.url }}">
+
+    <meta name="copyright" content="by {{ site.author.github }}" />
+
+    <!--<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />-->
 
     <!-- google search console 설정 -->
     <link rel="alternate" hreflang="ko" href="http://mohwa.github.io" />

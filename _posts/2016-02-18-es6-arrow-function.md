@@ -52,6 +52,35 @@ tags: [JavaScript, es6]
       // this 는 전달된 {x: 2} 객체로 초기화된다.
       console.log(A.bind({x: 3})()); // Object {x: 3}
       ```
+      
+- 바인딩된 **익명 함수** 내부에서의 <span style="color:#c11f1f">this</span> 값
+
+      ```javascript
+      // 버튼 객체를 생성한다.
+      var btnElem = document.querySelector('#btn1');
+      
+      // 생성된 버튼 객체에 click 이벤트를 바인딩한다.
+      btnElem.addEventListener('click', function(){
+      
+          // 이 경우 this 값은 target element 인 btnElem 객체를 가리킨다.
+          console.log(this); // btnElem object        
+      });
+      ```
+         
+- <span style="color:#c11f1f">bind</span> 함수를 통해 (바인딩된)함수 내부 <span style="color:#c11f1f">this</span> 값을 **전역** 스코프의 <span style="color:#c11f1f">this</span> 값으로 <span style="color:#c11f1f">초기화</span> 시킬 수 있다.
+
+      ```javascript
+      // 버튼 객체를 생성한다.
+      var btnElem = document.querySelector('#btn1');
+      
+      // 생성된 버튼 객체에 click 이벤트를 바인딩한다.
+      btnElem.addEventListener('click', function(){
+      
+          // 이 경우 this 값은 bind 함수를 통해 초기화된 this 값을 가리킨다.
+          console.log(this); // global object
+      }.bind(this));
+      ```      
+                  
 - ###<span style="color:#c11f1f">this</span> 값 초기화 테스트 in <span style="color:#c11f1f">Strict Mode</span>
 
   - <span style="color:#c11f1f">Strict Mode</span> 에서는 <span style="color:#c11f1f">this</span> 값이 **null**, 또는 **undefined** 인 경우, 암묵적으로 <span style="color:#c11f1f">global Object</span> 로 변환되지 않는다.
@@ -177,8 +206,26 @@ tags: [JavaScript, es6]
       
       // this 는 global object 로 초기화된 후 변하지 않는다.
       console.log(A.bind({x: 3})()); // global Object
-      ```
       
+      ```
+  
+  - 바인딩된 **익명** (Arrow)**함수** 내부에서의 <span style="color:#c11f1f">this</span> 값
+
+      ```javascript
+      // 버튼 객체를 생성한다.
+      var btnElem = document.querySelector('#btn1');
+      
+      // 생성된 버튼 객체에 click 이벤트를 바인딩한다.
+      btnElem.addEventListener('click', () => {
+      
+          // 이 경우 arrow function 의 this 값은 해당 함수를 둘러싼 전역 스코프의 this 값으로 초기화된다.
+          console.log(this); // global Object
+          
+          // 버튼 객체를 통해 명시적으로 접근한다.
+          console.log(btnElem);
+      });
+      ```
+            
   - 함수 객체 내부에서의 <span style="color:#c11f1f">Arrow Function</span> 의 <span style="color:#c11f1f">this</span> 값
 
       ```javascript
@@ -201,7 +248,7 @@ tags: [JavaScript, es6]
       A();
       ```
       
-  - 생성자 함수 객체 내부에서의 <span style="color:#c11f1f">Arrow Function</span> 의 <span style="color:#c11f1f">this</span> 값
+  - 생성자 함수 객체 내부에서의 <span style="color:#c11f1f">Arrow Function</span> 의 <span style="color:#c11f1f">this</span> 값(<span style="color:#c11f1f">Arrow Function</span> 의 <span style="color:#c11f1f">this</span> 값을 **동적 바인딩**하기위한 방법)
 
       ```javascript
       function A(){
@@ -249,7 +296,7 @@ tags: [JavaScript, es6]
           arrowMethod: () => {
       
               var bindFn = function(){
-                  console.log(this); // C object
+                  console.log(this); // A object
               }.bind(A)();
       
               return this;
@@ -257,7 +304,34 @@ tags: [JavaScript, es6]
       };
       
       console.log(A.arrowMethod()); // global Object
-      ```   
+      ```  
+       
+  - 그 밖의 테스트
+      
+      ```javascript
+      
+      // 객체를 반환하기 위해서는 괄호 연산자 또는 return 문을 사용해야한다.
+      {
+          let a = () => {x: 1 };
+      
+          console.log(a()); // undefined
+      }
+      
+      {
+          let a = () => ({x: 1});
+      
+          console.log(a()); // {x: 1} object
+      }
+      
+      {
+          let a = () => { return {x: 1}; };
+      
+          console.log(a()); // {x: 1} object
+      }
+      
+      // IIFE(즉시 실행 함수) 는 아래와 같이 표현될수 있다.
+      console.log((() => 1)()); // 1
+      ```         
       
 ##관련 URL
 

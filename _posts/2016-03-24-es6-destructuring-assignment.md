@@ -432,37 +432,57 @@ tags: [JavaScript, es6]
                   // 인자값이 전달되지않은 경우에는, 그에 대한 기본값인 빈 객체가 할당되며,
                   // 또 그 객체에 대한 기본값인 x = 1, y = 2 가 다시 할당된다.
                   C();
+                  
+                // 해체 할당을 통해 이와 같은 패턴이 적용될듯 하다.
+                function ajax({url = top.location.href, method = 'GET', headers = {}} = {}){
+        
+                    return {
+                        url: url,
+                        method: method,
+                        headers: headers
+                    };
+                };
+        
+                console.log(ajax()); // {url: "http://localhost:8080/sourceTest/es6/destructuring_assignment.html", method: "GET", headers: Object}
+                
+                console.log(ajax({url: 'myUrl', method: 'POST', headers: {contentType: ''}})); // {url: "myUrl", method: "POST", headers: Object}                  
               }
               ```                                                                             
                        
       - 그 밖의 표현식     
                                      
-          - (할당될)**값**이 객체가 아닌 경우에는, 그 값을 **객체**로 변환한 후, 해당 속성값을 할당시킨다
+          - (할당)패턴 없이, 값을 할당할 경우에는 그 값을 **객체**로 변환 후, 해당 속성값을 할당시킨다
           
               ```javascript
               {
-                  let {length: x} = 'mohwa'; // === new String('mohwa').length
           
-                  console.log(x); // 5
+                  let {length: x} = [1] // [].length
+                  console.log(x); // 1
           
-                  let {toString: y} = 'mohwa'; // === new String('mohwa').toString
+                  let {toString: xx} = {} // {}.toString
+                  console.log(xx); // toString function object
+                  
+                  // 할당될 값에 (할당)패턴이 적용된 경우...
+                  let {toString: _xx} = {toString: 1} // {}.toString
+                  console.log(_xx); // 1                  
           
-                  console.log(y); // toString function object
+                  let {length: xxx} = 'mohwa'; // === new String('mohwa').length
+                  console.log(xxx); // 5
           
+                  let {toString: xxxx} = 'mohwa'; // === new String('mohwa').toString
+                  console.log(xxxx); // toString function object
           
-                  let {toFixed: z} = 1; // new Number(1).toFixed
+                  let {toFixed: xxxxx} = 1; // new Number(1).toFixed
+                  console.log(xxxxx); // toFixed function object
           
-                  console.log(z); // toFixed function object
+                  let {valueOf: xxxxxx} = true; // new Boolean(true).valueOf
+                  console.log(xxxxxx); // valueOf function object
           
+                  let {length: xxxxxxx} = function(x){}; // function(x){}.length
+                  console.log(xxxxxxx); // 1
           
-                  let {valueOf: _x} = true; // new Boolean(true).valueOf
-          
-                  console.log(_x); // valueOf function object
-          
-          
-                  let {xx: _y} = 'mohwa'; // new String('mohwa').xx
-          
-                  console.log(_y); // undefined
+                  let {x: xxxxxxxx} = 'mohwa'; // new String('mohwa').xx
+                  console.log(xxxxxxxx); // undefined
           
           
                   // undefined 와 null 값은 예외가 발생한다.
@@ -480,6 +500,7 @@ tags: [JavaScript, es6]
                   catch(e){
                       console.log(e.message); // Cannot match against 'undefined' or 'null'.
                   }
+          
               }
               ```
               

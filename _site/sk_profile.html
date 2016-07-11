@@ -1,0 +1,1337 @@
+<!DOCTYPE HTML>
+<html lang="ko" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta property="og:title" content="[A Camp] Front-end 개발자 채용" />
+  <meta property="og:type" content="website" />
+
+
+  <meta property="og:url" content="https://careers.skplanet.com/manage/an/30000936/applicant/30003006/submit?fbrefresh=CAN_BE_ANYTHING" />
+
+
+
+  <meta property="og:description" content="SK 플래닛은 열정과 패기를 갖춘 인재를 기다리고 있습니다." />
+  <meta property="og:image" content="https://careers.skplanet.com/resources/images/facebook.png" />
+
+  <meta charset="utf-8">
+  <meta name="_csrf_parameter" content="_csrf" /><meta name="_csrf_header" content="X-CSRF-TOKEN" /><meta name="_csrf" content="256edbb6-08df-49d4-942d-cecae32d6435" />
+  <meta name="author" content="SK플래닛" />
+  <meta name="description" content="SK플래닛 채용 홈페이지입니다. 현재 진행중인 채용공고를 확인하실 수 있습니다." />
+  <meta name="keywords" content="SK플래닛,SK planet,SK채용,Platform Savvy,Globality,Venture Spirit,Openness,Customer Centric Creativity,전문가 육성,우수인재 육성,리더 육성,경력,신입,foreigner,계약,SKP,플래닛채용,인턴" />
+  <script type="text/javascript" src="/resources/js/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="/resources/js/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="/resources/js/common.js"></script>
+  <script type="text/javascript" src="/resources/js/sk.front.ui.js"></script>
+  <script type="text/javascript" src="/resources/jqueryui/jquery-ui.min.js"></script>
+  <script type="text/javascript">
+    common.res.pagingFirst = "처음";
+    common.res.pagingLast="마지막";
+    common.res.pagingPrev="이전";
+    common.res.pagingNext="다음";
+    common.res.validateDateFormat="올바른 날짜를 입력하세요.";
+    common.res.validateCurrentDate="현재날짜보다 이전날짜로 설정하세요.";
+    common.res.validateStartDate="시작일을 입력하세요.";
+    common.res.validateTerm="종료일은 시작일 이후 날짜로 입력하세요.";
+    common.res.validateacademicscore="최대 10점 만점으로 입력하세요.";
+    common.res.validatetextarea="최대 글자수를 초과했습니다.";
+    common.res.validateAcademicStatus = "졸업구분을 먼저 선택하여 주십시요.";
+    common.res.inputMode="등록";
+    common.res.register="등록";
+    common.res.validateNumberFormat="올바른 수치로 입력하세요.";
+    common.res.confirmDelete="삭제하시겠습니까?";
+    fileUpload.res.donotAttach = "더 이상 파일을 첨부할 수 없습니다.";
+    fileUpload.res.failureGet = "첨부파일을 가져오는데 실패하였습니다.";
+    fileUpload.res.failureDelete = "첨부파일을 삭제하는데 실패하였습니다.";
+    fileUpload.res.confirmDelete = "정말 삭제하시겠습니까?";
+  </script>
+  <link rel="stylesheet" href="/resources/jqueryui/jquery-ui.min.css" />
+  <link rel="stylesheet" href="/resources/jqueryui/jquery-ui.structure.min.css" />
+  <link rel="stylesheet" href="/resources/jqueryui/jquery-ui.theme.min.css" />
+
+
+  <link rel="stylesheet" href="/resources/css/sk.front.ui.css" />
+
+
+
+
+  <title>
+    지원서제출 | 지원서 작성
+  </title>
+</head>
+
+
+
+
+<body>
+<!-- Wrap -->
+<div class="sk-wrap">
+
+  <!-- Header -->
+
+
+
+
+
+
+
+
+
+  <div class="sk-layer-loading" style="display: none;">
+    <span class="sk-modal"></span>
+    <div class="sk-loading">
+      <img src="/resources/images/loading.gif" alt="로딩중입니다">
+    </div>
+  </div>
+
+  <!-- Skip Menu -->
+  <ul id="skipNavi">
+    <li><a href="#" onclick="$('#sk-content a:first').focus(); return false;">본문 바로가기</a></li>
+    <li><a href="#" onclick="$('.sk-list-gnb li.sk-gnb1 a:first').focus(); return false;">주 메뉴 바로가기</a></li>
+    <li><a href="#" onclick="$('.sk-ui-footer > a:first').focus(); return false;">하단 메뉴 바로가기</a></li>
+  </ul>
+  <!-- //Skip Menu -->
+
+  <header id="sk-header" class="sk-layout-header">
+    <h1 class="sk-ui-logo"><a href="/home"><span>SK Planet Careers</span></a></h1>
+    <!-- Top Menu -->
+    <ul class="sk-ui-menu">
+
+
+
+      <li class="sk-logout"><a href="#" onclick="formLogout.submit()"><span>로그아웃</span></a></li>
+      <li class="sk-myaccount"><a href="/manage/page"><span>개인정보관리</span></a></li>
+
+      <li class="sk-planet"><a href="#" title="새창 열림"><span>SK Planet</span></a></li>
+
+
+      <li class="sk-language"><a href="/home?lang=en"><span>English</span></a></li>
+
+
+
+      <li class="sk-facebook"><a href="https://www.facebook.com/skpcareers" target="_blank" title="새창 열림"><span>Facebook</span></a></li>
+      <li class="sk-oldsite"><a href="javascript:oldRecruitPopup();" title="새창 열림"><span>(구)채용공고</span></a></li>
+
+    </ul>
+    <form id="formLogout" name="formLogout" action="/account/logout" method="post" style="display: none;">
+      <input type="hidden" name="_csrf" value="256edbb6-08df-49d4-942d-cecae32d6435" />
+    </form>
+    <!-- //Top Menu -->
+    <!-- GNB -->
+    <nav class="sk-ui-gnb">
+      <ul class="sk-list-gnb" id="listGNB">
+
+
+
+
+        <li class="sk-gnb1"><a href="/jobs" class="sk-gnb"><span>채용공고</span></a>
+          <!-- 2Depth -->
+          <ul class="sk-list-depth">
+            <li><a href="/jobs">채용공고</a></li>
+          </ul>
+          <!-- //2Depth -->
+        </li>
+        <li class="sk-gnb2"><a href="/manage/page" class="sk-gnb"><span>입사지원&middot;관리</span></a>
+          <!-- 2Depth -->
+          <ul class="sk-list-depth">
+            <li><a href="/manage/page">입사지원&middot;관리</a></li>
+            <li><a href="/manage/question/create">채용문의</a></li>
+          </ul>
+          <!-- //2Depth -->
+        </li>
+        <li class="sk-gnb3"><a href="/talent" class="sk-gnb"><span>인재DB등록</span></a>
+          <!-- 2Depth -->
+          <ul class="sk-list-depth">
+            <li><a href="/talent">인재DB등록</a></li>
+          </ul>
+          <!-- //2Depth -->
+        </li>
+        <li class="sk-gnb4"><a href="/guide/people" class="sk-gnb"><span>채용안내</span></a>
+          <!-- 2Depth -->
+          <ul class="sk-list-depth">
+            <li><a href="/guide/people">인재상</a></li>
+            <li><a href="/guide/personnel">인사제도</a></li>
+            <li><a href="/guide/duty/engineering">직무소개</a></li>
+            <li><a href="/guide/notice">공지사항</a></li>
+          </ul>
+          <!-- //2Depth -->
+        </li>
+
+
+      </ul>
+      <script type="text/javascript">
+        $(window).load(function() {
+          $($("#listGNB li a:not(.sk-gnb)").get().reverse()).each(function (index, element) {
+            var a = $($target);
+            a.index($(element).parents($target));
+            var b = $($subTarget);
+            b.index($(element).parents($subTarget));
+            var ac = $(element).parents($subTarget)
+            var c = ac.find("li").index($(element).parent());
+            ac.find("li").index($(element).parent())
+
+
+            if (window.location.pathname.startsWith($(element).attr("href"))) {
+
+              var $target = "ul.sk-list-gnb > li";
+              var $subTarget = ".sk-list-depth";
+              var mainIndex = $($target).index($(element).parents($target));
+              var subIndex = $(element).parents($subTarget).find("li").index($(element).parent());
+              gnbSelector(mainIndex,subIndex);
+            }
+          });
+        });
+      </script>
+    </nav>
+    <!-- //GNB -->
+  </header>
+  <!-- //Header -->
+
+  <!-- SNB -->
+  <div class="sk-ui-snb"></div>
+  <!-- //SNB -->
+
+  <!-- Contents -->
+  <section id="sk-content" class="sk-layout-contents">
+    <!-- Tab -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Location -->
+    <div class="sk-ui-location">
+      <span class="sk-home"><a href="/home">Home</a></span>
+      <span class="sk-page">채용공고</span>
+    </div>
+    <!-- //Location -->
+
+    <h2 class="sk-h2">지원서 작성</h2>
+
+    <!-- 공고 -->
+    <div class="sk-ui-job-info">
+      <strong>[A Camp] Front-end 개발자 채용<span>(접수마감 : 2015-10-31 )</span></strong>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <script type="text/javascript">
+      function changeAnnouncementPopup(){
+        window.open("/manage/an/30000936/popup/change/30003006", "changeAnnouncementPopup", "width=690,height=610,scrollbars=no").focus();
+      }
+      function anncountmentChange(item){
+        var changeUrl = "/manage/an/announcementId/applicant/applicantId/basic";
+        changeUrl = changeUrl.replace('announcementId', item.announcementId);
+        changeUrl = changeUrl.replace('applicantId', item.applicantId);
+        location.replace(changeUrl);
+      }
+
+      function copyApplication(){
+        var isConfirm = confirm("선택한 공고에 지원서를 복사하시겠습니까?");
+        if(isConfirm){
+          $.ajax({
+            url: "/manage/an/30000936/copy",
+            type: "post",
+            success:function(data){
+              if(data=="0"){
+                alert("이전에 작성한 지원서, 인재DB가 존재하지 않습니다.");
+              } else if (data=="-1"){
+                alert("이미 심사중인 지원서가 존재합니다.");
+              } else{
+                alert("지원서 복사가 완료되었습니다.");
+                location.replace("/manage/an/30000936/applicant/" + data + "/basic");
+
+              }
+            },
+          }).fail(function() {
+            alert("접속중 오류가 발생했습니다.");
+          });
+        }
+      }
+      function moveNextTab(nextUrl){
+        var isConfirm = confirm("정보 입력 후 저장하지 않으면 입력하신 정보가 삭제됩니다.\n다음 단계로 이동하시겠습니까?");
+        if(isConfirm){
+          location.href = nextUrl;
+        } else{
+          return;
+        }
+      }
+    </script>
+
+    <div class="sk-ui-tab sk-mgt40">
+      <ul class="sk-list-tab">
+        <li id="tabs-1"><a href="/manage/an/30000936/applicant/30003006/basic">희망업무/기본인적사항</a></li>
+        <li id="tabs-2"><a href="/manage/an/30000936/applicant/30003006/academic">학력사항</a></li>
+        <li id="tabs-3"><a href="/manage/an/30000936/applicant/30003006/additional">어학&middot;자격&middot;활동내역</a></li>
+        <li id="tabs-4"><a href="/manage/an/30000936/applicant/30003006/career">경력사항</a></li>
+        <li id="tabs-5"><a href="/manage/an/30000936/applicant/30003006/introduce">자기소개서</a></li>
+
+        <li id="tabs-7"><a href="/manage/an/30000936/applicant/30003006/submit" class="sk-tab-eng">지원서 제출</a></li>
+      </ul>
+    </div>
+    <!-- //Tab -->
+
+    <!-- 버튼 -->
+    <div class="sk-ui-buttons sk-tar sk-mgt10">
+
+    </div>
+    <!-- //버튼 -->
+
+    <!-- Tab Contents -->
+    <div class="sk-ui-tab-content">
+      <dl class="sk-ui-preview">
+        <!-- 희망업무/기본인적사항 -->
+        <dt>
+          <strong>희망업무/기본인적사항</strong>
+
+        </dt>
+        <dd>
+          <h3 class="sk-h3">인적사항</h3>
+          <table class="sk-table-detail">
+            <caption>인적사항(요약정보:희망업무, 이름(한글, 영문, 한문), 생년월일, 성별, 자택번호, 휴대폰번호, 이메일, 국가, 비자정보, 비자만료일, 주소에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:140px;">
+              <col style="width:100px;">
+              <col style="width:190px;">
+              <col style="width:140px;">
+              <col style="width:auto;">
+              <col style="width:160px;">
+            </colgroup>
+            <tbody>
+            <tr>
+              <!-- 희망업무 -->
+              <th scope="row">희망업무</th>
+              <td colspan="5">Engineering</td>
+            </tr>
+            <tr>
+              <!-- 이름 -->
+              <th rowspan="2" scope="rowgroup">성명</th>
+              <!-- 한글 이름 -->
+              <th scope="row" class="sk-bdl">한글</th>
+              <td>전성균</td>
+              <!-- 영문 이름 -->
+              <th scope="row">영어</th>
+              <td>jeon seong gyun</td>
+              <td rowspan="5" class="sk-bdl">
+                <div class="sk-ui-profile">
+
+
+                  <img id="image" src="/common/file/download?fileId=8697&fileSeq=1" class="sk-img-profile" alt="프로필 사진"/>
+
+
+
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <!-- 한문 이름 -->
+              <th scope="row">한문</th>
+              <td colspan="3">田成均</td>
+            </tr>
+            <tr>
+              <!-- 생년월일 -->
+              <th scope="row">생년월일</th>
+              <!-- 음력 여부 -->
+              <td colspan="2">
+                1981-02-06
+
+
+
+                (양)
+
+
+              </td>
+              <!-- 성별 -->
+              <th scope="row">성별</th>
+              <td>
+
+
+                남자
+
+
+
+              </td>
+            </tr>
+            <tr>
+              <!-- 자택번호 -->
+              <th scope="row">자택번호</th>
+              <td colspan="2">
+
+              </td>
+              <!-- 휴대폰번호 -->
+              <th scope="row">휴대폰 번호</th>
+              <td>
+                +82) 010-9268-0594
+              </td>
+            </tr>
+            <tr>
+              <!-- 이메일 -->
+              <th scope="row">이메일</th>
+              <td colspan="4">
+                yanione2@gmail.com
+              </td>
+            </tr>
+            <tr>
+              <!-- 국가 -->
+              <th scope="row">국적</th>
+              <td colspan="5">
+                한국
+              </td>
+            </tr>
+            <tr>
+              <!-- 비자 정보 -->
+              <th scope="row">비자종류</th>
+
+
+
+
+              <td colspan="2"></td>
+
+
+              <!-- 비자만료일 -->
+              <th scope="row">비자 만기일</th>
+              <td colspan="2">
+
+              </td>
+            </tr>
+            <tr>
+              <!-- 주소 -->
+              <th scope="row">주소</th>
+              <td colspan="5">
+                한국 (151050)서울특별시 관악구 관악로 287 성현동 동아아파트 102동 2204호
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+          <!-- 병역정보 -->
+          <h3 class="sk-h3">병역사항</h3>
+          <table class="sk-table-detail">
+            <caption>병역정보(요약정보:병역/군별/계급, 복무기간에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:140px;">
+              <col style="width:175px;">
+              <col style="width:140px;">
+              <col style="width:auto;">
+            </colgroup>
+            <tbody>
+            <tr>
+              <!-- 병역/군별/계급 -->
+              <th scope="row">군필여부</th>
+              <td>
+                필
+
+                /육군
+
+
+                /병장
+
+              </td>
+              <!--  복무기간 -->
+              <th scope="row">복무기간</th>
+              <td>
+
+                2001-04-19 ~
+                2003-06-18
+
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+          <!-- 보훈사항 -->
+          <h3 class="sk-h3">보훈사항</h3>
+          <table class="sk-table-detail">
+            <caption>보훈사항(요약내용:보훈종류, 보훈자와의 관계, 보훈번호에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:140px;">
+              <col style="width:175px;">
+              <col style="width:140px;">
+              <col style="width:175px;">
+              <col style="width:140px;">
+              <col style="width:auto;">
+            </colgroup>
+            <tbody>
+            <tr>
+              <!-- 보훈종류 -->
+              <th scope="row">보훈유형</th>
+              <td>
+
+
+
+                비대상
+
+
+              </td>
+              <!-- 보훈자와 관계 -->
+              <th scope="row">대상자와의 관계</th>
+              <td></td>
+              <!-- 보훈번호 -->
+              <th scope="row">보훈등록번호</th>
+              <td></td>
+            </tr>
+            </tbody>
+          </table>
+
+          <!-- 장애사항 -->
+          <h3 class="sk-h3">장애사항</h3>
+          <table class="sk-table-detail">
+            <caption>장애사항(요약정보:장애종류, 장애등급, 인정일에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:140px;">
+              <col style="width:175px;">
+              <col style="width:140px;">
+              <col style="width:175px;">
+              <col style="width:140px;">
+              <col style="width:auto;">
+            </colgroup>
+            <tbody>
+            <tr>
+              <!-- 장애종류 -->
+              <th scope="row">장애사항</th>
+              <td>
+
+
+
+                비대상
+
+
+              </td>
+              <!-- 장애등급 -->
+              <th scope="row">장애등급</th>
+              <td></td>
+              <!-- 인정일 -->
+              <th scope="row">인정일</th>
+              <td></td>
+            </tr>
+            </tbody>
+          </table>
+
+
+
+          <!-- 추천인 정보 -->
+          <h3 class="sk-h3">사내추천여부</h3>
+          <table class="sk-table-detail">
+            <caption>추천인정보(요약내용:추천인, 추천인과의 관계, 추천인 연락처에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:140px;">
+              <col style="width:175px;">
+              <col style="width:140px;">
+              <col style="width:175px;">
+              <col style="width:140px;">
+              <col style="width:auto;">
+            </colgroup>
+            <tbody>
+            <tr>
+              <!-- 추천인 명(부서) -->
+              <th scope="row">추천인</th>
+              <td>
+
+              </td>
+              <!-- 추천인과의 관계 -->
+              <th scope="row">추천인과 관계</th>
+              <td></td>
+              <th scope="row">추천인 연락처</th>
+              <!-- 추천인 연락처 -->
+              <td></td>
+            </tr>
+            </tbody>
+          </table>
+          <!-- //희망업무/기본인적사항 -->
+
+        </dd>
+
+
+        <!-- 학력 -->
+        <dt>
+          <strong>학력</strong>
+
+        </dt>
+        <dd>
+          <!-- 대학원 정보 -->
+
+
+          <!-- 고등학교/전문대학/대학교 정보 -->
+          <h3 class="sk-h3">고등학교/대학교</h3>
+          <table class="sk-table-list">
+            <caption>고등학교/전문대학/대학교(요약내용:학교종류, 학교명, 전공명, 부전공명, 학점, 기간에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:140px;">
+              <col style="width:auto;">
+              <col style="width:160px;">
+              <col style="width:160px;">
+              <col style="width:100px;">
+              <col style="width:180px;">
+            </colgroup>
+            <thead>
+            <tr>
+              <!-- 학교종류 --><th scope="col">학위구분</th>
+              <!-- 학교명 --><th scope="col">학교</th>
+              <!-- 전공명 --><th scope="col">계열/전공</th>
+              <!-- 부전공명 --><th scope="col">부전공/복수전공</th>
+              <!-- 학점 --><th scope="col">학점</th>
+              <!-- 기간 --><th scope="col">기간</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+
+            <tr>
+              <td>
+                <!-- 학교구분 -->
+                <strong>고등학교</strong>
+                <!-- 편입 -->
+
+              </td>
+              <!-- 학교명 -->
+              <td>서초전자고</td>
+
+
+
+              <td>공업계</td>
+              <td>-</td>
+              <td>-</td>
+
+
+
+              <td>
+                <!-- 재학기간 -->
+                1996-03-01 ~
+                1999-03-01
+              </td>
+            <tr>
+
+            </tbody>
+          </table>
+
+
+
+        </dd>
+        <!-- //학력 -->
+
+        <!-- 어학/자격/활동내역 -->
+        <dt>
+          <strong>어학&middot;자격&middot;활동내역</strong>
+
+        </dt>
+        <dd>
+          <h3 class="sk-h3">어학</h3>
+          <table class="sk-table-list">
+            <caption>어학(요약내용:어학구분, 시험종류, 시험점수, 시험등급, 취득일자에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:;">
+              <col style="width:;">
+              <col style="width:;">
+              <col style="width:;">
+              <col style="width:;">
+            </colgroup>
+            <thead>
+            <tr>
+              <!-- 어학구분 --><th scope="col">외국어종류</th>
+              <!-- 시험종류 --><th scope="col">시험종류</th>
+              <!-- 시험점수 --><th scope="col">시험점수</th>
+              <!-- 시험등급 --><th scope="col">시험등급</th>
+              <!-- 취득일자 --><th scope="col">취득일자</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+
+            </tbody>
+          </table>
+          <div class="sk-nodata">
+            등록된 자료가 없습니다.
+          </div>
+
+
+
+          <!-- 자격정보 -->
+          <h3 class="sk-h3">자격사항</h3>
+          <table class="sk-table-list">
+            <caption>자격정보(요약내용:자격구분, 자격등급, 면허번호, 인증기관, 취득일자에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:;">
+              <col style="width:;">
+              <col style="width:;">
+              <col style="width:;">
+              <col style="width:;">
+            </colgroup>
+            <thead>
+            <tr>
+              <!-- 자격구분 --><th scope="col">자격증종류</th>
+              <!-- 자격등급 --><th scope="col">등급</th>
+              <!-- 면허번호 --><th scope="col">면허번호</th>
+              <!-- 인증기관 --><th scope="col">인증기관</th>
+              <!-- 취득일자 --><th scope="col">취득일자</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+
+            </tbody>
+          </table>
+          <div class="sk-nodata">
+            등록된 자료가 없습니다.
+          </div>
+
+
+
+          <!-- 수상정보 -->
+          <h3 class="sk-h3">수상경력</h3>
+          <table class="sk-table-list">
+            <caption>수상정보(요약내용:수상명, 기관, 수상일자, 내용에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:200px;">
+              <col style="width:200px;">
+              <col style="width:100px;">
+              <col style="width:auto;">
+            </colgroup>
+            <thead>
+            <tr>
+              <!-- 수상명 --><th scope="col">명칭</th>
+              <!-- 기관 --><th scope="col">기관(단체)명</th>
+              <!-- 수상일자 --><th scope="col">일자</th>
+              <!-- 내용 --><th scope="col">내용</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+
+            </tbody>
+          </table>
+          <div class="sk-nodata">
+            등록된 자료가 없습니다.
+          </div>
+
+
+
+          <!-- 활동정보 -->
+          <h3 class="sk-h3">활동내역</h3>
+          <table class="sk-table-list">
+            <caption>활동정보(요약내용:구분, 활동단체, 기간, 내용에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:200px;">
+              <col style="width:200px;">
+              <col style="width:200px;">
+              <col style="width:auto;">
+            </colgroup>
+            <thead>
+            <tr>
+              <!-- 구분 --><th scope="col">명칭</th>
+              <!-- 활동단체 --><th scope="col">기관(단체)명</th>
+              <!-- 기간 --><th scope="col">기간</th>
+              <!-- 내용 --><th scope="col">내용</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+
+            <tr>
+              <td>반응형웹 세미나 강사</td>
+              <td>한국경제</td>
+              <td>
+                2014-07-20 ~
+                2014-07-20
+              </td>
+              <td>한국경제에서 주최하는 반응형 웹 세미나에서 강사 자격으로 강의함</td>
+            </tr>
+
+            <tr>
+              <td>undefined 세미나 발표</td>
+              <td>undefined</td>
+              <td>
+                2015-01-01 ~
+                2015-10-26
+              </td>
+              <td>FaceBook Front-End 그룹인 &#034;undefined&#034; 세미나에서 다수 발표</td>
+            </tr>
+
+            </tbody>
+          </table>
+
+
+
+        </dd>
+        <!-- //어학/자격/활동내역 -->
+
+        <!-- 경력 -->
+        <dt>
+          <strong>경력</strong>
+
+        </dt>
+
+
+
+        <dd>
+
+          <table class="sk-table-detail sk-mgt30">
+            <caption>경력(요약내용:기간, 최종직위, 최종직위 승진일자, 연봉(만원), 퇴직사유, 담당업무에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:250px;">
+              <col style="width:140px;">
+              <col style="width:200px;">
+              <col style="width:140px;">
+              <col style="width:auto;">
+            </colgroup>
+            <tbody>
+            <tr>
+              <th scope="colgroup" class="sk-bg-none" rowspan="2">
+                <strong>
+                  2015-01-01 ~
+                  2015-10-26
+                </strong>
+												<span>
+													<em>CMTECH(스타트업)</em>
+
+														/ 과장(파트장)
+
+												</span>
+              </th>
+              <!-- 최종직위 승진일자 -->
+              <th scope="col">최종직위 승진일</th>
+              <td></td>
+              <!-- 연봉 -->
+              <th scope="col" class="sk-bdl">연봉수준(만원)</th>
+              <td>0</td>
+            </tr>
+            <tr>
+              <!-- 퇴직사유 -->
+              <th scope="col" class="sk-bdl">퇴직사유</th>
+              <td>기타</td>
+              <!-- 담당업무 -->
+              <th scope="col" class="sk-bdl">담당업무</th>
+              <td>CMTECH</td>
+            </tr>
+            </tbody>
+          </table>
+
+          </tbody>
+          </table>
+
+          <table class="sk-table-detail sk-mgt30">
+            <caption>경력(요약내용:기간, 최종직위, 최종직위 승진일자, 연봉(만원), 퇴직사유, 담당업무에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:250px;">
+              <col style="width:140px;">
+              <col style="width:200px;">
+              <col style="width:140px;">
+              <col style="width:auto;">
+            </colgroup>
+            <tbody>
+            <tr>
+              <th scope="colgroup" class="sk-bg-none" rowspan="2">
+                <strong>
+                  2013-08-20 ~
+                  2014-12-31
+                </strong>
+												<span>
+													<em>카본코드테크놀러지(외국계)</em>
+
+														/ 과장(파트장)
+
+												</span>
+              </th>
+              <!-- 최종직위 승진일자 -->
+              <th scope="col">최종직위 승진일</th>
+              <td></td>
+              <!-- 연봉 -->
+              <th scope="col" class="sk-bdl">연봉수준(만원)</th>
+              <td>0</td>
+            </tr>
+            <tr>
+              <!-- 퇴직사유 -->
+              <th scope="col" class="sk-bdl">퇴직사유</th>
+              <td>기타</td>
+              <!-- 담당업무 -->
+              <th scope="col" class="sk-bdl">담당업무</th>
+              <td>게임 로비 개발(모바일 및 데스크탑)</td>
+            </tr>
+            </tbody>
+          </table>
+
+          </tbody>
+          </table>
+
+          <table class="sk-table-detail sk-mgt30">
+            <caption>경력(요약내용:기간, 최종직위, 최종직위 승진일자, 연봉(만원), 퇴직사유, 담당업무에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:250px;">
+              <col style="width:140px;">
+              <col style="width:200px;">
+              <col style="width:140px;">
+              <col style="width:auto;">
+            </colgroup>
+            <tbody>
+            <tr>
+              <th scope="colgroup" class="sk-bg-none" rowspan="2">
+                <strong>
+                  2010-12-01 ~
+                  2013-07-20
+                </strong>
+												<span>
+													<em>드래곤플라이</em>
+
+														/ 과장
+
+												</span>
+              </th>
+              <!-- 최종직위 승진일자 -->
+              <th scope="col">최종직위 승진일</th>
+              <td></td>
+              <!-- 연봉 -->
+              <th scope="col" class="sk-bdl">연봉수준(만원)</th>
+              <td>0</td>
+            </tr>
+            <tr>
+              <!-- 퇴직사유 -->
+              <th scope="col" class="sk-bdl">퇴직사유</th>
+              <td>기타</td>
+              <!-- 담당업무 -->
+              <th scope="col" class="sk-bdl">담당업무</th>
+              <td>게임 및 포탈 사이트 개발</td>
+            </tr>
+            </tbody>
+          </table>
+
+          </tbody>
+          </table>
+
+          <table class="sk-table-detail sk-mgt30">
+            <caption>경력(요약내용:기간, 최종직위, 최종직위 승진일자, 연봉(만원), 퇴직사유, 담당업무에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:250px;">
+              <col style="width:140px;">
+              <col style="width:200px;">
+              <col style="width:140px;">
+              <col style="width:auto;">
+            </colgroup>
+            <tbody>
+            <tr>
+              <th scope="colgroup" class="sk-bg-none" rowspan="2">
+                <strong>
+                  2008-09-01 ~
+                  2010-11-30
+                </strong>
+												<span>
+													<em>에듀박스</em>
+
+														/ 대리
+
+												</span>
+              </th>
+              <!-- 최종직위 승진일자 -->
+              <th scope="col">최종직위 승진일</th>
+              <td></td>
+              <!-- 연봉 -->
+              <th scope="col" class="sk-bdl">연봉수준(만원)</th>
+              <td>0</td>
+            </tr>
+            <tr>
+              <!-- 퇴직사유 -->
+              <th scope="col" class="sk-bdl">퇴직사유</th>
+              <td>기타</td>
+              <!-- 담당업무 -->
+              <th scope="col" class="sk-bdl">담당업무</th>
+              <td>게임 및 교육 포탈 사이트 개발</td>
+            </tr>
+            </tbody>
+          </table>
+
+          </tbody>
+          </table>
+
+          <table class="sk-table-detail sk-mgt30">
+            <caption>경력(요약내용:기간, 최종직위, 최종직위 승진일자, 연봉(만원), 퇴직사유, 담당업무에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:250px;">
+              <col style="width:140px;">
+              <col style="width:200px;">
+              <col style="width:140px;">
+              <col style="width:auto;">
+            </colgroup>
+            <tbody>
+            <tr>
+              <th scope="colgroup" class="sk-bg-none" rowspan="2">
+                <strong>
+                  2006-05-31 ~
+                  2008-08-20
+                </strong>
+												<span>
+													<em>인텔리와이어리스</em>
+
+														/ 대리
+
+												</span>
+              </th>
+              <!-- 최종직위 승진일자 -->
+              <th scope="col">최종직위 승진일</th>
+              <td></td>
+              <!-- 연봉 -->
+              <th scope="col" class="sk-bdl">연봉수준(만원)</th>
+              <td>0</td>
+            </tr>
+            <tr>
+              <!-- 퇴직사유 -->
+              <th scope="col" class="sk-bdl">퇴직사유</th>
+              <td></td>
+              <!-- 담당업무 -->
+              <th scope="col" class="sk-bdl">담당업무</th>
+              <td>KT,MS,공사 등의 포탈 사이트 개발</td>
+            </tr>
+            </tbody>
+          </table>
+
+          </tbody>
+          </table>
+
+          <table class="sk-table-detail sk-mgt30">
+            <caption>경력(요약내용:기간, 최종직위, 최종직위 승진일자, 연봉(만원), 퇴직사유, 담당업무에 대한 정보를 제공합니다.)</caption>
+            <colgroup>
+              <col style="width:250px;">
+              <col style="width:140px;">
+              <col style="width:200px;">
+              <col style="width:140px;">
+              <col style="width:auto;">
+            </colgroup>
+            <tbody>
+            <tr>
+              <th scope="colgroup" class="sk-bg-none" rowspan="2">
+                <strong>
+                  2004-01-01 ~
+                  2006-05-26
+                </strong>
+												<span>
+													<em>굿앤리치자산운용</em>
+
+														/ 사원
+
+												</span>
+              </th>
+              <!-- 최종직위 승진일자 -->
+              <th scope="col">최종직위 승진일</th>
+              <td></td>
+              <!-- 연봉 -->
+              <th scope="col" class="sk-bdl">연봉수준(만원)</th>
+              <td>0</td>
+            </tr>
+            <tr>
+              <!-- 퇴직사유 -->
+              <th scope="col" class="sk-bdl">퇴직사유</th>
+              <td>기타</td>
+              <!-- 담당업무 -->
+              <th scope="col" class="sk-bdl">담당업무</th>
+              <td>사내 펀드 시스템 및 인트라넷 개발/전산팀</td>
+            </tr>
+            </tbody>
+          </table>
+
+          </tbody>
+          </table>
+
+
+
+
+        </dd>
+        <!-- //경력 -->
+
+        <!-- 자기소개서 -->
+        <dt>
+          <strong>자기소개서</strong>
+
+        </dt>
+        <dd>
+          <h3 class="sk-h3">지원서 요약 키워드</h3>
+          <p class="sk-ui-keyword">
+
+            JavaScript /
+
+            Web /
+
+            Mobile /
+
+            FrontEnd /
+
+            Mohwa
+
+          </p>
+
+          <h3 class="sk-h3">
+            <pre>SK플래닛에 지원하게 된 동기와 입사 후 계획에 대해 작성해주세요.</pre>
+          </h3>
+          <div class="sk-ui-introduce-content">
+								<pre>평소 주변 사람들의 이야기를 통해, SK 플래닛이 가진, 개발 환경(문화)을 꼭 한번 경험해보고싶다는 생각을 많이했었습니다.
+
+만약 기회가 주어진다면, 타 기업(이종 or 동종)에서도 부러워할만한 프로토타입(Naver 의 jindo 라이브러리와 같은)을 만들어 보고 싶습니다.
+
+또한, 미래에는 &quot;개인 역량&quot; 을 통해, 사회에 기여할 수 있는 일을 하는것이 저만의 &quot;포부&quot; 이기도 합니다.
+
+
+</pre>
+          </div>
+
+          <h3 class="sk-h3">
+            <pre>본인의 직무 전문성 및 역량을 보여줄 수 있는 대표적인 프로젝트를 골라 본인의 역할과 기여 중심으로 서술해주세요.</pre>
+          </h3>
+          <div class="sk-ui-introduce-content">
+								<pre>프로젝트: 게임 로비 개발(Web/모바일 Web/App)
+
+역할: &quot;개발 파트 리드&quot; 로써, 전체 프로젝트에 대한 &quot;아키텍쳐 디자인 및 메인 개발자&quot;를 담당하였습니다.
+
+구성한 프로젝트는 아래와 같습니다.
+
+- Main FrameWork: AngularJS(1.2.26+), Sencha Touch FrameWork(2.31+)
+- DeskTop App: NodeWebKit(Frame(nwfaketop)) 방식을 통해, AngulraJS 로 개발된 웹을 Embedded 하는 방식으로 구성)
+- BuildTool: GruntJS(NodeJS 기반), Grunt-Sass, Sencha CMD, ComPass(Sass) 등
+- Dependency Tool: Bower
+- App Generator Tool: Yeoman, NodeJS 를 통해 자체 개발함
+- Setup Wizard: Inno setup(Window 기반)
+- ETC: LocalStorage, Application Cache </pre>
+          </div>
+
+          <h3 class="sk-h3">
+            <pre>본인의 성격의 장단점과 삶의 가치관에 대해 서술하고, 이를 잘 보여줄 수 있는 대표적인 사례를 골라 작성해주세요.</pre>
+          </h3>
+          <div class="sk-ui-introduce-content">
+								<pre>인생을 살아가는 저의 가치관은, &quot;꾸준함&quot; 과 그것을 유지시키는 열정(or 덕력) 이라고 생각합니다.
+
+앞서말한, 꾸준함과 열정(or 덕력)에 대한, 저의 개인적인 산출물로는 개인 블로그 및 GitHub Page 를 통한 개인 프로젝트(회사 프로젝트를 통해 접하지 못했던 기술들을 접하기 위한)등이 있습니다.
+
+1. 2015년 이후부터 운영중인 개인 블로그:
+http://mohwa.github.io/blog/
+
+2. 2014년까지 운영했었던 개인 블로그:
+http://mohwaproject.tistory.com/
+
+3. GitHub Page
+https://github.com/mohwa
+
+4. 한경에서 주최한 세미나 발표 자료(응답하라 반응형웹)
+http://imazine.github.io/HKSeminar/#/
+
+5. Undefined 모임 발표 자료(CoffeeScript)
+https://goo.gl/aK9hAU</pre>
+          </div>
+
+          <h3 class="sk-h3">
+            <pre>기타 본인을 소개할 수 있는 내용이 있다면 자유롭게 작성해주세요.</pre>
+          </h3>
+          <div class="sk-ui-introduce-content">
+            <pre></pre>
+          </div>
+
+
+          <h3 class="sk-h3">첨부파일</h3>
+
+
+          <ul class="sk-ui-download-file">
+
+            <li>
+              <em>jeon_profile.pdf</em>
+              <span>483053KB</span>
+            </li>
+
+          </ul>
+
+
+
+        </dd>
+        <!-- //자기소개서 -->
+
+        <!-- Pre-Test -->
+
+      </dl>
+
+      <!-- 버튼 -->
+      <div class="sk-ui-buttons sk-tac">
+
+      </div>
+      <!-- //버튼 -->
+    </div>
+    <!-- //Tab Contents -->
+  </section>
+  <!-- //Contents -->
+
+  <!-- Footer -->
+
+
+
+
+
+  <footer id="sk-footer" class="sk-layout-footer">
+    <div class="sk-ui-footer">
+      <a href='/information'>개인정보취급방침</a>
+      <a href="#" class="sk-footer-location" title="새창 열림">오시는 길</a>
+      <address>
+
+        463-400) 경기도 성남시 분당구 판교로 264(삼평동) The Planet / SK플래닛 주식회사 대표이사 서진우
+      </address>
+      <div class="sk-ui-copyright">
+
+        COPYRIGHT 2015 SK PLANET. ALL RIGHTS RESERVED
+      </div>
+
+      <div class="sk-ui-cert-footer" >
+        <a href="http://webwatch.or.kr/certification/situation.html" target="_blank" class="sk-ui-wa" title="새창 열림"></a>
+      </div>
+      <!-- Family Site -->
+      <div class="sk-ui-familySite">
+
+        <div class="sk-box-family">
+          <a href="#">Family site</a>
+          <span class="sk-icon-open"></span>
+        </div>
+
+        <ul class="sk-list-family">
+          <li><a href="http://www.sktelecom.com/index_real.html" target="_blank" title="새창 열림">SK Telecom</a></li>
+          <li><a href="http://corp.nate.com/" target="_blank" title="새창 열림">SK Communications</a></li>
+          <li><a href="http://www.commerceplanet.co.kr/" target="_blank" title="새창 열림">CommercePlanet</a></li>
+          <li><a href="http://www.skmns.co.kr/" target="_blank" title="새창 열림">M&amp;SERVICE</a></li>
+          <li class="sk-kor"><a href="https://oic.skplanet.com/frontMain.action" target="_blank" title="새창 열림">상생혁신센터</a></li>
+          <li class="sk-kor"><a href="https://oic.skplanet.com/front/tacademy/courseinfo/courseInfoGuide.action" target="_blank" title="새창 열림">T아카데미</a></li>
+          <li class="sk-eng"><a href="https://oic.skplanet.com/frontMain.action" target="_blank" title="새창 열림">Open Innovation Center</a></li>
+          <li class="sk-eng"><a href="https://oic.skplanet.com/front/tacademy/courseinfo/courseInfoGuide.action" target="_blank" title="새창 열림">T Academy</a></li>
+          <li><a href="http://readme.skplanet.com/" target="_blank" title="새창 열림">Tech blog</a></li>
+        </ul>
+
+      </div>
+      <!-- //Family Site -->
+    </div>
+  </footer>
+
+
+
+
+  <!-- //Footer -->
+
+</div>
+<!-- //Wrap -->
+
+<script type="text/javascript">
+  $("#tabs-7").addClass("sk-selected");
+
+  //제출완료상태인 지원서는 나머지탭 클릭방지
+  if("N" == "N"){
+    $("#tabs-1").children("a").removeAttr("href");
+    $("#tabs-2").children("a").removeAttr("href");
+    $("#tabs-3").children("a").removeAttr("href");
+    $("#tabs-4").children("a").removeAttr("href");
+    $("#tabs-5").children("a").removeAttr("href");
+    $("#tabs-6").children("a").removeAttr("href");
+  }
+  //지원서 삭제
+  function deleteApplication(){
+    var isDelete = confirm("지원서를 삭제하시겠습니까?");
+    if(isDelete){
+      $.ajax({
+        url: "/manage/delete/30003006",
+        type: "post",
+        data: {"applicantId" : "30003006"},
+        success:function(data){
+          if(data){
+            alert("지원서 삭제가 완료되었습니다.");
+            location.replace("/home");
+          } else{
+            alert("지원서 삭제중 오류가 발생했습니다.");
+          }
+        },
+      }).fail(function() {
+        alert("접속중 오류가 발생했습니다.");
+      });
+    }
+  }
+  function save(){
+    var isSave = confirm("지원서 제출 후에는 내용 수정이 불가능합니다. 제출하시겠습니까?");
+    if(isSave){
+      data = {};
+      $.ajax({
+        url: "/manage/an/30000936/applicant/30003006/submit",
+        type: "post",
+        data: data ,
+        success:function(data){
+          if(data){
+            alert("제출이 완료되었습니다.");
+            location.replace("/manage/an/30000936/applicant/complete");
+          } else{
+            alert("제출중 오류가 발생했습니다.");
+          }
+        },
+      }).fail(function() {
+        alert("접속중 오류가 발생했습니다.");
+      });
+    }
+  }
+</script>
+</body>
+
+</html>

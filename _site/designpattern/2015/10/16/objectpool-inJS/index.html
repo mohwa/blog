@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <!-- viewport 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- keyword 설정 -->
+    <meta name="keywords" content="designpattern">
+    <!-- description 설정 -->
+    <meta name="description" content="JavaScript 를 활용한 ObjectPool 구현" />
+
+    <!-- open graph 설정 -->
+    <meta property="og:type" content="mohwa blog">
+    <meta property="og:title" content="ObjectPool in JS">
+    <meta property="og:description" content="JavaScript 를 활용한 ObjectPool 구현">
+    <!--<meta property="og:image" content="http://mysite.com/myimage.jpg">-->
+    <meta property="og:url" content="/blog">
+
+    <meta name="copyright" content="by mohwa" />
+
+    <!--<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />-->
+
+    <!-- google search console 설정 -->
+    <link rel="alternate" hreflang="ko" href="http://mohwa.github.io" />
+    <link rel="alternate" hreflang="ko" href="https://mohwa.github.io" />
+
+    <link rel="stylesheet" href="/blog/assets/css/site.css" />
+    <link rel="stylesheet" href="/blog/bower_components/highlightjs/styles/darkula.css">
+
+    <script src="/blog/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="/blog/bower_components/highlightjs/highlight.pack.min.js" type="text/javascript"></script>
+    <script src="/blog/bower_components/purl/purl.js" type="text/javascript"></script>
+    <!-- Script pointing to jekyll-search.js -->
+    <script src="/blog/bower_components/simple-jekyll-search/dest/jekyll-search.js" type="text/javascript"></script>
+
+    <title>ObjectPool in JS</title>
+
+    <script type="text/javascript">
+
+        // code highlight 적용
+        // https://highlightjs.org/static/demo/
+        $(document).ready(function() {
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+  <div class="top-bar"></div>
+
+  <div class="container">
+    <div class="site">
+      <header>
+        <nav>
+    <span style="float:left;">
+        <a class="" href="/blog/">Home</a>
+        <!--<a class="" href="/archive/">전체글</a>-->
+        <!--<a class="" href="//github.com/nolboo/nolboo.github.io/wiki">번역글 위키</a>-->
+    </span>
+    <span style="float:right;">
+        <div id="search-container" class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="search...">
+        </div>
+    </span>
+</nav>
+
+        <div class="pull-right right logo">
+          <div class="name"></div>
+          <!--<a href="/feed.xml"><img class="avatar" src="/images/rss.jpg" alt="RSS" /></a>-->
+        </div>
+      </header>
+      <div class="separator"></div>
+      <ul id="results-container" class="results-container"></ul>
+      <article>
+  <h1>
+    ObjectPool in JS
+  </h1>
+  <div class="center">
+    <p class="meta">16 Oct 2015</p>
+  </div>
+
+
+
+  <div class="post">
+  <h2 id="1">1. 정의</h2>
+
+<ul>
+<li><p>생성된 <strong>객체</strong>들을 별도의 <strong>Pool</strong> 안에 저장 후 <span style="color:#c11f1f">재사용</span> 하는 방법으로, 불필요한 객체 <strong>생성</strong> 및 <strong>반환</strong>(<strong>GC</strong>에 의한)을 <span style="color:#c11f1f">최소화</span>하는 <u><strong>디자인 패턴</strong></u>중 하나 이다.</p>
+
+<ul>
+<li><strong>객체</strong>  <span style="color:#c11f1f">재사용</span>을 위해, 생성된 <strong>객체</strong>를 <strong>Pool</strong> 안에 저장시켜 놓는다.</li>
+<li><p>새로운 <strong>객체</strong>가 필요할때는, <u>무조건 새로 <span style="color:#c11f1f">생성</span></u>하는것이 아니라, <strong>Pool</strong> 안에 <span style="color:#c11f1f">반환</span>된 <strong>객체</strong>가 존재한다면, <u>그 중 하나를 <span style="color:#c11f1f">재사용</span> 한다.</u></p>
+
+<ul>
+<li><em>객체 <span style="color:#c11f1f">재사용</span>으로 Heap 메모리 사용을 <span style="color:#c11f1f">최소화</span>한다.</em></li>
+</ul></li>
+<li><p>사용(객체)이 끝난 후에는 <u>다시 <strong>Pool</strong> 안에 <span style="color:#c11f1f">반환</span>시킨다.</u></p></li>
+</ul></li>
+</ul>
+
+<h2 id="2">2. 특징</h2>
+
+<ul>
+<li><p>정해진 <strong>범위</strong>내에서 개발자가 직접 <u><strong>Heap 메모리</strong>를 관리(객체 <span style="color:#c11f1f">생성</span> 및 <span style="color:#c11f1f">반환</span>)</u>할 수 있다.</p>
+
+<ul>
+<li><p><u><strong>객체 생성 비용</strong></u>을 줄일 수 있다.(Heap 메모리 사용을 줄일 수 있다)</p>
+
+<ul>
+<li><em>당연한 말이겠지만, 생성되는 객체 <span style="color:#c11f1f">크기</span> 및 그 <span style="color:#c11f1f">수</span>에 따라, <u>더 많은 비용을 줄일 수도 있다.</u></em></li>
+</ul></li>
+<li><p><strong>GC</strong> 를 통해 일어나는, <u>메모리 <span style="color:#c11f1f">반환</span>(반환 시 일어나는 일련의 작업들)) <strong>비용</strong>을 줄일 수 있다.</u></p>
+
+<ul>
+<li>보통 이 과정(메모리 반환 과정)을 처리하는 동안에는, <strong>프로그램 실행</strong> 이 중단된다.</li>
+<li>또한, 이 과정은 <u>프로그램 실행 중 <span style="color:#c11f1f">임의의 시간</span>에, <span style="color:#c11f1f">임의의 시간동안</span> 언제라도 일어날 수 있다.</u></li>
+<li>개발자는 이 <strong>과정</strong>을 <u><span style="color:#c11f1f">제어</span>할 수 없다.</u></li>
+</ul>
+
+<p><a href="http://www.html5rocks.com/ko/tutorials/speed/static-mem-pools/">Static Memory Javascript with Object Pools</a></p></li>
+</ul></li>
+<li><p><span style="color:#c11f1f">재사용</span>되는 <strong>객체</strong>는 <u>모두 <strong>동일한 타입</strong>을 갖는다.</u></p></li>
+</ul>
+
+<h2 id="3-js-objetpool">3. JS 로 동적 ObjetPool 구현해보기</h2>
+
+<iframe height='540' scrolling='no' src='http://codepen.io/yanione/embed/jPdzWB/?height=540&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yanione/pen/jPdzWB/'>jPdzWB</a> by mohwa (<a href='http://codepen.io/yanione'>@yanione</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+<ul>
+<li>일반적인 동적 <strong>Objet Pool</strong> 기능을 만드는 방법은 위 코드와 같이 크게 어렵지 않다.(물론 지원하는 기능의 범위에 따라, 구현 수준은 크게 달라질 수 있다)</li>
+</ul>
+
+<h2 id="4-objectpool">4. ObjectPool 적용 테스트</h2>
+
+<ul>
+<li><p>Click 버튼을 <span style="color:#c11f1f">10</span>번 누른 후 <strong>Profiles(in Chrome Tool) 패널</strong>을 통해, <strong>Heap Memory</strong> 를 체크하면 <span style="color:#c11f1f">적용</span> <strong>유/무</strong>에 따른 결과를 얻을 수 있다.</p>
+
+<ul>
+<li><p><strong>Object Pool</strong> 적용 전</p>
+
+<ul>
+<li><p><span style="color:#c11f1f">Ball</span> 생성자 함수를 통해 객체를 <strong>300</strong>개 할당했다.</p>
+
+<ul>
+<li>30 * 10 = 300(무조건 새로운 객체를 Heap 메모리에 할당했다)</li>
+</ul></li>
+</ul>
+
+<p><img src="/blog/assets/images/posts/ballHeap.jpg" alt=""></p></li>
+<li><p><strong>Object Pool</strong> 적용 후</p>
+
+<ul>
+<li><p><span style="color:#c11f1f">$F</span> 생성자 함수를 통해 <strong>93</strong>개의 객체를 할당했다.</p>
+
+<ul>
+<li><span style="color:#c11f1f">$F</span>: <strong>Object Pool</strong> 라이브러리상에서 만든 생성자 함수.</li>
+<li>적용 후에는 총 <strong>93</strong>개의 객체를 <span style="color:#c11f1f">할당</span>했으며, <strong>207</strong>개의 객체를 <span style="color:#c11f1f">재사용</span>하였다.</li>
+</ul></li>
+</ul>
+
+<p><img src="/blog/assets/images/posts/ballHeap2.jpg" alt=""></p></li>
+</ul></li>
+</ul>
+
+<h2 id="5">5. 정리하며</h2>
+
+<ul>
+<li><p>즉 지나친 객체 <span style="color:#c11f1f">생성</span> 및 <span style="color`:#c11f1f">반환</span>을 <strong>최소화</strong> 하는것이, <strong>어플리케이션</strong>상에 <span style="color:#c11f1f">메모리 변동</span>을 줄이는 방법이며, 이로인해 사용자 경험까지 최적화할 수 있다.</p></li>
+<li><p>일반적인 <strong>웹</strong>상에서는 적용할 일이 거의 없어보이지만, <strong>게임 어플리케이션</strong>이라면, 적용 범위가 꽤 많을 듯 하다.</p></li>
+</ul>
+
+<h2 id="6-url">6. 참고 URL</h2>
+
+<ul>
+<li><p><a href="http://ufx.kr/blog/591">액션스크립트의 객체 재사용을 위한 오브젝트 풀(Object Pool)</a></p></li>
+<li><p><a href="http://www.html5rocks.com/ko/tutorials/speed/static-mem-pools/">Static Memory Javascript with Object Pools</a></p></li>
+<li><p><a href="http://beej.us/blog/data/object-pool/">Object Pools</a></p></li>
+</ul>
+
+  </div>
+  <div data-count="10" id="recommend-article"></div>
+</article>
+
+<section class="post-footer">
+  <div class="related-posts">
+    <div class="related-posts-title"><h2>Related Posts</h2></div>
+    <div class="related-posts-list">
+      <ul>
+        
+          <!-- match 를 false 로 초기화한다 -->
+          <!---->
+          
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          
+          
+          <!---->
+        
+          <!-- match 를 false 로 초기화한다 -->
+          <!---->
+          
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          
+          
+          <!---->
+        
+          <!-- match 를 false 로 초기화한다 -->
+          <!---->
+          
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          
+          
+          <!---->
+        
+          <!-- match 를 false 로 초기화한다 -->
+          <!---->
+          
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          
+          
+          <!---->
+        
+          <!-- match 를 false 로 초기화한다 -->
+          <!---->
+          
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          
+          
+          <!---->
+        
+          <!-- match 를 false 로 초기화한다 -->
+          <!---->
+          
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          
+          
+          <!---->
+        
+          <!-- match 를 false 로 초기화한다 -->
+          <!---->
+          
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          
+          
+          <!---->
+        
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="comments">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'mohwa'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+
+
+      <div class="separator"></div>
+    </div>
+  </div>
+  <footer>
+    <section>
+  <ul class="links">
+      <li><a href="https://twitter.com/yanione" title="follow me" target="_blank"><i class="icon-twitter"></i></a></li>
+      <li><a href="https://github.com/mohwa" title="github page" target="_blank"><i class="icon-github"></i></a></li>
+  </ul>
+<section>
+
+  </footer>
+  <script>
+    <!-- Google Analytics -->
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-30470280-2', 'auto');
+    ga('send', 'pageview');
+
+    // include jekyll full text search
+    // https://github.com/christian-fei/Simple-Jekyll-Search
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '/blog/search.json',
+      searchResultTemplate: '<li><a href="{href}">{title}</a>&nbsp;&nbsp;&nbsp;{date}</li>',
+      noResultsText: 'No results found'
+    });
+
+  </script>
+  <script src="http://b.readtrend.com/j/s.js"></script>
+</body>
+</html>

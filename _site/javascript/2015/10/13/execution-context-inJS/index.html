@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <!-- viewport 설정 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- keyword 설정 -->
+    <meta name="keywords" content="javascript">
+    <!-- description 설정 -->
+    <meta name="description" content="JavaScript 실행 컨텍스트" />
+
+    <!-- open graph 설정 -->
+    <meta property="og:type" content="mohwa blog">
+    <meta property="og:title" content="Execution Context in JS">
+    <meta property="og:description" content="JavaScript 실행 컨텍스트">
+    <!--<meta property="og:image" content="http://mysite.com/myimage.jpg">-->
+    <meta property="og:url" content="/blog">
+
+    <meta name="copyright" content="by mohwa" />
+
+    <!--<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />-->
+
+    <!-- google search console 설정 -->
+    <link rel="alternate" hreflang="ko" href="http://mohwa.github.io" />
+    <link rel="alternate" hreflang="ko" href="https://mohwa.github.io" />
+
+    <link rel="stylesheet" href="/blog/assets/css/site.css" />
+    <link rel="stylesheet" href="/blog/bower_components/highlightjs/styles/darkula.css">
+
+    <script src="/blog/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="/blog/bower_components/highlightjs/highlight.pack.min.js" type="text/javascript"></script>
+    <script src="/blog/bower_components/purl/purl.js" type="text/javascript"></script>
+    <!-- Script pointing to jekyll-search.js -->
+    <script src="/blog/bower_components/simple-jekyll-search/dest/jekyll-search.js" type="text/javascript"></script>
+
+    <title>Execution Context in JS</title>
+
+    <script type="text/javascript">
+
+        // code highlight 적용
+        // https://highlightjs.org/static/demo/
+        $(document).ready(function() {
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+  <div class="top-bar"></div>
+
+  <div class="container">
+    <div class="site">
+      <header>
+        <nav>
+    <span style="float:left;">
+        <a class="" href="/blog/">Home</a>
+        <!--<a class="" href="/archive/">전체글</a>-->
+        <!--<a class="" href="//github.com/nolboo/nolboo.github.io/wiki">번역글 위키</a>-->
+    </span>
+    <span style="float:right;">
+        <div id="search-container" class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="search...">
+        </div>
+    </span>
+</nav>
+
+        <div class="pull-right right logo">
+          <div class="name"></div>
+          <!--<a href="/feed.xml"><img class="avatar" src="/images/rss.jpg" alt="RSS" /></a>-->
+        </div>
+      </header>
+      <div class="separator"></div>
+      <ul id="results-container" class="results-container"></ul>
+      <article>
+  <h1>
+    Execution Context in JS
+  </h1>
+  <div class="center">
+    <p class="meta">13 Oct 2015</p>
+  </div>
+
+
+
+  <div class="post">
+  <p>이 글은 오래전 <a href="http://huns.me/">김훈민</a>님의 블로그 글을 통해 <strong>ECMA-262-3 in detail</strong> 번역본을 정독 후, 개인적인 테스트를 통해 다시한번 정리해본 내용입니다. </p>
+
+<p><img src="https://www.dropbox.com/s/c9rg72fludmb0ak/84.png?dl=1" alt=""></p>
+
+<ul>
+<li><p><strong>Execution Context</strong> 는 일종의 <a href="http://ko.wikipedia.org/wiki/%EC%BD%9C_%EC%8A%A4%ED%83%9D">Call Stack</a> 형태를 취하고 있으며, Stack 의 <strong>바닥</strong>에는 Global <strong>Execution Context</strong> 가 존재하고, 가장 <strong>상위</strong>에는 <strong>현재 활성화된 Execution Context</strong> 가 놓이게된다.</p>
+
+<ul>
+<li><em>콜 스택(call stack) 이란 컴퓨터 과학에서 실행할 컴퓨터 프로그램 코드 정보를 저장하는 스택 자료구조이다. 또한 실행 스택(execution stack), 제어 스택 (control stack), 런 타임 스택 (run-time) 스택 혹은 기계 스택 (machine stack) 이라고도 하며 그냥 줄여서 스택 (the stack) 이라고도 한다. 소프트웨어 프로그램의 기능 수행에 있어 콜 스택의 유지 보수가 중요함에도 불구하고 구현 상세는 고급 프로그래밍 언어에서는 보통 감추어지며 자동화되어 있다.</em></li>
+</ul></li>
+<li><p><span style="color:#c11f1f">ECStack</span> 은 <strong>Execution Context</strong> 의 <a href="http://ko.wikipedia.org/wiki/%EC%BD%9C_%EC%8A%A4%ED%83%9D">Call Stack</a> 을 의미한다.</p></li>
+<li><p><span style="color:#c11f1f">ECStack</span> 은 여러 종류의 <strong>Execution Context</strong> 들이 들어오고 나가면서(pushed or poped), 지속적으로 관리(변경)된다.</p>
+
+<ul>
+<li><span style="color:#c11f1f">ECStack</span> 은 <strong>LIFO</strong>(Last In First out) 자료구조를 가진다.</li>
+</ul></li>
+<li><p><a href="http://mohwa.github.io/blog/javascript/2015/10/09/prototype/">런타임 시점</a>에서 <strong>실행 코드</strong>를 만나게되면 해당되는 <strong>Execution Context</strong> 가 생성되고, 생성된 <strong>Execution Context</strong>  안에서 <strong>실행 코드</strong>가 처리된다.</p>
+
+<ul>
+<li><p><strong>Execution Context</strong> 예 1</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="c1">// global Execution Context(buttom)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;global Execution Context&quot;</span><span class="p">);</span>
+
+  <span class="kd">function</span> <span class="nx">Func1</span><span class="p">(){</span>
+    <span class="c1">// active function Execution Context(top)</span>
+  <span class="p">};</span>
+
+  <span class="kd">function</span> <span class="nx">Func2</span><span class="p">(){</span>
+    <span class="c1">// function Execution Context</span>
+    <span class="nx">Func1</span><span class="p">();</span>
+  <span class="p">};</span>
+
+  <span class="nx">Func2</span><span class="p">();</span> <span class="c1">// call function object</span>
+</code></pre></div><div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">&lt;</span><span class="nx">Func1</span><span class="o">&gt;</span> <span class="nx">active</span> <span class="kd">function</span> <span class="nx">Execution</span> <span class="nx">Context</span><span class="p">,</span>
+    <span class="o">&lt;</span><span class="nx">Func2</span><span class="o">&gt;</span> <span class="kd">function</span> <span class="nx">Execution</span> <span class="nx">Context</span><span class="p">,</span>
+    <span class="nx">global</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+  <span class="p">];</span>
+</code></pre></div><div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="c1">// ECStack [생성 순서]</span>
+  <span class="mi">1</span><span class="p">.</span> <span class="nx">global</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+  <span class="mi">2</span><span class="p">.</span> <span class="o">&lt;</span><span class="nx">Func2</span><span class="o">&gt;</span> <span class="nx">functional</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+  <span class="mi">3</span><span class="p">.</span> <span class="o">&lt;</span><span class="nx">Func1</span><span class="o">&gt;</span> <span class="nx">active</span> <span class="nx">functional</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+
+  <span class="c1">// ECStack [소멸 순서]</span>
+  <span class="mi">1</span><span class="p">.</span> <span class="o">&lt;</span><span class="nx">Func1</span><span class="o">&gt;</span> <span class="nx">active</span> <span class="nx">functional</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+  <span class="mi">2</span><span class="p">.</span> <span class="o">&lt;</span><span class="nx">Func2</span><span class="o">&gt;</span> <span class="nx">functional</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+  <span class="mi">3</span><span class="p">.</span> <span class="nx">global</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+</code></pre></div></li>
+<li><p><strong>Execution Context</strong> 예 2(재귀 호출)</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="c1">// global Execution Context</span>
+  <span class="kd">function</span> <span class="nx">A</span><span class="p">(</span><span class="nx">x</span><span class="p">){</span>
+
+    <span class="c1">// function Execution Context</span>
+
+    <span class="c1">// 전달된 함수 매개변수의 갯수</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">);</span> <span class="c1">// 1</span>
+      <span class="c1">// call function object recursively</span>
+      <span class="nx">arguments</span><span class="p">.</span><span class="nx">callee</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+
+  <span class="nx">A</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// call function object</span>
+</code></pre></div><div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="nx">active</span> <span class="kd">function</span> <span class="nx">Execution</span> <span class="nx">Context</span> <span class="o">-</span> <span class="nx">recursively</span><span class="p">,</span>
+    <span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="kd">function</span> <span class="nx">Execution</span> <span class="nx">Context</span><span class="p">,</span>
+    <span class="nx">global</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+  <span class="p">];</span>
+</code></pre></div><div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="c1">// ECStack [생성 순서]</span>
+  <span class="mi">1</span><span class="p">.</span> <span class="nx">global</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+  <span class="mi">2</span><span class="p">.</span> <span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="nx">functional</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+  <span class="mi">3</span><span class="p">.</span> <span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="nx">active</span> <span class="kd">function</span> <span class="nx">Execution</span> <span class="nx">Context</span> <span class="o">-</span> <span class="nx">recursively</span>
+
+  <span class="c1">// ECStack [소멸 순서]</span>
+  <span class="mi">1</span><span class="p">.</span> <span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="nx">active</span> <span class="kd">function</span> <span class="nx">Execution</span> <span class="nx">Context</span> <span class="o">-</span> <span class="nx">recursively</span>
+  <span class="mi">2</span><span class="p">.</span> <span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="nx">functional</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+  <span class="mi">3</span><span class="p">.</span> <span class="nx">global</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+</code></pre></div></li>
+<li><p><strong>Execution Context</strong> 예 3(생성자 함수 호출)</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// global Execution Context</span>
+<span class="kd">function</span> <span class="nx">A</span><span class="p">(){</span>
+
+  <span class="c1">// A function Execution Context</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">dir</span><span class="p">(</span><span class="k">new</span> <span class="nx">A</span><span class="p">);</span> <span class="c1">// create instance</span>
+</code></pre></div><div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="kd">var</span> <span class="nx">ECStack</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="nx">active</span> <span class="kd">function</span> <span class="nx">Execution</span> <span class="nx">Context</span><span class="p">,</span>
+    <span class="nx">global</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+  <span class="p">];</span>
+</code></pre></div><div class="highlight"><pre><code class="language-javascript" data-lang="javascript">  <span class="c1">// ECStack [생성 순서]</span>
+  <span class="mi">1</span><span class="p">.</span> <span class="nx">global</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+  <span class="mi">2</span><span class="p">.</span> <span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="nx">active</span> <span class="kd">function</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+
+  <span class="c1">// ECStack [소멸 순서]</span>
+  <span class="mi">1</span><span class="p">.</span> <span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="nx">active</span> <span class="kd">function</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+  <span class="mi">2</span><span class="p">.</span> <span class="nx">global</span> <span class="nx">Execution</span> <span class="nx">Context</span>
+</code></pre></div></li>
+</ul></li>
+</ul>
+
+<h2 id="url">참고 URL</h2>
+
+<ul>
+<li><p><a href="http://dmitrysoshnikov.com/ecmascript/chapter-1-execution-contexts/">ECMA-262-3 IN DETAIL. CHAPTER 1. EXECUTION CONTEXTS</a></p></li>
+<li><p><a href="http://huns.me/development/159">ECMA-262-3 IN DETAIL. CHAPTER 1. EXECUTION CONTEXT 번역 글</a></p></li>
+<li><p><a href="http://davidshariff.com/blog/what-is-the-execution-context-in-javascript/">What is the Execution Context &amp; Stack in JavaScript?</a></p></li>
+<li><p><a href="http://www.yusufaytas.com/javascript-execution-context/">JavaScript Execution Context</a></p></li>
+</ul>
+
+  </div>
+  <div data-count="10" id="recommend-article"></div>
+</article>
+
+<section class="post-footer">
+  <div class="related-posts">
+    <div class="related-posts-title"><h2>Related Posts</h2></div>
+    <div class="related-posts-list">
+      <ul>
+        
+          <!-- match 를 false 로 초기화한다 -->
+          <!---->
+          
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          
+              <li><a href="/blog/javascript/2016/04/21/es6-object-literal/" title="ES6 object initializer">ES6 object initializer</a></li>
+          
+          
+          <!---->
+        
+          <!-- match 를 false 로 초기화한다 -->
+          <!---->
+          
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          
+              <li><a href="/blog/javascript/2016/03/24/es6-destructuring-assignment/" title="ES6 Destructuring assignment">ES6 Destructuring assignment</a></li>
+          
+          
+          <!---->
+        
+          <!-- match 를 false 로 초기화한다 -->
+          <!---->
+          
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          
+              <li><a href="/blog/javascript/2016/02/24/es6-const/" title="ES6 const">ES6 const</a></li>
+          
+          
+          <!---->
+        
+          <!-- match 를 false 로 초기화한다 -->
+          <!---->
+          
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          
+              <li><a href="/blog/javascript/2016/02/23/es6-let/" title="ES6 let">ES6 let</a></li>
+          
+          
+          <!---->
+        
+          <!-- match 를 false 로 초기화한다 -->
+          <!---->
+          
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          
+              <li><a href="/blog/javascript/2016/02/18/es6-arrow-function/" title="ES6 Arrow Function & This Test">ES6 Arrow Function & This Test</a></li>
+          
+          
+          <!---->
+        
+          <!-- match 를 false 로 초기화한다 -->
+          <!---->
+          
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          
+              <li><a href="/blog/javascript/2016/02/15/es6-class/" title="ES6 Class #1">ES6 Class #1</a></li>
+          
+          
+          <!---->
+        
+          <!-- match 를 false 로 초기화한다 -->
+          <!---->
+          
+          <!-- 현재 page.categories === category 와 동일하다면. -->
+          
+              <li><a href="/blog/javascript/2016/02/05/proto/" title="__proto__ 속성과 프로토타입 위임 과정">__proto__ 속성과 프로토타입 위임 과정</a></li>
+          
+          
+          <!---->
+        
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="comments">
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'mohwa'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</section>
+
+
+
+      <div class="separator"></div>
+    </div>
+  </div>
+  <footer>
+    <section>
+  <ul class="links">
+      <li><a href="https://twitter.com/yanione" title="follow me" target="_blank"><i class="icon-twitter"></i></a></li>
+      <li><a href="https://github.com/mohwa" title="github page" target="_blank"><i class="icon-github"></i></a></li>
+  </ul>
+<section>
+
+  </footer>
+  <script>
+    <!-- Google Analytics -->
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-30470280-2', 'auto');
+    ga('send', 'pageview');
+
+    // include jekyll full text search
+    // https://github.com/christian-fei/Simple-Jekyll-Search
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '/blog/search.json',
+      searchResultTemplate: '<li><a href="{href}">{title}</a>&nbsp;&nbsp;&nbsp;{date}</li>',
+      noResultsText: 'No results found'
+    });
+
+  </script>
+  <script src="http://b.readtrend.com/j/s.js"></script>
+</body>
+</html>

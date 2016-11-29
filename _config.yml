@@ -1,44 +1,30 @@
+# blog setup
 title: Mohwa blog
-
-
+tagline: Mohwa blog
+url: http://mohwa.github.io/blog/
+paginate: 3
 baseurl: "/blog"
 
-# Oveerriden by GitHub Pages: https://help.github.com/articles/using-jekyll-with-pages#configuring-jekyll
-# http://stackoverflow.com/questions/16988190/jekyll-plugin-not-working-on-local-machine
-# 지킬 내부의 plugins/*.rb 파일이 실행안되는 이유는 safe mode 가 false 로 되어있어야 하며, nodeJS 가 설치되어있어야 한다.(아마도;;)
-# Pc 이전 후 테스트 해보기로 하자 !!(현재는 내 mac 이 아니니까!!)
-safe: true
-highlighter: pygments
-lsi: false
+# About/contact
+author:
+  name:  mohwa
+  email: yanione2@gmail.com
 
+# Custom vars
+url:
+  github: https://github.com/mohwa
+  homePage: http://mohwa.github.io/blog/
+
+
+# Assets
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Permalinks
 permalink: pretty
 
 # Conversion
 markdown: redcarpet
-markdown_ext:  markdown,mkdown,mkdn,mkd,md
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data", "strikethrough", "superscript"]
 
-excerpt_separator: "\n\n"
-
-kramdown:
-  auto_ids: true
-  input: GFM
-  toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-
-# redcarpet:
-#    extensions: ["smart"]
-gems: ['jekyll-lunr-js-search', 'jekyll-paginate']
-
-paginate: 10
-
-author:
-    twitter: yanione
-    github: mohwa
-
-# lunr serarch exclude file setup
-#exclude_from_search: true
-lunr_search:
-  excludes: [rss.xml, atom.xml]
+gems: [jekyll-paginate]

@@ -1,0 +1,196 @@
+
+@import url('font/icomoon79565/style.css');
+
+.container {
+  padding: 0 2em;
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 1em;
+  }
+}
+
+.fancy, section, article {
+  font-family: "Titillium Web", Helvetica, Arial, sans-serif;
+  line-height: 170%;
+}
+
+.pull-right { float: right; }
+.pull-left { float: left; }
+.clear { clear: both; }
+.center { text-align: center; }
+.right { text-align: right; }
+.spacer {
+  border-top: 1px solid #E6E6E6;
+  margin: 3em auto;
+}
+.without-border {
+  border: none;
+}
+
+@media (max-width: 480px) {
+  section, article {
+    text-align: left;
+  }
+}
+
+/* Header and navigation */
+header {
+  margin: auto;
+  max-width: 1280px;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+header nav {
+
+  width: 100%;
+  min-width: 400px;
+
+  padding-top: 14px;
+  display: inline-block;
+  float: left;
+}
+
+.separator {
+
+  width: 100%;
+
+  display: inline-block;
+
+  border-bottom: 1px solid #E6E6E6;
+  padding-bottom: 1em;
+  margin-bottom: 1.5em;
+}
+
+header .logo a, header .logo a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.logo small a {
+  font-weight: 400;
+}
+
+
+.logo .name {
+  display: inline-block;
+}
+
+@media (max-width: 640px) {
+  header .logo {
+    clear: left;
+    text-align: center;
+    padding-top: 1em;
+    float: none;
+  }
+
+  header .avatar {
+    margin-top: 1em;
+    max-width: 80px;
+    vertical-align: -20px;
+  }
+
+  header nav {
+    float: none;
+    text-align: center;
+  }
+
+  .site {
+    text-align: left !important;
+  }
+}
+
+.links {
+  border-top: 1px solid #E6E6E6;
+  margin: 1em 0;
+  padding-top: 0.2em;
+  padding-left: 0;
+  list-style-type: none;
+  font-size: 1.2em;
+}
+
+.results-container{
+
+  font-size: 0.8em;
+  list-style: none;
+
+  text-align: left;
+}
+
+.search-input{
+  max-width: 50em;
+  padding: .5em;
+  font-size: 0.8em;
+  box-sizing: border-box;
+
+  display: inline-block;
+}
+
+.links li {
+  padding: 0.2em 0;
+}
+
+.social-icon {
+  padding: 0.2em 0;
+}
+
+.about-me h1 {
+  margin-top: 0;
+}
+
+.about-me .speak-french {
+  line-height: 3.8em;
+}
+
+.pagination{
+  text-align: center;
+}
+
+
+.site {
+  /*text-align: justify;*/
+  width: 100%;
+  max-width: 1280px;
+  min-width: 400px;
+  margin: 1em auto 1em;
+  line-height: 1.5em;
+}
+
+.site .header a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.site .header h1.title {
+  display: inline-block;
+  margin-bottom: 2em;
+}
+
+.site .header h1.title a {
+  color: #a00;
+}
+
+.site .header h1.title a:hover {
+  color: #000;
+}
+
+article h1 {
+  margin-bottom: 0;
+  line-height: 120%;
+  text-align: center;
+}
+
+.site .meta {
+  display: inline-block;
+  color: #666;
+  border-top: 1px solid #ccc;
+  margin-top: 4px;
+  padding: 4px 8px;
+  margin-bottom: 2em;
+}
+
+.convinced { margin: 6em 0 4em 0;}
+

@@ -1,0 +1,73 @@
+
+ul.posts {
+
+  text-align: justify;
+
+  list-style-type: none;
+  margin-bottom: 2em;
+  padding-left: 0;
+}
+
+ul.posts li {
+  line-height: 1.4em;
+}
+
+ul.posts .date {
+  color: #999;
+  font-family: "Titillium Web", monospace;
+  font-size: 90%;
+  margin-right: 0.5em;
+}
+
+.post ul, .post ol {
+  margin-left: 1.35em;
+}
+
+/*.post code {*/
+  /*background-color: #EAEAEA;*/
+  /*padding: 0 .2em;*/
+/*}*/
+
+/* terminal */
+/*pre.terminal {*/
+  /*padding: 1px 1px 1px 8px;*/
+  /*border: 1px solid #000;*/
+  /*background-color: #333;*/
+  /*color: #FFF;*/
+/*}*/
+
+/*pre.terminal code {*/
+  /*background-color: #333;*/
+/*}*/
+
+/* Quotes */
+blockquote {
+  margin: 1em .5em;
+  color: #666;
+  border-left: 4px solid #3073b3;
+  padding-left: 1em;
+}
+
+.post-footer {
+  margin-top: 1.6em;
+  margin-bottom: 0.3em;
+  font-style: italic;
+}
+
+.post-footer .related-posts .related-posts-title{
+
+    position: relative;
+
+    width: 100%;
+
+    font-style: normal;
+    margin-bottom: 0.6em;
+}
+
+.post-footer .related-posts .related-posts-list{
+  font-style: normal;
+}
+
+.post-footer .related-posts .related-posts-list li{
+  margin-bottom: 0.3em;
+}

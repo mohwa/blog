@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<!-- ./_layouts/default.html 파일에 정의된 {{ content }} 영역으로 아래 내용들이 들어간다. -->
+<!-- ./_layouts/default.html 파일에 정의된 \{\{ content \}\} 영역으로 아래 내용들이 들어간다. -->
 <section>
   <ul class="posts">
     <!-- This loops through the paginated posts -->
@@ -22,7 +22,7 @@ layout: default
             </div>
         </header>
 
-        <article style="position: relative; width: 100%; height: 400px; overflow-y: hidden; margin-bottom: 15px;">
+        <article style="position: relative; width: 100%; height: 35rem; overflow-y: hidden; margin-bottom: 15px;">
           {{ post.content }}
         </article>
         <p style="text-align: right"><a href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>

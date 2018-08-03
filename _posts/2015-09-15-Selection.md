@@ -11,17 +11,17 @@ tags: [JavaScript]
 ## **Selection**
 
 - 정의
-	- [Selection](https://developer.mozilla.org/en-US/docs/Web/API/Selection) 은 마우스 또는 키보드를 통해, 컨텐츠를 <u>**선택**</u>, 또는 <u>**선택된 영역을 제어**</u> 하기위한 모든 특성들을 제공한다.
+	- [Selection](https://developer.mozilla.org/en-US/docs/Web/API/Selection) 은 마우스 또는 키보드를 통해, 컨텐츠를 **선택**, 또는 **선택된 영역을 제어** 하기위한 모든 특성들을 제공한다.
 
 ## **관련 용어**
 
 - 정의
 
-	- **Selection** 에 대해 공부할때, 가장 큰 장애물이 되는것은, 각 **용어**에 대한 **이해도**라 생각한다. 즉 <u>**용어**</u>에 대한 정확한 이해없이는, 제공되는 **API** 기능에 대해 이해하기 힘든 부분이 존재하기 때문이다.
+	- **Selection** 에 대해 공부할때, 가장 큰 장애물이 되는것은, 각 **용어**에 대한 **이해도**라 생각한다. 즉 **용어**에 대한 정확한 이해없이는, 제공되는 **API** 기능에 대해 이해하기 힘든 부분이 존재하기 때문이다.
 
 - 용어 설명
 
-	- <span style="color:#c11f1f">Selection / Selection object</span>: 사용자가 마우스(드래그) 또는 키보드(키 조작)를 통해, <u>**선택된 텍스트**</u>의 **범위**를 말한다.
+	- <span style="color:#c11f1f">Selection / Selection object</span>: 사용자가 마우스(드래그) 또는 키보드(키 조작)를 통해, **선택된 텍스트**의 **범위**를 말한다.
 
 	- <span style="color:#c11f1f">anchor</span>: 선택된 범위가 **시작되는 지점**을 말한다.
 
@@ -86,7 +86,7 @@ tags: [JavaScript]
 
 		- 사용자는 <u>일반적으로 한번에 하나의 <span style="color:#6298c1">range</span> 를 선택할 수 있다.</u>
 
-		- <u>**Gecko** 브라우저에서는 Multiple <span style="color:#6298c1">range</span> 를 선택할 수 있다.</u>(Ctrl or Command 키를 통해)
+		- **Gecko** 브라우저에서는 Multiple <span style="color:#6298c1">range</span> 를 선택할 수 있다.</u>(Ctrl or Command 키를 통해)
 
 			![](http://mohwa.github.io/blog/assets/images/posts/Selection/selection_4.jpg)
 

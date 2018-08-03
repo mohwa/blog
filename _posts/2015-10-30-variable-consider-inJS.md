@@ -248,7 +248,7 @@ tags: [JavaScript]
         
             ![](/blog/assets/images/posts/20151030/variable_9.png)            
     
-##테스트 결과
+## 테스트 결과
     
 - <code style="background:#d1cccc">var x = obj</code> 코드를 통해, x 변수에는 obj 변수에 할당된 **객체 포인터(값)**가 할당된다.<p>
 
@@ -265,7 +265,7 @@ tags: [JavaScript]
 - <span style="color:#c11f1f">AO</span> 의 속성으로 할당된 **객체 참조**는 **함수 종료 시** 모두 **GC** 에 의해 **소멸**된다.<p>
 
 
-##참조 URL
+## 참조 URL
 
 - [Variable in JS](http://mohwa.github.io/blog/javascript/2015/10/14/variable-inJS/)
 

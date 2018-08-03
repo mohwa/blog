@@ -7,7 +7,7 @@ categories: [architecture]
 tags: [architecture, html, xhtml, html5, JavaScript, React]
 ---
 
-##1. [JSXTransformer](https://facebook.github.io/react/blog/2015/06/12/deprecating-jstransform-and-react-tools.html)
+## 1. [JSXTransformer](https://facebook.github.io/react/blog/2015/06/12/deprecating-jstransform-and-react-tools.html)
 
 - JSXTransformer 내부에서 사용되는 [Esprima-FB](https://github.com/facebookarchive/esprima) 파서는 기존 [Esprima](https://github.com/ariya/esprima/tree/harmony) 파서를 확장([JSX 명세](https://github.com/facebook/jsx)) 구현한 버전이다.
 
@@ -52,7 +52,7 @@ tags: [architecture, html, xhtml, html5, JavaScript, React]
 
 - [JSX Tree Spec](https://github.com/facebook/jsx/blob/master/AST.md)
 
-##2. 소스 수집 및 [Parse 트리](https://ko.wikipedia.org/wiki/%EA%B5%AC%EB%AC%B8_%EB%B6%84%EC%84%9D) 가 생성되는 과정
+## 2. 소스 수집 및 [Parse 트리](https://ko.wikipedia.org/wiki/%EA%B5%AC%EB%AC%B8_%EB%B6%84%EC%84%9D) 가 생성되는 과정
 
 - 아래 소스는 <em>[Parser](https://github.com/facebookarchive/esprima)</em> 에 의해 파싱될 <span style="color:#c11f1f">원본 소스</span>이다.
 
@@ -602,7 +602,7 @@ tags: [architecture, html, xhtml, html5, JavaScript, React]
 
     ![](/blog/assets/images/posts/20151228/jsx_8.png)
 
-##3. 마치며
+## 3. 마치며
 
 - 이 글은 <span style="color:#c11f1f">파서</span> 과정 중 <span style="color:#c11f1f">포인트</span>가 될만한 부분을 골라내어 분석한 글이며, 더 자세한 내용을 알기위해서는 더 깊이있는 <span style="color:#c11f1f">소스 분석</span>이 필요하다.
 

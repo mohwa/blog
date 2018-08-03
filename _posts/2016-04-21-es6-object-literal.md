@@ -7,17 +7,17 @@ categories: [javascript]
 tags: [JavaScript, es6]
 ---
 
-##1. 글에 대해
+## 1. 글에 대해
 
 - 모든 결과는 **Chrome 브라우저**를 통해 테스트된 결과입니다.
 
-##2. object initializer
+## 2. object initializer
 
 - 객체 <span style="color:#c11f1f">초기화</span>(or 생성)를 위한 표현법(or 식)으로 아래와 같은 것들이 존재한다.
 
     - [new Object()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), [Object.create()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create), Object Literal
 
-##3. <span style="color:#c11f1f">ES5</span> & <span style="color:#c11f1f">Object Initializer</span>
+## 3. <span style="color:#c11f1f">ES5</span> & <span style="color:#c11f1f">Object Initializer</span>
 
 ```javascript
 // 'use strict';
@@ -59,7 +59,7 @@ tags: [JavaScript, es6]
 }
 ```
 
-##4. <span style="color:#c11f1f">ES6</span> & <span style="color:#c11f1f">Object Initializer</span>
+## 4. <span style="color:#c11f1f">ES6</span> & <span style="color:#c11f1f">Object Initializer</span>
 
 - 기본적인 사용 방법
 
@@ -200,7 +200,7 @@ tags: [JavaScript, es6]
     ```
 
 
-##관련 URL
+## 관련 URL
 
 - [Object initializer](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer)<p>
 

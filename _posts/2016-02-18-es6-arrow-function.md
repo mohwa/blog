@@ -7,15 +7,15 @@ categories: [javascript]
 tags: [JavaScript, es6]
 ---
 
-##1. 글에 대해
+## 1. 글에 대해
 
 - 이 글은 <span style="color:#c11f1f">ES5</span> 및 <span style="color:#c11f1f">ES6</span> **Arrow Function** 안에서 <span style="color:#c11f1f">this</span> 값이 어떤식으로 평가되는지에 대한 내용을 다루고있다.
 
 - 또한 모든 결과는 **Chrome 브라우저**를 통해 테스트된 결과입니다.
 
-##2. <span style="color:#c11f1f">ES5</span> & <span style="color:#c11f1f">this</span>
+## 2. <span style="color:#c11f1f">ES5</span> & <span style="color:#c11f1f">this</span>
     
-- ###<span style="color:#c11f1f">this</span> 값 초기화 테스트
+- ## #<span style="color:#c11f1f">this</span> 값 초기화 테스트
 
       ```javascript
       // A 함수 객체를 선언한다.
@@ -81,7 +81,7 @@ tags: [JavaScript, es6]
       }.bind(this));
       ```      
                   
-- ###<span style="color:#c11f1f">this</span> 값 초기화 테스트 in <span style="color:#c11f1f">Strict Mode</span>
+- ## #<span style="color:#c11f1f">this</span> 값 초기화 테스트 in <span style="color:#c11f1f">Strict Mode</span>
 
   - <span style="color:#c11f1f">Strict Mode</span> 에서는 <span style="color:#c11f1f">this</span> 값이 **null**, 또는 **undefined** 인 경우, 암묵적으로 <span style="color:#c11f1f">global Object</span> 로 변환되지 않는다.
       
@@ -126,7 +126,7 @@ tags: [JavaScript, es6]
           console.log(A.bind({x: 3})()); // Object {x: 3}
           ```
           
-- ###<span style="color:#c11f1f">this</span> 값 초기화 테스트 in <span style="color:#c11f1f">Object</span>
+- ## #<span style="color:#c11f1f">this</span> 값 초기화 테스트 in <span style="color:#c11f1f">Object</span>
 
   - **객체 메서드**에서의 <span style="color:#c11f1f">this</span> 는 해당 메서드를 내부 프로퍼티로 소유한 <span style="color:#c11f1f">객체</span>를 가리킨다.  
       
@@ -151,7 +151,7 @@ tags: [JavaScript, es6]
           console.log(A.x()); // A Object
           ```          
                 
-##3. <span style="color:#c11f1f">ES6</span> Arrow Function & <span style="color:#c11f1f">this</span>
+## 3. <span style="color:#c11f1f">ES6</span> Arrow Function & <span style="color:#c11f1f">this</span>
                                       
   - Arrow Function 은 자신만의 <span style="color:#c11f1f">this</span>, arguments, super, new.target 이 <span style="color:#c11f1f">할당</span>되지 않는다.
   
@@ -333,7 +333,7 @@ tags: [JavaScript, es6]
       console.log((() => 1)()); // 1
       ```         
       
-##관련 URL
+## 관련 URL
 
 - [애로우 펑션](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98)<p />
 

@@ -7,15 +7,15 @@ categories: [javascript]
 tags: [JavaScript, es6]
 ---
 
-##1. 글에 대해
+## 1. 글에 대해
 
 - 모든 결과는 **Chrome 브라우저**(ver 49)를 통해 테스트된 결과입니다.
 
-##2. Destructuring assignment(해체 할당)이란?
+## 2. Destructuring assignment(해체 할당)이란?
 
 - <span style="color:#c11f1f">해체 할당</span>은, **배열** 또는 **객체** 리터럴과 유사한 **문법**으로, 변수에 값을 할당하는 <span style="color:#c11f1f">JS 표현식</span>중 하나이다.
   
-##3. <span style="color:#c11f1f">Array</span> destructing assignment(배열 해체 할당)
+## 3. <span style="color:#c11f1f">Array</span> destructing assignment(배열 해체 할당)
     
 - <span style="color:#c11f1f">배열 해체 할당</span>을 통해, **iterator** 객체의 **요소**값을, **변수**에 할당시킬 수 있다. 
 
@@ -324,7 +324,7 @@ tags: [JavaScript, es6]
               }
               ```
                                                                       
-##4. <span style="color:#c11f1f">Object</span> destructing assignment(객체 해체 할당)                                                                      
+## 4. <span style="color:#c11f1f">Object</span> destructing assignment(객체 해체 할당)                                                                      
               
 - <span style="color:#c11f1f">객체 해체 할당</span>을 통해, 객체 **속성**값을, **변수**에 할당시킬 수 있다. 
 
@@ -517,7 +517,7 @@ tags: [JavaScript, es6]
               }        
               ```                             
 
-##관련 URL
+## 관련 URL
 
 - [Destructuring and parameter handling in ECMAScript 6](http://www.2ality.com/2015/01/es6-destructuring.html)<p>
 

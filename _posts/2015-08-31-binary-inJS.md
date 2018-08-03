@@ -7,7 +7,7 @@ categories: JavaScript
 #tags: [JavaScript]
 ---
 
-##1. 사전 지식
+## 1. 사전 지식
 
 - **Blob**
 
@@ -216,7 +216,7 @@ categories: JavaScript
 
 
 
-##2. JavaScript 를 통해 Binary Data 조작하기
+## 2. JavaScript 를 통해 Binary Data 조작하기
 
 - <span style="color:#6298c1">예제 소스</span>에서는 **NodeJS** 및 **Socket.IO** 와 관련된 내용은 최대한 배제 하였습니다.(특별히 포스트 내용과 관련 없다고 판단한 내용)
 

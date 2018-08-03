@@ -7,7 +7,7 @@ categories: designPattern
 #tags: [Struct, C#, C++, JAVA, JavaScript, designPattern]
 ---
 
-##1. 정의
+## 1. 정의
 
 - C 와 C++(또는 C# 등) 에서 **구조화 된 데이터**를 처리할 때, **Struct** 를 사용하는데 이를 [구조체](https://ko.wikipedia.org/wiki/Struct)라 부른다.
 
@@ -61,7 +61,7 @@ categories: designPattern
 
 		- **구조체**와 **클래스**는 매우 비슷한 **구조**를 가지고 있으며, <u>**사용 방법** 및 **적용 이유**</u>가 유사하다.
 
-##2. C# 구조체의 특징
+## 2. C# 구조체의 특징
 
 - `값 타입`이다.
 
@@ -297,7 +297,7 @@ categories: designPattern
 				![](http://mohwa.github.io/blog/assets/images/posts/heapSnapShot2.jpg)
 
 
-##3. JS 로 Struct 구현해보기
+## 3. JS 로 Struct 구현해보기
 
 - 위에서 나열한 **구조체**의 **특징** 중 **클래스**와 **본질**적으로 다른 부분인, <u>**데이터 생성**</u>에 대한 부분을 JS 를 통해 구현해 보았다.
 
@@ -449,7 +449,7 @@ var structDate = Struct(new Date());
 console.dir(structDate); // date object
 ```
 
-##4. 정리하며
+## 4. 정리하며
 
 - 그럼 언제 사용하면될까?
 
@@ -468,7 +468,7 @@ console.dir(structDate); // date object
 		- *간단히 말해, 특정 `언어`가 `구조체`를 어떤 방식으로 `구현`하느냐에 따라, `사용 범위`도 크게 달라질 수 있다는 말과 같다.*
 
 
-##5. 참고 URL
+## 5. 참고 URL
 
 - [C# 구조체 설명](https://msdn.microsoft.com/ko-kr/library/0taef578.aspx)
 

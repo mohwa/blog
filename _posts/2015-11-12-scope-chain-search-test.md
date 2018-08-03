@@ -11,14 +11,14 @@ tags: [tool]
  
 또, 이 내용을 **검증**하기위한 **테스트 코드**를 아래와 같이 작성해보았다.
 
-##식별자 검색 테스트
+## 식별자 검색 테스트
 
 - (<span style="color:#c11f1f">n</span>) 개의 **전역 변수** 및 **중첩 함수**를 생성하여, **식별자 검색**에 대한 <span style="color:#c11f1f">성능 테스트</span>를 진행할 수 있다.
 
   <iframe height='350' scrolling='no' src='http://codepen.io/yanione/embed/epbYzm/?height=268&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yanione/pen/epbYzm/'>epbYzm</a> by mohwa (<a href='http://codepen.io/yanione'>@yanione</a>) on <a href='http://codepen.io'>CodePen</a>.
   </iframe>
 
-##개선된 식별자 검색
+## 개선된 식별자 검색
 
 - 마지막 **중첩 함수**의 **지역 변수**를 통해, **식별자 검색**을 개선시켰다.
 
@@ -65,7 +65,7 @@ tags: [tool]
           }
           ```
                       
-##테스트 결과
+## 테스트 결과
 
   - 이 결과는 **테스트 환경**에 따라, <span style="color:#c11f1f">오차 범위</span>를 보일 수 있다.
   
@@ -85,7 +85,7 @@ tags: [tool]
        - 읽기: <span style="color:#c11f1f">0 ~ 2</span>ms(개선 전) / <span style="color:#c11f1f">0 ~ 1</span>ms(개선 후)<p />
        - 쓰기: <span style="color:#c11f1f">5 ~ 6</span>ms(개선 전) / <span style="color:#c11f1f">0 ~ 1</span>ms(개선 후)<p />    
 
-##마치며
+## 마치며
 
 - 이 코드는 **ms 단위**의 **정확한 테스트**를 위해 사용하기에는 무리가 따르며, 환경(브라우저)별, **엔진 최적화** 범위를 알 수 있는 정도로 사용하는것이 좋다.
 
@@ -94,6 +94,6 @@ tags: [tool]
 - 즉 **App** 이 오래된 브라우저를 지원하지 않아도 되는 경우에는, **식별자 검색**에 대한 성능 만큼은, 큰 **이슈**가 되지 않을 듯 하다.
  
   
-##참고 URL
+## 참고 URL
 
 - [Scope Chain 그리고 Closure](http://mohwa.github.io/blog/javascript/2015/10/11/scope-chain-inJS/)

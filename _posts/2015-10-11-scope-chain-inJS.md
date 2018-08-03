@@ -869,7 +869,7 @@ tags: [JavaScript]
                 ];
               ```	
               
-##참고 URL
+## 참고 URL
 
 - [ECMA-262-3 in detail. Chapter 4. Scope chain.](http://dmitrysoshnikov.com/ecmascript/chapter-4-scope-chain/)<p>
 

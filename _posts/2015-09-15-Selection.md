@@ -8,12 +8,12 @@ tags: [JavaScript]
 ---
 
 
-##**Selection**
+## **Selection**
 
 - 정의
 	- [Selection](https://developer.mozilla.org/en-US/docs/Web/API/Selection) 은 마우스 또는 키보드를 통해, 컨텐츠를 <u>**선택**</u>, 또는 <u>**선택된 영역을 제어**</u> 하기위한 모든 특성들을 제공한다.
 
-##**관련 용어**
+## **관련 용어**
 
 - 정의
 
@@ -30,7 +30,7 @@ tags: [JavaScript]
 	- <span style="color:#c11f1f">range</span>: 선택된 범위의 **문서 조각**들을 말한다.
 
 
-##**특성**
+## **특성**
 
 - **Properties**
 
@@ -196,7 +196,7 @@ tags: [JavaScript]
 		console.log(selection.containsNode(worldNode, true)); // true
 		```
 
-##**API 테스트**
+## **API 테스트**
 
 아래 코드는 **Chrome** 브라우저에서만 테스트되었습니다.(소스 참조시 반드시 다른 브라우저에서도 테스트 하시기 바랍니다)
 

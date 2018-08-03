@@ -9,11 +9,11 @@ tags: [book]
 
 꽤 오래전에 구입했었던, [JavaScript 성능 최적화](http://www.hanbit.co.kr/book/look.html?isbn=978-89-7914-855-8)라는 책을 다시 한번 읽어보며, 책 내용 중 개인적으로 중요하다고 느꼈던 부분과, 당시 [모호](http://krdic.naver.com/detail.nhn?docid=13706300)했었던 부분들을, 이 포스트를 통해, 다시한번 정리해나갈 생각이다. 아마 이 책을 소지하고계신 분이라면, 책 내용을 이해하는데, 조금은 도움이될 듯 합니다.
 
-##글에 대해
+## 글에 대해
 
 - 자주 언급되는 특정 <span style="color:#c11f1f">[JS 용어](http://mohwa.github.io/blog/search/?category=javascript)</span>(**VO**, **AO**, **Scope Chain** 등)에 대해서는 따로 설명하지 않으며, **링크**된 **블로그 글**을 통해 찾아볼 수 있을것이다.
 
-##데이터 접근
+## 데이터 접근
 
 - <h3>원글: <em><strong>리터널 값</strong>이란? 단순히 자신을 나타낼 뿐이며, 특정 장소에 저장되지 않는 <strong>모든 값</strong>입니다. JS 에서는 문자열, 숫자, 불리언, 객체, 배열, <span style="color:#c11f1f">함수</span>, 정규 표현식, 특별한 값인 null 과 undefined 가 <strong>리터널</strong>입니다.</em></h3>
 
@@ -201,7 +201,7 @@ tags: [book]
 
   - [Variable in JS](http://mohwa.github.io/blog/javascript/2015/10/14/variable-inJS/)
   
-##**Scope Chain** 과 **식별자 해석**
+## **Scope Chain** 과 **식별자 해석**
 
 - <h3>원글: <em><u>JS 함수는 <strong>객체</strong>이고, 엄밀히 말해 <span style="color:#c11f1f">Function</span> 의 인스턴스 입니다.</u> 함수 객체는 다른 모든 객체와 마찬가지로 속성이 있는데, 이 속성은 프로그램에서 접근할 수 있는 속성과 JS 엔진에서 사용되며, 코드(개발자가 직접)에서 접근할 수 없는 <strong>내부 속성</strong>으로 나뉩니다. 이러한 <strong>내부 속성</strong> 중 하나가 ECMA-262 세 번째 판에서 정의한 [[Scope]] 속성 입니다.</em></h3>
 
@@ -542,7 +542,7 @@ tags: [book]
             }
             ```
             
-##프로토타입 체인
+## 프로토타입 체인
             
 - <h3>원글: <em><strong>프로토타입</strong>이란? 다른 객체의 <strong>기반</strong>이 되는 객체이고, 새 객체가 가져야 할 <strong>맴버</strong>를 정의하고 구현합니다.</em></h3>
 
@@ -653,6 +653,6 @@ tags: [book]
   
   - [JS Enumerable(열거자) or Nonenumerable(비 열거자)](http://mohwa.github.io/blog/javascript/2015/10/09/enumerable-inJS/)
 
-##글을 마치며
+## 글을 마치며
 
 - **말머리**에서 **언급**한바와같이, 이 글은 책의 내용을 **비판**하고자하는 목적이 아닌, 책 내용중 개인적으로 중요하다고 판단한 부분과, 의미상 **모호**했던 부분을 다시한번 정리해본것이다.

@@ -7,11 +7,11 @@ categories: designPattern
 #tags: [interface, C#, C++, JAVA, JavaScript, designPattern]
 ---
 
-##1. 정의
+## 1. 정의
 
 - 가장 큰 범위의 [인터페이스](https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4) `정의`는 사물 간 또는 사물과 인간 간([User Interface](https://ko.wikipedia.org/wiki/%EC%82%AC%EC%9A%A9%EC%9E%90_%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4))의 의사소통을 위한 중간 <span style="color:#c11f1f">매개체</span>다. 즉 서로간의 의사소통을 위해 정해진 약속이 존재하며, 이를 `표준 규격` 이라 말할 수 있는것이다.
 
-##2. 의미
+## 2. 의미
 
 ![](/blog/assets/images/posts/interface_diagram.png)
 
@@ -29,7 +29,7 @@ categories: designPattern
 
 			- [x] *정확히 말하자면, 특정 API 의 모든 기능이 아닌 인터페이스를 구현한 기능에 한정된다.*
 
-##3. 상황에 따른 의미
+## 3. 상황에 따른 의미
 
 - 만약 운영중인 어플리케이션의 DB 플랫폼이 **MSSQL** 에서 **PostgreSQL** 로 변경된다고 가정해보자.(오랜 기간 운영중인 어플리케이션의 경우 이런저런 이유로 이와 같은 상황이 충분히 올 수 있다)
 
@@ -37,7 +37,7 @@ categories: designPattern
 
 	- *또 `사용자 입장`에서보면, 인터페이스를 통해 구현된, 공통적인 기능 만큼은 기존 코드를 <span style="color:#c11f1f">재사용</span>할 수 있다는 큰 장점까지 갖게 되는 것이다.(어플리케이션 유지보수 비용 최소화)*
 
-##4. JS 로 인터페이스 구현해보기
+## 4. JS 로 인터페이스 구현해보기
 
 <iframe width="100%" height="1000" src="http://jsfiddle.net/mohwa/jzu5r06e/3/embedded/js" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 
@@ -59,7 +59,7 @@ categories: designPattern
 - [C# 인터페이스](https://msdn.microsoft.com/ko-kr/library/ms173156.aspx)(인터페이스 `정의`는 각 언어마다 조금씩 차이를 보인다(모든 언어에 동일하게 구현되어있지 않다))
 
 
-##5. 정리하며
+## 5. 정리하며
 
 - **인터페이스**는 개발 중인 어플케이션 규모 및 설계에 따라 적용 범위가 얼마든지 달라질 수 있다.(또는 사용이 불필요할 수 도 있다(간혹 팀내에서의 **관행**적인 적용이 있다는 말을 들은적이 있는데 이건 정말 아닌듯 하다;;;))
 
@@ -68,7 +68,7 @@ categories: designPattern
 - 위에서 언급한 내용과 다른 **적용 사례**에 대해(*인터페이스를 구현하는 상황이 또 모가 있을까?) 한번쯤 심도있게 생각해보길 바란다*
 
 
-##6. 참고 URL
+## 6. 참고 URL
 
 - [DI란?](http://woonohyo.tistory.com/22)
 

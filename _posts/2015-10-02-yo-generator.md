@@ -7,7 +7,7 @@ categories: [generator]
 tags: [generator]
 ---
 
-##1. 문서 내용에 대해
+## 1. 문서 내용에 대해
 
 - 이 문서에서는 **Yeoman** 을 통해 자신만의 **app generator** 모듈을 생성하는 방법에 대해 알아볼 것이다.
 
@@ -17,7 +17,7 @@ tags: [generator]
 
 - 이 문서의 내용은 **MAC 환경**을 기준으로 작성되어있다.
 
-##2 app generator 개발 환경 구축
+## 2 app generator 개발 환경 구축
 
 - [generator-generator](https://github.com/yeoman/generator-generator) 모듈은 사용자가 자신만의 **app generator** 모듈을 개발할때, 그 기반 설계를 도와주는 **Yeoman generator** 모듈 중 하나이다.
 
@@ -71,7 +71,7 @@ tags: [generator]
       
         ![](http://mohwa.github.io/blog/assets/images/posts/20151002/yeoman_5.jpg)
 
-##3. app generator 개발 포인트
+## 3. app generator 개발 포인트
 
 - **package.json** 파일 설정
 
@@ -401,7 +401,7 @@ tags: [generator]
           }
           ```
 
-##4. 정리하며
+## 4. 정리하며
 
 - 아래 URL 은 현재 개발중인 사이트(**AngularJS** 사용)의 **app generator** 초기 버전이며, **설계**시 참고할 수 있을 듯하여 공유드립니다.(현재는 테스트 버전입니다)
 

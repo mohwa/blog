@@ -124,7 +124,7 @@ tags: [JavaScript]
           2. global Execution Context
         ```
 
-##참고 URL
+## 참고 URL
 
 - [ECMA-262-3 IN DETAIL. CHAPTER 1. EXECUTION CONTEXTS](http://dmitrysoshnikov.com/ecmascript/chapter-1-execution-contexts/)
 

@@ -45,7 +45,7 @@ tags: [JavaScript]
     <iframe height='300' scrolling='no' src='//codepen.io/yanione/embed/JGOoOX/?height=300&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yanione/pen/JGOoOX/'>JGOoOX</a> by mohwa (<a href='http://codepen.io/yanione'>@yanione</a>) on <a href='http://codepen.io'>CodePen</a>.
     </iframe>
         
-##참고 URL
+## 참고 URL
 
 - [Easing 처리에 대한 이해를 돕기위한 포스트](http://upshots.org/actionscript/jsas-understanding-easing)
                                  

@@ -202,10 +202,10 @@ tags: [JavaScript, es6]
 
 ## 관련 URL
 
-- [Object initializer](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer)<p>
+- [Object initializer](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 
-- [super](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super)<p>
+- [super](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super)
 
-- [[es6] Generator #1](http://www.bsidesoft.com/?p=2053)<p>
+- [[es6] Generator #1](http://www.bsidesoft.com/?p=2053)
 
-- [ES6 In Depth: let and const (번역)](https://medium.com/@dduskim/es6-in-depth-let-and-const-%EB%B2%88%EC%97%AD-31028c086e72#.c48zfoehd)<p>
+- [ES6 In Depth: let and const (번역)](https://medium.com/@dduskim/es6-in-depth-let-and-const-%EB%B2%88%EC%97%AD-31028c086e72#.c48zfoehd)

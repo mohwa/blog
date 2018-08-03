@@ -335,10 +335,10 @@ tags: [JavaScript, es6]
       
 ## 관련 URL
 
-- [애로우 펑션](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98)<p />
+- [애로우 펑션](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98)
 
-- [ES6 Arrow Functions & this](http://codepen.io/somethingkindawierd/post/es6-arrow-functions-this)<p />
+- [ES6 Arrow Functions & this](http://codepen.io/somethingkindawierd/post/es6-arrow-functions-this)
 
-- [화살표 함수(arrow functions)](https://github.com/wlzla000/JavaScript-documents/blob/master/ECMAScript%206%20Arrow%20functions(Korean).md)<p />
+- [화살표 함수(arrow functions)](https://github.com/wlzla000/JavaScript-documents/blob/master/ECMAScript%206%20Arrow%20functions(Korean).md)
 
-- [Strict 모드(JavaScript)](https://msdn.microsoft.com/ko-kr/library/br230269(v=vs.94).aspx)<p />
+- [Strict 모드(JavaScript)](https://msdn.microsoft.com/ko-kr/library/br230269(v=vs.94).aspx)

@@ -519,8 +519,8 @@ tags: [JavaScript, es6]
 
 ## 관련 URL
 
-- [Destructuring and parameter handling in ECMAScript 6](http://www.2ality.com/2015/01/es6-destructuring.html)<p>
+- [Destructuring and parameter handling in ECMAScript 6](http://www.2ality.com/2015/01/es6-destructuring.html)
 
-- [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)<p>
+- [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
-- [ES6 In Depth: 컬렉션 (Collections)](http://hacks.mozilla.or.kr/2015/12/es6-in-depth-collections/)<p>
+- [ES6 In Depth: 컬렉션 (Collections)](http://hacks.mozilla.or.kr/2015/12/es6-in-depth-collections/)

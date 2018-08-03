@@ -65,7 +65,7 @@ tags: [JavaScript]
 
 		![](http://mohwa.github.io/blog/assets/images/posts/Selection/selection_2.jpg)
 
-	- <u><span style="color:#6298c1">anchorOffset</span> 과 <span style="color:#6298c1">focusOffset</span> 이 좀 이해하기 힘들더라도(개인적일수도 있지만;;;) 그만큼 중요한 부분이니, 반드시 **이해**하고 넘어가길 바란다.</u>
+	- <u><span style="color:#6298c1">anchorOffset</span> 과 <span style="color:#6298c1">focusOffset</span> 이 좀 이해하기 힘들더라도(개인적일수도 있지만;;;) 그만큼 중요한 부분이니, 반드시 <b>이해</b>하고 넘어가길 바란다.</u>
 
 	- <span style="color:#6298c1">selection.isCollapsed</span>:
 
@@ -82,7 +82,7 @@ tags: [JavaScript]
 
 		- 선택된 범위의 <span style="color:#6298c1">range</span> 크기를 반환한다.
 
-		- 페이지 로드 후 <u>사용자가 문서를 **클릭**하지 않았을경우</u>, <span style="color:#6298c1">rangeCount</span> 는 <span style="color:#c11f1f">0</span>을, **클릭한 후**에는 <span style="color:#c11f1f">1</span>을 반환하게 된다.
+		- 페이지 로드 후 <u>사용자가 문서를 <b>클릭</b>하지 않았을경우</u>, <span style="color:#6298c1">rangeCount</span> 는 <span style="color:#c11f1f">0</span>을, <b>클릭한 후</b>에는 <span style="color:#c11f1f">1</span>을 반환하게 된다.
 
 		- 사용자는 <u>일반적으로 한번에 하나의 <span style="color:#6298c1">range</span> 를 선택할 수 있다.</u>
 
@@ -106,7 +106,7 @@ tags: [JavaScript]
 
 			![](http://mohwa.github.io/blog/assets/images/posts/Selection/selection_5.jpg)
 
-	- anchorNode 와 focusNode 를 각각의 메서드를 통해 <u>새로 지정하면, 새로운 **선택** 범위를 만들어낼수 있다.</u>
+	- anchorNode 와 focusNode 를 각각의 메서드를 통해 <u>새로 지정하면, 새로운 <b>선택</b> 범위를 만들어낼수 있다.</u>
 
 
 		```javascript

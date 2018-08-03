@@ -84,15 +84,16 @@ tags: [JavaScript]
 - Global Execution Context 의 **Scope Chain**
 
   - Global Execution Context 내부에 생성되는 **Scope Chain** 은 globalExecutionContext.VO 만 **포함**한다.
-    
-          ```javascript
-            globalExecutionContext:{
-              VO: ...
-              Scope(Scope Chain): [
-                globalExecutionContext.VO
-              ]
-            }
-          ```
+
+      ```javascript
+        globalExecutionContext:{
+          VO: ...
+          Scope(Scope Chain): [
+            globalExecutionContext.VO
+          ]
+        }
+      ```
+
 - **함수 생명 주기** 와 Function Execution Context 의 **Scope Chain**
       
 	- 함수 생명 주기는 **함수 생성**과 **함수 호출**로 나눌 수 있다.
@@ -107,70 +108,70 @@ tags: [JavaScript]
 		
       - A 함수를 선언한다
   
-              ```javascript
-              
-              // global execution context
-              
-              function A(){
-      
-              }
-        
-              ```
+          ```javascript
+
+          // global execution context
+
+          function A(){
+
+          }
+
+          ```
   
       - <span style="color:#c11f1f">함수 생성</span> 시 함수 객체 내부
       
-              ```javascript
-              A: {
-                [[Scope]]: [
-                  // A 함수는 [[Scope]] property 를 통해 global execution context 의 VO 를 갖는다.
-                  globalExecutionContext.VO
-                ];
-              }
-              ```
+          ```javascript
+          A: {
+            [[Scope]]: [
+              // A 함수는 [[Scope]] property 를 통해 global execution context 의 VO 를 갖는다.
+              globalExecutionContext.VO
+            ];
+          }
+          ```
       - 함수 내부에 또 다른 함수 생성
       
-              ```javascript
-              
-              // global execution context
-              
-              // 변수 선언 VO.x
-              var x = 1; 
-      
-              function A(){
-      
-                // function execution context
-                // 변수 선언 AO.y
-                var y = 1;
-      
-                function B(){
-                
-                  // function execution context
-                }
-              }
-              
-              A();
-        
-              ```
+          ```javascript
+
+          // global execution context
+
+          // 변수 선언 VO.x
+          var x = 1;
+
+          function A(){
+
+            // function execution context
+            // 변수 선언 AO.y
+            var y = 1;
+
+            function B(){
+
+              // function execution context
+            }
+          }
+
+          A();
+
+          ```
   
       - 각 함수 객체 내부
       
-              ```javascript
-                A: {
-                  [[Scope]]: [
-                    // A 함수는 global execution context 의 VO 를 갖는다.
-                    globalExecutionContext.VO
-                  ];
-                }
-        
-                B: {
-                  [[Scope]]: [
-                    // B 함수는 global execution context 의 VO 와 부모 함수인 A 함수의 AO(VO)를 갖는다.					
-                    <A> functionExecutionContext.AO(VO),
-                    globalExecutionContext.VO
-                  ];
-                }
-                
-              ```
+          ```javascript
+            A: {
+              [[Scope]]: [
+                // A 함수는 global execution context 의 VO 를 갖는다.
+                globalExecutionContext.VO
+              ];
+            }
+
+            B: {
+              [[Scope]]: [
+                // B 함수는 global execution context 의 VO 와 부모 함수인 A 함수의 AO(VO)를 갖는다.
+                <A> functionExecutionContext.AO(VO),
+                globalExecutionContext.VO
+              ];
+            }
+
+          ```
 
 	- 함수 호출
    
@@ -595,97 +596,97 @@ tags: [JavaScript]
   
   - 즉 <span style="color:#6298c1">eval</span> 함수가 포함된 execution context 의 **Scope Chain** 을 갖는다.
 
-          ```javascript
-          evalExecutionContext.Scope === callingContext.Scope;
-          ```	
+      ```javascript
+      evalExecutionContext.Scope === callingContext.Scope;
+      ```
   - 실행 코드 
       
-          ```javascript
-          
-          // global execution context
-          var x = 1;
-          
-          // global execution context 의 Scope Chain 을 갖는다.
-          eval('console.log(x)'); // 1
-    
-          function A(){
-    
-            // function execution context
-    
-            var y = 2;
-    
-            // A function execution context 의 Scope Chain 을 갖는다.
-            eval('console.log(x, y)'); // 1 2
-    
-            function B(){
-    
-              // B function execution context 의 Scope Chain 을 갖는다.
-    
-              var z = 3;
-    
-              eval('console.log(x, y, z)'); // 1 2 3
-            }
-    
-            B();
-          }
-    
-          A();		
-          ```
+      ```javascript
+
+      // global execution context
+      var x = 1;
+
+      // global execution context 의 Scope Chain 을 갖는다.
+      eval('console.log(x)'); // 1
+
+      function A(){
+
+        // function execution context
+
+        var y = 2;
+
+        // A function execution context 의 Scope Chain 을 갖는다.
+        eval('console.log(x, y)'); // 1 2
+
+        function B(){
+
+          // B function execution context 의 Scope Chain 을 갖는다.
+
+          var z = 3;
+
+          eval('console.log(x, y, z)'); // 1 2 3
+        }
+
+        B();
+      }
+
+      A();
+      ```
           
 - Function 생성자 함수
 
   - <span style="color:#c11f1f">Function 생성자 함수</span>를 통한, **함수 생성 시** 생성되는 [[Scope]] property 에는 Global Execution Context 의 <span style="color:#c11f1f">VO</span> 만 포함된다.
 
-        ```javascript
-        
-        // global execution context
-        var x = 1;
-        var y = 2;
-  
-        var fn = Function('console.log(x, y);'); // 1, 2
-  
-        fn();
-        ```
+    ```javascript
+
+    // global execution context
+    var x = 1;
+    var y = 2;
+
+    var fn = Function('console.log(x, y);'); // 1, 2
+
+    fn();
+    ```
   - globalExecutionContext 의 x 변수에 접근
       
-        ```javascript
-        
-        // global execution context
-        var x = 1;
-  
-        function A(){
-  
-          // function execution context
-  
-          var y = 2;
-  
-          var fn = Function('console.log(x);'); // 1
-  
-          fn();
-        }
-  
-        A();
-        ```
+    ```javascript
+
+    // global execution context
+    var x = 1;
+
+    function A(){
+
+      // function execution context
+
+      var y = 2;
+
+      var fn = Function('console.log(x);'); // 1
+
+      fn();
+    }
+
+    A();
+    ```
     - functionExecutionContext 의 y 변수에 접근
           
         ```javascript
-  
+
         // global execution context
-  
+
         var x = 1;
-  
+
         function A(){
-          
+
           // function execution context
-          
+
           // AFunctionExecutionContext.AO.y
           var y = 2;
-  
+
           var fn = Function('console.log(y);'); // Uncaught ReferenceError: y is not defined
-  
+
           fn();
         }
-  
+
         A();
         ```
 			

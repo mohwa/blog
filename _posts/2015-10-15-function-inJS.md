@@ -75,73 +75,73 @@ tags: [JavaScript]
           ```
   - global execution context 내부 선언
   
-          ```javascript
-          // global execution context
-      
-          function A(){
-          };
-          ```
+      ```javascript
+      // global execution context
+
+      function A(){
+      };
+      ```
   - <span style="color:#c11f1f">ECStack</span> 내부
           
-          ```javascript
-          var ECStack = [
-            globalExecutionContext: {
-              VO: {
-                A: <reference to function>
-              }
-            }
-          ];
-          ```
+      ```javascript
+      var ECStack = [
+        globalExecutionContext: {
+          VO: {
+            A: <reference to function>
+          }
+        }
+      ];
+      ```
   - global or function execution context 내부 선언
   
-          ```javascript
-      
-          // global execution context
-          
-          // global execution context 의 VO 속성으로 추가된다.
-          function A(){
-      
-            // function execution context
-            
-            // 내부 함수
-            // function execution context 의 AO(VO) 속성으로 추가된다.
-            function B(){
-              // function execution context					
-            }
-          };
-      
-          A();
-          ```
+      ```javascript
+
+      // global execution context
+
+      // global execution context 의 VO 속성으로 추가된다.
+      function A(){
+
+        // function execution context
+
+        // 내부 함수
+        // function execution context 의 AO(VO) 속성으로 추가된다.
+        function B(){
+          // function execution context
+        }
+      };
+
+      A();
+      ```
   - <span style="color:#c11f1f">ECStack</span> 내부
   
-          ```javascript
-          var ECStack = [
-            <A> functionExecutionContext: {
-              AO(VO): {
-                // function execution context 의 AO(VO) 속성으로 추가된다.
-                B: <reference to function>
-              },
-              // 함수 호출 시 생성되는 Scope Chain
-              Scope(Scope Chain): [
-                AO(VO): {
-                  B: <reference to function>
-                },              
-                globalExecutionContext.VO: {
-                  A: < reference to function >
-                }
-              ]
+      ```javascript
+      var ECStack = [
+        <A> functionExecutionContext: {
+          AO(VO): {
+            // function execution context 의 AO(VO) 속성으로 추가된다.
+            B: <reference to function>
+          },
+          // 함수 호출 시 생성되는 Scope Chain
+          Scope(Scope Chain): [
+            AO(VO): {
+              B: <reference to function>
             },
-            globalExecutionContext: {
-              VO: {
-                // global execution context 의 VO 속성으로 추가된다.
-                A: <reference to function>
-              },
-              Scope(Scope Chain): [
-                globalExecutionContext.VO
-              ]              
+            globalExecutionContext.VO: {
+              A: < reference to function >
             }
-          ];
-          ```
+          ]
+        },
+        globalExecutionContext: {
+          VO: {
+            // global execution context 의 VO 속성으로 추가된다.
+            A: <reference to function>
+          },
+          Scope(Scope Chain): [
+            globalExecutionContext.VO
+          ]
+        }
+      ];
+      ```
 
 - 함수 표현식(Function Expression(<span style="color:#c11f1f">FE</span>))
   
@@ -149,7 +149,6 @@ tags: [JavaScript]
 	
 	- <span style="color:#c11f1f">FE</span> 는 해당 Execution Context 진입 시, <span style="color:#c11f1f">VO</span> 의 새로운 속성으로 추가되지않으며, **초기화**된 undefined 는 A 변수 선언식에 의해 **초기화**된것이다.
 
-	
           ```javascript
           
           // 함수 표현식이 아닌, A 변수 선언식에 의해 undefined 로 초기화된다.
@@ -279,115 +278,116 @@ tags: [JavaScript]
 			
 			    - <span style="color:#6298c1">apply</span> 메서드를 통한 <span style="color:#6298c1">this</span> 값 초기화
 
-                      ```javascript
+                    ```javascript
                 
-                        // global execution context
-                
-                        (function(){
-                
-                          // function execution context
-                
-                          console.log(this); // object Object
-                
-                        }).apply({});
-                      ```
+                    // global execution context
+
+                    (function(){
+
+                      // function execution context
+
+                      console.log(this); // object Object
+
+                    }).apply({});
+                    ```
 
               - JS Singleton 구현
     
-                      ```javascript
-                
-                      // global execution context
-                      
-                      var $ = (function(){
-                      
-                          // 익명 함수 표현식 내부
+                  ```javascript
+
+                  // global execution context
+
+                  var $ = (function(){
+
+                      // 익명 함수 표현식 내부
+                      // function execution context
+                      var instance = null;
+
+                      function $(){
+
+                          // $ 함수 선언식 내부
                           // function execution context
-                          var instance = null;
-                      
-                          function $(){
-                      
-                              // $ 함수 선언식 내부
-                              // function execution context
-                      
-                              // 만약 instance 변수에 할당된 this 값이 있다면, 그 값을 반환한다.
-                              if (!instance) instance = this;
-                      
-                              return instance;
-                          }
-                      
-                          return $;
-                      
-                      }());
-                      
-                      var obj1 = new $();
-                      var obj2 = new $();
-                      
-                      console.log(obj1 === obj2); // ture
-                      ```
+
+                          // 만약 instance 변수에 할당된 this 값이 있다면, 그 값을 반환한다.
+                          if (!instance) instance = this;
+
+                          return instance;
+                      }
+
+                      return $;
+
+                  }());
+
+                  var obj1 = new $();
+                  var obj2 = new $();
+
+                  console.log(obj1 === obj2); // ture
+                  ```
+
               - JQuery Framework 구조생성
     
-                      ```javascript
-                
-                        var $ = (function(){
-                        
-                            function $(selector){
-                                return new init(selector);
-                            };
-                        
-                            function init(selector){
-                        
-                                selector = selector || '';
-                        
-                                var elems = document.getElementById(selector) || document.getElementsByTagName(selector);
-                        
-                                if (elems.length){
-                        
-                                    for (var n in elems) {
-                        
-                                        var elem = elems[n];
-                        
-                                        if (elem.nodeName) this[n] = elems[n];
-                                    };
-                                }
-                        
-                                return this;
-                            };
-                        
-                            init.prototype = {
-                        
-                                get: function(idx){
-                        
-                                    idx = idx || 0;
-                        
-                                    return this[idx] || undefined;
-                                }
-                            };
-                        
-                            $.get = function(){
-                                console.log('ajax get');
-                            };
-                            $.post = function(){
-                                console.log('ajax post');
-                            };
-                        
-                            return $;
-                        
-                        })();
-                        
-                        console.log($('title')); // object Object
-                        
-                        console.log($('title')[0]); // title elem
-                        console.log($('title').get(0)); // title elem
-                        
-                        console.log($('meta')[0]); // meta elem
-                        console.log($('meta').get(0)); // meta elem
-                        
-                        console.log($('span')[0]); // undefined
-                        console.log($('span').get(1)); // undefined
-                        
-                        $.get(); // ajax get
-                        $.post(); // ajax post
-                      ```			
+                  ```javascript
+
+                    var $ = (function(){
+
+                        function $(selector){
+                            return new init(selector);
+                        };
+
+                        function init(selector){
+
+                            selector = selector || '';
+
+                            var elems = document.getElementById(selector) || document.getElementsByTagName(selector);
+
+                            if (elems.length){
+
+                                for (var n in elems) {
+
+                                    var elem = elems[n];
+
+                                    if (elem.nodeName) this[n] = elems[n];
+                                };
+                            }
+
+                            return this;
+                        };
+
+                        init.prototype = {
+
+                            get: function(idx){
+
+                                idx = idx || 0;
+
+                                return this[idx] || undefined;
+                            }
+                        };
+
+                        $.get = function(){
+                            console.log('ajax get');
+                        };
+                        $.post = function(){
+                            console.log('ajax post');
+                        };
+
+                        return $;
+
+                    })();
+
+                    console.log($('title')); // object Object
+
+                    console.log($('title')[0]); // title elem
+                    console.log($('title').get(0)); // title elem
+
+                    console.log($('meta')[0]); // meta elem
+                    console.log($('meta').get(0)); // meta elem
+
+                    console.log($('span')[0]); // undefined
+                    console.log($('span').get(1)); // undefined
+
+                    $.get(); // ajax get
+                    $.post(); // ajax post
+                  ```
                 
 	- 그룹화 연산자를 사용하지 않는 <span style="color:#c11f1f">IIFE</span>
 
@@ -396,18 +396,18 @@ tags: [JavaScript]
 			- <span style="color:#c11f1f">FE</span> 가 <span style="color:#c11f1f">FE</span> 위치에 있을 경우, 파서는 **실행 코드 처리시**, 이것이 실행 가능하다는 것을 알고 있다.
 		
                   ```javascript
-            
+
                     var A = function(x){
                       console.log(x); // 1
                     }(1);
-            
+
                     var B = {
-            
+
                       // 상황에 따른 초기화 값을 할당할때 유용하게 사용할 수 있다.
                       x: function(y){
                         return y ? true : false;
                       }(1)
                     };
-            
+
                     console.log(B.x); // true
                   ```

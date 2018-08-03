@@ -356,17 +356,17 @@ tags: [JavaScript]
 
   - **objA.\_\_proto\_\_**: 나를 만든 생성자 함수 객체의 원형
   
-          ```javascript
-          console.log(objA.__proto__ === A.prototype); // true
-          ```
+      ```javascript
+      console.log(objA.__proto__ === A.prototype); // true
+      ```
 
   - **A.constructor**: 나를 만든 생성자 함수 객체
   
-          ```javascript
-          console.log(objA.constructor === A); // true
-          ```
+      ```javascript
+      console.log(objA.constructor === A); // true
+      ```
 
-        ![](http://mohwa.github.io/blog/assets/images/posts/20151012/prototype_5.png)		
+    ![](http://mohwa.github.io/blog/assets/images/posts/20151012/prototype_5.png)
 
 - **위임**받은 자식 객체는 부모 객체의 <span style="color:#c11f1f">원형</span>을 참조하고 있기 때문에, 자식 객체로 부터 부모 객체의 <span style="color:#c11f1f">원형</span>이 변조될 수 있다.(이로인해 아주 위험한 상황이 연출될 수 있다)
 

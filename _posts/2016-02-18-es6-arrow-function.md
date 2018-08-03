@@ -15,7 +15,7 @@ tags: [JavaScript, es6]
 
 ## 2. <span style="color:#c11f1f">ES5</span> & <span style="color:#c11f1f">this</span>
     
-- ## #<span style="color:#c11f1f">this</span> 값 초기화 테스트
+- ### <span style="color:#c11f1f">this</span> 값 초기화 테스트
 
       ```javascript
       // A 함수 객체를 선언한다.
@@ -81,75 +81,75 @@ tags: [JavaScript, es6]
       }.bind(this));
       ```      
                   
-- ## #<span style="color:#c11f1f">this</span> 값 초기화 테스트 in <span style="color:#c11f1f">Strict Mode</span>
+- ### <span style="color:#c11f1f">this</span> 값 초기화 테스트 in <span style="color:#c11f1f">Strict Mode</span>
 
   - <span style="color:#c11f1f">Strict Mode</span> 에서는 <span style="color:#c11f1f">this</span> 값이 **null**, 또는 **undefined** 인 경우, 암묵적으로 <span style="color:#c11f1f">global Object</span> 로 변환되지 않는다.
       
-          ```javascript
-          // A 함수 객체를 선언한다.
-          function A() {
-          
-              // Strict Mode 선언
-              'use strict';
-          
-              function B() {
-                  // this 는 undefined 로 초기화된다.
-                  console.log(this);  // undefined
-              }
-          
-              // AO 에 포함된 내부 함수를 호출한다.
-              B(); // AO.B();
-          
-              // 초기화된 this 값을 반환한다.
-              return this;
+      ```javascript
+      // A 함수 객체를 선언한다.
+      function A() {
+
+          // Strict Mode 선언
+          'use strict';
+
+          function B() {
+              // this 는 undefined 로 초기화된다.
+              console.log(this);  // undefined
           }
+
+          // AO 에 포함된 내부 함수를 호출한다.
+          B(); // AO.B();
+
+          // 초기화된 this 값을 반환한다.
+          return this;
+      }
+
+      // this 는 undefined 로 초기화된다.
+      console.log(A()); // undefined
+
+      // this 는 global object 로 초기화된다.
+      console.log(this.A());
+
+      // this 는 생성된 인스턴스로 초기화된다.
+      console.log(new A()); // A Object
+
+      // this 는 null 로 초기화된다.
+      console.log(A.call(null)); // global Object
+
+      // this 는 전달된 {x: 1} 객체로 초기화된다.
+      console.log(A.call({x: 1})); // Object {x: 1}
+
+      // this 는 전달된 {x: 2} 객체로 초기화된다.
+      console.log(A.apply({x: 2})); // Object {x: 2}
+
+      // this 는 전달된 {x: 2} 객체로 초기화된다.
+      console.log(A.bind({x: 3})()); // Object {x: 3}
+      ```
           
-          // this 는 undefined 로 초기화된다.
-          console.log(A()); // undefined
-          
-          // this 는 global object 로 초기화된다.
-          console.log(this.A());
-          
-          // this 는 생성된 인스턴스로 초기화된다.
-          console.log(new A()); // A Object
-          
-          // this 는 null 로 초기화된다.
-          console.log(A.call(null)); // global Object
-          
-          // this 는 전달된 {x: 1} 객체로 초기화된다.
-          console.log(A.call({x: 1})); // Object {x: 1}
-          
-          // this 는 전달된 {x: 2} 객체로 초기화된다.
-          console.log(A.apply({x: 2})); // Object {x: 2}
-          
-          // this 는 전달된 {x: 2} 객체로 초기화된다.
-          console.log(A.bind({x: 3})()); // Object {x: 3}
-          ```
-          
-- ## #<span style="color:#c11f1f">this</span> 값 초기화 테스트 in <span style="color:#c11f1f">Object</span>
+- ### <span style="color:#c11f1f">this</span> 값 초기화 테스트 in <span style="color:#c11f1f">Object</span>
 
   - **객체 메서드**에서의 <span style="color:#c11f1f">this</span> 는 해당 메서드를 내부 프로퍼티로 소유한 <span style="color:#c11f1f">객체</span>를 가리킨다.  
       
-          ```javascript
-          var A = {
-              x: function(){
-          
-                  var B = function(){
-                      // this 는 undefined 로 초기화되며, undefined 는 this 로 평가될 수 없으므로, 암묵적으로 global Object 로 변환된다.
-                      console.log(this); // global Object
-                  }
-          
-                  // AO 에 포함된 내부 함수를 호출한다.
-                  B(); // AO.B();
-          
-                  // 초기화된 this 값을 반환한다.
-                  return this;
+      ```javascript
+      var A = {
+          x: function(){
+
+              var B = function(){
+                  // this 는 undefined 로 초기화되며, undefined 는 this 로 평가될 수 없으므로, 암묵적으로 global Object 로 변환된다.
+                  console.log(this); // global Object
               }
-          };
-          
-          // 이 경우 this 는 해당 함수를 내부 프로퍼티로 소유한 객체를 가리킨다.
-          console.log(A.x()); // A Object
-          ```          
+
+              // AO 에 포함된 내부 함수를 호출한다.
+              B(); // AO.B();
+
+              // 초기화된 this 값을 반환한다.
+              return this;
+          }
+      };
+
+      // 이 경우 this 는 해당 함수를 내부 프로퍼티로 소유한 객체를 가리킨다.
+      console.log(A.x()); // A Object
+      ```
                 
 ## 3. <span style="color:#c11f1f">ES6</span> Arrow Function & <span style="color:#c11f1f">this</span>
                                       

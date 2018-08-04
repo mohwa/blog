@@ -7,7 +7,7 @@ categories: [book, cording, technique]
 tags: [book, cording, technique]
 ---
 
-## 1장 호율적으로 언어 배우기
+## 1장 효율적으로 언어 배우기
 
 ### 1.1 비교를 통한 배움
 
